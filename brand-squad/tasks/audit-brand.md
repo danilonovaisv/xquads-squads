@@ -1,6 +1,6 @@
 ---
 task: auditBrand()
-responsavel: "@brand-chief"
+responsavel: '@brand-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Brand equity scored across 5 Aaker pillars"
-  - "[ ] Identity assessed across 6 Kapferer facets"
-  - "[ ] Prioritized recommendations with specialist routing"
+  - '[ ] Brand equity scored across 5 Aaker pillars'
+  - '[ ] Identity assessed across 6 Kapferer facets'
+  - '[ ] Prioritized recommendations with specialist routing'
 ---
 
 # Task: Audit Brand
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| brand | string | User prompt | Yes | Brand name and brief description |
-| industry | string | User prompt | Yes | Industry and market context |
-| brand_assets | list | User prompt | No | Logo, website, social profiles, marketing materials |
-| competitors | list | User prompt | No | Key competitors for positioning context |
-| audience | string | User prompt | No | Target audience description |
-| brand_age | string | User prompt | No | How long the brand has existed |
-| known_issues | string | User prompt | No | Self-identified brand challenges |
+| Field        | Type   | Source      | Required | Validation                                          |
+| ------------ | ------ | ----------- | -------- | --------------------------------------------------- |
+| brand        | string | User prompt | Yes      | Brand name and brief description                    |
+| industry     | string | User prompt | Yes      | Industry and market context                         |
+| brand_assets | list   | User prompt | No       | Logo, website, social profiles, marketing materials |
+| competitors  | list   | User prompt | No       | Key competitors for positioning context             |
+| audience     | string | User prompt | No       | Target audience description                         |
+| brand_age    | string | User prompt | No       | How long the brand has existed                      |
+| known_issues | string | User prompt | No       | Self-identified brand challenges                    |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Brand Equity Assessment (Aaker Model)
+
 1. Evaluate the 5 pillars of brand equity:
    - **Brand Awareness:** Recognition and recall level in target market
    - **Perceived Quality:** How the audience rates quality vs competitors
@@ -72,6 +73,7 @@ Checklist:
 4. Benchmark against competitors where data available
 
 ### Phase 2: Identity Assessment (Kapferer Prism)
+
 1. Evaluate the 6 facets of brand identity:
    - **Physique:** Visual elements, logo, colors, packaging, product design
    - **Personality:** Character traits, voice, tone, human qualities
@@ -84,6 +86,7 @@ Checklist:
 4. Note any facets that are undefined or contradictory
 
 ### Phase 3: Positioning Analysis
+
 1. Evaluate current positioning:
    - What category does the brand compete in?
    - What is the primary point of differentiation?
@@ -95,6 +98,7 @@ Checklist:
 3. Test positioning clarity: Can someone describe what makes this brand different in one sentence?
 
 ### Phase 4: Touchpoint and Consistency Audit
+
 1. Review brand consistency across touchpoints:
    - Visual identity: logo usage, colors, typography
    - Verbal identity: messaging, tone, key phrases
@@ -120,42 +124,46 @@ Checklist:
 
 ### Brand Equity Scorecard (Aaker)
 
-| Pillar | Score | Strengths | Gaps |
-|--------|-------|-----------|------|
-| Awareness | X/10 | {note} | {note} |
-| Perceived Quality | X/10 | {note} | {note} |
-| Associations | X/10 | {note} | {note} |
-| Loyalty | X/10 | {note} | {note} |
-| Proprietary Assets | X/10 | {note} | {note} |
+| Pillar             | Score | Strengths | Gaps   |
+| ------------------ | ----- | --------- | ------ |
+| Awareness          | X/10  | {note}    | {note} |
+| Perceived Quality  | X/10  | {note}    | {note} |
+| Associations       | X/10  | {note}    | {note} |
+| Loyalty            | X/10  | {note}    | {note} |
+| Proprietary Assets | X/10  | {note}    | {note} |
 
 ### Identity Prism (Kapferer)
 
-| Facet | Current State | Consistency | Issue |
-|-------|--------------|-------------|-------|
-| Physique | {description} | {aligned/misaligned} | {note} |
-| Personality | {description} | {aligned/misaligned} | {note} |
-| Culture | {description} | {aligned/misaligned} | {note} |
+| Facet        | Current State | Consistency          | Issue  |
+| ------------ | ------------- | -------------------- | ------ |
+| Physique     | {description} | {aligned/misaligned} | {note} |
+| Personality  | {description} | {aligned/misaligned} | {note} |
+| Culture      | {description} | {aligned/misaligned} | {note} |
 | Relationship | {description} | {aligned/misaligned} | {note} |
-| Reflection | {description} | {aligned/misaligned} | {note} |
-| Self-image | {description} | {aligned/misaligned} | {note} |
+| Reflection   | {description} | {aligned/misaligned} | {note} |
+| Self-image   | {description} | {aligned/misaligned} | {note} |
 
 ### Positioning Map
+
 **Current Position:** {description}
 **Differentiation:** {clear/unclear}
 **White Space Opportunities:** {identified gaps}
 **Competitive Overlap:** {where you collide with competitors}
 
 ### Consistency Score
+
 **Overall Coherence:** {X}/10
 **Strongest Touchpoint:** {touchpoint}
 **Weakest Touchpoint:** {touchpoint}
 
 ### Prioritized Recommendations
-| Priority | Area | Issue | Recommended Fix | Agent |
-|----------|------|-------|-----------------|-------|
-| 1 | {area} | {issue} | {fix} | {specialist} |
+
+| Priority | Area   | Issue   | Recommended Fix | Agent        |
+| -------- | ------ | ------- | --------------- | ------------ |
+| 1        | {area} | {issue} | {fix}           | {specialist} |
 
 ### What to Protect
+
 {Elements that are working well and must be preserved}
 ```
 

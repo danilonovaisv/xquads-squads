@@ -46,10 +46,10 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| question | string | User prompt | Yes | Non-empty natural language question or problem description |
-| context | object | Session state | No | Active story, branch, recent errors if available |
+| Field    | Type   | Source        | Required | Validation                                                 |
+| -------- | ------ | ------------- | -------- | ---------------------------------------------------------- |
+| question | string | User prompt   | Yes      | Non-empty natural language question or problem description |
+| context  | object | Session state | No       | Active story, branch, recent errors if available           |
 
 ---
 
@@ -78,17 +78,18 @@
 
 Apply keyword matching against the 7 specialist domains:
 
-| Domain | Keywords | Route To | Persona |
-|--------|----------|----------|---------|
-| hooks | hook, pre_tool_use, post_tool_use, lifecycle, intercept, block, exit code, automation pipeline, pre_compact, notification, damage control | hooks-architect | Latch |
-| mcp | mcp, server, tool search, stdio, sse, http streamable, mcp__, context7, exa, docker gateway, add server | mcp-integrator | Piper |
-| subagents | subagent, agent team, swarm, teammate, worktree, parallel, background agent, spawn, multi-agent, TeammateTool | swarm-orchestrator | Nexus |
-| config | settings, permission, CLAUDE.md, rules, sandbox, managed, enterprise, allow, deny, keybinding, context window, compaction | config-engineer | Sigil |
-| skills | skill, command, plugin, SKILL.md, slash command, context engineering, spec-driven, .claude/commands, .claude/skills, marketplace | skill-craftsman | Anvil |
-| integration | integrate, repository, project setup, CI/CD, headless, brownfield, monorepo, AIOS, git workflow | project-integrator | Conduit |
-| roadmap | update, changelog, version, roadmap, new feature, what changed, migration, upgrade, adoption | roadmap-sentinel | Vigil |
+| Domain      | Keywords                                                                                                                                  | Route To           | Persona |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------- |
+| hooks       | hook, pre_tool_use, post_tool_use, lifecycle, intercept, block, exit code, automation pipeline, pre_compact, notification, damage control | hooks-architect    | Latch   |
+| mcp         | mcp, server, tool search, stdio, sse, http streamable, mcp\_\_, context7, exa, docker gateway, add server                                 | mcp-integrator     | Piper   |
+| subagents   | subagent, agent team, swarm, teammate, worktree, parallel, background agent, spawn, multi-agent, TeammateTool                             | swarm-orchestrator | Nexus   |
+| config      | settings, permission, CLAUDE.md, rules, sandbox, managed, enterprise, allow, deny, keybinding, context window, compaction                 | config-engineer    | Sigil   |
+| skills      | skill, command, plugin, SKILL.md, slash command, context engineering, spec-driven, .claude/commands, .claude/skills, marketplace          | skill-craftsman    | Anvil   |
+| integration | integrate, repository, project setup, CI/CD, headless, brownfield, monorepo, AIOS, git workflow                                           | project-integrator | Conduit |
+| roadmap     | update, changelog, version, roadmap, new feature, what changed, migration, upgrade, adoption                                              | roadmap-sentinel   | Vigil   |
 
 **Scoring rules:**
+
 - Count keyword matches per domain
 - If one domain scores significantly higher (2+ matches above others), route there
 - If multiple domains tie or the question spans domains, treat as cross-cutting
@@ -120,11 +121,11 @@ If the question maps to a specific domain:
 
 Rate the diagnosis confidence:
 
-| Confidence | Criteria | Action |
-|------------|----------|--------|
-| HIGH | 3+ keyword matches in one domain, clear intent | Route with confidence |
-| MEDIUM | 1-2 matches, ambiguous intent | Provide answer + suggest 2 possible specialists |
-| LOW | No clear domain match | Answer directly, ask clarifying question |
+| Confidence | Criteria                                       | Action                                          |
+| ---------- | ---------------------------------------------- | ----------------------------------------------- |
+| HIGH       | 3+ keyword matches in one domain, clear intent | Route with confidence                           |
+| MEDIUM     | 1-2 matches, ambiguous intent                  | Provide answer + suggest 2 possible specialists |
+| LOW        | No clear domain match                          | Answer directly, ask clarifying question        |
 
 ---
 

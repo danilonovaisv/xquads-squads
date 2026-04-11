@@ -1,6 +1,6 @@
 ---
 task: setVision()
-responsavel: "@vision-chief"
+responsavel: '@vision-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Mission and vision statements crafted"
-  - "[ ] 3-5 strategic pillars set with OKRs"
-  - "[ ] 3-year roadmap created with annual themes"
+  - '[ ] Mission and vision statements crafted'
+  - '[ ] 3-5 strategic pillars set with OKRs'
+  - '[ ] 3-year roadmap created with annual themes'
 ---
 
 # Task: Set Vision
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `company` | User prompt | Yes | Company name and description |
-| `industry` | User prompt | Yes | Industry or market sector |
-| `current_state` | User | Yes | Current stage, revenue, team size, challenges |
-| `ambition` | User | No | Where the founder wants to be in 3-5 years |
-| `existing_mission` | User | No | Any existing mission/vision statements |
+| Input              | Source      | Required | Description                                   |
+| ------------------ | ----------- | -------- | --------------------------------------------- |
+| `company`          | User prompt | Yes      | Company name and description                  |
+| `industry`         | User prompt | Yes      | Industry or market sector                     |
+| `current_state`    | User        | Yes      | Current stage, revenue, team size, challenges |
+| `ambition`         | User        | No       | Where the founder wants to be in 3-5 years    |
+| `existing_mission` | User        | No       | Any existing mission/vision statements        |
 
 ## Preconditions
 
@@ -129,27 +129,27 @@ Checklist:
 
 ```yaml
 strategic_vision:
-  company: "{name}"
-  mission: "{mission statement}"
-  vision: "{vision statement}"
-  core_values: ["{value1}", "{value2}", "{value3}"]
+  company: '{name}'
+  mission: '{mission statement}'
+  vision: '{vision statement}'
+  core_values: ['{value1}', '{value2}', '{value3}']
   strategic_pillars:
-    - name: "{pillar}"
-      objective: "{what}"
-      key_results: ["{kr1}", "{kr2}"]
-      owner: "{c-level role}"
-      timeline: "{milestones}"
+    - name: '{pillar}'
+      objective: '{what}'
+      key_results: ['{kr1}', '{kr2}']
+      owner: '{c-level role}'
+      timeline: '{milestones}'
   porters_five_forces:
-    rivalry: "{low|medium|high}"
-    new_entrants: "{low|medium|high}"
-    substitutes: "{low|medium|high}"
-    supplier_power: "{low|medium|high}"
-    buyer_power: "{low|medium|high}"
+    rivalry: '{low|medium|high}'
+    new_entrants: '{low|medium|high}'
+    substitutes: '{low|medium|high}'
+    supplier_power: '{low|medium|high}'
+    buyer_power: '{low|medium|high}'
   roadmap:
-    year_1: {theme: "", priorities: [], investments: []}
-    year_2: {theme: "", priorities: [], investments: []}
-    year_3: {theme: "", priorities: [], investments: []}
-  review_cadence: "quarterly"
+    year_1: { theme: '', priorities: [], investments: [] }
+    year_2: { theme: '', priorities: [], investments: [] }
+    year_3: { theme: '', priorities: [], investments: [] }
+  review_cadence: 'quarterly'
   deliverables:
     - strategic-assessment.md
     - vision-mission-values.md

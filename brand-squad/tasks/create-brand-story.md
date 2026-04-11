@@ -1,6 +1,6 @@
 ---
 task: createBrandStory()
-responsavel: "@donald-miller"
+responsavel: '@donald-miller'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All 7 SB7 elements defined"
-  - "[ ] One-liner and elevator pitch created"
-  - "[ ] Website wireframe copy provided"
+  - '[ ] All 7 SB7 elements defined'
+  - '[ ] One-liner and elevator pitch created'
+  - '[ ] Website wireframe copy provided'
 ---
 
 # Task: Create Brand Story
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| brand | string | User prompt | Yes | Brand name and what it does |
-| audience | string | User prompt | Yes | Target customer and their world |
-| problem | string | User prompt | Yes | The problem the brand solves |
-| solution | string | User prompt | Yes | How the brand solves it |
-| brand_values | list | User prompt | No | Core values and beliefs |
-| founder_story | string | User prompt | No | Origin story of the founder/company |
-| proof_elements | list | User prompt | No | Testimonials, results, credentials |
+| Field          | Type   | Source      | Required | Validation                          |
+| -------------- | ------ | ----------- | -------- | ----------------------------------- |
+| brand          | string | User prompt | Yes      | Brand name and what it does         |
+| audience       | string | User prompt | Yes      | Target customer and their world     |
+| problem        | string | User prompt | Yes      | The problem the brand solves        |
+| solution       | string | User prompt | Yes      | How the brand solves it             |
+| brand_values   | list   | User prompt | No       | Core values and beliefs             |
+| founder_story  | string | User prompt | No       | Origin story of the founder/company |
+| proof_elements | list   | User prompt | No       | Testimonials, results, credentials  |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: StoryBrand BrandScript (SB7)
+
 1. Define each of the 7 elements:
    - **A Character:** The customer is the hero, not the brand. Define who they are and what they want.
    - **Has a Problem:** Define the villain (the root cause), and 3 levels of problem:
@@ -81,6 +82,7 @@ Checklist:
    - **And Ends in Success:** What does life look like when they succeed? Paint the positive transformation.
 
 ### Phase 2: Story Execution
+
 1. Write the one-liner (logline for the brand):
    - Problem + Solution + Result in one sentence
    - Must be memorable enough to repeat at a dinner party
@@ -98,6 +100,7 @@ Checklist:
 4. Write the elevator pitch (60 seconds)
 
 ### Phase 3: Story Applications
+
 1. Create story-based copy for key touchpoints:
    - About page: The brand as guide (not hero)
    - Email welcome: Empathy + authority + first step
@@ -121,53 +124,66 @@ Checklist:
 ### BrandScript
 
 #### 1. Character (Hero = Customer)
+
 **Who they are:** {description}
 **What they want:** {desire}
 
 #### 2. Problem
+
 **Villain:** {root cause}
 **External:** {tangible problem}
 **Internal:** {how it feels}
 **Philosophical:** {why it's wrong}
 
 #### 3. Guide (Brand)
+
 **Empathy:** {we understand statement}
 **Authority:** {proof of expertise}
 
 #### 4. Plan
+
 1. {Step 1}
 2. {Step 2}
 3. {Step 3}
 
 #### 5. Call to Action
+
 **Direct CTA:** {primary action}
 **Transitional CTA:** {softer entry point}
 
 #### 6. Failure (Stakes)
+
 {What happens if they don't act}
 
 #### 7. Success (Transformation)
+
 {What life looks like after}
 
 ---
 
 ### One-Liner
+
 {Problem + Solution + Result in one sentence}
 
 ### Brand Narrative
+
 {2-3 paragraph story}
 
 ### Elevator Pitch
+
 {60-second spoken version}
 
 ### Website Wireframe Copy
+
 {Header, stakes, value prop, guide, plan, CTA sections}
 
 ### Touchpoint Applications
+
 | Touchpoint | Copy Approach | Key SB7 Element |
-|-----------|--------------|-----------------|
+| ---------- | ------------- | --------------- |
 
 ### Testimonial Framework
+
 {Questions to ask customers for story-aligned testimonials}
 ```
 

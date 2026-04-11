@@ -1,6 +1,6 @@
 ---
 task: planGoToMarket()
-responsavel: "@cmo-architect"
+responsavel: '@cmo-architect'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] TAM/SAM/SOM defined with market timing"
-  - "[ ] Positioning statement crafted with messaging hierarchy"
-  - "[ ] Top 3 channels selected with strategy and budget"
+  - '[ ] TAM/SAM/SOM defined with market timing'
+  - '[ ] Positioning statement crafted with messaging hierarchy'
+  - '[ ] Top 3 channels selected with strategy and budget'
 ---
 
 # Task: Plan Go-to-Market
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `product` | User prompt | Yes | Product or service to bring to market |
-| `target_market` | User prompt | Yes | Target market and ideal customer profile |
-| `competitive_landscape` | User | No | Known competitors and their positioning |
-| `budget` | User | No | Marketing budget available |
-| `timeline` | User | No | Launch date or time constraint |
+| Input                   | Source      | Required | Description                              |
+| ----------------------- | ----------- | -------- | ---------------------------------------- |
+| `product`               | User prompt | Yes      | Product or service to bring to market    |
+| `target_market`         | User prompt | Yes      | Target market and ideal customer profile |
+| `competitive_landscape` | User        | No       | Known competitors and their positioning  |
+| `budget`                | User        | No       | Marketing budget available               |
+| `timeline`              | User        | No       | Launch date or time constraint           |
 
 ## Preconditions
 
@@ -143,27 +143,27 @@ Checklist:
 
 ```yaml
 gtm_strategy:
-  product: "{name}"
+  product: '{name}'
   market:
-    tam: "{size}"
-    sam: "{size}"
-    som: "{size}"
-    timing: "{why now}"
+    tam: '{size}'
+    sam: '{size}'
+    som: '{size}'
+    timing: '{why now}'
   positioning:
-    statement: "{positioning statement}"
-    one_line_pitch: "{10-second pitch}"
-    differentiator: "{key differentiator}"
+    statement: '{positioning statement}'
+    one_line_pitch: '{10-second pitch}'
+    differentiator: '{key differentiator}'
   channels:
-    core: ["{channel1}", "{channel2}", "{channel3}"]
-    total_budget: "{amount}"
-    target_cac: "{amount}"
+    core: ['{channel1}', '{channel2}', '{channel3}']
+    total_budget: '{amount}'
+    target_cac: '{amount}'
   launch:
-    date: "{date or TBD}"
-    sequence_duration: "90 days (60 pre + 30 post)"
-    key_milestones: ["{milestone1}", "{milestone2}"]
+    date: '{date or TBD}'
+    sequence_duration: '90 days (60 pre + 30 post)'
+    key_milestones: ['{milestone1}', '{milestone2}']
   success_metrics:
-    30_day: {signups: "", revenue: "", activation: ""}
-    ltv_cac_target: "> 3:1"
+    30_day: { signups: '', revenue: '', activation: '' }
+    ltv_cac_target: '> 3:1'
   deliverables:
     - market-analysis.md
     - positioning-document.md

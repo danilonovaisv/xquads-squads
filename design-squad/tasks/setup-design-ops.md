@@ -1,6 +1,6 @@
 ---
 task: setupDesignOps()
-responsavel: "@dave-malouf"
+responsavel: '@dave-malouf'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Current state assessed with bottlenecks identified"
-  - "[ ] Design workflow defined with stages, activities, and gates"
-  - "[ ] Metrics defined for ongoing health tracking"
+  - '[ ] Current state assessed with bottlenecks identified'
+  - '[ ] Design workflow defined with stages, activities, and gates'
+  - '[ ] Metrics defined for ongoing health tracking'
 ---
 
 # Task: DesignOps Practice Setup
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `team_context` | Design team size, structure, maturity | YES |
-| `current_pain_points` | Biggest operational challenges | YES |
-| `tools_in_use` | Current design and collaboration tools | PREFERRED |
+| Input                  | Source                                   | Required  |
+| ---------------------- | ---------------------------------------- | --------- |
+| `team_context`         | Design team size, structure, maturity    | YES       |
+| `current_pain_points`  | Biggest operational challenges           | YES       |
+| `tools_in_use`         | Current design and collaboration tools   | PREFERRED |
 | `engineering_workflow` | How dev team works (agile, kanban, etc.) | PREFERRED |
-| `budget_constraints` | Available budget for tools/hires | NO |
+| `budget_constraints`   | Available budget for tools/hires         | NO        |
 
 ## Preconditions
 
@@ -126,35 +126,35 @@ Checklist:
 
 ```yaml
 design_ops:
-  architect: "dave-malouf"
+  architect: 'dave-malouf'
   team_size: 0
-  maturity_level: "Ad Hoc | Emerging | Defined | Managed | Optimized"
+  maturity_level: 'Ad Hoc | Emerging | Defined | Managed | Optimized'
   workflow:
     stages: [discover, define, design, deliver, measure]
-    sprint_cadence: "{duration}"
+    sprint_cadence: '{duration}'
     rituals:
-      - name: "{ritual}"
-        frequency: "{cadence}"
-        participants: ["{roles}"]
+      - name: '{ritual}'
+        frequency: '{cadence}'
+        participants: ['{roles}']
   people_ops:
-    roles_defined: ["{role list}"]
+    roles_defined: ['{role list}']
     career_framework: true
     onboarding_plan: true
-    knowledge_management: "{approach}"
+    knowledge_management: '{approach}'
   tools:
-    design: "{primary tool}"
-    collaboration: "{tool}"
-    research: "{tool}"
-    asset_management: "{tool}"
+    design: '{primary tool}'
+    collaboration: '{tool}'
+    research: '{tool}'
+    asset_management: '{tool}'
   metrics:
-    cycle_time: "{target}"
-    rework_rate: "{target}"
-    system_adoption: "{target}"
-    team_satisfaction: "{target}"
+    cycle_time: '{target}'
+    rework_rate: '{target}'
+    system_adoption: '{target}'
+    team_satisfaction: '{target}'
   implementation_plan:
-    week_1_2: ["{immediate setup}"]
-    month_1: ["{foundation}"]
-    month_3: ["{optimization}"]
+    week_1_2: ['{immediate setup}']
+    month_1: ['{foundation}']
+    month_3: ['{optimization}']
 ```
 
 ## Veto Conditions

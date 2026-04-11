@@ -1,6 +1,6 @@
 ---
 task: analyzeStory()
-responsavel: "@shawn-coyne"
+responsavel: '@shawn-coyne'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Genre identified with core value and obligatory scenes"
-  - "[ ] All scenes mapped with turning points and value shifts"
-  - "[ ] Issues diagnosed and prioritized with prescriptions"
+  - '[ ] Genre identified with core value and obligatory scenes'
+  - '[ ] All scenes mapped with turning points and value shifts'
+  - '[ ] Issues diagnosed and prioritized with prescriptions'
 ---
 
 # Task: Story Analysis (Story Grid)
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `story_text` | User provides draft, outline, or description | YES |
-| `intended_genre` | User specification | PREFERRED |
-| `target_audience` | User description | NO |
-| `specific_concerns` | What the author thinks is wrong | NO |
-| `story_format` | Novel, screenplay, short story, episode | NO |
+| Input               | Source                                       | Required  |
+| ------------------- | -------------------------------------------- | --------- |
+| `story_text`        | User provides draft, outline, or description | YES       |
+| `intended_genre`    | User specification                           | PREFERRED |
+| `target_audience`   | User description                             | NO        |
+| `specific_concerns` | What the author thinks is wrong              | NO        |
+| `story_format`      | Novel, screenplay, short story, episode      | NO        |
 
 ## Preconditions
 
@@ -106,34 +106,34 @@ Checklist:
 
 ```yaml
 story_analysis:
-  analyst: "shawn-coyne"
-  methodology: "Story Grid"
+  analyst: 'shawn-coyne'
+  methodology: 'Story Grid'
   genre:
-    content_genre: "{genre}"
-    sub_genre: "{sub-genre}"
-    core_value: "{value at stake}"
-    obligatory_scenes_present: ["{scenes found}"]
-    obligatory_scenes_missing: ["{scenes missing}"]
-    conventions_met: ["{conventions found}"]
-    conventions_violated: ["{conventions broken}"]
+    content_genre: '{genre}'
+    sub_genre: '{sub-genre}'
+    core_value: '{value at stake}'
+    obligatory_scenes_present: ['{scenes found}']
+    obligatory_scenes_missing: ['{scenes missing}']
+    conventions_met: ['{conventions found}']
+    conventions_violated: ['{conventions broken}']
   scene_map:
     total_scenes: 0
-    value_arc: "prescriptive | cautionary"
+    value_arc: 'prescriptive | cautionary'
     key_scenes:
-      - scene: "{scene name}"
-        turning_point: "{what changes}"
-        value_shift: "{from → to}"
-        commandments: "{5 commandments assessment}"
+      - scene: '{scene name}'
+        turning_point: '{what changes}'
+        value_shift: '{from → to}'
+        commandments: '{5 commandments assessment}'
   structure_assessment:
-    beginning_hook: "{assessment}"
-    middle_build: "{assessment}"
-    ending_payoff: "{assessment}"
-    global_crisis: "{assessment}"
+    beginning_hook: '{assessment}'
+    middle_build: '{assessment}'
+    ending_payoff: '{assessment}'
+    global_crisis: '{assessment}'
   diagnosis:
-    critical_issues: ["{must fix}"]
-    major_issues: ["{should fix}"]
-    minor_issues: ["{nice to fix}"]
-  prescriptions: ["{specific recommendations}"]
+    critical_issues: ['{must fix}']
+    major_issues: ['{should fix}']
+    minor_issues: ['{nice to fix}']
+  prescriptions: ['{specific recommendations}']
 ```
 
 ## Veto Conditions

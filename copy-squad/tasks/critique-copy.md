@@ -1,6 +1,6 @@
 ---
 task: critiqueCopy()
-responsavel: "@copy-chief"
+responsavel: '@copy-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All 8 criteria scored with justification"
-  - "[ ] Fatal flaw identified with rewrite examples"
-  - "[ ] Prioritized fix list with specialist routing"
+  - '[ ] All 8 criteria scored with justification'
+  - '[ ] Fatal flaw identified with rewrite examples'
+  - '[ ] Prioritized fix list with specialist routing'
 ---
 
 # Task: Critique Copy
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| copy_text | string | User prompt | Yes | Full copy to critique |
-| copy_type | enum | User prompt | Yes | headline, sales-letter, email, vsl-script, ad, landing-page, funnel, bullets |
-| original_brief | string | User prompt | No | Original brief or goal the copy was written for |
-| target_audience | string | User prompt | No | Intended audience |
-| performance_data | object | User prompt | No | Existing metrics if the copy is live |
+| Field            | Type   | Source      | Required | Validation                                                                   |
+| ---------------- | ------ | ----------- | -------- | ---------------------------------------------------------------------------- |
+| copy_text        | string | User prompt | Yes      | Full copy to critique                                                        |
+| copy_type        | enum   | User prompt | Yes      | headline, sales-letter, email, vsl-script, ad, landing-page, funnel, bullets |
+| original_brief   | string | User prompt | No       | Original brief or goal the copy was written for                              |
+| target_audience  | string | User prompt | No       | Intended audience                                                            |
+| performance_data | object | User prompt | No       | Existing metrics if the copy is live                                         |
 
 ---
 
@@ -59,6 +59,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Objective Assessment
+
 1. Read the copy through once without judgment — note gut reactions
 2. Read again with the 8-point scoring framework active
 3. For each of the 8 criteria, assign a score (1-10):
@@ -77,6 +78,7 @@ Checklist:
    - Below 40: Weak — consider starting over with new approach
 
 ### Phase 2: Deep Critique
+
 1. For each criterion scoring below 7, provide:
    - What specifically is wrong (cite the exact text)
    - Why it matters (what it costs in conversions or engagement)
@@ -92,6 +94,7 @@ Checklist:
    - Multiple CTAs competing for attention
 
 ### Phase 3: Actionable Recommendations
+
 1. Provide a prioritized fix list (highest impact first)
 2. For the top 3 fixes, write actual rewrite examples
 3. Recommend which specialist agent could best handle each fix
@@ -114,22 +117,23 @@ Checklist:
 
 ### 8-Point Scorecard
 
-| # | Criterion | Score | Status |
-|---|-----------|-------|--------|
-| 1 | Attention | X/10 | {Pass/Fix} |
-| 2 | Interest | X/10 | {Pass/Fix} |
-| 3 | Desire | X/10 | {Pass/Fix} |
-| 4 | Action | X/10 | {Pass/Fix} |
-| 5 | Specificity | X/10 | {Pass/Fix} |
-| 6 | Proof | X/10 | {Pass/Fix} |
-| 7 | Voice | X/10 | {Pass/Fix} |
-| 8 | Flow | X/10 | {Pass/Fix} |
+| #   | Criterion   | Score | Status     |
+| --- | ----------- | ----- | ---------- |
+| 1   | Attention   | X/10  | {Pass/Fix} |
+| 2   | Interest    | X/10  | {Pass/Fix} |
+| 3   | Desire      | X/10  | {Pass/Fix} |
+| 4   | Action      | X/10  | {Pass/Fix} |
+| 5   | Specificity | X/10  | {Pass/Fix} |
+| 6   | Proof       | X/10  | {Pass/Fix} |
+| 7   | Voice       | X/10  | {Pass/Fix} |
+| 8   | Flow        | X/10  | {Pass/Fix} |
 
 ---
 
 ### Detailed Critique
 
 #### {Criterion Name} — {Score}/10
+
 **Issue:** {what's wrong — cite exact text}
 **Impact:** {what it costs}
 **Fix:** {specific recommendation}
@@ -138,19 +142,23 @@ Checklist:
 ---
 
 ### Copy Crimes Detected
+
 - {crime}: {where it occurs}
 
 ### Prioritized Fix List
-| Priority | Fix | Impact | Effort | Agent |
-|----------|-----|--------|--------|-------|
-| 1 | {fix} | High | {Low/Med/High} | {agent} |
+
+| Priority | Fix   | Impact | Effort         | Agent   |
+| -------- | ----- | ------ | -------------- | ------- |
+| 1        | {fix} | High   | {Low/Med/High} | {agent} |
 
 ### Quick Wins (Under 5 Minutes)
+
 1. {quick fix}
 2. {quick fix}
 3. {quick fix}
 
 ### What to Keep
+
 {Acknowledge what the copy does well}
 ```
 

@@ -1,6 +1,6 @@
 ---
 task: writeManifesto()
-responsavel: "@manifestador"
+responsavel: '@manifestador'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Manifesto includes all 7 components"
-  - "[ ] Enemy named as systemic force, not person"
-  - "[ ] Call to action includes concrete first step"
+  - '[ ] Manifesto includes all 7 components'
+  - '[ ] Enemy named as systemic force, not person'
+  - '[ ] Call to action includes concrete first step'
 ---
 
 # Task: Write Manifesto
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `identity_architecture` | Phase 2 output | Yes | Complete identity framework from identitario |
-| `spark_analysis` | Phase 1 output | Yes | Phenomenological analysis with narrative kernel |
-| `cause` | User prompt | Yes | The movement's cause |
-| `tone` | User | No | Desired tone: revolutionary, inspirational, urgent, poetic |
-| `length` | User | No | Target length: short (500w), standard (1000w), epic (2000w) |
+| Input                   | Source         | Required | Description                                                 |
+| ----------------------- | -------------- | -------- | ----------------------------------------------------------- |
+| `identity_architecture` | Phase 2 output | Yes      | Complete identity framework from identitario                |
+| `spark_analysis`        | Phase 1 output | Yes      | Phenomenological analysis with narrative kernel             |
+| `cause`                 | User prompt    | Yes      | The movement's cause                                        |
+| `tone`                  | User           | No       | Desired tone: revolutionary, inspirational, urgent, poetic  |
+| `length`                | User           | No       | Target length: short (500w), standard (1000w), epic (2000w) |
 
 ## Preconditions
 
@@ -101,23 +101,23 @@ Checklist:
 
 ```yaml
 manifesto:
-  title: "{manifesto title}"
-  movement: "{movement name}"
-  word_count: {number}
-  tone: "{revolutionary|inspirational|urgent|poetic}"
+  title: '{manifesto title}'
+  movement: '{movement name}'
+  word_count: { number }
+  tone: '{revolutionary|inspirational|urgent|poetic}'
   components:
-    reality_declaration: "{opening truth}"
-    belief_count: {number}
-    central_belief: "{core belief}"
-    named_enemy: "{systemic enemy}"
-    promised_land: "{future vision summary}"
-    battle_cry: "{one sentence}"
-    call_to_action: "{first step}"
+    reality_declaration: '{opening truth}'
+    belief_count: { number }
+    central_belief: '{core belief}'
+    named_enemy: '{systemic enemy}'
+    promised_land: '{future vision summary}'
+    battle_cry: '{one sentence}'
+    call_to_action: '{first step}'
   full_text: |
     {complete manifesto text}
   usage_guidelines:
-    - "{where and how to use this manifesto}"
-    - "{adaptation guidelines for different formats}"
+    - '{where and how to use this manifesto}'
+    - '{adaptation guidelines for different formats}'
 ```
 
 ## Veto Conditions

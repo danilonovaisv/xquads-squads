@@ -1,6 +1,6 @@
 ---
 task: auditBusiness()
-responsavel: "@hormozi-audit"
+responsavel: '@hormozi-audit'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Revenue equation scored with all 4 components"
-  - "[ ] #1 constraint clearly identified"
-  - "[ ] 3 prioritized recommendations with revenue impact"
+  - '[ ] Revenue equation scored with all 4 components'
+  - '[ ] #1 constraint clearly identified'
+  - '[ ] 3 prioritized recommendations with revenue impact'
 ---
 
 # Task: Audit Business
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| business | string | User prompt | Yes | Business name, type, and stage |
-| revenue | number | User prompt | Yes | Monthly or annual revenue |
-| profit_margin | number | User prompt | No | Current profit margin percentage |
-| team_size | number | User prompt | No | Number of employees/contractors |
-| channels | list | User prompt | No | Marketing and sales channels in use |
-| biggest_challenge | string | User prompt | No | Self-identified primary constraint |
-| metrics | object | User prompt | No | Available business metrics (CAC, LTV, churn, etc.) |
+| Field             | Type   | Source      | Required | Validation                                         |
+| ----------------- | ------ | ----------- | -------- | -------------------------------------------------- |
+| business          | string | User prompt | Yes      | Business name, type, and stage                     |
+| revenue           | number | User prompt | Yes      | Monthly or annual revenue                          |
+| profit_margin     | number | User prompt | No       | Current profit margin percentage                   |
+| team_size         | number | User prompt | No       | Number of employees/contractors                    |
+| channels          | list   | User prompt | No       | Marketing and sales channels in use                |
+| biggest_challenge | string | User prompt | No       | Self-identified primary constraint                 |
+| metrics           | object | User prompt | No       | Available business metrics (CAC, LTV, churn, etc.) |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Revenue Engine Audit
+
 1. Diagnose the revenue equation: Revenue = Leads x Conversion Rate x Price x Frequency
 2. Score each component (1-10):
    - Leads: Volume and quality of incoming leads
@@ -72,6 +73,7 @@ Checklist:
 5. Determine the constraint: which single improvement would double revenue?
 
 ### Phase 2: Offer Audit
+
 1. Evaluate the current offer against the Value Equation
 2. Score each quadrant:
    - Dream Outcome: Is the promise compelling enough?
@@ -82,6 +84,7 @@ Checklist:
 4. Benchmark pricing: is the business underpriced for the value delivered?
 
 ### Phase 3: Operations Audit
+
 1. Assess the delivery system:
    - Can the business fulfill 2x current volume without breaking?
    - What is the cost to deliver per customer?
@@ -97,6 +100,7 @@ Checklist:
    - Customer Acquisition Cost vs Lifetime Value ratio
 
 ### Phase 4: Growth Prescription
+
 1. Identify the #1 constraint holding the business back
 2. Provide 3 specific, prioritized recommendations:
    - Quick win (implementable this week)
@@ -122,43 +126,46 @@ Checklist:
 
 ### Revenue Engine
 
-| Component | Score | Current | 10% Improvement Impact |
-|-----------|-------|---------|----------------------|
-| Leads | X/10 | {metric} | +${X}/month |
-| Conversion | X/10 | {metric}% | +${X}/month |
-| Price | X/10 | ${metric} | +${X}/month |
-| Frequency | X/10 | {metric}x/year | +${X}/month |
+| Component  | Score | Current        | 10% Improvement Impact |
+| ---------- | ----- | -------------- | ---------------------- |
+| Leads      | X/10  | {metric}       | +${X}/month            |
+| Conversion | X/10  | {metric}%      | +${X}/month            |
+| Price      | X/10  | ${metric}      | +${X}/month            |
+| Frequency  | X/10  | {metric}x/year | +${X}/month            |
 
 **Weakest Link:** {component}
 **Doubling Lever:** {which component to focus on}
 
 ### Offer Assessment
 
-| Quadrant | Score | Issue | Fix |
-|----------|-------|-------|-----|
-| Dream Outcome | X/10 | {issue} | {fix} |
-| Perceived Likelihood | X/10 | {issue} | {fix} |
-| Time Delay | X/10 | {issue} | {fix} |
-| Effort & Sacrifice | X/10 | {issue} | {fix} |
+| Quadrant             | Score | Issue   | Fix   |
+| -------------------- | ----- | ------- | ----- |
+| Dream Outcome        | X/10  | {issue} | {fix} |
+| Perceived Likelihood | X/10  | {issue} | {fix} |
+| Time Delay           | X/10  | {issue} | {fix} |
+| Effort & Sacrifice   | X/10  | {issue} | {fix} |
 
 ### Operations Assessment
+
 **Scalability:** {can/cannot handle 2x volume}
 **Bottleneck:** {identified bottleneck}
 **CAC:LTV Ratio:** {X}:1
 
 ### Growth Prescription
 
-| Priority | Recommendation | Timeline | Revenue Impact |
-|----------|---------------|----------|----------------|
-| 1 | {quick win} | This week | +${X}/month |
-| 2 | {medium play} | This month | +${X}/month |
-| 3 | {strategic shift} | This quarter | +${X}/month |
+| Priority | Recommendation    | Timeline     | Revenue Impact |
+| -------- | ----------------- | ------------ | -------------- |
+| 1        | {quick win}       | This week    | +${X}/month    |
+| 2        | {medium play}     | This month   | +${X}/month    |
+| 3        | {strategic shift} | This quarter | +${X}/month    |
 
 ### Stop Doing List
+
 1. {thing to stop}
 2. {thing to stop}
 
 ### 90-Day Focus
+
 {One clear priority for the next 90 days}
 ```
 

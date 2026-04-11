@@ -54,11 +54,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_path | string | User or cwd | Yes | Must contain .claude/ directory |
-| pain_points | string[] | User | No | Described bottlenecks (e.g., "too many permission prompts") |
-| workflow_type | enum | User | No | `solo-dev`, `team-review`, `ci-cd`, `exploratory` |
+| Field         | Type     | Source      | Required | Validation                                                  |
+| ------------- | -------- | ----------- | -------- | ----------------------------------------------------------- |
+| project_path  | string   | User or cwd | Yes      | Must contain .claude/ directory                             |
+| pain_points   | string[] | User        | No       | Described bottlenecks (e.g., "too many permission prompts") |
+| workflow_type | enum     | User        | No       | `solo-dev`, `team-review`, `ci-cd`, `exploratory`           |
 
 ---
 
@@ -166,7 +166,7 @@ Produce a prioritized optimization plan:
 
 ## Output Format
 
-```markdown
+````markdown
 ## Workflow Optimization Report
 
 **Project:** {project_path}
@@ -175,8 +175,8 @@ Produce a prioritized optimization plan:
 
 ### Bottlenecks Found
 
-| Bottleneck | Impact | Fix Effort |
-|------------|--------|------------|
+| Bottleneck    | Impact       | Fix Effort              |
+| ------------- | ------------ | ----------------------- |
 | {description} | HIGH/MED/LOW | Quick/Medium/Investment |
 
 ### Quick Wins (Apply Now)
@@ -185,6 +185,7 @@ Produce a prioritized optimization plan:
    ```json
    // Exact config change
    ```
+````
 
 ### Medium Effort
 
@@ -203,6 +204,7 @@ Produce a prioritized optimization plan:
 **Before:** {N} expected prompts per session
 **After:** {M} expected prompts per session
 **Reduction:** {X}%
+
 ```
 
 ---
@@ -224,3 +226,4 @@ Produce a prioritized optimization plan:
 - [ ] Keyboard shortcuts recommended for workflow type
 - [ ] Memory configuration suggested
 - [ ] Prioritized optimization plan delivered
+```

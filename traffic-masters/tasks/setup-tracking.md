@@ -1,6 +1,6 @@
 ---
 task: setupTracking()
-responsavel: "@pixel-specialist"
+responsavel: '@pixel-specialist'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Tracking architecture mapped with all platforms"
-  - "[ ] Event hierarchy defined with parameters"
-  - "[ ] QA checklist created and tested"
+  - '[ ] Tracking architecture mapped with all platforms'
+  - '[ ] Event hierarchy defined with parameters'
+  - '[ ] QA checklist created and tested'
 ---
 
 # Task: Setup Tracking
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| platforms | list | User prompt | Yes | Ad platforms in use (facebook, google, tiktok, etc.) |
-| website | string | User prompt | Yes | Website URL and tech stack (WordPress, Shopify, custom, etc.) |
-| conversion_events | list | User prompt | Yes | Key events to track (purchase, lead, signup, etc.) |
-| funnel_pages | list | User prompt | No | Key pages in the funnel (landing, checkout, thank you) |
-| current_tracking | string | User prompt | No | Existing tracking setup description |
-| ecommerce | boolean | User prompt | No | Whether the site has e-commerce transactions |
+| Field             | Type    | Source      | Required | Validation                                                    |
+| ----------------- | ------- | ----------- | -------- | ------------------------------------------------------------- |
+| platforms         | list    | User prompt | Yes      | Ad platforms in use (facebook, google, tiktok, etc.)          |
+| website           | string  | User prompt | Yes      | Website URL and tech stack (WordPress, Shopify, custom, etc.) |
+| conversion_events | list    | User prompt | Yes      | Key events to track (purchase, lead, signup, etc.)            |
+| funnel_pages      | list    | User prompt | No       | Key pages in the funnel (landing, checkout, thank you)        |
+| current_tracking  | string  | User prompt | No       | Existing tracking setup description                           |
+| ecommerce         | boolean | User prompt | No       | Whether the site has e-commerce transactions                  |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Tracking Architecture
+
 1. Map the complete tracking stack:
    - Tag Manager: Google Tag Manager, Meta Pixel Helper, platform-native
    - Pixels: Meta Pixel, Google Ads Tag, TikTok Pixel, LinkedIn Insight Tag
@@ -78,6 +79,7 @@ Checklist:
 4. Document UTM parameter strategy for attribution
 
 ### Phase 2: Platform-Specific Setup
+
 1. For each platform, document the setup requirements:
    - **Meta (Facebook/Instagram):**
      - Base Pixel installation
@@ -101,6 +103,7 @@ Checklist:
 3. Define the testing procedure to verify each event fires correctly
 
 ### Phase 3: Attribution Strategy
+
 1. Define the attribution model for reporting:
    - Last-click: Simple but biased toward bottom-of-funnel
    - Data-driven: Recommended when volume supports it
@@ -115,6 +118,7 @@ Checklist:
    - How to reconcile cross-platform attribution
 
 ### Phase 4: QA and Validation
+
 1. Create a tracking QA checklist:
    - Each pixel fires on the correct pages
    - Events fire with correct parameters (value, currency, content ID)
@@ -140,41 +144,46 @@ Checklist:
 
 ### Event Map
 
-| Event | Trigger | Platforms | Parameters | Page |
-|-------|---------|-----------|------------|------|
-| PageView | All pages | All | URL, referrer | * |
-| Lead | Form submit | Meta, Google | value, content_name | /thank-you |
+| Event    | Trigger     | Platforms    | Parameters                   | Page                |
+| -------- | ----------- | ------------ | ---------------------------- | ------------------- |
+| PageView | All pages   | All          | URL, referrer                | \*                  |
+| Lead     | Form submit | Meta, Google | value, content_name          | /thank-you          |
 | Purchase | Transaction | Meta, Google | value, currency, content_ids | /order-confirmation |
 
 ### Platform Setup Guides
 
 #### Meta Pixel + CAPI
+
 {Step-by-step instructions}
 
 #### Google Ads + Enhanced Conversions
+
 {Step-by-step instructions}
 
 #### {Additional platforms}
 
 ### UTM Strategy
 
-| Parameter | Convention | Example |
-|-----------|-----------|---------|
-| utm_source | {platform} | facebook |
-| utm_medium | {type} | cpc |
+| Parameter    | Convention          | Example               |
+| ------------ | ------------------- | --------------------- |
+| utm_source   | {platform}          | facebook              |
+| utm_medium   | {type}              | cpc                   |
 | utm_campaign | {naming convention} | cold_lookalike_offer1 |
 
 ### Attribution Framework
+
 **Primary model:** {model}
 **Windows:** {per platform}
 **Source of truth:** {which system for which metric}
 
 ### QA Checklist
+
 - [ ] {item per platform and event}
 
 ### Monitoring
+
 | Alert | Condition | Action |
-|-------|-----------|--------|
+| ----- | --------- | ------ |
 ```
 
 ---

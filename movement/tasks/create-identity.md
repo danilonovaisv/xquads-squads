@@ -1,6 +1,6 @@
 ---
 task: createIdentity()
-responsavel: "@identitario"
+responsavel: '@identitario'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Belief system defined with central conviction"
-  - "[ ] Tribal markers designed across all categories"
-  - "[ ] Belonging gradient defined with 5 levels"
+  - '[ ] Belief system defined with central conviction'
+  - '[ ] Tribal markers designed across all categories'
+  - '[ ] Belonging gradient defined with 5 levels'
 ---
 
 # Task: Create Identity
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `spark_analysis` | Phase 1 output | Yes | Phenomenological analysis with validated spark |
-| `cause` | User prompt | Yes | The movement's cause or purpose |
-| `audience` | User prompt | Yes | Target community description |
-| `existing_brand` | User | No | Existing brand assets to incorporate |
-| `cultural_context` | User | No | Cultural norms and sensitivities |
+| Input              | Source         | Required | Description                                    |
+| ------------------ | -------------- | -------- | ---------------------------------------------- |
+| `spark_analysis`   | Phase 1 output | Yes      | Phenomenological analysis with validated spark |
+| `cause`            | User prompt    | Yes      | The movement's cause or purpose                |
+| `audience`         | User prompt    | Yes      | Target community description                   |
+| `existing_brand`   | User           | No       | Existing brand assets to incorporate           |
+| `cultural_context` | User           | No       | Cultural norms and sensitivities               |
 
 ## Preconditions
 
@@ -95,41 +95,41 @@ Checklist:
 
 ```yaml
 identity_architecture:
-  movement: "{name}"
+  movement: '{name}'
   identity_stack:
-    values: ["{value1}", "{value2}", "{value3}"]
+    values: ['{value1}', '{value2}', '{value3}']
     beliefs:
-      central: "{core belief statement}"
-      supporting: ["{belief1}", "{belief2}"]
-      aspirational: ["{belief3}"]
-    behaviors: ["{behavior1}", "{behavior2}", "{behavior3}"]
-    symbols: ["{symbol1}", "{symbol2}", "{symbol3}"]
-    rituals: ["{ritual1}", "{ritual2}", "{ritual3}"]
+      central: '{core belief statement}'
+      supporting: ['{belief1}', '{belief2}']
+      aspirational: ['{belief3}']
+    behaviors: ['{behavior1}', '{behavior2}', '{behavior3}']
+    symbols: ['{symbol1}', '{symbol2}', '{symbol3}']
+    rituals: ['{ritual1}', '{ritual2}', '{ritual3}']
   tribal_markers:
-    language: ["{term1}", "{term2}", "{term3}"]
-    visual: "{aesthetic description}"
-    behavioral: ["{action1}", "{action2}"]
-    status: ["{level1}", "{level2}", "{level3}"]
+    language: ['{term1}', '{term2}', '{term3}']
+    visual: '{aesthetic description}'
+    behavioral: ['{action1}', '{action2}']
+    status: ['{level1}', '{level2}', '{level3}']
   ritual_architecture:
-    initiation: "{description}"
-    daily: "{description}"
-    gathering: "{description}"
-    celebration: "{description}"
-    storytelling: "{description}"
+    initiation: '{description}'
+    daily: '{description}'
+    gathering: '{description}'
+    celebration: '{description}'
+    storytelling: '{description}'
   belonging_gradient:
-    - level: "Curious"
-      description: "{what defines this level}"
-    - level: "Sympathizer"
-      description: "{what defines this level}"
-    - level: "Member"
-      description: "{what defines this level}"
-    - level: "Advocate"
-      description: "{what defines this level}"
-    - level: "Core Believer"
-      description: "{what defines this level}"
+    - level: 'Curious'
+      description: '{what defines this level}'
+    - level: 'Sympathizer'
+      description: '{what defines this level}'
+    - level: 'Member'
+      description: '{what defines this level}'
+    - level: 'Advocate'
+      description: '{what defines this level}'
+    - level: 'Core Believer'
+      description: '{what defines this level}'
   boundary:
-    inclusion_criteria: "{what makes someone belong}"
-    exclusion_triggers: ["{trigger1}", "{trigger2}"]
+    inclusion_criteria: '{what makes someone belong}'
+    exclusion_triggers: ['{trigger1}', '{trigger2}']
 ```
 
 ## Veto Conditions

@@ -63,13 +63,13 @@ OUTPUT: Optimized CLAUDE.md file
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Auto-detect | yes | Valid project directory |
-| existing_claude_md | string | Auto-detect | no | Path to existing CLAUDE.md if present |
-| project_name | string | User or auto | no | Human-readable project name |
-| team_notes | string | User | no | Any team conventions not captured in code |
-| style | enum | User | no | minimal / standard / comprehensive (default: standard) |
+| Field              | Type   | Source       | Required | Validation                                             |
+| ------------------ | ------ | ------------ | -------- | ------------------------------------------------------ |
+| project_root       | string | Auto-detect  | yes      | Valid project directory                                |
+| existing_claude_md | string | Auto-detect  | no       | Path to existing CLAUDE.md if present                  |
+| project_name       | string | User or auto | no       | Human-readable project name                            |
+| team_notes         | string | User         | no       | Any team conventions not captured in code              |
+| style              | enum   | User         | no       | minimal / standard / comprehensive (default: standard) |
 
 ---
 
@@ -97,12 +97,13 @@ OUTPUT: Optimized CLAUDE.md file
 
 1.1. Detect tech stack (package.json, tsconfig.json, etc.).
 1.2. Identify the 5-10 most important patterns by analyzing:
-   - Most frequently used patterns across files
-   - Patterns that are project-specific (not framework defaults)
-   - Patterns that Claude commonly gets wrong
-1.3. List what Claude needs to know vs what it already knows:
-   - Claude already knows React, TypeScript, common frameworks
-   - Claude does NOT know your project's custom patterns, aliases, conventions
+
+- Most frequently used patterns across files
+- Patterns that are project-specific (not framework defaults)
+- Patterns that Claude commonly gets wrong
+  1.3. List what Claude needs to know vs what it already knows:
+- Claude already knows React, TypeScript, common frameworks
+- Claude does NOT know your project's custom patterns, aliases, conventions
 
 ---
 
@@ -117,6 +118,7 @@ OUTPUT: Optimized CLAUDE.md file
 
 ```markdown
 ## Code Standards
+
 - Use named exports (not default exports)
 - Import with @ alias: `import { Button } from '@/components/Button'`
 - Error handling: always use custom AppError class
@@ -139,6 +141,7 @@ OUTPUT: Optimized CLAUDE.md file
 
 ```markdown
 ## Testing
+
 - Run all tests: `npm test`
 - Run specific: `npm test -- --testPathPattern=auth`
 - Coverage: `npm test -- --coverage`
@@ -147,9 +150,10 @@ OUTPUT: Optimized CLAUDE.md file
 ```
 
 3.3. Document testing patterns:
-   - Where test files live (co-located vs separate directory)
-   - Naming convention (*.test.ts vs *.spec.ts)
-   - Mock patterns specific to this project
+
+- Where test files live (co-located vs separate directory)
+- Naming convention (_.test.ts vs _.spec.ts)
+- Mock patterns specific to this project
 
 3.4. Keep this section under 15 lines.
 
@@ -171,6 +175,7 @@ git log --oneline -20
 
 ```markdown
 ## Git Conventions
+
 - Commits: `type(scope): description` (conventional commits)
 - Branch naming: `feature/`, `fix/`, `chore/`
 - PR: squash merge, reference issue number
@@ -190,6 +195,7 @@ git log --oneline -20
 
 ```markdown
 ## Architecture
+
 - Monorepo with packages/ directory
 - API routes in src/app/api/ (Next.js App Router)
 - Database: Supabase with RLS policies
@@ -200,6 +206,7 @@ git log --oneline -20
 
 ```markdown
 ## Key Files
+
 - `src/lib/supabase.ts` -- Supabase client singleton
 - `src/middleware.ts` -- Auth middleware for all routes
 - `src/types/database.ts` -- Auto-generated DB types
@@ -226,14 +233,15 @@ git log --oneline -20
 ### Steps
 
 6.1. Review every line and ask: "Would removing this cause Claude to make a mistake?"
-   - If no, remove it
-   - If yes, keep it
-6.2. Convert paragraphs to bullet points or tables.
-6.3. Move any section over 30 lines to a rules file.
-6.4. Target final length:
-   - Minimal style: 50-80 lines
-   - Standard style: 100-150 lines
-   - Comprehensive style: 150-200 lines
+
+- If no, remove it
+- If yes, keep it
+  6.2. Convert paragraphs to bullet points or tables.
+  6.3. Move any section over 30 lines to a rules file.
+  6.4. Target final length:
+- Minimal style: 50-80 lines
+- Standard style: 100-150 lines
+- Comprehensive style: 150-200 lines
 
 ---
 
@@ -245,7 +253,9 @@ git log --oneline -20
 
 ```markdown
 <!-- MANAGED-START: tech-stack -->
+
 ## Tech Stack
+
 - Next.js 14, React 18, TypeScript 5
 - Tailwind CSS, shadcn/ui
 - Supabase (auth + database)
@@ -280,10 +290,11 @@ git log --oneline -20
 
 8.1. Run the validation checklist.
 8.2. Test with a sample Claude interaction:
-   - Ask Claude to create a new component -- does it follow the patterns?
-   - Ask Claude to add a test -- does it use the right framework?
-   - Ask Claude to commit -- does it use the right format?
-8.3. If any test fails, identify the missing instruction and add it.
+
+- Ask Claude to create a new component -- does it follow the patterns?
+- Ask Claude to add a test -- does it use the right framework?
+- Ask Claude to commit -- does it use the right format?
+  8.3. If any test fails, identify the missing instruction and add it.
 
 ---
 
@@ -291,44 +302,44 @@ git log --oneline -20
 
 ```yaml
 claude_md_engineer_result:
-  file: "CLAUDE.md"
+  file: 'CLAUDE.md'
   total_lines: 142
-  style: "standard"
+  style: 'standard'
   sections:
-    - name: "Project Overview"
+    - name: 'Project Overview'
       lines: 5
-    - name: "Code Standards"
+    - name: 'Code Standards'
       lines: 18
-    - name: "Testing"
+    - name: 'Testing'
       lines: 12
-    - name: "Git Conventions"
+    - name: 'Git Conventions'
       lines: 8
-    - name: "Architecture"
+    - name: 'Architecture'
       lines: 15
-    - name: "Key Files"
+    - name: 'Key Files'
       lines: 10
-    - name: "Commands"
+    - name: 'Commands'
       lines: 8
   managed_sections: 2
   rules_extracted_to:
-    - ".claude/rules/code-standards.md"
-    - ".claude/rules/architecture.md"
+    - '.claude/rules/code-standards.md'
+    - '.claude/rules/architecture.md'
   validation:
-    line_count: "pass"
-    actionability: "pass"
-    references: "pass"
-    sample_test: "pass"
-  overall_status: "PASS"
+    line_count: 'pass'
+    actionability: 'pass'
+    references: 'pass'
+    sample_test: 'pass'
+  overall_status: 'PASS'
 ```
 
 ---
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
-| CLAUDE.md exceeds 200 lines after optimization | HALT -- continue trimming or extract to rules |
-| No source code in project (nothing to analyze) | HALT -- no patterns to document |
-| Existing CLAUDE.md has custom managed sections from another tool | WARN -- preserve existing markers |
-| Project uses language/framework with no detected conventions | WARN -- generate minimal CLAUDE.md |
-| Every line removed in optimization was marked as necessary | WARN -- project may genuinely need 200+ lines, use rules files |
+| Condition                                                        | Action                                                         |
+| ---------------------------------------------------------------- | -------------------------------------------------------------- |
+| CLAUDE.md exceeds 200 lines after optimization                   | HALT -- continue trimming or extract to rules                  |
+| No source code in project (nothing to analyze)                   | HALT -- no patterns to document                                |
+| Existing CLAUDE.md has custom managed sections from another tool | WARN -- preserve existing markers                              |
+| Project uses language/framework with no detected conventions     | WARN -- generate minimal CLAUDE.md                             |
+| Every line removed in optimization was marked as necessary       | WARN -- project may genuinely need 200+ lines, use rules files |

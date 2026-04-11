@@ -29,23 +29,25 @@ tooling/
 
 ## Tech Stack
 
-| Layer | Technology | Notes |
-|-------|-----------|-------|
-| Build | Turborepo | Task orchestration and caching |
-| Package Manager | pnpm | Workspace support, strict hoisting |
-| Language | TypeScript | Shared tsconfig in tooling/ |
-| Linting | ESLint | Shared config across packages |
-| Testing | Jest | Shared config, per-package execution |
+| Layer           | Technology | Notes                                |
+| --------------- | ---------- | ------------------------------------ |
+| Build           | Turborepo  | Task orchestration and caching       |
+| Package Manager | pnpm       | Workspace support, strict hoisting   |
+| Language        | TypeScript | Shared tsconfig in tooling/          |
+| Linting         | ESLint     | Shared config across packages        |
+| Testing         | Jest       | Shared config, per-package execution |
 
 ## Shared Dependencies
 
-### Internal Packages (workspace:*)
+### Internal Packages (workspace:\*)
+
 - `@[scope]/core` — Business logic, types, constants
 - `@[scope]/ui` — React components, design tokens
 - `@[scope]/utils` — Utility functions (date, string, validation)
 - `@[scope]/config` — Shared configuration files
 
 ### Dependency Rules
+
 - **Root dependencies:** Only dev tools (turbo, prettier, husky)
 - **Shared deps:** Declared in the package that owns them
 - **Version alignment:** Use `syncpack` or `manypkg` to keep versions consistent
@@ -55,37 +57,45 @@ tooling/
 ## Per-Package Conventions
 
 ### apps/web (Next.js)
+
 ```bash
 pnpm --filter web dev        # Dev server
 pnpm --filter web build      # Production build
 pnpm --filter web test       # Tests
 ```
+
 - Imports from `@[scope]/ui` and `@[scope]/core`
 - Uses App Router, follows fullstack patterns
 
 ### apps/api (Express/Fastify)
+
 ```bash
 pnpm --filter api dev        # Dev server
 pnpm --filter api build      # Compile TypeScript
 pnpm --filter api test       # Tests
 ```
+
 - Imports from `@[scope]/core` for shared types
 - Never imports from `@[scope]/ui`
 
 ### packages/ui (Component Library)
+
 ```bash
 pnpm --filter ui dev         # Storybook
 pnpm --filter ui build       # Build for consumption
 pnpm --filter ui test        # Component tests
 ```
+
 - Exports via package.json `exports` field
 - Uses `tsup` or `unbuild` for compilation
 
 ### packages/core (Business Logic)
+
 ```bash
 pnpm --filter core build     # Compile
 pnpm --filter core test      # Unit tests
 ```
+
 - Pure TypeScript, no framework dependencies
 - Exports types, validators, constants
 

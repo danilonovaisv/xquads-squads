@@ -1,6 +1,6 @@
 ---
 task: scaleCampaign()
-responsavel: "@scale-optimizer"
+responsavel: '@scale-optimizer'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Scalability assessment completed with risk ratings"
-  - "[ ] Scaling method selected with rationale"
-  - "[ ] Monitoring guardrails defined with thresholds"
+  - '[ ] Scalability assessment completed with risk ratings'
+  - '[ ] Scaling method selected with rationale'
+  - '[ ] Monitoring guardrails defined with thresholds'
 ---
 
 # Task: Scale Campaign
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| platform | enum | User prompt | Yes | facebook, google, youtube, tiktok |
-| campaign_data | object | User prompt | Yes | Current metrics: spend, CPA, ROAS, CTR, CVR, daily spend |
-| target_spend | number | User prompt | Yes | Desired daily or monthly spend target |
-| current_spend | number | User prompt | Yes | Current daily or monthly spend |
-| max_cpa | number | User prompt | No | Maximum acceptable CPA |
-| min_roas | number | User prompt | No | Minimum acceptable ROAS |
-| timeline | string | User prompt | No | How fast to scale (aggressive, moderate, conservative) |
+| Field         | Type   | Source      | Required | Validation                                               |
+| ------------- | ------ | ----------- | -------- | -------------------------------------------------------- |
+| platform      | enum   | User prompt | Yes      | facebook, google, youtube, tiktok                        |
+| campaign_data | object | User prompt | Yes      | Current metrics: spend, CPA, ROAS, CTR, CVR, daily spend |
+| target_spend  | number | User prompt | Yes      | Desired daily or monthly spend target                    |
+| current_spend | number | User prompt | Yes      | Current daily or monthly spend                           |
+| max_cpa       | number | User prompt | No       | Maximum acceptable CPA                                   |
+| min_roas      | number | User prompt | No       | Minimum acceptable ROAS                                  |
+| timeline      | string | User prompt | No       | How fast to scale (aggressive, moderate, conservative)   |
 
 ---
 
@@ -62,6 +62,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Scalability Assessment
+
 1. Evaluate the campaign's scaling readiness:
    - Is the audience large enough to support the target spend?
    - Is the creative showing fatigue signals (declining CTR)?
@@ -72,6 +73,7 @@ Checklist:
 4. Check backend capacity: can the business handle 2x-5x the current lead/sale volume?
 
 ### Phase 2: Scaling Strategy Selection
+
 1. Choose the scaling method based on the gap between current and target spend:
    - **Vertical Scaling (< 2x):** Increase budget on existing campaigns
      - 20% budget increase every 48-72 hours
@@ -89,6 +91,7 @@ Checklist:
 3. Set kill criteria for each scaling phase
 
 ### Phase 3: Creative Scaling
+
 1. Identify the creative elements that drive performance:
    - Which hooks perform best?
    - Which formats convert best?
@@ -103,6 +106,7 @@ Checklist:
 4. Build a "creative bank" of 5-10 ads ready to deploy when fatigue hits
 
 ### Phase 4: Monitoring and Guardrails
+
 1. Define daily monitoring metrics and thresholds:
    - CPA threshold: Max X% above target before pausing
    - ROAS threshold: Min X:1 before pausing
@@ -133,33 +137,35 @@ Checklist:
 
 ### Scalability Assessment
 
-| Factor | Status | Risk |
-|--------|--------|------|
-| Audience Size | {adequate/limited} | {low/med/high} |
-| Creative Depth | {N winning ads} | {low/med/high} |
-| CPA Stability | {stable/rising} | {low/med/high} |
-| Frequency | {current} | {low/med/high} |
-| Backend Capacity | {ready/concern} | {low/med/high} |
+| Factor           | Status             | Risk           |
+| ---------------- | ------------------ | -------------- |
+| Audience Size    | {adequate/limited} | {low/med/high} |
+| Creative Depth   | {N winning ads}    | {low/med/high} |
+| CPA Stability    | {stable/rising}    | {low/med/high} |
+| Frequency        | {current}          | {low/med/high} |
+| Backend Capacity | {ready/concern}    | {low/med/high} |
 
 ### Scaling Schedule
 
 | Week | Daily Budget | Method | New Elements |
-|------|-------------|--------|-------------|
+| ---- | ------------ | ------ | ------------ |
 
 ### Creative Pipeline
 
 | Priority | Creative | Format | Audience | Status |
-|----------|---------|--------|----------|--------|
+| -------- | -------- | ------ | -------- | ------ |
 
 ### Guardrails
 
 | Metric | Threshold | Action if Breached |
-|--------|-----------|-------------------|
+| ------ | --------- | ------------------ |
 
 ### Kill Criteria
+
 {When to stop scaling and reassess}
 
 ### Success Milestone
+
 {Definition of scaling success}
 ```
 

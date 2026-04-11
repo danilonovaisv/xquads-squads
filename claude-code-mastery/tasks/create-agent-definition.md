@@ -53,13 +53,13 @@ OUTPUT: Agent definition file + test results
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| agent_name | string | User | yes | Kebab-case, no spaces (e.g., code-reviewer) |
-| agent_purpose | string | User | yes | One-sentence description of what the agent does |
-| complexity | enum | User or auto | yes | simple / standard / complex |
-| tools_needed | array | User | no | List of tools the agent needs access to |
-| output_format | string | User | no | Expected output structure (markdown, json, yaml) |
+| Field         | Type   | Source       | Required | Validation                                       |
+| ------------- | ------ | ------------ | -------- | ------------------------------------------------ |
+| agent_name    | string | User         | yes      | Kebab-case, no spaces (e.g., code-reviewer)      |
+| agent_purpose | string | User         | yes      | One-sentence description of what the agent does  |
+| complexity    | enum   | User or auto | yes      | simple / standard / complex                      |
+| tools_needed  | array  | User         | no       | List of tools the agent needs access to          |
+| output_format | string | User         | no       | Expected output structure (markdown, json, yaml) |
 
 ---
 
@@ -100,11 +100,11 @@ Needs: {context1}, {context2}
 
 ### Subagent Types
 
-| Type | Tools Available | Best For |
-|------|----------------|----------|
-| **General-purpose** (default) | All tools | Implementation, analysis, complex tasks |
-| **Explore** | Read, Glob, Grep, Bash(read-only) | Research, code search, documentation lookup |
-| **Plan** | Read, Glob, Grep (no write) | Design, architecture, planning tasks |
+| Type                          | Tools Available                   | Best For                                    |
+| ----------------------------- | --------------------------------- | ------------------------------------------- |
+| **General-purpose** (default) | All tools                         | Implementation, analysis, complex tasks     |
+| **Explore**                   | Read, Glob, Grep, Bash(read-only) | Research, code search, documentation lookup |
+| **Plan**                      | Read, Glob, Grep (no write)       | Design, architecture, planning tasks        |
 
 ### Steps
 
@@ -122,9 +122,9 @@ Needs: {context1}, {context2}
 
 ```markdown
 ---
-name: {agent-name}
-description: {one-line description}
-model: {opus-4|sonnet-4|haiku-4}
+name: { agent-name }
+description: { one-line description }
+model: { opus-4|sonnet-4|haiku-4 }
 allowed-tools:
   - Read
   - Write
@@ -137,15 +137,19 @@ allowed-tools:
 # {Agent Name}
 
 ## Role
+
 {Detailed description of agent's role and expertise}
 
 ## Instructions
+
 {Step-by-step behavioral instructions}
 
 ## Constraints
+
 {What the agent must NOT do}
 
 ## Output Format
+
 {Expected output structure}
 ```
 
@@ -154,10 +158,11 @@ allowed-tools:
 3.1. Create `.claude/agents/{name}.md` using the template above.
 3.2. Fill in YAML frontmatter with name, description, model, and allowed-tools.
 3.3. The frontmatter fields are:
-   - `name`: Display name for the agent
-   - `description`: Brief description shown in agent listings
-   - `model`: Which Claude model to use (see Phase 5)
-   - `allowed-tools`: Array of tools the agent can access (omit for all tools)
+
+- `name`: Display name for the agent
+- `description`: Brief description shown in agent listings
+- `model`: Which Claude model to use (see Phase 5)
+- `allowed-tools`: Array of tools the agent can access (omit for all tools)
 
 ---
 
@@ -177,19 +182,23 @@ allowed-tools:
 
 ```markdown
 ## Role
+
 You are a {role} specialized in {domain}. Your job is to {primary task}.
 
 ## Process
+
 1. First, read {relevant files}
 2. Then, analyze {what to look for}
 3. Finally, produce {output format}
 
 ## Rules
+
 - ALWAYS {mandatory behavior}
 - NEVER {prohibited behavior}
 - When unsure, {fallback behavior}
 
 ## Output Format
+
 Return your analysis as:
 {format specification}
 ```
@@ -207,11 +216,11 @@ Return your analysis as:
 
 ### Model Selection Guide
 
-| Model | Cost | Speed | Best For |
-|-------|------|-------|----------|
-| **claude-opus-4** | High | Slow | Complex analysis, architecture decisions, nuanced writing |
-| **claude-sonnet-4** | Medium | Medium | Standard tasks, code review, implementation |
-| **claude-haiku-4** | Low | Fast | Simple lookups, formatting, repetitive tasks |
+| Model               | Cost   | Speed  | Best For                                                  |
+| ------------------- | ------ | ------ | --------------------------------------------------------- |
+| **claude-opus-4**   | High   | Slow   | Complex analysis, architecture decisions, nuanced writing |
+| **claude-sonnet-4** | Medium | Medium | Standard tasks, code review, implementation               |
+| **claude-haiku-4**  | Low    | Fast   | Simple lookups, formatting, repetitive tasks              |
 
 ### Decision Matrix
 
@@ -239,12 +248,13 @@ Is the task complex with ambiguous inputs?
 
 6.1. Invoke the agent using the Agent tool with a representative prompt.
 6.2. Verify the agent:
-   - Uses only its allowed tools
-   - Follows its instructions
-   - Produces output in the expected format
-   - Stays within its defined scope
-6.3. If the agent fails, iterate on instructions (most common fix).
-6.4. Run 2-3 different test prompts to cover edge cases.
+
+- Uses only its allowed tools
+- Follows its instructions
+- Produces output in the expected format
+- Stays within its defined scope
+  6.3. If the agent fails, iterate on instructions (most common fix).
+  6.4. Run 2-3 different test prompts to cover edge cases.
 
 ---
 
@@ -252,16 +262,16 @@ Is the task complex with ambiguous inputs?
 
 ```yaml
 agent_definition_result:
-  file: ".claude/agents/{name}.md"
-  name: "{agent-name}"
-  type: "{general|explore|plan}"
-  model: "{opus-4|sonnet-4|haiku-4}"
+  file: '.claude/agents/{name}.md'
+  name: '{agent-name}'
+  type: '{general|explore|plan}'
+  model: '{opus-4|sonnet-4|haiku-4}'
   tools_allowed: [...]
   test_results:
-    - prompt: "Test prompt 1"
-      status: "pass"
-    - prompt: "Test prompt 2"
-      status: "pass"
+    - prompt: 'Test prompt 1'
+      status: 'pass'
+    - prompt: 'Test prompt 2'
+      status: 'pass'
   ready: true
 ```
 
@@ -269,10 +279,10 @@ agent_definition_result:
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
-| Agent purpose is too broad (covers 5+ unrelated domains) | HALT -- split into multiple agents |
-| No clear output format defined | HALT -- define expected output before creation |
-| Agent requires tools that do not exist | HALT -- verify tool availability first |
-| Test prompts all fail | HALT -- rewrite instructions, do not ship broken agent |
-| Agent name conflicts with existing agent | HALT -- choose unique name |
+| Condition                                                | Action                                                 |
+| -------------------------------------------------------- | ------------------------------------------------------ |
+| Agent purpose is too broad (covers 5+ unrelated domains) | HALT -- split into multiple agents                     |
+| No clear output format defined                           | HALT -- define expected output before creation         |
+| Agent requires tools that do not exist                   | HALT -- verify tool availability first                 |
+| Test prompts all fail                                    | HALT -- rewrite instructions, do not ship broken agent |
+| Agent name conflicts with existing agent                 | HALT -- choose unique name                             |

@@ -1,6 +1,6 @@
 ---
 task: diagnose()
-responsavel: "@data-chief"
+responsavel: '@data-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -18,29 +18,29 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Query parsed with intent and domain classification"
-  - "[ ] Quick answer provided"
-  - "[ ] Route executed or direct answer given"
+  - '[ ] Query parsed with intent and domain classification'
+  - '[ ] Quick answer provided'
+  - '[ ] Route executed or direct answer given'
 ---
 
 # Task: Diagnose — Data Squad
 
 ## Metadata
 
-| Field         | Value                                              |
-|---------------|----------------------------------------------------|
-| Task ID       | `data-squad:diagnose`                              |
-| Command       | `@data-squad diagnose "{query}"`                   |
-| Orchestrator  | `data-chief`                                       |
-| Purpose       | Parse the user's request, provide a quick answer, and route to the best data expert |
+| Field        | Value                                                                               |
+| ------------ | ----------------------------------------------------------------------------------- |
+| Task ID      | `data-squad:diagnose`                                                               |
+| Command      | `@data-squad diagnose "{query}"`                                                    |
+| Orchestrator | `data-chief`                                                                        |
+| Purpose      | Parse the user's request, provide a quick answer, and route to the best data expert |
 
 ## Inputs
 
-| Input        | Source       | Required | Description                              |
-|--------------|-------------|----------|------------------------------------------|
-| `query`      | User prompt | Yes      | The user's question or request           |
-| `context`    | Session     | No       | Previous conversation context            |
-| `domain_hint`| User/Auto   | No       | Suggested domain (analytics, growth, etc.) |
+| Input         | Source      | Required | Description                                |
+| ------------- | ----------- | -------- | ------------------------------------------ |
+| `query`       | User prompt | Yes      | The user's question or request             |
+| `context`     | Session     | No       | Previous conversation context              |
+| `domain_hint` | User/Auto   | No       | Suggested domain (analytics, growth, etc.) |
 
 ## Preconditions
 
@@ -75,14 +75,14 @@ Checklist:
    - **Confidence level**: HIGH (>= 3 keyword matches), MEDIUM (2 matches), LOW (0-1 matches)
 
 4. Expert selection guide:
-   | Problem Area              | Primary Agent     | Secondary Agent  |
+   | Problem Area | Primary Agent | Secondary Agent |
    |---------------------------|-------------------|------------------|
-   | Web/marketing analytics   | avinash-kaushik   | sean-ellis       |
-   | Customer value/segmentation | peter-fader     | nick-mehta       |
-   | Growth/acquisition        | sean-ellis        | avinash-kaushik  |
-   | Audience/content          | wes-kao           | david-spinks     |
-   | Retention/churn           | nick-mehta        | peter-fader      |
-   | Community                 | david-spinks      | nick-mehta       |
+   | Web/marketing analytics | avinash-kaushik | sean-ellis |
+   | Customer value/segmentation | peter-fader | nick-mehta |
+   | Growth/acquisition | sean-ellis | avinash-kaushik |
+   | Audience/content | wes-kao | david-spinks |
+   | Retention/churn | nick-mehta | peter-fader |
+   | Community | david-spinks | nick-mehta |
 
 ### Phase 3: Answer
 
@@ -105,17 +105,17 @@ Checklist:
 
 ```yaml
 diagnosis:
-  query_summary: "{1-line summary}"
-  intent: "{question|analysis|strategy|framework|troubleshoot}"
-  domain: "{analytics|clv|growth|audience|community|retention}"
+  query_summary: '{1-line summary}'
+  intent: '{question|analysis|strategy|framework|troubleshoot}'
+  domain: '{analytics|clv|growth|audience|community|retention}'
   quick_answer: |
     {2-4 sentence direct answer}
   routing:
-    confidence: "{HIGH|MEDIUM|LOW}"
-    primary_agent: "{agent-id}"
-    secondary_agent: "{agent-id}"
-    reason: "{why this expert is the best match}"
-  routed: {true|false}
+    confidence: '{HIGH|MEDIUM|LOW}'
+    primary_agent: '{agent-id}'
+    secondary_agent: '{agent-id}'
+    reason: '{why this expert is the best match}'
+  routed: { true|false }
 ```
 
 ## Veto Rules

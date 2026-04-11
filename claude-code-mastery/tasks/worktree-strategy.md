@@ -48,13 +48,13 @@ OUTPUT: Worktree config + branch strategy + lifecycle plan
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| agent_count | number | From team topology | yes | Number of agents needing isolation |
-| base_branch | string | Auto-detect or user | no | Branch to create worktrees from (default: current) |
-| task_id | string | User | yes | Identifier for this parallel work session |
-| shared_files | array | Analysis | no | Files that multiple agents might modify |
-| auto_cleanup | boolean | User | no | Remove worktrees after merge (default: true) |
+| Field        | Type    | Source              | Required | Validation                                         |
+| ------------ | ------- | ------------------- | -------- | -------------------------------------------------- |
+| agent_count  | number  | From team topology  | yes      | Number of agents needing isolation                 |
+| base_branch  | string  | Auto-detect or user | no       | Branch to create worktrees from (default: current) |
+| task_id      | string  | User                | yes      | Identifier for this parallel work session          |
+| shared_files | array   | Analysis            | no       | Files that multiple agents might modify            |
+| auto_cleanup | boolean | User                | no       | Remove worktrees after merge (default: true)       |
 
 ---
 
@@ -73,14 +73,14 @@ OUTPUT: Worktree config + branch strategy + lifecycle plan
 
 ### When to Use Worktrees vs Shared Repo
 
-| Scenario | Strategy | Reason |
-|----------|----------|--------|
-| Agents modify different files | **Shared repo** | No conflict risk, simpler setup |
-| Agents modify same files | **Worktree** | Prevents runtime merge conflicts |
-| Sequential pipeline (A then B) | **Shared repo** | No simultaneous writes |
-| Parallel agents with file overlap | **Worktree** | Each agent needs clean state |
-| Single agent with long-running task | **Shared repo** | No need for isolation |
-| CI/CD parallel test execution | **Worktree** | Tests need independent environments |
+| Scenario                            | Strategy        | Reason                              |
+| ----------------------------------- | --------------- | ----------------------------------- |
+| Agents modify different files       | **Shared repo** | No conflict risk, simpler setup     |
+| Agents modify same files            | **Worktree**    | Prevents runtime merge conflicts    |
+| Sequential pipeline (A then B)      | **Shared repo** | No simultaneous writes              |
+| Parallel agents with file overlap   | **Worktree**    | Each agent needs clean state        |
+| Single agent with long-running task | **Shared repo** | No need for isolation               |
+| CI/CD parallel test execution       | **Worktree**    | Tests need independent environments |
 
 ### Steps
 
@@ -118,24 +118,25 @@ Examples:
 ### Steps
 
 2.1. Define the base branch (where worktrees branch from):
-   - Use current branch for story work
-   - Use `main` for independent feature work
+
+- Use current branch for story work
+- Use `main` for independent feature work
 
 2.2. Create a branch plan:
 
 ```yaml
 branches:
-  base: "feature/auth-system"
+  base: 'feature/auth-system'
   worktree_branches:
-    - name: "feature/auth-system/api-agent"
-      agent: "api-agent"
-      files_owned: ["src/api/**"]
-    - name: "feature/auth-system/test-agent"
-      agent: "test-agent"
-      files_owned: ["tests/**"]
-    - name: "feature/auth-system/docs-agent"
-      agent: "docs-agent"
-      files_owned: ["docs/**"]
+    - name: 'feature/auth-system/api-agent'
+      agent: 'api-agent'
+      files_owned: ['src/api/**']
+    - name: 'feature/auth-system/test-agent'
+      agent: 'test-agent'
+      files_owned: ['tests/**']
+    - name: 'feature/auth-system/docs-agent'
+      agent: 'docs-agent'
+      files_owned: ['docs/**']
 ```
 
 2.3. Verify no branch names conflict with existing branches.
@@ -201,27 +202,28 @@ CREATE                 WORK                    MERGE                CLEANUP
 ```yaml
 lifecycle:
   create:
-    trigger: "Task start"
-    steps: ["create worktree", "create branch", "install deps"]
-    estimated_time: "1-3 min"
+    trigger: 'Task start'
+    steps: ['create worktree', 'create branch', 'install deps']
+    estimated_time: '1-3 min'
   work:
-    trigger: "Agent activation"
-    duration: "Variable"
-    monitoring: "Progress file in shared location"
+    trigger: 'Agent activation'
+    duration: 'Variable'
+    monitoring: 'Progress file in shared location'
   merge:
-    trigger: "All agents complete"
-    order: ["api-agent", "test-agent", "docs-agent"]
-    conflict_resolution: "manual"
+    trigger: 'All agents complete'
+    order: ['api-agent', 'test-agent', 'docs-agent']
+    conflict_resolution: 'manual'
   cleanup:
-    trigger: "Merge complete + verified"
-    steps: ["remove worktree", "delete branch"]
+    trigger: 'Merge complete + verified'
+    steps: ['remove worktree', 'delete branch']
     auto: true
 ```
 
 4.2. Define stale worktree detection:
-   - Worktree with no commits in 24 hours = potentially stale
-   - Worktree from deleted/merged branch = definitely stale
-4.3. Set up cleanup command:
+
+- Worktree with no commits in 24 hours = potentially stale
+- Worktree from deleted/merged branch = definitely stale
+  4.3. Set up cleanup command:
 
 ```bash
 # Remove a specific worktree
@@ -263,9 +265,10 @@ git merge {agent-branch} --no-ff -m "merge: {agent-name} work for {task-id}"
 ```
 
 5.3. After all merges complete:
-   - Run full test suite on merged result
-   - If tests fail, identify which merge introduced the failure
-   - Fix or revert as needed
+
+- Run full test suite on merged result
+- If tests fail, identify which merge introduced the failure
+- Fix or revert as needed
 
 5.4. Cleanup:
 
@@ -291,17 +294,17 @@ git worktree prune
 ```yaml
 worktree_strategy_result:
   isolation_needed: true
-  reason: "2 agents modify overlapping files in src/"
+  reason: '2 agents modify overlapping files in src/'
   worktrees:
-    - agent: "api-agent"
-      path: "../project-wt-api-agent"
-      branch: "feature/auth-system/api-agent"
-      status: "created"
-    - agent: "test-agent"
-      path: "../project-wt-test-agent"
-      branch: "feature/auth-system/test-agent"
-      status: "created"
-  merge_order: ["api-agent", "test-agent"]
+    - agent: 'api-agent'
+      path: '../project-wt-api-agent'
+      branch: 'feature/auth-system/api-agent'
+      status: 'created'
+    - agent: 'test-agent'
+      path: '../project-wt-test-agent'
+      branch: 'feature/auth-system/test-agent'
+      status: 'created'
+  merge_order: ['api-agent', 'test-agent']
   auto_cleanup: true
   lifecycle_documented: true
 ```
@@ -310,11 +313,11 @@ worktree_strategy_result:
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
-| Git repository has no commits | HALT -- initialize repo first |
-| Uncommitted changes in working tree | HALT -- commit or stash before creating worktrees |
-| Disk space insufficient for N worktrees | HALT -- estimate ~size of repo per worktree |
-| Git version < 2.5 | HALT -- upgrade git for worktree support |
-| No file conflicts detected between agents | SKIP -- use shared repo instead (simpler) |
-| Worktree creation fails | HALT -- check git lock files and existing worktrees |
+| Condition                                 | Action                                              |
+| ----------------------------------------- | --------------------------------------------------- |
+| Git repository has no commits             | HALT -- initialize repo first                       |
+| Uncommitted changes in working tree       | HALT -- commit or stash before creating worktrees   |
+| Disk space insufficient for N worktrees   | HALT -- estimate ~size of repo per worktree         |
+| Git version < 2.5                         | HALT -- upgrade git for worktree support            |
+| No file conflicts detected between agents | SKIP -- use shared repo instead (simpler)           |
+| Worktree creation fails                   | HALT -- check git lock files and existing worktrees |

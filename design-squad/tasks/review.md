@@ -1,6 +1,6 @@
 ---
 task: reviewDesignOutput()
-responsavel: "@design-chief"
+responsavel: '@design-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All checklist items evaluated"
-  - "[ ] Verdict rendered (APPROVE/REVISE/REJECT)"
-  - "[ ] Accessibility, consistency, and responsiveness individually assessed"
+  - '[ ] All checklist items evaluated'
+  - '[ ] Verdict rendered (APPROVE/REVISE/REJECT)'
+  - '[ ] Accessibility, consistency, and responsiveness individually assessed'
 ---
 
 # Task: Review Design Systems/UX Output
@@ -39,11 +39,11 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| specialist_output | string | Specialist agent | Yes | Non-empty deliverable |
-| original_request | string | User prompt | Yes | The original request that triggered the work |
-| specialist_id | string | Routing | Yes | Agent ID that produced the output |
+| Field             | Type   | Source           | Required | Validation                                   |
+| ----------------- | ------ | ---------------- | -------- | -------------------------------------------- |
+| specialist_output | string | Specialist agent | Yes      | Non-empty deliverable                        |
+| original_request  | string | User prompt      | Yes      | The original request that triggered the work |
+| specialist_id     | string | Routing          | Yes      | Agent ID that produced the output            |
 
 ---
 
@@ -74,11 +74,11 @@ Checklist:
 
 ### Phase 3: Score and Decide
 
-| Score | Verdict | Action |
-|-------|---------|--------|
-| All CRITICAL pass, < 2 non-critical fail | APPROVE | Deliver to user |
-| All CRITICAL pass, 2+ non-critical fail | REVISE | Return to specialist with specific feedback |
-| Any CRITICAL fail | REJECT | Return to specialist, block delivery |
+| Score                                    | Verdict | Action                                      |
+| ---------------------------------------- | ------- | ------------------------------------------- |
+| All CRITICAL pass, < 2 non-critical fail | APPROVE | Deliver to user                             |
+| All CRITICAL pass, 2+ non-critical fail  | REVISE  | Return to specialist with specific feedback |
+| Any CRITICAL fail                        | REJECT  | Return to specialist, block delivery        |
 
 ### Phase 4: Output
 
@@ -96,17 +96,21 @@ Produce review report with verdict, score, and feedback.
 **Score:** {X}/{total} items passed
 
 ### Passed
+
 - {items that passed}
 
 ### Issues Found
+
 - [{CRITICAL|WARN}] {description} — {recommendation}
 
 ### Design-Specific Notes
+
 - Accessibility compliance: {assessment}
 - System consistency: {assessment}
 - Responsive behavior: {assessment}
 
 ### Recommendation
+
 {Next step: deliver / revise specific items / redo}
 ```
 

@@ -47,11 +47,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_path | string | User or cwd | Yes | Valid project directory |
-| budget | enum | User | No | `minimal` (1-2 MCPs), `standard` (3-5), `full` (no limit) |
-| priorities | string[] | User | No | e.g., ["documentation", "web search", "database", "browser testing"] |
+| Field        | Type     | Source      | Required | Validation                                                           |
+| ------------ | -------- | ----------- | -------- | -------------------------------------------------------------------- |
+| project_path | string   | User or cwd | Yes      | Valid project directory                                              |
+| budget       | enum     | User        | No       | `minimal` (1-2 MCPs), `standard` (3-5), `full` (no limit)            |
+| priorities   | string[] | User        | No       | e.g., ["documentation", "web search", "database", "browser testing"] |
 
 ---
 
@@ -77,11 +77,11 @@ Examine the project to identify where MCP servers would add value:
 
 Produce a needs matrix:
 
-| Need Category | Specific Need | Frequency | Current Solution |
-|---------------|---------------|-----------|-----------------|
-| Documentation | React docs lookup | Daily | Manual browser search |
-| Database | Query execution | Hourly | Copy-paste to psql |
-| Search | Find code examples | Daily | Manual Google search |
+| Need Category | Specific Need      | Frequency | Current Solution      |
+| ------------- | ------------------ | --------- | --------------------- |
+| Documentation | React docs lookup  | Daily     | Manual browser search |
+| Database      | Query execution    | Hourly    | Copy-paste to psql    |
+| Search        | Find code examples | Daily     | Manual Google search  |
 
 ### Phase 2: Map Capabilities to Available MCPs
 
@@ -115,6 +115,7 @@ Each MCP server has a context cost. Estimate:
 4. **Memory footprint**: resources consumed while running
 
 Calculate context budget:
+
 ```
 Total context overhead = sum(tools_per_mcp * avg_description_tokens)
 % of 200K context window used by MCP registrations
@@ -138,6 +139,7 @@ ROI = (frequency_of_need * time_saved_per_use) / (context_cost + setup_effort)
 ```
 
 Where:
+
 - **frequency_of_need**: daily=5, weekly=3, monthly=1
 - **time_saved_per_use**: minutes saved vs manual approach
 - **context_cost**: token overhead (normalized 1-5)
@@ -154,6 +156,7 @@ Produce the final plan with phased rollout:
 **Phase C (As needed)**: lower ROI MCPs, add when specific need arises
 
 For each MCP in the plan:
+
 1. Configuration snippet for settings.json
 2. Required environment variables or credentials
 3. Verification command to test connectivity
@@ -163,7 +166,7 @@ For each MCP in the plan:
 
 ## Output Format
 
-```markdown
+````markdown
 ## MCP Integration Plan
 
 **Project:** {project_path}
@@ -172,20 +175,21 @@ For each MCP in the plan:
 
 ### Needs Analysis
 
-| Need | Frequency | Matched MCP | ROI Score |
-|------|-----------|-------------|-----------|
-| {need} | {freq} | {mcp} | {score} |
+| Need   | Frequency | Matched MCP | ROI Score |
+| ------ | --------- | ----------- | --------- |
+| {need} | {freq}    | {mcp}       | {score}   |
 
 ### Context Budget
 
 | MCP Server | Tools | Est. Tokens | % Window |
-|------------|-------|-------------|----------|
-| {mcp} | {N} | {N} | {N}% |
-| **Total** | | | {N}% |
+| ---------- | ----- | ----------- | -------- |
+| {mcp}      | {N}   | {N}         | {N}%     |
+| **Total**  |       |             | {N}%     |
 
 ### Rollout Plan
 
 #### Phase A: Immediate (Day 1)
+
 1. **{mcp_name}**: {reason}
    - ROI: {score}
    - Config:
@@ -195,17 +199,19 @@ For each MCP in the plan:
    - Verify: {command}
 
 #### Phase B: Short-term (Week 1)
+
 1. **{mcp_name}**: {reason}
 
 #### Phase C: On-demand
+
 1. **{mcp_name}**: {reason}
 
 ### Excluded MCPs
 
-| MCP | Reason for Exclusion |
-|-----|---------------------|
-| {mcp} | {reason} |
-```
+| MCP   | Reason for Exclusion |
+| ----- | -------------------- |
+| {mcp} | {reason}             |
+````
 
 ---
 

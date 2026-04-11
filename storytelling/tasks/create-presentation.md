@@ -1,6 +1,6 @@
 ---
 task: createPresentation()
-responsavel: "@nancy-duarte"
+responsavel: '@nancy-duarte'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Audience profiled with current beliefs and resistance mapped"
-  - "[ ] Sparkline structure created with alternating contrasts"
-  - "[ ] Star moment designed and call to action defined"
+  - '[ ] Audience profiled with current beliefs and resistance mapped'
+  - '[ ] Sparkline structure created with alternating contrasts'
+  - '[ ] Star moment designed and call to action defined'
 ---
 
 # Task: Presentation Narrative Arc
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `presentation_topic` | User prompt | YES |
-| `audience` | Who will attend | YES |
-| `desired_action` | What audience should do after | YES |
-| `key_data` | Supporting facts, metrics, research | PREFERRED |
-| `duration` | Time available | NO (default: 20 min) |
-| `existing_content` | Current slides or notes | NO |
+| Input                | Source                              | Required             |
+| -------------------- | ----------------------------------- | -------------------- |
+| `presentation_topic` | User prompt                         | YES                  |
+| `audience`           | Who will attend                     | YES                  |
+| `desired_action`     | What audience should do after       | YES                  |
+| `key_data`           | Supporting facts, metrics, research | PREFERRED            |
+| `duration`           | Time available                      | NO (default: 20 min) |
+| `existing_content`   | Current slides or notes             | NO                   |
 
 ## Preconditions
 
@@ -112,38 +112,38 @@ Checklist:
 
 ```yaml
 presentation:
-  topic: "{presentation topic}"
-  specialist: "nancy-duarte"
-  methodology: "Sparkline"
-  audience: "{target audience}"
-  desired_action: "{what audience should do}"
-  duration: "{time}"
-  key_takeaway: "{one thing to remember}"
+  topic: '{presentation topic}'
+  specialist: 'nancy-duarte'
+  methodology: 'Sparkline'
+  audience: '{target audience}'
+  desired_action: '{what audience should do}'
+  duration: '{time}'
+  key_takeaway: '{one thing to remember}'
   sparkline:
-    - section: "Opening — What Is"
-      content: "{current reality}"
-      visual_support: "{slide concept}"
-      duration: "{time}"
-    - section: "Contrast 1 — What Could Be"
-      content: "{the possibility}"
-      visual_support: "{slide concept}"
-      duration: "{time}"
+    - section: 'Opening — What Is'
+      content: '{current reality}'
+      visual_support: '{slide concept}'
+      duration: '{time}'
+    - section: 'Contrast 1 — What Could Be'
+      content: '{the possibility}'
+      visual_support: '{slide concept}'
+      duration: '{time}'
     # ... additional toggles
-    - section: "Star Moment"
-      content: "{memorable peak}"
-      visual_support: "{dramatic visual}"
-      duration: "{time}"
-    - section: "Call to Action"
-      content: "{specific ask}"
-      duration: "{time}"
-    - section: "New Bliss"
-      content: "{transformed future}"
-      duration: "{time}"
-  star_moment: "{description of the memorable moment}"
-  closing_statement: "{resonant ending}"
+    - section: 'Star Moment'
+      content: '{memorable peak}'
+      visual_support: '{dramatic visual}'
+      duration: '{time}'
+    - section: 'Call to Action'
+      content: '{specific ask}'
+      duration: '{time}'
+    - section: 'New Bliss'
+      content: '{transformed future}'
+      duration: '{time}'
+  star_moment: '{description of the memorable moment}'
+  closing_statement: '{resonant ending}'
   qa_prep:
-    - question: "{anticipated question}"
-      answer: "{prepared response}"
+    - question: '{anticipated question}'
+      answer: '{prepared response}'
 ```
 
 ## Veto Conditions

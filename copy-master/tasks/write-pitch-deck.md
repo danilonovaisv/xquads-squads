@@ -1,6 +1,6 @@
 ---
 task: writePitchDeck()
-responsavel: "@oren-klaff"
+responsavel: '@oren-klaff'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] STRONG method fully executed (all 6 elements)"
-  - "[ ] Frame control strategy defined for each section"
-  - "[ ] Intrigue + tension arc maintained throughout"
-  - "[ ] Psychological Layer applied (Cialdini/Warren principles tagged)"
+  - '[ ] STRONG method fully executed (all 6 elements)'
+  - '[ ] Frame control strategy defined for each section'
+  - '[ ] Intrigue + tension arc maintained throughout'
+  - '[ ] Psychological Layer applied (Cialdini/Warren principles tagged)'
 ---
 
 # Task: Write Pitch Deck Copy
@@ -40,16 +40,16 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| business | string | User prompt | Yes | Business/product with core value proposition |
-| audience | enum | User prompt | Yes | investors, partners, clients, internal-stakeholders |
-| ask | string | User prompt | Yes | What you're requesting (funding amount, partnership, deal, buy-in) |
-| traction | object | User prompt | No | Revenue, users, growth rate, milestones |
-| market_data | object | User prompt | No | TAM, SAM, SOM, market trends |
-| team | list | User prompt | No | Key team members and credentials |
-| competitive_advantage | string | User prompt | No | Unique moat or unfair advantage |
-| pitch_context | string | User prompt | No | Where/how the pitch will be delivered (boardroom, demo day, virtual, 1-on-1) |
+| Field                 | Type   | Source      | Required | Validation                                                                   |
+| --------------------- | ------ | ----------- | -------- | ---------------------------------------------------------------------------- |
+| business              | string | User prompt | Yes      | Business/product with core value proposition                                 |
+| audience              | enum   | User prompt | Yes      | investors, partners, clients, internal-stakeholders                          |
+| ask                   | string | User prompt | Yes      | What you're requesting (funding amount, partnership, deal, buy-in)           |
+| traction              | object | User prompt | No       | Revenue, users, growth rate, milestones                                      |
+| market_data           | object | User prompt | No       | TAM, SAM, SOM, market trends                                                 |
+| team                  | list   | User prompt | No       | Key team members and credentials                                             |
+| competitive_advantage | string | User prompt | No       | Unique moat or unfair advantage                                              |
+| pitch_context         | string | User prompt | No       | Where/how the pitch will be delivered (boardroom, demo day, virtual, 1-on-1) |
 
 ---
 
@@ -162,21 +162,24 @@ Study these real-world champion pitches before writing:
 **Duration:** {X} minutes
 
 ### Persuasion Architecture
-| Slide/Section | STRONG Element | Cialdini Principles | Warren Levers | Frame Control |
-|--------------|---------------|--------------------|--------------  |--------------|
-| Title | Set the Frame | Authority | Encourage dreams | Prize frame |
-| Problem | Tell the Story | Liking | Confirm suspicions | Power frame |
-| ... | ... | ... | ... | ... |
+
+| Slide/Section | STRONG Element | Cialdini Principles | Warren Levers      | Frame Control |
+| ------------- | -------------- | ------------------- | ------------------ | ------------- |
+| Title         | Set the Frame  | Authority           | Encourage dreams   | Prize frame   |
+| Problem       | Tell the Story | Liking              | Confirm suspicions | Power frame   |
+| ...           | ...            | ...                 | ...                | ...           |
 
 ---
 
 ### Slide 1: {Title}
+
 **On-slide copy:** {text that appears on the slide}
 **Speaker notes:** {what to say}
 **Frame control:** {technique for this moment}
 **Intrigue ping:** {curiosity trigger}
 
 ### Slide 2: {Problem}
+
 **On-slide copy:** {text}
 **Speaker notes:** {what to say}
 **Data point:** {specific proof}
@@ -187,17 +190,20 @@ Study these real-world champion pitches before writing:
 ---
 
 ### Frame Control Playbook
-| Situation | Their Frame | Your Counter-Frame |
-|-----------|------------|-------------------|
-| "We need more data" | Analyst frame | "I'll send the details — but first, does the vision resonate?" |
-| "What about competitor X?" | Power frame | "Good question — here's why they can't do what we do" |
-| "Let me think about it" | Delay frame | "I understand — I should mention we're closing [date]" |
+
+| Situation                  | Their Frame   | Your Counter-Frame                                             |
+| -------------------------- | ------------- | -------------------------------------------------------------- |
+| "We need more data"        | Analyst frame | "I'll send the details — but first, does the vision resonate?" |
+| "What about competitor X?" | Power frame   | "Good question — here's why they can't do what we do"          |
+| "Let me think about it"    | Delay frame   | "I understand — I should mention we're closing [date]"         |
 
 ### Objection Responses
+
 | Objection | Response | Cialdini Principle Used |
-|-----------|---------|----------------------|
+| --------- | -------- | ----------------------- |
 
 ### Delivery Notes
+
 - **Total slides:** {count}
 - **Key frame control moments:** {list}
 - **Hot cognition triggers:** {list}

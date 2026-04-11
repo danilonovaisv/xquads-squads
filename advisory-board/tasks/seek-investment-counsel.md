@@ -1,6 +1,6 @@
 ---
 task: seekInvestmentCounsel()
-responsavel: "@board-chair"
+responsavel: '@board-chair'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All three analyses (Dalio, Munger, Thiel) completed"
-  - "[ ] Clear recommendation with terms or conditions"
-  - "[ ] Kill criteria and monitoring framework defined"
+  - '[ ] All three analyses (Dalio, Munger, Thiel) completed'
+  - '[ ] Clear recommendation with terms or conditions'
+  - '[ ] Kill criteria and monitoring framework defined'
 ---
 
 # Task: Investment Committee Session
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `opportunity_description` | User prompt | YES |
-| `financial_data` | Revenue, costs, projections | PREFERRED |
-| `investment_amount` | Capital required | PREFERRED |
-| `market_context` | Industry, competition, timing | PREFERRED |
-| `risk_appetite` | Conservative, moderate, aggressive | NO |
-| `time_horizon` | Short-term, medium, long-term | NO |
+| Input                     | Source                             | Required  |
+| ------------------------- | ---------------------------------- | --------- |
+| `opportunity_description` | User prompt                        | YES       |
+| `financial_data`          | Revenue, costs, projections        | PREFERRED |
+| `investment_amount`       | Capital required                   | PREFERRED |
+| `market_context`          | Industry, competition, timing      | PREFERRED |
+| `risk_appetite`           | Conservative, moderate, aggressive | NO        |
+| `time_horizon`            | Short-term, medium, long-term      | NO        |
 
 ## Preconditions
 
@@ -67,6 +67,7 @@ Checklist:
 ### Phase 2: Risk Analysis
 
 **Ray Dalio — Principles-Based Analysis:**
+
 1. Apply radical transparency — what are the uncomfortable truths?
 2. Stress-test assumptions — what if projections are 50% wrong?
 3. Assess systematic risk — is this correlated with macro factors?
@@ -75,6 +76,7 @@ Checklist:
 6. Check: Does this align with established investment principles?
 
 **Charlie Munger — Mental Models Analysis:**
+
 1. Apply inversion — what would make this fail? Work backwards from disaster
 2. Check for cognitive biases — confirmation bias, FOMO, sunk cost, anchoring
 3. Assess circle of competence — do you truly understand this domain?
@@ -83,6 +85,7 @@ Checklist:
 6. Apply the "newspaper test" — would you be proud of this decision on the front page?
 
 **Peter Thiel — Zero-to-One Analysis:**
+
 1. Is this a 0-to-1 opportunity (creating something new) or 1-to-n (copying)?
 2. What is the secret — what do you believe that most people do not?
 3. Can this become a monopoly in a small market before expanding?
@@ -112,34 +115,34 @@ Checklist:
 
 ```yaml
 investment_counsel:
-  opportunity: "{description}"
+  opportunity: '{description}'
   committee: [ray-dalio, charlie-munger, peter-thiel]
   analyses:
     dalio:
-      principles_assessment: "{analysis}"
-      expected_value: "{calculation}"
-      stress_test: "{worst case}"
-      verdict: "INVEST | PASS | CONDITIONAL"
+      principles_assessment: '{analysis}'
+      expected_value: '{calculation}'
+      stress_test: '{worst case}'
+      verdict: 'INVEST | PASS | CONDITIONAL'
     munger:
-      mental_models_applied: ["{models used}"]
-      inversion_result: "{failure scenarios}"
-      bias_check: ["{biases identified}"]
-      verdict: "INVEST | PASS | CONDITIONAL"
+      mental_models_applied: ['{models used}']
+      inversion_result: '{failure scenarios}'
+      bias_check: ['{biases identified}']
+      verdict: 'INVEST | PASS | CONDITIONAL'
     thiel:
-      zero_to_one: "{is this creating something new?}"
-      monopoly_potential: "{assessment}"
-      power_law_fit: "{could this be a 100x?}"
-      verdict: "INVEST | PASS | CONDITIONAL"
+      zero_to_one: '{is this creating something new?}'
+      monopoly_potential: '{assessment}'
+      power_law_fit: '{could this be a 100x?}'
+      verdict: 'INVEST | PASS | CONDITIONAL'
   synthesis:
-    agreement: ["{convergence}"]
-    disagreement: ["{divergence}"]
-    asymmetry: "{upside vs downside}"
+    agreement: ['{convergence}']
+    disagreement: ['{divergence}']
+    asymmetry: '{upside vs downside}'
   recommendation:
-    verdict: "INVEST | PASS | CONDITIONAL"
-    terms: "{if invest}"
-    conditions: "{if conditional}"
-    kill_criteria: ["{exit triggers}"]
-    monitoring: ["{key metrics}"]
+    verdict: 'INVEST | PASS | CONDITIONAL'
+    terms: '{if invest}'
+    conditions: '{if conditional}'
+    kill_criteria: ['{exit triggers}']
+    monitoring: ['{key metrics}']
 ```
 
 ## Veto Conditions

@@ -1,6 +1,6 @@
 ---
 task: generateHandoff()
-responsavel: "@ui-engineer"
+responsavel: '@ui-engineer'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All components inventoried and mapped to design system"
-  - "[ ] Every visual value mapped to a design token"
-  - "[ ] Dev review completed with tradeoffs documented"
+  - '[ ] All components inventoried and mapped to design system'
+  - '[ ] Every visual value mapped to a design token'
+  - '[ ] Dev review completed with tradeoffs documented'
 ---
 
 # Task: Developer Handoff Documentation
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `design_files` | Figma/Sketch files or screenshots | YES |
-| `design_system` | Existing design system reference | PREFERRED |
-| `tech_stack` | Frontend framework and CSS approach | YES |
-| `component_list` | Components used in the design | PREFERRED |
-| `interaction_specs` | Animations, transitions, hover states | PREFERRED |
-| `responsive_requirements` | Breakpoints and adaptation behavior | NO |
+| Input                     | Source                                | Required  |
+| ------------------------- | ------------------------------------- | --------- |
+| `design_files`            | Figma/Sketch files or screenshots     | YES       |
+| `design_system`           | Existing design system reference      | PREFERRED |
+| `tech_stack`              | Frontend framework and CSS approach   | YES       |
+| `component_list`          | Components used in the design         | PREFERRED |
+| `interaction_specs`       | Animations, transitions, hover states | PREFERRED |
+| `responsive_requirements` | Breakpoints and adaptation behavior   | NO        |
 
 ## Preconditions
 
@@ -122,47 +122,47 @@ Checklist:
 ```yaml
 handoff:
   creators: [ui-engineer, dan-mall]
-  tech_stack: "{framework}"
-  design_system: "{system name}"
+  tech_stack: '{framework}'
+  design_system: '{system name}'
   components:
-    existing: ["{components from design system}"]
-    variants_needed: ["{new variants of existing}"]
-    new_required: ["{entirely new components}"]
+    existing: ['{components from design system}']
+    variants_needed: ['{new variants of existing}']
+    new_required: ['{entirely new components}']
   token_map:
     colors:
-      - design_value: "{hex or rgba}"
-        token: "{token name}"
-        usage: "{where used}"
+      - design_value: '{hex or rgba}'
+        token: '{token name}'
+        usage: '{where used}'
     typography:
-      - design_style: "{style name}"
-        token: "{token name}"
+      - design_style: '{style name}'
+        token: '{token name}'
     spacing:
-      - design_value: "{px value}"
-        token: "{token name}"
+      - design_value: '{px value}'
+        token: '{token name}'
   interactions:
     state_transitions:
-      - element: "{component}"
-        states: "{default → hover → focus → active → disabled}"
-        animation: "{duration, easing}"
+      - element: '{component}'
+        states: '{default → hover → focus → active → disabled}'
+        animation: '{duration, easing}'
     micro_interactions:
-      - trigger: "{user action}"
-        animation: "{description}"
-        duration: "{ms}"
-        easing: "{function}"
+      - trigger: '{user action}'
+        animation: '{description}'
+        duration: '{ms}'
+        easing: '{function}'
     keyboard:
-      tab_order: ["{element sequence}"]
-      shortcuts: ["{key: action}"]
+      tab_order: ['{element sequence}']
+      shortcuts: ['{key: action}']
   responsive:
-    breakpoints: ["{px values}"]
+    breakpoints: ['{px values}']
     adaptations:
-      - breakpoint: "{px}"
-        changes: ["{layout changes}"]
+      - breakpoint: '{px}'
+        changes: ['{layout changes}']
   assets:
-    icons: ["{icon list with format}"]
-    images: ["{image list with sizes}"]
-    fonts: ["{font files}"]
-  dev_review_notes: ["{decisions and tradeoffs}"]
-  qa_checklist: ["{verification items}"]
+    icons: ['{icon list with format}']
+    images: ['{image list with sizes}']
+    fonts: ['{font files}']
+  dev_review_notes: ['{decisions and tradeoffs}']
+  qa_checklist: ['{verification items}']
 ```
 
 ## Veto Conditions

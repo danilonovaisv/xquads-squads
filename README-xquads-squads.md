@@ -6,20 +6,20 @@
 
 ## Squads Disponiveis
 
-| Squad | Agentes | Foco |
-|-------|---------|------|
-| Advisory Board | 11 | Conselheiros estrategicos (Ray Dalio, Charlie Munger, Naval Ravikant...) |
-| Brand Squad | 15 | Branding e posicionamento (David Aaker, Marty Neumeier, Al Ries...) |
-| C-Level Squad | 6 | Lideranca executiva (CEO, CTO, CMO, COO, CIO, CAIO) |
-| Claude Code Mastery | 8 | Dominio do Claude Code e AIOS |
-| Copy Squad | 23 | Copywriting (Gary Halbert, Eugene Schwartz, David Ogilvy...) |
-| Cybersecurity | 15 | Seguranca ofensiva e defensiva |
-| Data Squad | 7 | Analytics, growth e comunidade (Sean Ellis, Avinash Kaushik...) |
-| Design Squad | 8 | UX/UI e design systems (Brad Frost, Dan Mall...) |
-| Hormozi Squad | 16 | Negocios e escala (framework Alex Hormozi) |
-| Movement | 7 | Construcao de movimentos e comunidades |
-| Storytelling | 12 | Narrativa e storytelling (Joseph Campbell, Oren Klaff...) |
-| Traffic Masters | 16 | Trafego pago e midia (Pedro Sobral, Kasim Aslam...) |
+| Squad               | Agentes | Foco                                                                     |
+| ------------------- | ------- | ------------------------------------------------------------------------ |
+| Advisory Board      | 11      | Conselheiros estrategicos (Ray Dalio, Charlie Munger, Naval Ravikant...) |
+| Brand Squad         | 15      | Branding e posicionamento (David Aaker, Marty Neumeier, Al Ries...)      |
+| C-Level Squad       | 6       | Lideranca executiva (CEO, CTO, CMO, COO, CIO, CAIO)                      |
+| Claude Code Mastery | 8       | Dominio do Claude Code e AIOS                                            |
+| Copy Squad          | 23      | Copywriting (Gary Halbert, Eugene Schwartz, David Ogilvy...)             |
+| Cybersecurity       | 15      | Seguranca ofensiva e defensiva                                           |
+| Data Squad          | 7       | Analytics, growth e comunidade (Sean Ellis, Avinash Kaushik...)          |
+| Design Squad        | 8       | UX/UI e design systems (Brad Frost, Dan Mall...)                         |
+| Hormozi Squad       | 16      | Negocios e escala (framework Alex Hormozi)                               |
+| Movement            | 7       | Construcao de movimentos e comunidades                                   |
+| Storytelling        | 12      | Narrativa e storytelling (Joseph Campbell, Oren Klaff...)                |
+| Traffic Masters     | 16      | Trafego pago e midia (Pedro Sobral, Kasim Aslam...)                      |
 
 ## Como Instalar
 

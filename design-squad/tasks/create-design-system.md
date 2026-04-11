@@ -1,6 +1,6 @@
 ---
 task: createDesignSystem()
-responsavel: "@brad-frost"
+responsavel: '@brad-frost'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Interface audit completed with inconsistencies documented"
-  - "[ ] All design tokens defined (colors, typography, spacing, borders, shadows)"
-  - "[ ] Documentation complete with examples and contribution guide"
+  - '[ ] Interface audit completed with inconsistencies documented'
+  - '[ ] All design tokens defined (colors, typography, spacing, borders, shadows)'
+  - '[ ] Documentation complete with examples and contribution guide'
 ---
 
 # Task: Atomic Design System Creation
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `project_context` | Application or product description | YES |
-| `brand_guidelines` | Colors, typography, logos | PREFERRED |
-| `existing_ui` | Current interface screenshots or code | PREFERRED |
-| `tech_stack` | Frontend framework and tools | YES |
-| `team_size` | Design and dev team size | NO |
-| `accessibility_requirements` | WCAG level target | NO (default: AA) |
+| Input                        | Source                                | Required         |
+| ---------------------------- | ------------------------------------- | ---------------- |
+| `project_context`            | Application or product description    | YES              |
+| `brand_guidelines`           | Colors, typography, logos             | PREFERRED        |
+| `existing_ui`                | Current interface screenshots or code | PREFERRED        |
+| `tech_stack`                 | Frontend framework and tools          | YES              |
+| `team_size`                  | Design and dev team size              | NO               |
+| `accessibility_requirements` | WCAG level target                     | NO (default: AA) |
 
 ## Preconditions
 
@@ -89,6 +89,7 @@ Checklist:
 ### Phase 3: Build Molecules & Organisms (brad-frost + dan-mall)
 
 **Molecules (simple component groups):**
+
 1. Button group (button + icon + label)
 2. Input field (label + input + helper text + error message)
 3. Search bar (input + button + icon)
@@ -97,6 +98,7 @@ Checklist:
 6. Card header (avatar + title + subtitle + action)
 
 **Organisms (complex component groups):**
+
 1. Navigation bar (logo + nav items + search + user menu)
 2. Form section (heading + description + multiple input fields + actions)
 3. Data table (header + rows + pagination + filters)
@@ -105,6 +107,7 @@ Checklist:
 6. Sidebar (logo + navigation + user info + footer)
 
 For each component:
+
 - Define variants (size, color, state)
 - Specify interactive states (default, hover, focus, active, disabled, loading)
 - Document props/API
@@ -131,22 +134,22 @@ For each component:
 
 ```yaml
 design_system:
-  name: "{system name}"
+  name: '{system name}'
   creators: [brad-frost, dan-mall]
-  methodology: "Atomic Design"
-  tech_stack: "{framework}"
-  accessibility_target: "WCAG 2.1 AA"
+  methodology: 'Atomic Design'
+  tech_stack: '{framework}'
+  accessibility_target: 'WCAG 2.1 AA'
   tokens:
-    colors: "{token count}"
-    typography: "{token count}"
-    spacing: "{token count}"
-    borders: "{token count}"
-    shadows: "{token count}"
+    colors: '{token count}'
+    typography: '{token count}'
+    spacing: '{token count}'
+    borders: '{token count}'
+    shadows: '{token count}'
   components:
-    atoms: ["{list}"]
-    molecules: ["{list}"]
-    organisms: ["{list}"]
-    templates: ["{list}"]
+    atoms: ['{list}']
+    molecules: ['{list}']
+    organisms: ['{list}']
+    templates: ['{list}']
   documentation:
     getting_started: true
     token_reference: true
@@ -155,9 +158,9 @@ design_system:
     contribution_guide: true
     governance_model: true
   governance:
-    versioning: "semver"
-    approval_process: "{description}"
-    deprecation_policy: "{description}"
+    versioning: 'semver'
+    approval_process: '{description}'
+    deprecation_policy: '{description}'
 ```
 
 ## Veto Conditions

@@ -59,12 +59,12 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_path | string | User | Yes | Must be valid directory path |
-| project_type | enum | User | Yes | `monorepo`, `fullstack`, `frontend`, `backend`, `library`, `mobile` |
-| team_size | enum | User | No | `solo`, `small` (2-5), `medium` (6-15), `enterprise` (15+) |
-| existing_git | boolean | Detection | No | Auto-detected from .git/ presence |
+| Field        | Type    | Source    | Required | Validation                                                          |
+| ------------ | ------- | --------- | -------- | ------------------------------------------------------------------- |
+| project_path | string  | User      | Yes      | Must be valid directory path                                        |
+| project_type | enum    | User      | Yes      | `monorepo`, `fullstack`, `frontend`, `backend`, `library`, `mobile` |
+| team_size    | enum    | User      | No       | `solo`, `small` (2-5), `medium` (6-15), `enterprise` (15+)          |
+| existing_git | boolean | Detection | No       | Auto-detected from .git/ presence                                   |
 
 ---
 
@@ -103,6 +103,7 @@ Create the complete directory tree:
 ```
 
 For each directory:
+
 1. Create directory if not present
 2. Add `.gitkeep` for empty optional directories
 3. Record creation in output log
@@ -119,6 +120,7 @@ Generate a project-specific CLAUDE.md following best practices:
 6. **Common Patterns**: 2-3 code snippets showing project conventions
 
 **Constraints:**
+
 - Keep under 150 lines total
 - Only universally applicable content
 - Domain-specific knowledge goes in rules/ or skills/
@@ -136,6 +138,7 @@ Create `.claude/settings.json` with:
 3. **rules**: path-based rule loading configuration
 
 Adapt permissions based on `project_type`:
+
 - `monorepo`: include workspace-aware commands
 - `fullstack`: include both frontend and backend build tools
 - `library`: include publish-related deny rules
@@ -149,11 +152,12 @@ Create rule files in `.claude/rules/`:
 3. **git-workflow.md**: branch naming, commit conventions, PR template guidance
 
 Each rule file includes `paths:` frontmatter for contextual loading:
+
 ```yaml
 ---
 paths:
-  - "src/**/*.ts"
-  - "src/**/*.tsx"
+  - 'src/**/*.ts'
+  - 'src/**/*.tsx'
 ---
 ```
 
@@ -192,18 +196,20 @@ Run verification checks:
 
 ### Components Created
 
-| Component | Status | Path |
-|-----------|--------|------|
-| .claude/CLAUDE.md | PASS | .claude/CLAUDE.md |
-| settings.json | PASS | .claude/settings.json |
-| Rules | PASS | .claude/rules/ (N files) |
-| Hooks | SKIP/PASS | .claude/hooks/ |
+| Component         | Status    | Path                     |
+| ----------------- | --------- | ------------------------ |
+| .claude/CLAUDE.md | PASS      | .claude/CLAUDE.md        |
+| settings.json     | PASS      | .claude/settings.json    |
+| Rules             | PASS      | .claude/rules/ (N files) |
+| Hooks             | SKIP/PASS | .claude/hooks/           |
 
 ### CLAUDE.md Summary
+
 - Lines: {N}/150
 - Sections: {list}
 
 ### Next Steps
+
 1. Review CLAUDE.md and adjust project context
 2. Run `claude` to test the integration
 3. Consider adding skills with `*create-skill`

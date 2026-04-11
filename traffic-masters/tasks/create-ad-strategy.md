@@ -1,6 +1,6 @@
 ---
 task: createAdStrategy()
-responsavel: "@traffic-chief"
+responsavel: '@traffic-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] 3-5 audience segments defined with targeting details"
-  - "[ ] Campaign structure mapped by funnel stage"
-  - "[ ] Budget allocated with daily and monthly breakdowns"
+  - '[ ] 3-5 audience segments defined with targeting details'
+  - '[ ] Campaign structure mapped by funnel stage'
+  - '[ ] Budget allocated with daily and monthly breakdowns'
 ---
 
 # Task: Create Ad Strategy
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product or service to advertise |
-| audience | string | User prompt | Yes | Target audience demographics and psychographics |
-| platform | enum | User prompt | Yes | facebook, google, youtube, tiktok, linkedin, multi-platform |
-| budget | number | User prompt | Yes | Monthly advertising budget |
-| objective | enum | User prompt | Yes | awareness, traffic, leads, sales, app-installs |
-| funnel | string | User prompt | No | Landing page or funnel URL/description |
-| current_performance | object | User prompt | No | Existing metrics if running ads already |
+| Field               | Type   | Source      | Required | Validation                                                  |
+| ------------------- | ------ | ----------- | -------- | ----------------------------------------------------------- |
+| product             | string | User prompt | Yes      | Product or service to advertise                             |
+| audience            | string | User prompt | Yes      | Target audience demographics and psychographics             |
+| platform            | enum   | User prompt | Yes      | facebook, google, youtube, tiktok, linkedin, multi-platform |
+| budget              | number | User prompt | Yes      | Monthly advertising budget                                  |
+| objective           | enum   | User prompt | Yes      | awareness, traffic, leads, sales, app-installs              |
+| funnel              | string | User prompt | No       | Landing page or funnel URL/description                      |
+| current_performance | object | User prompt | No       | Existing metrics if running ads already                     |
 
 ---
 
@@ -62,6 +62,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Audience Architecture
+
 1. Define the primary audience segments (3-5 segments):
    - Demographics: age, gender, location, income
    - Psychographics: interests, behaviors, pain points
@@ -74,6 +75,7 @@ Checklist:
 4. Prioritize segments by expected ROAS
 
 ### Phase 2: Campaign Architecture
+
 1. Structure campaigns by objective and funnel stage:
    - Top of Funnel: Awareness/engagement campaigns (cold audiences)
    - Middle of Funnel: Consideration campaigns (warm audiences)
@@ -88,6 +90,7 @@ Checklist:
    - Minimum budget per ad set for statistical significance
 
 ### Phase 3: Creative Strategy
+
 1. Define creative themes per funnel stage:
    - TOF: Problem awareness, curiosity, entertainment
    - MOF: Proof, education, differentiation
@@ -101,6 +104,7 @@ Checklist:
 4. Define the testing framework: which variables to test first
 
 ### Phase 4: Budget and KPI Framework
+
 1. Allocate budget across funnel stages:
    - Suggested split: 60% TOF, 25% MOF, 15% BOF (adjust based on maturity)
 2. Set KPI targets per stage using platform benchmarks
@@ -128,38 +132,41 @@ Checklist:
 ### Audience Segments
 
 | Segment | Type | Size | Targeting | Funnel Stage |
-|---------|------|------|-----------|-------------|
+| ------- | ---- | ---- | --------- | ------------ |
 
 ### Campaign Structure
 
 | Campaign | Objective | Audience | Daily Budget | Placements |
-|----------|----------|----------|-------------|------------|
+| -------- | --------- | -------- | ------------ | ---------- |
 
 ### Creative Strategy
 
 | Stage | Format | Theme | Hook Angle | CTA |
-|-------|--------|-------|-----------|-----|
+| ----- | ------ | ----- | ---------- | --- |
 
 ### Creative Briefs
+
 {3-5 ad creative briefs with copy direction and visual notes}
 
 ### Budget Allocation
 
 | Stage | % Budget | Monthly | Target CPA/ROAS |
-|-------|---------|---------|----------------|
+| ----- | -------- | ------- | --------------- |
 
 ### KPI Targets
 
 | Metric | TOF | MOF | BOF |
-|--------|-----|-----|-----|
+| ------ | --- | --- | --- |
 
 ### Optimization Schedule
+
 | Timeframe | Action | Criteria |
-|-----------|--------|----------|
+| --------- | ------ | -------- |
 
 ### Scaling Plan
+
 | Trigger | Method | Budget Increase |
-|---------|--------|----------------|
+| ------- | ------ | --------------- |
 ```
 
 ---

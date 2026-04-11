@@ -53,12 +53,12 @@ OUTPUT: Configured MCP servers + context budget report + CLAUDE.md updates
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Auto-detect | yes | Valid directory with package.json or equivalent |
-| tech_stack | array | Scan or user | yes | List of frameworks/languages in use |
-| current_mcps | object | .claude/settings.json | no | Existing MCP configuration |
-| context_budget_limit | number | User or default | no | Max tokens for MCP overhead (default: 10000) |
+| Field                | Type   | Source                | Required | Validation                                      |
+| -------------------- | ------ | --------------------- | -------- | ----------------------------------------------- |
+| project_root         | string | Auto-detect           | yes      | Valid directory with package.json or equivalent |
+| tech_stack           | array  | Scan or user          | yes      | List of frameworks/languages in use             |
+| current_mcps         | object | .claude/settings.json | no       | Existing MCP configuration                      |
+| context_budget_limit | number | User or default       | no       | Max tokens for MCP overhead (default: 10000)    |
 
 ---
 
@@ -78,22 +78,23 @@ OUTPUT: Configured MCP servers + context budget report + CLAUDE.md updates
 ### Steps
 
 1.1. Scan the project root for tech stack indicators:
-   - `package.json` -> Node.js ecosystem (look for React, Next.js, Express, etc.)
-   - `requirements.txt` / `pyproject.toml` -> Python ecosystem
-   - `docker-compose.yml` -> Container-based services
-   - `.env` / `supabase/` -> Supabase/database usage
-   - `playwright.config.*` -> Browser testing
+
+- `package.json` -> Node.js ecosystem (look for React, Next.js, Express, etc.)
+- `requirements.txt` / `pyproject.toml` -> Python ecosystem
+- `docker-compose.yml` -> Container-based services
+- `.env` / `supabase/` -> Supabase/database usage
+- `playwright.config.*` -> Browser testing
 
 1.2. Cross-reference detected stack against MCP server catalog:
 
-| Tech Stack Signal | Recommended MCP | Purpose |
-|-------------------|----------------|---------|
-| Supabase project | supabase | Database operations, migrations |
-| Any web project | playwright/browser | UI testing, screenshots |
-| Research-heavy | exa | Web search, company research |
-| Any framework | context7 | Library documentation lookup |
-| Docker services | desktop-commander | Container management |
-| GitHub repo | github-cli (native) | PR/issue management |
+| Tech Stack Signal | Recommended MCP     | Purpose                         |
+| ----------------- | ------------------- | ------------------------------- |
+| Supabase project  | supabase            | Database operations, migrations |
+| Any web project   | playwright/browser  | UI testing, screenshots         |
+| Research-heavy    | exa                 | Web search, company research    |
+| Any framework     | context7            | Library documentation lookup    |
+| Docker services   | desktop-commander   | Container management            |
+| GitHub repo       | github-cli (native) | PR/issue management             |
 
 1.3. List current MCP servers from config and identify gaps.
 
@@ -106,6 +107,7 @@ OUTPUT: Configured MCP servers + context budget report + CLAUDE.md updates
 ### Context Budget Math
 
 Each MCP server adds to the system prompt:
+
 - **Server registration:** ~200 tokens (name, description, connection info)
 - **Tool definitions:** ~100-400 tokens per tool (name, description, parameters, schema)
 - **Typical server:** 600-2000 tokens total
@@ -126,11 +128,11 @@ Example:
 
 ### Decision Framework
 
-| Total MCP Budget | Recommendation |
-|-----------------|---------------|
-| < 5,000 tokens | Green -- add freely |
+| Total MCP Budget    | Recommendation                   |
+| ------------------- | -------------------------------- |
+| < 5,000 tokens      | Green -- add freely              |
 | 5,000-10,000 tokens | Yellow -- evaluate each addition |
-| > 10,000 tokens | Red -- remove low-value servers |
+| > 10,000 tokens     | Red -- remove low-value servers  |
 
 2.1. Calculate token cost for each proposed MCP server.
 2.2. Sum total and compare against budget limit.
@@ -144,10 +146,10 @@ Example:
 
 ### Config Location Decision
 
-| Scope | File | When to Use |
-|-------|------|-------------|
-| Project-only | `.claude/settings.json` | MCP is project-specific (e.g., supabase for this DB) |
-| Global (all projects) | `~/.claude.json` | MCP is universally useful (e.g., context7, exa) |
+| Scope                 | File                    | When to Use                                          |
+| --------------------- | ----------------------- | ---------------------------------------------------- |
+| Project-only          | `.claude/settings.json` | MCP is project-specific (e.g., supabase for this DB) |
+| Global (all projects) | `~/.claude.json`        | MCP is universally useful (e.g., context7, exa)      |
 
 ### Steps
 
@@ -179,10 +181,10 @@ Example:
 
 ### Transport Comparison
 
-| Transport | Protocol | Use Case | Latency | Setup |
-|-----------|----------|----------|---------|-------|
-| **stdio** (default) | stdin/stdout | Local CLI tools, most servers | Low | Simple |
-| **HTTP Streamable** | HTTP + SSE | Remote servers, shared infra | Medium | URL + auth |
+| Transport           | Protocol     | Use Case                      | Latency | Setup      |
+| ------------------- | ------------ | ----------------------------- | ------- | ---------- |
+| **stdio** (default) | stdin/stdout | Local CLI tools, most servers | Low     | Simple     |
+| **HTTP Streamable** | HTTP + SSE   | Remote servers, shared infra  | Medium  | URL + auth |
 
 ### Decision Tree
 
@@ -210,14 +212,15 @@ Is the MCP server running locally?
 
 5.1. Start Claude Code with the new configuration.
 5.2. For each configured MCP server, verify tool availability:
-   - Check that tools appear in tool list
-   - Run a minimal test call (e.g., context7 resolve-library-id with "react")
-5.3. Document any servers that fail to connect.
-5.4. If a server fails, check:
-   - Binary installed? (command exists)
-   - API key valid? (env vars set)
-   - Port available? (for HTTP transport)
-   - Network accessible? (for remote servers)
+
+- Check that tools appear in tool list
+- Run a minimal test call (e.g., context7 resolve-library-id with "react")
+  5.3. Document any servers that fail to connect.
+  5.4. If a server fails, check:
+- Binary installed? (command exists)
+- API key valid? (env vars set)
+- Port available? (for HTTP transport)
+- Network accessible? (for remote servers)
 
 ---
 
@@ -241,11 +244,12 @@ Need to accomplish a task?
 ### Steps
 
 6.1. Add or update MCP section in CLAUDE.md with:
-   - List of configured servers and their purposes
-   - Tool selection priority (native > MCP > Bash)
-   - Server-specific usage rules
-6.2. Create `.claude/rules/mcp-usage.md` if it does not exist, with path-based activation.
-6.3. Document any server-specific gotchas (auth, rate limits, etc.).
+
+- List of configured servers and their purposes
+- Tool selection priority (native > MCP > Bash)
+- Server-specific usage rules
+  6.2. Create `.claude/rules/mcp-usage.md` if it does not exist, with path-based activation.
+  6.3. Document any server-specific gotchas (auth, rate limits, etc.).
 
 ---
 
@@ -254,21 +258,21 @@ Need to accomplish a task?
 ```yaml
 mcp_workflow_result:
   servers_configured:
-    - name: "context7"
-      transport: "stdio"
+    - name: 'context7'
+      transport: 'stdio'
       tools: 2
       token_cost: 500
-      status: "verified"
-    - name: "playwright"
-      transport: "stdio"
+      status: 'verified'
+    - name: 'playwright'
+      transport: 'stdio'
       tools: 15
       token_cost: 2450
-      status: "verified"
+      status: 'verified'
   total_token_cost: 2950
-  budget_status: "green"
+  budget_status: 'green'
   files_modified:
-    - ".claude/settings.json"
-    - "CLAUDE.md"
+    - '.claude/settings.json'
+    - 'CLAUDE.md'
   documentation_updated: true
 ```
 
@@ -276,10 +280,10 @@ mcp_workflow_result:
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
+| Condition                              | Action                                        |
+| -------------------------------------- | --------------------------------------------- |
 | MCP token budget exceeds 15,000 tokens | HALT -- must remove servers before proceeding |
-| API key required but not provided | SKIP server -- document as pending |
-| MCP server binary not installable | SKIP server -- suggest alternative |
-| Config file write fails | HALT -- check file permissions |
-| All MCP servers fail validation | HALT -- likely environment issue, debug first |
+| API key required but not provided      | SKIP server -- document as pending            |
+| MCP server binary not installable      | SKIP server -- suggest alternative            |
+| Config file write fails                | HALT -- check file permissions                |
+| All MCP servers fail validation        | HALT -- likely environment issue, debug first |

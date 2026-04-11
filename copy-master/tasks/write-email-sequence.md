@@ -1,6 +1,6 @@
 ---
 task: writeEmailSequence()
-responsavel: "@andre-chaperon"
+responsavel: '@andre-chaperon'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Sequence type framework correctly applied"
-  - "[ ] All emails written with dual subject lines"
-  - "[ ] Open loops planted and resolved across sequence"
-  - "[ ] Psychological Layer applied (Cialdini/Warren principles tagged)"
+  - '[ ] Sequence type framework correctly applied'
+  - '[ ] All emails written with dual subject lines'
+  - '[ ] Open loops planted and resolved across sequence'
+  - '[ ] Psychological Layer applied (Cialdini/Warren principles tagged)'
 ---
 
 # Task: Write Email Sequence
@@ -40,15 +40,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service being promoted |
-| audience | string | User prompt | Yes | Subscriber profile and emotional state |
-| sequence_type | enum | User prompt | Yes | soap-opera, daily, nurture, launch, welcome, cart-abandon |
-| num_emails | number | User prompt | No | Defaults by type: soap-opera=5, daily=7, nurture=10, launch=7, welcome=5, cart-abandon=3 |
-| offer | object | User prompt | No | Required for soap-opera and launch types |
-| brand_voice | string | User prompt | No | Tone and personality of the sender |
-| entry_point | string | User prompt | No | What opt-in or action triggered this sequence |
+| Field         | Type   | Source      | Required | Validation                                                                               |
+| ------------- | ------ | ----------- | -------- | ---------------------------------------------------------------------------------------- |
+| product       | string | User prompt | Yes      | Product/service being promoted                                                           |
+| audience      | string | User prompt | Yes      | Subscriber profile and emotional state                                                   |
+| sequence_type | enum   | User prompt | Yes      | soap-opera, daily, nurture, launch, welcome, cart-abandon                                |
+| num_emails    | number | User prompt | No       | Defaults by type: soap-opera=5, daily=7, nurture=10, launch=7, welcome=5, cart-abandon=3 |
+| offer         | object | User prompt | No       | Required for soap-opera and launch types                                                 |
+| brand_voice   | string | User prompt | No       | Tone and personality of the sender                                                       |
+| entry_point   | string | User prompt | No       | What opt-in or action triggered this sequence                                            |
 
 ---
 
@@ -75,6 +75,7 @@ Study these real-world champion email sequences before writing:
 ## Execution Phases
 
 ### Phase 1: Sequence Architecture
+
 1. Define the narrative arc across the full sequence
 2. Map email-by-email purpose using the sequence framework:
    - **Soap Opera:** Hook -> Backstory -> Epiphany -> Hidden Benefits -> Urgency
@@ -87,6 +88,7 @@ Study these real-world champion email sequences before writing:
 4. Plan open loops between emails (Chaperon's signature technique)
 
 ### Phase 2: Psychological Layer
+
 1. Map Cialdini's principles across the sequence arc:
    - **Early emails:** Reciprocity (free value), Liking (personal stories)
    - **Mid emails:** Social Proof (testimonials), Authority (credentials)
@@ -100,6 +102,7 @@ Study these real-world champion email sequences before writing:
 4. Tag each email with its primary psychological driver
 
 ### Phase 3: Write Each Email
+
 1. Write subject lines (2 options per email, one curiosity-based, one benefit-based)
 2. Write preview text that complements (not repeats) the subject line
 3. Write email body following the one-email-one-idea rule
@@ -109,6 +112,7 @@ Study these real-world champion email sequences before writing:
 7. Include P.S. lines on selling emails
 
 ### Phase 4: Sequence Optimization
+
 1. Review the emotional arc — does tension build across the sequence?
 2. Verify open loops are planted and resolved at the right moments
 3. Check that no email feels like a standalone — each must reference the thread
@@ -129,12 +133,14 @@ Study these real-world champion email sequences before writing:
 **Narrative Arc:** {one-line arc description}
 
 ### Persuasion Map
+
 | Email # | Cialdini Principle | Warren Lever | Emotional Theme |
-|---------|-------------------|--------------|-----------------|
+| ------- | ------------------ | ------------ | --------------- |
 
 ---
 
 ### Email 1: {Title}
+
 **Send:** {timing — e.g., Immediately, Day 1}
 **Subject A:** {subject line option 1}
 **Subject B:** {subject line option 2}
@@ -150,19 +156,22 @@ P.S. {if applicable}
 ---
 
 ### Email 2: {Title}
+
 ...
 
 ---
 
 ### Sequence Map
 
-| # | Title | Purpose | Emotion | Open Loop | CTA | Cialdini | Warren |
-|---|-------|---------|---------|-----------|-----|----------|--------|
+| #   | Title | Purpose | Emotion | Open Loop | CTA | Cialdini | Warren |
+| --- | ----- | ------- | ------- | --------- | --- | -------- | ------ |
 
 ### Send Schedule
+
 {Timing recommendations with rationale}
 
 ### Segmentation Triggers
+
 {Behavioral triggers and branch recommendations}
 ```
 

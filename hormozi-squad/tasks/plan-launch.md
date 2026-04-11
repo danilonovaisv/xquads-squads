@@ -1,6 +1,6 @@
 ---
 task: planLaunch()
-responsavel: "@hormozi-launch"
+responsavel: '@hormozi-launch'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Launch model selected with rationale"
-  - "[ ] Timeline mapped with all phases"
-  - "[ ] Revenue model calculated with scenarios"
+  - '[ ] Launch model selected with rationale'
+  - '[ ] Timeline mapped with all phases'
+  - '[ ] Revenue model calculated with scenarios'
 ---
 
 # Task: Plan Launch
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product being launched |
-| offer | object | User prompt | Yes | Complete offer (price, bonuses, guarantee) |
-| audience_size | number | User prompt | Yes | Total reachable audience (email list, followers, etc.) |
-| launch_type | enum | User prompt | No | seed, internal, partnership, paid — defaults to internal |
-| timeline | string | User prompt | No | Desired launch date or window |
-| budget | number | User prompt | No | Available launch budget |
+| Field         | Type   | Source      | Required | Validation                                               |
+| ------------- | ------ | ----------- | -------- | -------------------------------------------------------- |
+| product       | string | User prompt | Yes      | Product being launched                                   |
+| offer         | object | User prompt | Yes      | Complete offer (price, bonuses, guarantee)               |
+| audience_size | number | User prompt | Yes      | Total reachable audience (email list, followers, etc.)   |
+| launch_type   | enum   | User prompt | No       | seed, internal, partnership, paid — defaults to internal |
+| timeline      | string | User prompt | No       | Desired launch date or window                            |
+| budget        | number | User prompt | No       | Available launch budget                                  |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Launch Architecture
+
 1. Select the launch model:
    - Seed Launch: Small audience, test offer, collect testimonials
    - Internal Launch: Email list and existing audience
@@ -74,6 +75,7 @@ Checklist:
 4. Calculate required traffic and conversion rates backward from revenue target
 
 ### Phase 2: Pre-Launch Sequence
+
 1. Design the pre-launch content (value-first, builds anticipation):
    - Day 1-3: Problem awareness content
    - Day 4-7: Solution education content
@@ -85,6 +87,7 @@ Checklist:
 5. Create the "launch story" narrative arc
 
 ### Phase 3: Launch Execution Plan
+
 1. Cart Open day plan:
    - Email sequence (open announcement + 2 follow-ups)
    - Social media posts (announcement + behind-the-scenes)
@@ -101,6 +104,7 @@ Checklist:
 4. Define the scarcity mechanism (quantity, time, bonus expiry)
 
 ### Phase 4: Post-Launch
+
 1. Thank you and onboarding plan for buyers
 2. "Door closed" messaging for non-buyers
 3. Results collection strategy (for future launches)
@@ -124,34 +128,38 @@ Checklist:
 
 ### Launch Calendar
 
-| Phase | Days | Key Actions |
-|-------|------|-------------|
-| Pre-Launch | Day 1-14 | {summary} |
-| Cart Open | Day 15-17 | {summary} |
-| Mid-Cart | Day 18-19 | {summary} |
-| Cart Close | Day 20-21 | {summary} |
-| Post-Launch | Day 22-26 | {summary} |
+| Phase       | Days      | Key Actions |
+| ----------- | --------- | ----------- |
+| Pre-Launch  | Day 1-14  | {summary}   |
+| Cart Open   | Day 15-17 | {summary}   |
+| Mid-Cart    | Day 18-19 | {summary}   |
+| Cart Close  | Day 20-21 | {summary}   |
+| Post-Launch | Day 22-26 | {summary}   |
 
 ### Pre-Launch Content Plan
+
 | Day | Content | Channel | Goal |
-|-----|---------|---------|------|
+| --- | ------- | ------- | ---- |
 
 ### Email Sequence
+
 | Day | Email | Subject Line | Purpose |
-|-----|-------|-------------|---------|
+| --- | ----- | ------------ | ------- |
 
 ### Cart Open Checklist
+
 - [ ] {item}
 
 ### Revenue Model
 
-| Metric | Target | Conservative | Aggressive |
-|--------|--------|-------------|------------|
-| Traffic | {N} | {N} | {N} |
-| Conversion | {X}% | {X}% | {X}% |
-| Revenue | ${X} | ${X} | ${X} |
+| Metric     | Target | Conservative | Aggressive |
+| ---------- | ------ | ------------ | ---------- |
+| Traffic    | {N}    | {N}          | {N}        |
+| Conversion | {X}%   | {X}%         | {X}%       |
+| Revenue    | ${X}   | ${X}         | ${X}       |
 
 ### Post-Launch Plan
+
 {Onboarding, follow-up, and evergreen transition}
 ```
 

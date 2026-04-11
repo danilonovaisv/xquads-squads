@@ -9,6 +9,7 @@
 This checklist validates business scaling output specifically, rooted in Hormozi-style frameworks.
 
 EXECUTION APPROACH:
+
 1. For each category, verify every item against the deliverable
 2. Mark items as [x] Pass, [ ] Fail, [N/A] Not Applicable
 3. CRITICAL items block delivery; non-critical items are advisory

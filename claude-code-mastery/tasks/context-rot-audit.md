@@ -53,11 +53,11 @@ OUTPUT: Rot score + findings report + remediation plan
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Auto-detect | yes | Valid directory with .claude/ or CLAUDE.md |
-| fix_automatically | boolean | User | no | Whether to auto-fix simple issues (default: false) |
-| verbose | boolean | User | no | Show all checks including passing (default: false) |
+| Field             | Type    | Source      | Required | Validation                                         |
+| ----------------- | ------- | ----------- | -------- | -------------------------------------------------- |
+| project_root      | string  | Auto-detect | yes      | Valid directory with .claude/ or CLAUDE.md         |
+| fix_automatically | boolean | User        | no       | Whether to auto-fix simple issues (default: false) |
+| verbose           | boolean | User        | no       | Show all checks including passing (default: false) |
 
 ---
 
@@ -75,12 +75,12 @@ OUTPUT: Rot score + findings report + remediation plan
 
 ### Size Thresholds
 
-| Lines | Status | Impact |
-|-------|--------|--------|
-| < 100 | Lean | Optimal for auto-memory |
-| 100-200 | Normal | Good for most projects |
+| Lines   | Status  | Impact                        |
+| ------- | ------- | ----------------------------- |
+| < 100   | Lean    | Optimal for auto-memory       |
+| 100-200 | Normal  | Good for most projects        |
 | 200-500 | Growing | Consider splitting into rules |
-| 500+ | Bloated | Actively degrades performance |
+| 500+    | Bloated | Actively degrades performance |
 
 ### Steps
 
@@ -95,14 +95,14 @@ OUTPUT: Rot score + findings report + remediation plan
 ```yaml
 size_audit:
   total_lines: 347
-  status: "growing"
+  status: 'growing'
   largest_sections:
-    - name: "Code Standards"
+    - name: 'Code Standards'
       lines: 89
-      recommendation: "Extract to .claude/rules/code-standards.md"
-    - name: "API Reference"
+      recommendation: 'Extract to .claude/rules/code-standards.md'
+    - name: 'API Reference'
       lines: 67
-      recommendation: "Extract to .claude/rules/api.md"
+      recommendation: 'Extract to .claude/rules/api.md'
   duplicates_found: 2
 ```
 
@@ -138,9 +138,9 @@ reference_audit:
   missing: 5
   likely_moved: 2
   missing_details:
-    - path: "src/lib/api-client.ts"
-      referenced_in: "CLAUDE.md:42"
-      suggestion: "File was renamed to src/lib/http-client.ts"
+    - path: 'src/lib/api-client.ts'
+      referenced_in: 'CLAUDE.md:42'
+      suggestion: 'File was renamed to src/lib/http-client.ts'
 ```
 
 ---
@@ -151,26 +151,27 @@ reference_audit:
 
 ### Staleness Indicators
 
-| Signal | Detection Method |
-|--------|-----------------|
-| Deprecated package | Check if version in instructions differs from package.json |
-| Old API patterns | Instructions mention patterns not found in current code |
-| Removed scripts | Referenced npm scripts no longer in package.json |
-| Old directory structure | Instructions reference paths that were restructured |
-| Version-specific instructions | Instructions tied to old framework version |
+| Signal                        | Detection Method                                           |
+| ----------------------------- | ---------------------------------------------------------- |
+| Deprecated package            | Check if version in instructions differs from package.json |
+| Old API patterns              | Instructions mention patterns not found in current code    |
+| Removed scripts               | Referenced npm scripts no longer in package.json           |
+| Old directory structure       | Instructions reference paths that were restructured        |
+| Version-specific instructions | Instructions tied to old framework version                 |
 
 ### Steps
 
 3.1. Cross-reference CLAUDE.md instructions with current package.json:
-   - Are referenced dependencies still installed?
-   - Do version numbers match?
-3.2. Check if code patterns described in CLAUDE.md exist in the codebase:
-   - Grep for the pattern in source files
-   - If not found, the instruction is stale
-3.3. Check for tech-specific staleness:
-   - React class components mentioned but none exist
-   - Old import paths referenced
-   - Deprecated API methods mentioned
+
+- Are referenced dependencies still installed?
+- Do version numbers match?
+  3.2. Check if code patterns described in CLAUDE.md exist in the codebase:
+- Grep for the pattern in source files
+- If not found, the instruction is stale
+  3.3. Check for tech-specific staleness:
+- React class components mentioned but none exist
+- Old import paths referenced
+- Deprecated API methods mentioned
 
 ### Findings Format
 
@@ -181,10 +182,10 @@ staleness_audit:
   stale: 4
   uncertain: 1
   stale_details:
-    - instruction: "Use getServerSideProps for data fetching"
-      location: "CLAUDE.md:78"
-      issue: "Project uses App Router with server components"
-      fix: "Update to describe server component patterns"
+    - instruction: 'Use getServerSideProps for data fetching'
+      location: 'CLAUDE.md:78'
+      issue: 'Project uses App Router with server components'
+      fix: 'Update to describe server component patterns'
 ```
 
 ---
@@ -197,16 +198,19 @@ staleness_audit:
 
 4.1. List all `.claude/rules/*.md` files.
 4.2. For each rule with path-based frontmatter:
-   - Extract the `paths:` patterns
-   - Verify at least one file matches the glob pattern
-   - If no files match, the rule is orphaned
+
+- Extract the `paths:` patterns
+- Verify at least one file matches the glob pattern
+- If no files match, the rule is orphaned
 
 4.3. Check for missing rules:
-   - Are there important directories with no corresponding rule?
-   - Compare rule coverage against project structure
+
+- Are there important directories with no corresponding rule?
+- Compare rule coverage against project structure
 
 4.4. Check for conflicting rules:
-   - Do any rules give contradictory instructions for the same paths?
+
+- Do any rules give contradictory instructions for the same paths?
 
 ### Findings Format
 
@@ -235,11 +239,12 @@ rules_audit:
 
 5.1. Scan `.claude/agent-memory/` for all memory files.
 5.2. For each memory file:
-   - Check if referenced files still exist
-   - Check if referenced patterns are still valid
-   - Check for contradictions with current CLAUDE.md
-5.3. Check MEMORY.md line count (should be under 200 for auto-loading).
-5.4. Identify entries that are session-specific (should not be in persistent memory).
+
+- Check if referenced files still exist
+- Check if referenced patterns are still valid
+- Check for contradictions with current CLAUDE.md
+  5.3. Check MEMORY.md line count (should be under 200 for auto-loading).
+  5.4. Identify entries that are session-specific (should not be in persistent memory).
 
 ---
 
@@ -269,13 +274,13 @@ Score Interpretation:
 
 6.1. Generate prioritized fix list:
 
-| Priority | Fix | Effort | Impact |
-|----------|-----|--------|--------|
-| P0 | Remove references to deleted files | Low | High |
-| P1 | Update stale instructions | Medium | High |
-| P2 | Remove orphaned rules | Low | Medium |
-| P3 | Extract large CLAUDE.md sections to rules | Medium | Medium |
-| P4 | Clean stale memory entries | Low | Low |
+| Priority | Fix                                       | Effort | Impact |
+| -------- | ----------------------------------------- | ------ | ------ |
+| P0       | Remove references to deleted files        | Low    | High   |
+| P1       | Update stale instructions                 | Medium | High   |
+| P2       | Remove orphaned rules                     | Low    | Medium |
+| P3       | Extract large CLAUDE.md sections to rules | Medium | Medium |
+| P4       | Clean stale memory entries                | Low    | Low    |
 
 6.2. If `fix_automatically` is true, apply P0 fixes automatically.
 6.3. Generate a summary report.
@@ -287,7 +292,7 @@ Score Interpretation:
 ```yaml
 context_rot_audit_result:
   rot_score: 12
-  severity: "yellow"
+  severity: 'yellow'
   summary:
     total_checks: 89
     passed: 76
@@ -296,7 +301,7 @@ context_rot_audit_result:
   phases:
     size_audit:
       lines: 234
-      status: "growing"
+      status: 'growing'
     reference_validation:
       total: 45
       missing: 3
@@ -313,17 +318,17 @@ context_rot_audit_result:
     auto_fixed: 0
     manual_fixes_needed: 7
     priority_list: [...]
-  overall_status: "NEEDS_ATTENTION"
+  overall_status: 'NEEDS_ATTENTION'
 ```
 
 ---
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
-| No CLAUDE.md and no .claude/ directory | HALT -- nothing to audit |
-| Project has no git history (cannot determine staleness) | WARN -- skip staleness checks |
-| Rot score exceeds 50 | HALT -- critical rot, needs immediate human attention |
-| Auto-fix would modify more than 10 files | HALT -- too many changes, require manual review |
-| CLAUDE.md has AIOS-managed sections | WARN -- do not modify managed sections |
+| Condition                                               | Action                                                |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| No CLAUDE.md and no .claude/ directory                  | HALT -- nothing to audit                              |
+| Project has no git history (cannot determine staleness) | WARN -- skip staleness checks                         |
+| Rot score exceeds 50                                    | HALT -- critical rot, needs immediate human attention |
+| Auto-fix would modify more than 10 files                | HALT -- too many changes, require manual review       |
+| CLAUDE.md has AIOS-managed sections                     | WARN -- do not modify managed sections                |

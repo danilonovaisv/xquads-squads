@@ -1,6 +1,6 @@
 ---
 task: buildCommunityStrategy()
-responsavel: "@david-spinks"
+responsavel: '@david-spinks'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] SPACES model assessed with primary dimension selected"
-  - "[ ] Engagement ladder designed with 7 rungs"
-  - "[ ] Community Health Score defined with 5 components"
+  - '[ ] SPACES model assessed with primary dimension selected'
+  - '[ ] Engagement ladder designed with 7 rungs'
+  - '[ ] Community Health Score defined with 5 components'
 ---
 
 # Task: Build Community Strategy
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `business` | User prompt | Yes | Business or product description |
-| `community_goal` | User prompt | Yes | Primary goal for the community |
-| `existing_community` | User | No | Current community status (none, early, growing, mature) |
-| `platform_preference` | User | No | Preferred platform (Discord, Slack, Circle, forum, etc.) |
-| `resources` | User | No | Team and budget available for community management |
+| Input                 | Source      | Required | Description                                              |
+| --------------------- | ----------- | -------- | -------------------------------------------------------- |
+| `business`            | User prompt | Yes      | Business or product description                          |
+| `community_goal`      | User prompt | Yes      | Primary goal for the community                           |
+| `existing_community`  | User        | No       | Current community status (none, early, growing, mature)  |
+| `platform_preference` | User        | No       | Preferred platform (Discord, Slack, Circle, forum, etc.) |
+| `resources`           | User        | No       | Team and budget available for community management       |
 
 ## Preconditions
 
@@ -129,23 +129,23 @@ Checklist:
 
 ```yaml
 community_strategy:
-  business: "{name}"
-  spaces_primary: "{S|P|A|C|E|S}"
-  spaces_secondary: ["{dimension1}", "{dimension2}"]
+  business: '{name}'
+  spaces_primary: '{S|P|A|C|E|S}'
+  spaces_secondary: ['{dimension1}', '{dimension2}']
   engagement_ladder:
     rungs: 7
-    critical_transition: "{rung X to rung Y}"
+    critical_transition: '{rung X to rung Y}'
   launch_plan:
-    platform: "{platform}"
-    founding_members_target: {number}
+    platform: '{platform}'
+    founding_members_target: { number }
     launch_date: "{date or 'TBD'}"
-    content_seed: {number of initial posts}
+    content_seed: { number of initial posts }
   health_score:
-    activity_rate: {target: "", current: ""}
-    response_rate: {target: "", current: ""}
-    growth_rate: {target: "", current: ""}
-    depth_score: {target: "", current: ""}
-    sentiment: {target: "", current: ""}
+    activity_rate: { target: '', current: '' }
+    response_rate: { target: '', current: '' }
+    growth_rate: { target: '', current: '' }
+    depth_score: { target: '', current: '' }
+    sentiment: { target: '', current: '' }
   deliverables:
     - community-strategy.md
     - engagement-ladder.md

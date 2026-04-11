@@ -1,6 +1,6 @@
 ---
 task: diagnoseTrafficChallenge()
-responsavel: "@traffic-chief"
+responsavel: '@traffic-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Request parsed and keywords extracted"
-  - "[ ] Routing catalog consulted with scored results"
-  - "[ ] Quick answer provided with metric reference"
+  - '[ ] Request parsed and keywords extracted'
+  - '[ ] Routing catalog consulted with scored results'
+  - '[ ] Quick answer provided with metric reference'
 ---
 
 # Task: Diagnose Traffic Challenge
@@ -52,11 +52,11 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| request | string | User prompt | Yes | Non-empty traffic/ads-related description |
-| context | object | Session state | No | Ad account details, current metrics, budget |
-| platform | string | User prompt | No | Facebook, Google, YouTube, TikTok, LinkedIn, cross-platform |
+| Field    | Type   | Source        | Required | Validation                                                  |
+| -------- | ------ | ------------- | -------- | ----------------------------------------------------------- |
+| request  | string | User prompt   | Yes      | Non-empty traffic/ads-related description                   |
+| context  | object | Session state | No       | Ad account details, current metrics, budget                 |
+| platform | string | User prompt   | No       | Facebook, Google, YouTube, TikTok, LinkedIn, cross-platform |
 
 ---
 
@@ -81,26 +81,27 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 
 ### Phase 2: Match Against Routing Catalog
 
-| Domain | Keywords | Route To |
-|--------|----------|----------|
-| Facebook/Meta Strategy | Facebook ads, Meta ads, Instagram ads | molly-pittman / depesh-mandalia |
-| Facebook Scaling | scale Facebook, increase spend, BPM method | depesh-mandalia / ralph-burns |
-| YouTube Ads | YouTube ads, video ads, pre-roll, TrueView | tom-breeze / ad-midas |
-| Google Ads | Google Ads, PPC, Performance Max, search ads | kasim-aslam / performance-analyst |
-| High-ROI Facebook | high ROI, Give-Give-Give-Ask, relationship ads | nicholas-kusmich / molly-pittman |
-| Brazil/LATAM Traffic | Brazil, LATAM, Sobral method, Portuguese ads | pedro-sobral / depesh-mandalia |
-| Ad Creative | creative, ad creative, UGC, video creative | ad-midas / creative-analyst |
-| Media Buying | media buying, campaign setup, bidding, placement | media-buyer / ralph-burns |
-| Performance Analysis | analytics, reporting, metrics, ROAS, data | performance-analyst / ads-analyst |
-| Creative Testing | A/B test, split test, creative fatigue, iteration | creative-analyst / ad-midas |
-| Campaign Scaling | scale campaigns, increase budget, lookalike | scale-optimizer / depesh-mandalia |
-| Tracking/Attribution | tracking, pixel, CAPI, attribution, iOS 14 | pixel-specialist / performance-analyst |
-| Ad Account Audit | audit, account health, waste, optimization | ads-analyst / performance-analyst |
-| Budget Management | budget, ad spend, cost control, allocation | fiscal / scale-optimizer |
-| Full-Funnel Strategy | full funnel, TOFU, MOFU, BOFU, customer journey | ralph-burns / molly-pittman |
-| Perpetual Traffic | perpetual traffic, evergreen, always-on, sustainable | ralph-burns / molly-pittman |
+| Domain                 | Keywords                                             | Route To                               |
+| ---------------------- | ---------------------------------------------------- | -------------------------------------- |
+| Facebook/Meta Strategy | Facebook ads, Meta ads, Instagram ads                | molly-pittman / depesh-mandalia        |
+| Facebook Scaling       | scale Facebook, increase spend, BPM method           | depesh-mandalia / ralph-burns          |
+| YouTube Ads            | YouTube ads, video ads, pre-roll, TrueView           | tom-breeze / ad-midas                  |
+| Google Ads             | Google Ads, PPC, Performance Max, search ads         | kasim-aslam / performance-analyst      |
+| High-ROI Facebook      | high ROI, Give-Give-Give-Ask, relationship ads       | nicholas-kusmich / molly-pittman       |
+| Brazil/LATAM Traffic   | Brazil, LATAM, Sobral method, Portuguese ads         | pedro-sobral / depesh-mandalia         |
+| Ad Creative            | creative, ad creative, UGC, video creative           | ad-midas / creative-analyst            |
+| Media Buying           | media buying, campaign setup, bidding, placement     | media-buyer / ralph-burns              |
+| Performance Analysis   | analytics, reporting, metrics, ROAS, data            | performance-analyst / ads-analyst      |
+| Creative Testing       | A/B test, split test, creative fatigue, iteration    | creative-analyst / ad-midas            |
+| Campaign Scaling       | scale campaigns, increase budget, lookalike          | scale-optimizer / depesh-mandalia      |
+| Tracking/Attribution   | tracking, pixel, CAPI, attribution, iOS 14           | pixel-specialist / performance-analyst |
+| Ad Account Audit       | audit, account health, waste, optimization           | ads-analyst / performance-analyst      |
+| Budget Management      | budget, ad spend, cost control, allocation           | fiscal / scale-optimizer               |
+| Full-Funnel Strategy   | full funnel, TOFU, MOFU, BOFU, customer journey      | ralph-burns / molly-pittman            |
+| Perpetual Traffic      | perpetual traffic, evergreen, always-on, sustainable | ralph-burns / molly-pittman            |
 
 **Platform shortcut routing:**
+
 - Facebook/Meta mentioned --> molly-pittman, depesh-mandalia, ralph-burns (narrow by function)
 - YouTube mentioned --> tom-breeze
 - Google mentioned --> kasim-aslam
@@ -109,6 +110,7 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 - Cross-platform / unclear --> traffic-chief answers, suggest platform experts
 
 **Scoring rules:**
+
 - Count keyword matches per domain
 - 2+ matches above others --> route to that domain's primary specialist
 - Platform + function match --> route to platform expert first
@@ -118,6 +120,7 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 ### Phase 3a: Cross-Cutting Answer
 
 If request is general or cross-platform:
+
 - Provide platform-agnostic traffic advice
 - Reference key metrics to evaluate (ROAS, CPA, CTR)
 - Suggest platform-specific experts for deeper analysis
@@ -125,17 +128,18 @@ If request is general or cross-platform:
 ### Phase 3b: Domain-Specific Route
 
 If request maps clearly to a domain:
+
 1. **Quick answer first** (3-5 lines minimum + concrete metric benchmark or tactic)
 2. **Route:** Name the specialist, explain their methodology, provide activation command
    - Example: "For scaling Facebook spend, Depesh Mandalia's BPM method is proven at scale. Activate with `@traffic-masters:depesh-mandalia`"
 
 ### Phase 4: Confidence Assessment
 
-| Confidence | Criteria | Action |
-|------------|----------|--------|
-| HIGH | 3+ keyword matches + clear platform | Route with confidence to primary specialist |
-| MEDIUM | 1-2 matches or unclear platform | Answer + suggest 2 specialists |
-| LOW | No clear match or very vague | Answer directly, ask about platform and budget |
+| Confidence | Criteria                            | Action                                         |
+| ---------- | ----------------------------------- | ---------------------------------------------- |
+| HIGH       | 3+ keyword matches + clear platform | Route with confidence to primary specialist    |
+| MEDIUM     | 1-2 matches or unclear platform     | Answer + suggest 2 specialists                 |
+| LOW        | No clear match or very vague        | Answer directly, ask about platform and budget |
 
 ---
 
@@ -143,15 +147,18 @@ If request maps clearly to a domain:
 
 ```markdown
 ## Diagnosis
+
 **Category:** {domain | cross-platform}
 **Confidence:** {HIGH | MEDIUM | LOW}
 **Platform:** {Facebook | Google | YouTube | TikTok | LinkedIn | Cross-platform}
 **Specialist:** {Name} ({agent-id}) | Direct Answer
 
 ### Quick Answer
+
 {3-10 line answer with concrete traffic advice}
 
 ### Recommended Next Step
+
 {Route instruction with activation command, or follow-up question}
 ```
 

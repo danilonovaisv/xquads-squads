@@ -1,6 +1,6 @@
 ---
 task: diagnose()
-responsavel: "@movement-chief"
+responsavel: '@movement-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -18,29 +18,29 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Query parsed with intent and phase classification"
-  - "[ ] Quick answer provided"
-  - "[ ] Route executed or direct answer given"
+  - '[ ] Query parsed with intent and phase classification'
+  - '[ ] Quick answer provided'
+  - '[ ] Route executed or direct answer given'
 ---
 
 # Task: Diagnose — Movement Squad
 
 ## Metadata
 
-| Field         | Value                                              |
-|---------------|----------------------------------------------------|
-| Task ID       | `movement:diagnose`                                |
-| Command       | `@movement diagnose "{query}"`                     |
-| Orchestrator  | `movement-chief`                                   |
-| Purpose       | Parse the user's request, provide a quick answer, and route to the best specialist agent |
+| Field        | Value                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| Task ID      | `movement:diagnose`                                                                      |
+| Command      | `@movement diagnose "{query}"`                                                           |
+| Orchestrator | `movement-chief`                                                                         |
+| Purpose      | Parse the user's request, provide a quick answer, and route to the best specialist agent |
 
 ## Inputs
 
-| Input        | Source       | Required | Description                              |
-|--------------|-------------|----------|------------------------------------------|
-| `query`      | User prompt | Yes      | The user's question or request           |
-| `context`    | Session     | No       | Previous conversation context            |
-| `phase_hint` | User/Auto   | No       | Suggested movement phase (1-5)           |
+| Input        | Source      | Required | Description                    |
+| ------------ | ----------- | -------- | ------------------------------ |
+| `query`      | User prompt | Yes      | The user's question or request |
+| `context`    | Session     | No       | Previous conversation context  |
+| `phase_hint` | User/Auto   | No       | Suggested movement phase (1-5) |
 
 ## Preconditions
 
@@ -74,13 +74,13 @@ Checklist:
    - **Confidence level**: HIGH (>= 3 keyword matches), MEDIUM (2 matches), LOW (0-1 matches)
 
 4. Movement phase mapping:
-   | Phase              | Primary Agent          | Secondary Agent       |
+   | Phase | Primary Agent | Secondary Agent |
    |--------------------|------------------------|-----------------------|
-   | Spark              | fenomenologo           | movement-architect    |
-   | Identity           | identitario            | manifestador          |
-   | Ignition           | manifestador           | estrategista-de-ciclo |
-   | Growth             | estrategista-de-ciclo  | analista-de-impacto   |
-   | Impact             | analista-de-impacto    | movement-chief        |
+   | Spark | fenomenologo | movement-architect |
+   | Identity | identitario | manifestador |
+   | Ignition | manifestador | estrategista-de-ciclo |
+   | Growth | estrategista-de-ciclo | analista-de-impacto |
+   | Impact | analista-de-impacto | movement-chief |
 
 ### Phase 3: Answer
 
@@ -103,17 +103,17 @@ Checklist:
 
 ```yaml
 diagnosis:
-  query_summary: "{1-line summary}"
-  intent: "{question|creation|analysis|strategy}"
-  movement_phase: "{spark|identity|ignition|growth|impact}"
+  query_summary: '{1-line summary}'
+  intent: '{question|creation|analysis|strategy}'
+  movement_phase: '{spark|identity|ignition|growth|impact}'
   quick_answer: |
     {2-4 sentence direct answer}
   routing:
-    confidence: "{HIGH|MEDIUM|LOW}"
-    primary_agent: "{agent-id}"
-    secondary_agent: "{agent-id}"
-    reason: "{why this agent is the best match}"
-  routed: {true|false}
+    confidence: '{HIGH|MEDIUM|LOW}'
+    primary_agent: '{agent-id}'
+    secondary_agent: '{agent-id}'
+    reason: '{why this agent is the best match}'
+  routed: { true|false }
 ```
 
 ## Veto Rules

@@ -1,6 +1,6 @@
 ---
 task: auditDesign()
-responsavel: "@dave-malouf"
+responsavel: '@dave-malouf'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All three lenses assessed with scores and specific findings"
-  - "[ ] Top 3-5 highest-leverage improvements identified"
-  - "[ ] Phased roadmap created with milestones"
+  - '[ ] All three lenses assessed with scores and specific findings'
+  - '[ ] Top 3-5 highest-leverage improvements identified'
+  - '[ ] Phased roadmap created with milestones'
 ---
 
 # Task: Design Audit & Maturity Assessment
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `organization_context` | Company size, stage, industry | YES |
-| `current_design_practice` | Team, tools, processes | YES |
-| `design_artifacts` | Existing designs, systems, docs | PREFERRED |
-| `stakeholder_concerns` | Pain points from leadership | NO |
-| `product_portfolio` | Products/services using design | NO |
+| Input                     | Source                          | Required  |
+| ------------------------- | ------------------------------- | --------- |
+| `organization_context`    | Company size, stage, industry   | YES       |
+| `current_design_practice` | Team, tools, processes          | YES       |
+| `design_artifacts`        | Existing designs, systems, docs | PREFERRED |
+| `stakeholder_concerns`    | Pain points from leadership     | NO        |
+| `product_portfolio`       | Products/services using design  | NO        |
 
 ## Preconditions
 
@@ -58,6 +58,7 @@ Checklist:
 ### Phase 1: Assess Maturity (3 Lenses)
 
 **Lens 1: How We Work Together (People & Culture)**
+
 1. Team structure — centralized, embedded, hybrid?
 2. Role clarity — are design roles well-defined?
 3. Career paths — do designers have growth trajectories?
@@ -67,6 +68,7 @@ Checklist:
 7. Rate: Ad Hoc (1) → Emerging (2) → Defined (3) → Managed (4) → Optimized (5)
 
 **Lens 2: How We Work (Process & Workflow)**
+
 1. Design process — is there a consistent methodology?
 2. Research practice — how are user insights gathered and used?
 3. Handoff process — how do designs get to engineers?
@@ -76,6 +78,7 @@ Checklist:
 7. Rate: Ad Hoc (1) → Emerging (2) → Defined (3) → Managed (4) → Optimized (5)
 
 **Lens 3: What We Work On (Craft & Output)**
+
 1. Design system — does one exist? Is it used consistently?
 2. Accessibility — is WCAG compliance standard practice?
 3. Visual consistency — are products visually coherent?
@@ -124,35 +127,35 @@ Checklist:
 ```yaml
 design_audit:
   auditors: [dave-malouf, design-chief]
-  organization: "{company}"
+  organization: '{company}'
   maturity_scores:
     people_culture:
       score: 0
-      level: "Ad Hoc | Emerging | Defined | Managed | Optimized"
-      strengths: ["{what works}"]
-      gaps: ["{what is missing}"]
+      level: 'Ad Hoc | Emerging | Defined | Managed | Optimized'
+      strengths: ['{what works}']
+      gaps: ['{what is missing}']
     process_workflow:
       score: 0
-      level: "Ad Hoc | Emerging | Defined | Managed | Optimized"
-      strengths: ["{what works}"]
-      gaps: ["{what is missing}"]
+      level: 'Ad Hoc | Emerging | Defined | Managed | Optimized'
+      strengths: ['{what works}']
+      gaps: ['{what is missing}']
     craft_output:
       score: 0
-      level: "Ad Hoc | Emerging | Defined | Managed | Optimized"
-      strengths: ["{what works}"]
-      gaps: ["{what is missing}"]
+      level: 'Ad Hoc | Emerging | Defined | Managed | Optimized'
+      strengths: ['{what works}']
+      gaps: ['{what is missing}']
   overall_maturity: 0
-  primary_bottleneck: "{lowest scoring lens}"
+  primary_bottleneck: '{lowest scoring lens}'
   top_improvements:
-    - improvement: "{description}"
-      impact: "HIGH | MEDIUM | LOW"
-      effort: "HIGH | MEDIUM | LOW"
-      timeline: "quick_win | short_term | long_term"
+    - improvement: '{description}'
+      impact: 'HIGH | MEDIUM | LOW'
+      effort: 'HIGH | MEDIUM | LOW'
+      timeline: 'quick_win | short_term | long_term'
   roadmap:
-    phase_1: ["{foundation items}"]
-    phase_2: ["{building items}"]
-    phase_3: ["{scaling items}"]
-  measurement_plan: ["{metrics to track}"]
+    phase_1: ['{foundation items}']
+    phase_2: ['{building items}']
+    phase_3: ['{scaling items}']
+  measurement_plan: ['{metrics to track}']
 ```
 
 ## Veto Conditions

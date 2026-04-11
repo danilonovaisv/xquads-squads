@@ -1,6 +1,6 @@
 ---
 task: writeAdCopy()
-responsavel: "@dan-kennedy"
+responsavel: '@dan-kennedy'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Platform constraints identified and respected"
-  - "[ ] 5 ad variations written with distinct angles"
-  - "[ ] Testing plan with prioritized pairs provided"
-  - "[ ] Psychological Layer applied (Cialdini/Warren principles tagged)"
+  - '[ ] Platform constraints identified and respected'
+  - '[ ] 5 ad variations written with distinct angles'
+  - '[ ] Testing plan with prioritized pairs provided'
+  - '[ ] Psychological Layer applied (Cialdini/Warren principles tagged)'
 ---
 
 # Task: Write Ad Copy
@@ -40,15 +40,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service with key benefit |
-| audience | string | User prompt | Yes | Target audience with platform behavior |
-| platform | enum | User prompt | Yes | facebook, instagram, google-search, google-display, youtube, tiktok, linkedin |
-| objective | enum | User prompt | Yes | awareness, traffic, leads, sales, retargeting |
-| offer | string | User prompt | No | What the ad is driving to (lead magnet, sale, webinar, etc.) |
-| budget_context | string | User prompt | No | Spend level — affects volume of variations |
-| competitors | list | User prompt | No | Known competitors for differentiation |
+| Field          | Type   | Source      | Required | Validation                                                                    |
+| -------------- | ------ | ----------- | -------- | ----------------------------------------------------------------------------- |
+| product        | string | User prompt | Yes      | Product/service with key benefit                                              |
+| audience       | string | User prompt | Yes      | Target audience with platform behavior                                        |
+| platform       | enum   | User prompt | Yes      | facebook, instagram, google-search, google-display, youtube, tiktok, linkedin |
+| objective      | enum   | User prompt | Yes      | awareness, traffic, leads, sales, retargeting                                 |
+| offer          | string | User prompt | No       | What the ad is driving to (lead magnet, sale, webinar, etc.)                  |
+| budget_context | string | User prompt | No       | Spend level — affects volume of variations                                    |
+| competitors    | list   | User prompt | No       | Known competitors for differentiation                                         |
 
 ---
 
@@ -75,6 +75,7 @@ Study these real-world champion ads before writing:
 ## Execution Phases
 
 ### Phase 1: Platform-Specific Strategy
+
 1. Define format constraints per platform:
    - Facebook/Instagram: Primary text (125 chars above fold), headline (40 chars), description (30 chars), image/video
    - Google Search: 3 headlines (30 chars each), 2 descriptions (90 chars each)
@@ -88,6 +89,7 @@ Study these real-world champion ads before writing:
    - Hot traffic/retarget: Lead with offer and urgency
 
 ### Phase 2: Psychological Layer
+
 1. Select primary Cialdini principle per ad variation:
    - Social Proof ad: "Join 10,000+ who already..."
    - Authority ad: "Recommended by Dr. X..."
@@ -101,6 +103,7 @@ Study these real-world champion ads before writing:
 3. Ensure each of the 5 variations uses a different primary psychological driver
 
 ### Phase 3: Ad Copy Creation
+
 1. Write 5 ad variations per format using distinct angles:
    - Problem-agitation angle
    - Benefit-first angle
@@ -118,6 +121,7 @@ Study these real-world champion ads before writing:
 4. Ensure each ad can stand alone (no dependency on creative)
 
 ### Phase 4: Testing Framework
+
 1. Organize ads into a structured testing plan
 2. Recommend which 2 ads to test first and why
 3. Define success metrics by platform and objective
@@ -139,6 +143,7 @@ Study these real-world champion ads before writing:
 ---
 
 ### Ad Variation 1: {Angle Name}
+
 **Primary Text:** {body copy}
 **Headline:** {headline}
 **Description:** {description}
@@ -156,12 +161,14 @@ Study these real-world champion ads before writing:
 ### Testing Plan
 
 | Priority | Ad # | Angle | Psych Driver | Test Against | Success Metric |
-|----------|------|-------|-------------|-------------|----------------|
+| -------- | ---- | ----- | ------------ | ------------ | -------------- |
 
 ### Retargeting Variants
+
 {2-3 retargeting ad variations for non-converters}
 
 ### Platform-Specific Notes
+
 {Character limits respected, format compliance, policy considerations}
 ```
 

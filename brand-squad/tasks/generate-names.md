@@ -1,6 +1,6 @@
 ---
 task: generateNames()
-responsavel: "@naming-strategist"
+responsavel: '@naming-strategist'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] 30-50 raw candidates generated across 4+ categories"
-  - "[ ] All candidates scored on 7 criteria"
-  - "[ ] Final 3-5 presented with full profiles"
+  - '[ ] 30-50 raw candidates generated across 4+ categories'
+  - '[ ] All candidates scored on 7 criteria'
+  - '[ ] Final 3-5 presented with full profiles'
 ---
 
 # Task: Generate Names
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| what | string | User prompt | Yes | What is being named (company, product, feature, service) |
-| positioning | string | User prompt | Yes | Positioning or value proposition |
-| audience | string | User prompt | Yes | Target audience |
-| tone | string | User prompt | No | Desired tone (modern, classic, playful, serious, technical) |
-| constraints | list | User prompt | No | Length limits, language requirements, sounds to avoid |
-| domain_needed | boolean | User prompt | No | Whether .com domain availability matters |
-| category_names | list | User prompt | No | Competitor names to avoid similarity |
+| Field          | Type    | Source      | Required | Validation                                                  |
+| -------------- | ------- | ----------- | -------- | ----------------------------------------------------------- |
+| what           | string  | User prompt | Yes      | What is being named (company, product, feature, service)    |
+| positioning    | string  | User prompt | Yes      | Positioning or value proposition                            |
+| audience       | string  | User prompt | Yes      | Target audience                                             |
+| tone           | string  | User prompt | No       | Desired tone (modern, classic, playful, serious, technical) |
+| constraints    | list    | User prompt | No       | Length limits, language requirements, sounds to avoid       |
+| domain_needed  | boolean | User prompt | No       | Whether .com domain availability matters                    |
+| category_names | list    | User prompt | No       | Competitor names to avoid similarity                        |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Naming Strategy
+
 1. Define the naming objectives:
    - Must convey: {what the name should communicate}
    - Must feel: {the emotional/tonal quality}
@@ -77,6 +78,7 @@ Checklist:
 4. Define the evaluation criteria before generating names
 
 ### Phase 2: Name Generation
+
 1. Generate 30-50 raw name candidates across selected categories
 2. For each category, use specific techniques:
    - Descriptive: Combine function words with modifiers
@@ -92,6 +94,7 @@ Checklist:
 4. Check each name for unintended meanings in major languages
 
 ### Phase 3: Evaluation and Shortlisting
+
 1. Score each name on 7 criteria (1-5 each):
    - **Memorability:** Easy to recall after hearing once
    - **Pronounceability:** Easy to say without explanation
@@ -105,6 +108,7 @@ Checklist:
 4. Note potential domain availability for finalists (if domain matters)
 
 ### Phase 4: Name Presentation
+
 1. For each finalist, provide:
    - Name and pronunciation guide
    - Category and etymology
@@ -131,6 +135,7 @@ Checklist:
 ### Top 5 Finalists
 
 #### 1. {Name}
+
 **Category:** {type}
 **Etymology:** {origin and meaning}
 **Communicates:** {what it says about the brand}
@@ -141,18 +146,21 @@ Checklist:
 #### 2-5: ...
 
 ### Dark Horse
+
 {Unexpected option with rationale}
 
 ### Full Candidate List
 
-| # | Name | Category | Total Score | Notes |
-|---|------|----------|-------------|-------|
+| #   | Name | Category | Total Score | Notes |
+| --- | ---- | -------- | ----------- | ----- |
 
 ### Rejected with Rationale
+
 | Name | Why Rejected |
-|------|-------------|
+| ---- | ------------ |
 
 ### Next Steps
+
 1. Trademark search for top 3
 2. Domain availability check
 3. Audience reaction testing

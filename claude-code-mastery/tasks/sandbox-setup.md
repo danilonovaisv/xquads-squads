@@ -29,11 +29,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Valid project directory |
-| platform | string | Auto-detected | No | `macos`, `linux`, `wsl2`, `windows` |
-| isolation_level | string | User parameter | No | `standard` (default), `strict`, `airgapped` |
+| Field           | Type   | Source            | Required | Validation                                  |
+| --------------- | ------ | ----------------- | -------- | ------------------------------------------- |
+| project_root    | string | Working directory | Yes      | Valid project directory                     |
+| platform        | string | Auto-detected     | No       | `macos`, `linux`, `wsl2`, `windows`         |
+| isolation_level | string | User parameter    | No       | `standard` (default), `strict`, `airgapped` |
 
 ---
 
@@ -51,12 +51,12 @@
 
 1. Determine the platform and available sandbox features:
 
-| Platform | Sandbox Technology | Filesystem | Network | Status |
-|----------|--------------------|------------|---------|--------|
-| macOS | Apple Sandbox (Seatbelt) | Full support | Full support | Production |
-| Linux | Landlock + Seccomp | Full support | Full support | Production |
-| WSL2 | Linux sandbox in WSL | Full support | Full support | Production |
-| Windows (native) | Limited | Partial | Limited | Limited |
+| Platform         | Sandbox Technology       | Filesystem   | Network      | Status     |
+| ---------------- | ------------------------ | ------------ | ------------ | ---------- |
+| macOS            | Apple Sandbox (Seatbelt) | Full support | Full support | Production |
+| Linux            | Landlock + Seccomp       | Full support | Full support | Production |
+| WSL2             | Linux sandbox in WSL     | Full support | Full support | Production |
+| Windows (native) | Limited                  | Partial      | Limited      | Limited    |
 
 2. Survey project requirements:
    - Which directories need write access? (src/, tests/, docs/, node_modules/)
@@ -67,11 +67,11 @@
 
 3. Choose isolation level:
 
-| Level | Filesystem | Network | Use Case |
-|-------|-----------|---------|----------|
-| standard | Write to project, read home | Allow known domains | General development |
-| strict | Write to src/ only | Allow only essential | Sensitive projects |
-| airgapped | Write to src/ only | No external network | Regulated/offline |
+| Level     | Filesystem                  | Network              | Use Case            |
+| --------- | --------------------------- | -------------------- | ------------------- |
+| standard  | Write to project, read home | Allow known domains  | General development |
+| strict    | Write to src/ only          | Allow only essential | Sensitive projects  |
+| airgapped | Write to src/ only          | No external network  | Regulated/offline   |
 
 ### Phase 2: Configure Sandbox Mode in Settings
 
@@ -90,12 +90,12 @@ Generate the sandbox configuration in settings.json:
 
 **Key settings explained:**
 
-| Setting | Purpose | Recommendation |
-|---------|---------|----------------|
-| `enabled` | Enable sandbox for bash commands | `true` for all shared projects |
+| Setting                    | Purpose                                    | Recommendation                    |
+| -------------------------- | ------------------------------------------ | --------------------------------- |
+| `enabled`                  | Enable sandbox for bash commands           | `true` for all shared projects    |
 | `autoAllowBashIfSandboxed` | Skip permission prompts for sandboxed bash | `true` -- sandbox provides safety |
-| `excludedCommands` | Commands that bypass sandbox | Only git, docker if needed |
-| `allowUnsandboxedCommands` | Allow `dangerouslyDisableSandbox` | `false` unless explicit need |
+| `excludedCommands`         | Commands that bypass sandbox               | Only git, docker if needed        |
+| `allowUnsandboxedCommands` | Allow `dangerouslyDisableSandbox`          | `false` unless explicit need      |
 
 ### Phase 3: Set Up Network Restrictions
 
@@ -105,11 +105,7 @@ Configure network access using the `network` section:
 {
   "sandbox": {
     "network": {
-      "allowedDomains": [
-        "registry.npmjs.org",
-        "api.github.com",
-        "raw.githubusercontent.com"
-      ],
+      "allowedDomains": ["registry.npmjs.org", "api.github.com", "raw.githubusercontent.com"],
       "allowUnixSockets": [],
       "allowAllUnixSockets": false,
       "allowLocalBinding": false,
@@ -122,17 +118,18 @@ Configure network access using the `network` section:
 
 **Common domain allowlists by project type:**
 
-| Project Type | Domains to Allow |
-|-------------|-----------------|
-| Node.js | registry.npmjs.org, nodejs.org |
-| Python | pypi.org, files.pythonhosted.org |
-| Frontend | unpkg.com, cdn.jsdelivr.net, fonts.googleapis.com |
-| Supabase | *.supabase.co, *.supabase.in |
-| GitHub | api.github.com, raw.githubusercontent.com |
-| Docker | registry.docker.io, auth.docker.io |
-| General API | (project-specific API domains) |
+| Project Type | Domains to Allow                                  |
+| ------------ | ------------------------------------------------- |
+| Node.js      | registry.npmjs.org, nodejs.org                    |
+| Python       | pypi.org, files.pythonhosted.org                  |
+| Frontend     | unpkg.com, cdn.jsdelivr.net, fonts.googleapis.com |
+| Supabase     | _.supabase.co, _.supabase.in                      |
+| GitHub       | api.github.com, raw.githubusercontent.com         |
+| Docker       | registry.docker.io, auth.docker.io                |
+| General API  | (project-specific API domains)                    |
 
 **Isolation levels:**
+
 - **standard**: Allow package registries + project APIs
 - **strict**: Allow only package registries
 - **airgapped**: Empty allowedDomains (no external network)
@@ -145,22 +142,9 @@ Set filesystem access controls:
 {
   "sandbox": {
     "filesystem": {
-      "allowWrite": [
-        "/src",
-        "/tests",
-        "/docs",
-        "//tmp"
-      ],
-      "denyWrite": [
-        "/.aios-core/core",
-        "/node_modules",
-        "/.git"
-      ],
-      "denyRead": [
-        "/.env",
-        "/.env.*",
-        "/secrets"
-      ]
+      "allowWrite": ["/src", "/tests", "/docs", "//tmp"],
+      "denyWrite": ["/.aios-core/core", "/node_modules", "/.git"],
+      "denyRead": ["/.env", "/.env.*", "/secrets"]
     }
   }
 }
@@ -168,22 +152,23 @@ Set filesystem access controls:
 
 **Path prefix reference:**
 
-| Prefix | Meaning | Example |
-|--------|---------|---------|
-| `//` | Filesystem root | `//tmp/build` |
-| `~/` | Home directory | `~/.ssh`, `~/.kube` |
-| `/` | Relative to settings file directory | `/src`, `/tests` |
-| `./` | Runtime-resolved relative path | `./output` |
+| Prefix | Meaning                             | Example             |
+| ------ | ----------------------------------- | ------------------- |
+| `//`   | Filesystem root                     | `//tmp/build`       |
+| `~/`   | Home directory                      | `~/.ssh`, `~/.kube` |
+| `/`    | Relative to settings file directory | `/src`, `/tests`    |
+| `./`   | Runtime-resolved relative path      | `./output`          |
 
 **Standard write access:**
 
-| Level | Write Allowed | Write Denied |
-|-------|---------------|--------------|
-| standard | src/, tests/, docs/, tmp/ | node_modules/, .git/, .aios-core/core/ |
-| strict | src/ only | Everything else |
-| airgapped | src/ with review | Everything else |
+| Level     | Write Allowed             | Write Denied                           |
+| --------- | ------------------------- | -------------------------------------- |
+| standard  | src/, tests/, docs/, tmp/ | node_modules/, .git/, .aios-core/core/ |
+| strict    | src/ only                 | Everything else                        |
+| airgapped | src/ with review          | Everything else                        |
 
 **Read restrictions (always deny):**
+
 - `.env`, `.env.*` -- environment variables
 - `secrets/`, `private/` -- secret directories
 - `~/.ssh/` -- SSH keys
@@ -208,18 +193,18 @@ Set filesystem access controls:
 
 4. Document test results:
 
-| Test | Expected | Actual | Status |
-|------|----------|--------|--------|
-| Read .env | BLOCKED | {result} | {PASS/FAIL} |
-| Write to src/ | ALLOWED | {result} | {PASS/FAIL} |
-| Fetch npm registry | ALLOWED | {result} | {PASS/FAIL} |
-| Fetch random domain | BLOCKED | {result} | {PASS/FAIL} |
+| Test                | Expected | Actual   | Status      |
+| ------------------- | -------- | -------- | ----------- |
+| Read .env           | BLOCKED  | {result} | {PASS/FAIL} |
+| Write to src/       | ALLOWED  | {result} | {PASS/FAIL} |
+| Fetch npm registry  | ALLOWED  | {result} | {PASS/FAIL} |
+| Fetch random domain | BLOCKED  | {result} | {PASS/FAIL} |
 
 ---
 
 ## Output Format
 
-```markdown
+````markdown
 ## Sandbox Configuration
 
 **Platform:** {platform}
@@ -230,23 +215,24 @@ Set filesystem access controls:
 ```json
 {complete sandbox section of settings.json}
 ```
+````
 
 ### Filesystem Policy
 
-| Path | Read | Write | Rationale |
-|------|------|-------|-----------|
-| src/ | Yes | Yes | Source code development |
-| .env | No | No | Sensitive environment variables |
-| node_modules/ | Yes | No | Dependencies (managed by npm) |
-| ... | ... | ... | ... |
+| Path          | Read | Write | Rationale                       |
+| ------------- | ---- | ----- | ------------------------------- |
+| src/          | Yes  | Yes   | Source code development         |
+| .env          | No   | No    | Sensitive environment variables |
+| node_modules/ | Yes  | No    | Dependencies (managed by npm)   |
+| ...           | ...  | ...   | ...                             |
 
 ### Network Policy
 
-| Domain | Allowed | Rationale |
-|--------|---------|-----------|
-| registry.npmjs.org | Yes | Package installation |
-| *.supabase.co | Yes | Database access |
-| * (all others) | No | Default deny |
+| Domain             | Allowed | Rationale            |
+| ------------------ | ------- | -------------------- |
+| registry.npmjs.org | Yes     | Package installation |
+| \*.supabase.co     | Yes     | Database access      |
+| \* (all others)    | No      | Default deny         |
 
 ### Test Results
 
@@ -255,6 +241,7 @@ Set filesystem access controls:
 ### Excluded Commands
 
 {List of commands that bypass sandbox with justification}
+
 ```
 
 ---
@@ -277,3 +264,4 @@ Set filesystem access controls:
 - [ ] Network restrictions configured with specific domain allowlist
 - [ ] Filesystem boundaries set with write/read controls
 - [ ] Sandbox isolation tested with documented results
+```

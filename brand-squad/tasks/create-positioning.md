@@ -1,6 +1,6 @@
 ---
 task: createPositioning()
-responsavel: "@al-ries"
+responsavel: '@al-ries'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Category ladder mapped with competitor positions"
-  - "[ ] Formal positioning statement written with alternatives"
-  - "[ ] Messaging guidelines and proof points provided"
+  - '[ ] Category ladder mapped with competitor positions'
+  - '[ ] Formal positioning statement written with alternatives'
+  - '[ ] Messaging guidelines and proof points provided'
 ---
 
 # Task: Create Positioning
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| brand | string | User prompt | Yes | Brand name and current description |
-| category | string | User prompt | Yes | Market category the brand competes in |
-| audience | string | User prompt | Yes | Target audience |
-| competitors | list | User prompt | Yes | Key competitors with their positioning |
-| differentiator | string | User prompt | No | Known or suspected point of difference |
-| brand_values | list | User prompt | No | Core values and beliefs |
+| Field          | Type   | Source      | Required | Validation                             |
+| -------------- | ------ | ----------- | -------- | -------------------------------------- |
+| brand          | string | User prompt | Yes      | Brand name and current description     |
+| category       | string | User prompt | Yes      | Market category the brand competes in  |
+| audience       | string | User prompt | Yes      | Target audience                        |
+| competitors    | list   | User prompt | Yes      | Key competitors with their positioning |
+| differentiator | string | User prompt | No       | Known or suspected point of difference |
+| brand_values   | list   | User prompt | No       | Core values and beliefs                |
 
 ---
 
@@ -60,6 +60,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Category Analysis
+
 1. Define the category ladder — how prospects mentally organize options
 2. Identify who owns the #1 position in the category
 3. Map all competitors to their claimed positions
@@ -70,6 +71,7 @@ Checklist:
    - If no clear category: Create the category and own it
 
 ### Phase 2: Positioning Strategy
+
 1. Apply the Ries positioning principles:
    - **Narrow the focus:** Better to own a small niche than compete broadly
    - **Own a word:** What single word should the brand own in the prospect's mind?
@@ -86,6 +88,7 @@ Checklist:
    - Is it credible and deliverable?
 
 ### Phase 3: Positioning Statement
+
 1. Write the formal positioning statement:
    "For {target audience} who {need/want}, {brand} is the {category} that {point of difference} because {reason to believe}."
 2. Write 3 variations with different emphasis:
@@ -96,6 +99,7 @@ Checklist:
 4. Define the positioning proof points (3-5 evidence items)
 
 ### Phase 4: Positioning Activation
+
 1. Translate the positioning into messaging guidelines:
    - Key messages by audience segment
    - Elevator pitch (30 seconds)
@@ -125,41 +129,49 @@ Checklist:
 
 ### Category Map
 
-| Position | Brand | Claim |
-|----------|-------|-------|
-| #1 | {brand} | {their position} |
-| #2 | {brand} | {their position} |
-| Open | — | {white space} |
+| Position | Brand       | Claim              |
+| -------- | ----------- | ------------------ |
+| #1       | {brand}     | {their position}   |
+| #2       | {brand}     | {their position}   |
+| Open     | —           | {white space}      |
 | **Ours** | **{brand}** | **{our position}** |
 
 ### Positioning Statement
+
 "For {target} who {need}, {brand} is the {category} that {difference} because {proof}."
 
 ### Alternative Versions
+
 1. **Target-led:** {version}
 2. **Benefit-led:** {version}
 3. **Category-led:** {version}
 
 ### Tagline
+
 {5-8 word tagline}
 
 ### Proof Points
+
 1. {evidence}
 2. {evidence}
 3. {evidence}
 
 ### Messaging Guidelines
+
 **Elevator Pitch:** {30-second version}
 **Key Messages:**
+
 - For {segment 1}: {message}
 - For {segment 2}: {message}
 
 ### Positioning Narrative
+
 {1-2 paragraph story of the positioning}
 
 ### Risks and Mitigations
+
 | Risk | Likelihood | Mitigation |
-|------|-----------|------------|
+| ---- | ---------- | ---------- |
 ```
 
 ---

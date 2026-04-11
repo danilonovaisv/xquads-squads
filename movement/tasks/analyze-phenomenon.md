@@ -1,6 +1,6 @@
 ---
 task: analyzePhenomenon()
-responsavel: "@fenomenologo"
+responsavel: '@fenomenologo'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Lived experience identified with essential structures"
-  - "[ ] Collective tension mapped with intensity rating"
-  - "[ ] Movement potential rated with justification"
+  - '[ ] Lived experience identified with essential structures'
+  - '[ ] Collective tension mapped with intensity rating'
+  - '[ ] Movement potential rated with justification'
 ---
 
 # Task: Analyze Phenomenon
@@ -39,12 +39,12 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `subject` | User prompt | Yes | The phenomenon, experience, or tension to analyze |
-| `audience` | User prompt | Yes | The group whose experience is being analyzed |
-| `context` | Session | No | Cultural, market, or social context |
-| `data_sources` | User | No | Interviews, surveys, social media threads, forums |
+| Input          | Source      | Required | Description                                       |
+| -------------- | ----------- | -------- | ------------------------------------------------- |
+| `subject`      | User prompt | Yes      | The phenomenon, experience, or tension to analyze |
+| `audience`     | User prompt | Yes      | The group whose experience is being analyzed      |
+| `context`      | Session     | No       | Cultural, market, or social context               |
+| `data_sources` | User        | No       | Interviews, surveys, social media threads, forums |
 
 ## Preconditions
 
@@ -98,28 +98,28 @@ Checklist:
 
 ```yaml
 phenomenological_analysis:
-  phenomenon: "{name}"
-  audience: "{target group}"
+  phenomenon: '{name}'
+  audience: '{target group}'
   lived_experience:
-    essential_structures: ["{element1}", "{element2}", "{element3}"]
-    emotional_landscape: ["{emotion1}", "{emotion2}", "{emotion3}"]
+    essential_structures: ['{element1}', '{element2}', '{element3}']
+    emotional_landscape: ['{emotion1}', '{emotion2}', '{emotion3}']
   collective_tension:
-    gap: "{current state vs desired state}"
-    frustration: "{named frustration}"
-    intensity: {1-5}
-    scope: "{personal|community|structural|systemic}"
+    gap: '{current state vs desired state}'
+    frustration: '{named frustration}'
+    intensity: { 1-5 }
+    scope: '{personal|community|structural|systemic}'
   shared_narrative:
-    villain: "{what/who is blamed}"
-    hero_archetype: "{who people aspire to be}"
-    turning_point: "{what would change everything}"
+    villain: '{what/who is blamed}'
+    hero_archetype: '{who people aspire to be}'
+    turning_point: '{what would change everything}'
     narrative_kernel: |
       {one paragraph shared story}
   aspiration:
-    desired_future: "{future state}"
-    transformation: "{individual change}"
-    impact: "{collective change}"
-    aspiration_statement: "{one sentence}"
-  movement_potential: "{LOW|MEDIUM|HIGH|CRITICAL}"
+    desired_future: '{future state}'
+    transformation: '{individual change}'
+    impact: '{collective change}'
+    aspiration_statement: '{one sentence}'
+  movement_potential: '{LOW|MEDIUM|HIGH|CRITICAL}'
 ```
 
 ## Veto Conditions

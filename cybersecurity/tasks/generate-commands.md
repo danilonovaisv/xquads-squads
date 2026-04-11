@@ -1,6 +1,6 @@
 ---
 task: generateCommands()
-responsavel: "@command-generator"
+responsavel: '@command-generator'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Appropriate tool selected with reasoning"
-  - "[ ] Command generated with inline documentation"
-  - "[ ] Safety assessment completed with warnings"
+  - '[ ] Appropriate tool selected with reasoning'
+  - '[ ] Command generated with inline documentation'
+  - '[ ] Safety assessment completed with warnings'
 ---
 
 # Task: Security Tool Command Generation
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `objective` | User prompt | YES |
-| `target` | User specification | YES |
-| `tool_preference` | User or auto-select | NO |
-| `authorization_context` | User confirmation | YES |
-| `constraints` | Rate limits, stealth, time | NO |
-| `os_context` | Target OS/environment | PREFERRED |
+| Input                   | Source                     | Required  |
+| ----------------------- | -------------------------- | --------- |
+| `objective`             | User prompt                | YES       |
+| `target`                | User specification         | YES       |
+| `tool_preference`       | User or auto-select        | NO        |
+| `authorization_context` | User confirmation          | YES       |
+| `constraints`           | Rate limits, stealth, time | NO        |
+| `os_context`            | Target OS/environment      | PREFERRED |
 
 ## Preconditions
 
@@ -98,24 +98,24 @@ Checklist:
 
 ```yaml
 command_output:
-  objective: "{what the command achieves}"
-  tool: "{tool name}"
-  category: "recon | enum | vuln_scan | exploit | defense"
-  authorization: "confirmed — {context}"
+  objective: '{what the command achieves}'
+  tool: '{tool name}'
+  category: 'recon | enum | vuln_scan | exploit | defense'
+  authorization: 'confirmed — {context}'
   command: |
     {full command with comments}
   explanation:
-    - flag: "{flag}"
-      purpose: "{what it does}"
+    - flag: '{flag}'
+      purpose: '{what it does}'
   safety_assessment:
     scope_safe: true
     destructive: false
-    noise_level: "LOW | MEDIUM | HIGH"
-    warnings: ["{any cautions}"]
+    noise_level: 'LOW | MEDIUM | HIGH'
+    warnings: ['{any cautions}']
   alternatives:
-    - tool: "{alternative tool}"
-      command: "{alternative command}"
-      tradeoff: "{why you might prefer this}"
+    - tool: '{alternative tool}'
+      command: '{alternative command}'
+      tradeoff: '{why you might prefer this}'
 ```
 
 ## Veto Conditions

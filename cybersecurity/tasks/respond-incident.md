@@ -1,6 +1,6 @@
 ---
 task: respondIncident()
-responsavel: "@omar-santos"
+responsavel: '@omar-santos'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Incident classified with severity and timeline established"
-  - "[ ] Containment actions executed and verified"
-  - "[ ] Lessons learned documented with actionable improvements"
+  - '[ ] Incident classified with severity and timeline established'
+  - '[ ] Containment actions executed and verified'
+  - '[ ] Lessons learned documented with actionable improvements'
 ---
 
 # Task: Incident Response Playbook
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `incident_description` | User/alert system | YES |
-| `affected_systems` | User or monitoring | YES |
-| `incident_severity` | Initial triage | YES |
-| `timeline_so_far` | User description | PREFERRED |
-| `available_logs` | System logs | PREFERRED |
-| `contacts_list` | Escalation contacts | NO |
+| Input                  | Source              | Required  |
+| ---------------------- | ------------------- | --------- |
+| `incident_description` | User/alert system   | YES       |
+| `affected_systems`     | User or monitoring  | YES       |
+| `incident_severity`    | Initial triage      | YES       |
+| `timeline_so_far`      | User description    | PREFERRED |
+| `available_logs`       | System logs         | PREFERRED |
+| `contacts_list`        | Escalation contacts | NO        |
 
 ## Preconditions
 
@@ -119,28 +119,28 @@ Checklist:
 
 ```yaml
 incident_report:
-  incident_id: "IR-{YYYY}-{NNN}"
-  responder: "omar-santos"
-  severity: "P1 | P2 | P3 | P4"
-  type: "{incident type}"
-  status: "ACTIVE | CONTAINED | ERADICATED | RECOVERED | CLOSED"
+  incident_id: 'IR-{YYYY}-{NNN}'
+  responder: 'omar-santos'
+  severity: 'P1 | P2 | P3 | P4'
+  type: '{incident type}'
+  status: 'ACTIVE | CONTAINED | ERADICATED | RECOVERED | CLOSED'
   timeline:
-    detected: "{timestamp}"
-    contained: "{timestamp}"
-    eradicated: "{timestamp}"
-    recovered: "{timestamp}"
-  affected_systems: ["{system list}"]
+    detected: '{timestamp}'
+    contained: '{timestamp}'
+    eradicated: '{timestamp}'
+    recovered: '{timestamp}'
+  affected_systems: ['{system list}']
   iocs:
-    - type: "IP | HASH | DOMAIN | EMAIL | USER"
-      value: "{indicator}"
-      context: "{where observed}"
+    - type: 'IP | HASH | DOMAIN | EMAIL | USER'
+      value: '{indicator}'
+      context: '{where observed}'
   root_cause: |
     {Root cause analysis}
-  remediation_actions: ["{actions taken}"]
+  remediation_actions: ['{actions taken}']
   lessons_learned:
-    what_worked: ["{positives}"]
-    improvements: ["{areas to improve}"]
-    recommendations: ["{prevent recurrence}"]
+    what_worked: ['{positives}']
+    improvements: ['{areas to improve}']
+    recommendations: ['{prevent recurrence}']
 ```
 
 ## Veto Conditions

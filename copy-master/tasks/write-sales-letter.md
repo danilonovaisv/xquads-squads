@@ -1,6 +1,6 @@
 ---
 task: writeSalesLetter()
-responsavel: "@gary-halbert"
+responsavel: '@gary-halbert'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Big promise and emotional driver identified"
-  - "[ ] Letter follows AIDA structure with proof throughout"
-  - "[ ] CTA appears minimum 3 times with P.S. sections"
-  - "[ ] Psychological Layer applied (Cialdini/Warren principles tagged)"
+  - '[ ] Big promise and emotional driver identified'
+  - '[ ] Letter follows AIDA structure with proof throughout'
+  - '[ ] CTA appears minimum 3 times with P.S. sections'
+  - '[ ] Psychological Layer applied (Cialdini/Warren principles tagged)'
 ---
 
 # Task: Write Sales Letter
@@ -40,15 +40,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service with key features and benefits |
-| audience | string | User prompt | Yes | Target audience with pain points and desires |
-| offer | object | User prompt | Yes | Price, guarantee, bonuses, urgency elements |
-| awareness_level | enum | User prompt | No | Schwartz's 5 levels — defaults to problem-aware |
-| proof_elements | list | User prompt | No | Testimonials, stats, credentials, case studies |
-| tone | string | User prompt | No | Defaults to conversational, personal, urgent |
-| word_count_target | number | User prompt | No | Defaults to 2000-4000 words |
+| Field             | Type   | Source      | Required | Validation                                      |
+| ----------------- | ------ | ----------- | -------- | ----------------------------------------------- |
+| product           | string | User prompt | Yes      | Product/service with key features and benefits  |
+| audience          | string | User prompt | Yes      | Target audience with pain points and desires    |
+| offer             | object | User prompt | Yes      | Price, guarantee, bonuses, urgency elements     |
+| awareness_level   | enum   | User prompt | No       | Schwartz's 5 levels — defaults to problem-aware |
+| proof_elements    | list   | User prompt | No       | Testimonials, stats, credentials, case studies  |
+| tone              | string | User prompt | No       | Defaults to conversational, personal, urgent    |
+| word_count_target | number | User prompt | No       | Defaults to 2000-4000 words                     |
 
 ---
 
@@ -75,6 +75,7 @@ Study these real-world champion sales letters before writing:
 ## Execution Phases
 
 ### Phase 1: Research and Strategy
+
 1. Identify the single most powerful emotion driving the prospect
 2. Define the "big promise" — one transformative outcome
 3. Map the prospect's current state vs. desired state
@@ -83,6 +84,7 @@ Study these real-world champion sales letters before writing:
 6. Determine the primary objection that must be overcome
 
 ### Phase 2: Structure the Letter
+
 1. Outline using the classic Halbert structure:
    - Attention: Headline + opening that grabs by the throat
    - Interest: Story or shocking revelation that builds intrigue
@@ -93,6 +95,7 @@ Study these real-world champion sales letters before writing:
 4. Place proof elements strategically (early credibility, mid social proof, late risk reversal)
 
 ### Phase 3: Psychological Layer
+
 1. Map Cialdini's 7 principles into the letter structure:
    - **Reciprocity:** Free value or insight given before the ask
    - **Commitment/Consistency:** Small yeses building to the big yes
@@ -110,6 +113,7 @@ Study these real-world champion sales letters before writing:
 3. Document which principles appear in each section
 
 ### Phase 4: Write the Draft
+
 1. Write the headline and lead (first 300 words) — this is 80% of the battle
 2. Build the story section with personal, relatable narrative
 3. Transition from story to product reveal with a "bridge" paragraph
@@ -120,6 +124,7 @@ Study these real-world champion sales letters before writing:
 8. Add P.S. sections (Halbert's signature move) — restate offer + add bonus reason
 
 ### Phase 5: Polish and Review
+
 1. Read aloud — cut anything that breaks the conversational flow
 2. Verify every claim is supported by proof
 3. Ensure the letter can be understood by a 7th grader
@@ -140,31 +145,37 @@ Study these real-world champion sales letters before writing:
 **Big Promise:** {one-line promise}
 
 ### Persuasion Architecture
-| Section | Cialdini Principles | Warren Levers |
-|---------|--------------------|--------------  |
-| Lead | {principles} | {levers} |
-| Story | {principles} | {levers} |
-| Benefits | {principles} | {levers} |
-| Close | {principles} | {levers} |
+
+| Section  | Cialdini Principles | Warren Levers |
+| -------- | ------------------- | ------------- |
+| Lead     | {principles}        | {levers}      |
+| Story    | {principles}        | {levers}      |
+| Benefits | {principles}        | {levers}      |
+| Close    | {principles}        | {levers}      |
 
 ---
 
 ### [HEADLINE]
+
 {headline}
 
 ### [SUB-HEADLINE]
+
 {sub-headline}
 
 ### [LETTER BODY]
+
 {full sales letter with natural paragraph breaks}
 
 ### [P.S. SECTIONS]
+
 P.S. {first postscript}
 P.P.S. {second postscript}
 
 ---
 
 ### Writer's Notes
+
 - **Lead type:** {story, proclamation, prediction, secret, problem-solution}
 - **Key proof used:** {list}
 - **Primary objection addressed:** {objection + how}

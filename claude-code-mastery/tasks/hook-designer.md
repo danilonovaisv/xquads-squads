@@ -51,11 +51,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| hook_purpose | string | User | Yes | Description of what the hook should automate |
-| trigger_event | string | User | No | Specific event if known (e.g., "PreToolUse", "Stop") |
-| project_path | string | User or cwd | Yes | Project directory for context |
+| Field         | Type   | Source      | Required | Validation                                           |
+| ------------- | ------ | ----------- | -------- | ---------------------------------------------------- |
+| hook_purpose  | string | User        | Yes      | Description of what the hook should automate         |
+| trigger_event | string | User        | No       | Specific event if known (e.g., "PreToolUse", "Stop") |
+| project_path  | string | User or cwd | Yes      | Project directory for context                        |
 
 ---
 
@@ -91,22 +91,22 @@ If the need is not hook-suitable, recommend the appropriate alternative.
 
 Claude Code hooks operate in two transport modes:
 
-| Transport | Language | Best For | Constraint |
-|-----------|----------|----------|------------|
-| command | Any (bash, node, python) | File operations, API calls, complex logic | Must exit within timeout |
-| prompt | N/A (returns text) | Injecting context into conversation | Output added to assistant context |
+| Transport | Language                 | Best For                                  | Constraint                        |
+| --------- | ------------------------ | ----------------------------------------- | --------------------------------- |
+| command   | Any (bash, node, python) | File operations, API calls, complex logic | Must exit within timeout          |
+| prompt    | N/A (returns text)       | Injecting context into conversation       | Output added to assistant context |
 
 **Hook categories by event:**
 
-| Event | When Fires | Common Uses |
-|-------|-----------|-------------|
-| PreToolUse | Before any tool call | Block dangerous commands, validate inputs |
-| PostToolUse | After tool completes | Log results, capture metrics, trigger follow-ups |
-| Stop | Session ends normally | Save state, generate summary, update memory |
-| SubagentStop | Subagent completes | Collect results, merge outputs |
-| PreCompact | Before context compaction | Preserve critical state |
-| Notification | User receives notification | Custom notification routing |
-| UserPromptSubmit | User sends message | Input preprocessing, routing |
+| Event            | When Fires                 | Common Uses                                      |
+| ---------------- | -------------------------- | ------------------------------------------------ |
+| PreToolUse       | Before any tool call       | Block dangerous commands, validate inputs        |
+| PostToolUse      | After tool completes       | Log results, capture metrics, trigger follow-ups |
+| Stop             | Session ends normally      | Save state, generate summary, update memory      |
+| SubagentStop     | Subagent completes         | Collect results, merge outputs                   |
+| PreCompact       | Before context compaction  | Preserve critical state                          |
+| Notification     | User receives notification | Custom notification routing                      |
+| UserPromptSubmit | User sends message         | Input preprocessing, routing                     |
 
 Select the appropriate event based on when the automation should trigger.
 
@@ -129,6 +129,7 @@ For the identified need, determine:
 Design the hook implementation:
 
 1. **Input contract**: what data the hook receives from Claude Code
+
    ```json
    {
      "tool_name": "Bash",
@@ -167,6 +168,7 @@ Create the hook implementation:
    - Add inline comments explaining the logic
 
 2. **Register the hook** in settings.json:
+
    ```json
    {
      "hooks": {
@@ -200,7 +202,7 @@ Verify the hook works within the full Claude Code session:
 
 ## Output Format
 
-```markdown
+````markdown
 ## Hook Design Specification
 
 **Purpose:** {hook_purpose}
@@ -217,11 +219,14 @@ Verify the hook works within the full Claude Code session:
 ### Input/Output Contract
 
 **Input:**
+
 ```json
 {input_schema}
 ```
+````
 
 **Output:**
+
 ```json
 {output_schema}
 ```
@@ -230,23 +235,25 @@ Verify the hook works within the full Claude Code session:
 
 **File:** `.claude/hooks/{hook-name}.js`
 **Registration:**
+
 ```json
 {settings_json_snippet}
 ```
 
 ### Test Plan
 
-| Scenario | Input | Expected Output |
-|----------|-------|-----------------|
-| Normal case | {input} | {output} |
-| Edge case | {input} | {output} |
-| Error case | {input} | {output} |
+| Scenario    | Input   | Expected Output |
+| ----------- | ------- | --------------- |
+| Normal case | {input} | {output}        |
+| Edge case   | {input} | {output}        |
+| Error case  | {input} | {output}        |
 
 ### Performance
 
 - Expected execution time: {N}ms
 - Timeout configured: {N}ms
 - Failure mode: {continue|stop}
+
 ```
 
 ---
@@ -270,3 +277,4 @@ Verify the hook works within the full Claude Code session:
 - [ ] Implementation created and registered in settings.json
 - [ ] Test plan documented with at least 3 scenarios
 - [ ] Integration verified in a real session
+```

@@ -1,6 +1,6 @@
 ---
 task: createComponentSpec()
-responsavel: "@design-system-architect"
+responsavel: '@design-system-architect'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All variants specified (size, intent, state, layout, content)"
-  - "[ ] Design tokens mapped with fallback chain"
-  - "[ ] Accessibility requirements complete (ARIA, keyboard, screen reader)"
+  - '[ ] All variants specified (size, intent, state, layout, content)'
+  - '[ ] Design tokens mapped with fallback chain'
+  - '[ ] Accessibility requirements complete (ARIA, keyboard, screen reader)'
 ---
 
 # Task: Component Specification
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `component_name` | User request | YES |
-| `component_purpose` | What problem it solves | YES |
-| `design_system_context` | Existing tokens and patterns | PREFERRED |
-| `tech_stack` | Framework (React, Vue, Svelte, etc.) | YES |
-| `usage_context` | Where it will be used | PREFERRED |
-| `reference_examples` | Existing implementations to reference | NO |
+| Input                   | Source                                | Required  |
+| ----------------------- | ------------------------------------- | --------- |
+| `component_name`        | User request                          | YES       |
+| `component_purpose`     | What problem it solves                | YES       |
+| `design_system_context` | Existing tokens and patterns          | PREFERRED |
+| `tech_stack`            | Framework (React, Vue, Svelte, etc.)  | YES       |
+| `usage_context`         | Where it will be used                 | PREFERRED |
+| `reference_examples`    | Existing implementations to reference | NO        |
 
 ## Preconditions
 
@@ -127,42 +127,42 @@ Checklist:
 
 ```yaml
 component_spec:
-  name: "{component name}"
+  name: '{component name}'
   creators: [design-system-architect, brad-frost]
-  atomic_level: "atom | molecule | organism"
-  purpose: "{what it does}"
-  dependencies: ["{required sub-components}"]
+  atomic_level: 'atom | molecule | organism'
+  purpose: '{what it does}'
+  dependencies: ['{required sub-components}']
   variants:
-    sizes: ["{size list}"]
-    intents: ["{intent list}"]
-    states: ["{state list}"]
+    sizes: ['{size list}']
+    intents: ['{intent list}']
+    states: ['{state list}']
   tokens:
-    - token: "{token name}"
-      value: "{default value}"
+    - token: '{token name}'
+      value: '{default value}'
       customizable: true
-      dark_mode: "{dark value}"
+      dark_mode: '{dark value}'
   props:
-    - name: "{prop name}"
-      type: "{type}"
-      default: "{default}"
+    - name: '{prop name}'
+      type: '{type}'
+      default: '{default}'
       required: true
-      description: "{what it controls}"
+      description: '{what it controls}'
   events:
-    - name: "{event name}"
-      payload: "{data type}"
-      description: "{when it fires}"
+    - name: '{event name}'
+      payload: '{data type}'
+      description: '{when it fires}'
   accessibility:
-    role: "{ARIA role}"
-    keyboard: ["{interaction pattern}"]
-    announcements: ["{screen reader behavior}"]
-    contrast: "verified AA"
+    role: '{ARIA role}'
+    keyboard: ['{interaction pattern}']
+    announcements: ['{screen reader behavior}']
+    contrast: 'verified AA'
   responsive:
-    breakpoints: ["{adaptations}"]
-    touch_target: "44x44px minimum"
+    breakpoints: ['{adaptations}']
+    touch_target: '44x44px minimum'
   code_examples:
-    basic: "{code}"
-    variants: "{code}"
-    composition: "{code}"
+    basic: '{code}'
+    variants: '{code}'
+    composition: '{code}'
 ```
 
 ## Veto Conditions

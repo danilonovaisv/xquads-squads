@@ -1,6 +1,6 @@
 ---
 task: createOffer()
-responsavel: "@hormozi-offers"
+responsavel: '@hormozi-offers'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Value Equation scored across all 4 quadrants"
-  - "[ ] Problems mapped to solution vehicles with proprietary names"
-  - "[ ] Offer stack assembled with core + bonuses"
+  - '[ ] Value Equation scored across all 4 quadrants'
+  - '[ ] Problems mapped to solution vehicles with proprietary names'
+  - '[ ] Offer stack assembled with core + bonuses'
 ---
 
 # Task: Create Grand Slam Offer
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Core product or service |
-| audience | string | User prompt | Yes | Dream customer avatar |
-| current_price | number | User prompt | No | Existing price if applicable |
-| delivery_method | string | User prompt | No | How the product is delivered |
-| market | string | User prompt | No | Industry or niche |
-| competitors | list | User prompt | No | Known competing offers |
+| Field           | Type   | Source      | Required | Validation                   |
+| --------------- | ------ | ----------- | -------- | ---------------------------- |
+| product         | string | User prompt | Yes      | Core product or service      |
+| audience        | string | User prompt | Yes      | Dream customer avatar        |
+| current_price   | number | User prompt | No       | Existing price if applicable |
+| delivery_method | string | User prompt | No       | How the product is delivered |
+| market          | string | User prompt | No       | Industry or niche            |
+| competitors     | list   | User prompt | No       | Known competing offers       |
 
 ---
 
@@ -60,6 +60,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Dream Outcome Mapping
+
 1. Define the dream outcome in the customer's words (not yours)
 2. Identify the gap between where they are and where they want to be
 3. List every problem that stands between the customer and the dream outcome
@@ -68,6 +69,7 @@ Checklist:
 6. Identify which problems they have tried and failed to solve before
 
 ### Phase 2: Value Equation Construction
+
 1. Apply the Hormozi Value Equation: Value = (Dream Outcome x Perceived Likelihood) / (Time Delay x Effort & Sacrifice)
 2. Maximize the numerator:
    - Dream Outcome: Make the outcome as specific and vivid as possible
@@ -79,6 +81,7 @@ Checklist:
 5. Identify which quadrant has the most room for improvement
 
 ### Phase 3: Offer Architecture
+
 1. Transform each problem into a solution vehicle (course, tool, template, service, community, etc.)
 2. Name each solution vehicle with a proprietary name
 3. Assign delivery method and format to each vehicle
@@ -95,6 +98,7 @@ Checklist:
 6. Set the price based on value delivered, not cost or competitors
 
 ### Phase 4: Offer Naming and Positioning
+
 1. Create a compelling offer name that implies the transformation
 2. Write the one-line value proposition
 3. Define the "this is NOT for you" qualifier to increase perceived exclusivity
@@ -117,40 +121,44 @@ Checklist:
 
 ### Value Equation Breakdown
 
-| Quadrant | Score | Strategy |
-|----------|-------|----------|
-| Dream Outcome | X/10 | {how we maximize} |
-| Perceived Likelihood | X/10 | {how we maximize} |
-| Time Delay | X/10 | {how we minimize} |
-| Effort & Sacrifice | X/10 | {how we minimize} |
+| Quadrant             | Score | Strategy          |
+| -------------------- | ----- | ----------------- |
+| Dream Outcome        | X/10  | {how we maximize} |
+| Perceived Likelihood | X/10  | {how we maximize} |
+| Time Delay           | X/10  | {how we minimize} |
+| Effort & Sacrifice   | X/10  | {how we minimize} |
 
 ### Problems → Solutions Map
 
 | Problem | Solution Vehicle | Proprietary Name | Delivery |
-|---------|-----------------|-------------------|----------|
+| ------- | ---------------- | ---------------- | -------- |
 
 ### Offer Stack
 
-| Component | What It Does | Value |
-|-----------|-------------|-------|
-| Core Offer | {description} | ${value} |
-| Speed Bonus 1 | {description} | ${value} |
+| Component      | What It Does  | Value    |
+| -------------- | ------------- | -------- |
+| Core Offer     | {description} | ${value} |
+| Speed Bonus 1  | {description} | ${value} |
 | Effort Bonus 1 | {description} | ${value} |
-| Proof Bonus 1 | {description} | ${value} |
+| Proof Bonus 1  | {description} | ${value} |
 
 **Total Value:** ${total}
 **Your Price:** ${price}
 
 ### Guarantee
+
 {Full guarantee statement with type}
 
 ### Scarcity/Urgency
+
 {Mechanism and rationale}
 
 ### Qualifier
+
 "This is NOT for you if..."
 
 ### Stack Slide Copy
+
 {Ready-to-use visual stack summary}
 ```
 

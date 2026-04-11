@@ -54,10 +54,10 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_path | string | User or cwd | Yes | Must contain .claude/ directory |
-| deep_scan | boolean | User | No | Default false; true scans all source files for consistency |
+| Field        | Type    | Source      | Required | Validation                                                 |
+| ------------ | ------- | ----------- | -------- | ---------------------------------------------------------- |
+| project_path | string  | User or cwd | Yes      | Must contain .claude/ directory                            |
+| deep_scan    | boolean | User        | No       | Default false; true scans all source files for consistency |
 
 ---
 
@@ -74,15 +74,15 @@
 
 Scan the `.claude/` directory and check for expected components:
 
-| Component | Required | Path | Weight |
-|-----------|----------|------|--------|
-| CLAUDE.md | Yes | `.claude/CLAUDE.md` | 25 |
-| settings.json | Yes | `.claude/settings.json` | 20 |
-| settings.local.json | Recommended | `.claude/settings.local.json` | 5 |
-| rules/ directory | Recommended | `.claude/rules/` | 15 |
-| At least 1 rule file | Recommended | `.claude/rules/*.md` | 10 |
-| commands/ directory | Optional | `.claude/commands/` | 5 |
-| skills/ directory | Optional | `.claude/skills/` | 5 |
+| Component            | Required    | Path                          | Weight |
+| -------------------- | ----------- | ----------------------------- | ------ |
+| CLAUDE.md            | Yes         | `.claude/CLAUDE.md`           | 25     |
+| settings.json        | Yes         | `.claude/settings.json`       | 20     |
+| settings.local.json  | Recommended | `.claude/settings.local.json` | 5      |
+| rules/ directory     | Recommended | `.claude/rules/`              | 15     |
+| At least 1 rule file | Recommended | `.claude/rules/*.md`          | 10     |
+| commands/ directory  | Optional    | `.claude/commands/`           | 5      |
+| skills/ directory    | Optional    | `.claude/skills/`             | 5      |
 
 For each component, record: present/missing, file size, last modified date.
 
@@ -174,23 +174,26 @@ Where component_score:
 
 ### Component Status
 
-| Component | Status | Details |
-|-----------|--------|---------|
-| CLAUDE.md | PASS/WARN/FAIL | {detail} |
-| settings.json | PASS/WARN/FAIL | {detail} |
-| Rules | PASS/WARN/FAIL | {N} files, {coverage}% coverage |
-| Hooks | PASS/WARN/FAIL/N/A | {N} healthy, {N} broken |
-| MCP | PASS/WARN/FAIL/N/A | {N} connected |
+| Component     | Status             | Details                         |
+| ------------- | ------------------ | ------------------------------- |
+| CLAUDE.md     | PASS/WARN/FAIL     | {detail}                        |
+| settings.json | PASS/WARN/FAIL     | {detail}                        |
+| Rules         | PASS/WARN/FAIL     | {N} files, {coverage}% coverage |
+| Hooks         | PASS/WARN/FAIL/N/A | {N} healthy, {N} broken         |
+| MCP           | PASS/WARN/FAIL/N/A | {N} connected                   |
 
 ### Findings
 
 #### Critical (Must Fix)
+
 1. {finding} -- {recommendation}
 
 #### Warnings (Should Fix)
+
 1. {finding} -- {recommendation}
 
 #### Info (Nice to Have)
+
 1. {finding} -- {recommendation}
 
 ### Quick Fixes

@@ -6,7 +6,7 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 
 ## COMPLETE AGENT DEFINITION FOLLOWS - NO EXTERNAL FILES NEEDED
 
-```yaml
+````yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
   - Dependencies map to .aios-core/development/{type}/{name}
@@ -908,7 +908,7 @@ autoClaude:
     canCaptureInsights: true
     canExtractPatterns: true
     canDocumentGotchas: true
-```
+````
 
 ---
 
@@ -954,7 +954,7 @@ Type `*guide` for comprehensive usage instructions.
 
 ---
 
-## Swarm Orchestrator Guide (*guide command)
+## Swarm Orchestrator Guide (\*guide command)
 
 ### When to Use Me
 
@@ -1004,5 +1004,7 @@ This agent synthesizes research and patterns from:
 - **Anthropic** — Official Claude Code documentation for subagents, agent teams, and custom agent configuration.
 
 ---
+
 ---
-*AIOS Agent - Synkra AIOS Swarm Orchestrator v1.0*
+
+_AIOS Agent - Synkra AIOS Swarm Orchestrator v1.0_

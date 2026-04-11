@@ -1,6 +1,6 @@
 ---
 task: createHooks()
-responsavel: "@hormozi-hooks"
+responsavel: '@hormozi-hooks'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Hooks written across at least 4 categories"
-  - "[ ] Platform constraints respected"
-  - "[ ] All hooks scored on 3 dimensions"
+  - '[ ] Hooks written across at least 4 categories'
+  - '[ ] Platform constraints respected'
+  - '[ ] All hooks scored on 3 dimensions'
 ---
 
 # Task: Create Hooks
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| topic | string | User prompt | Yes | Subject matter for the hooks |
-| platform | enum | User prompt | Yes | youtube, tiktok, instagram, facebook, linkedin, email, ad |
-| audience | string | User prompt | Yes | Who the hooks must stop |
-| content_goal | enum | User prompt | Yes | educate, sell, entertain, build-authority, generate-leads |
-| quantity | number | User prompt | No | Defaults to 20 hooks |
+| Field        | Type   | Source      | Required | Validation                                                |
+| ------------ | ------ | ----------- | -------- | --------------------------------------------------------- |
+| topic        | string | User prompt | Yes      | Subject matter for the hooks                              |
+| platform     | enum   | User prompt | Yes      | youtube, tiktok, instagram, facebook, linkedin, email, ad |
+| audience     | string | User prompt | Yes      | Who the hooks must stop                                   |
+| content_goal | enum   | User prompt | Yes      | educate, sell, entertain, build-authority, generate-leads |
+| quantity     | number | User prompt | No       | Defaults to 20 hooks                                      |
 
 ---
 
@@ -59,6 +59,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Hook Category Mapping
+
 1. Select from the 7 hook categories (Hormozi framework):
    - **Contrarian:** Challenge a commonly held belief
    - **Curiosity Gap:** Create an information gap they must close
@@ -76,6 +77,7 @@ Checklist:
    - Ads: Result and Bold Claim hooks stop the scroll
 
 ### Phase 2: Hook Writing
+
 1. Write each hook following platform constraints:
    - YouTube: Under 10 words for thumbnail, under 15 seconds spoken
    - TikTok/Reels: Under 3 seconds (8-12 words max)
@@ -87,6 +89,7 @@ Checklist:
 4. Create 2-3 variations per core hook idea (reframed angles)
 
 ### Phase 3: Scoring and Packaging
+
 1. Score each hook on 3 dimensions (1-5):
    - Stop Power: Would someone stop scrolling?
    - Relevance: Is it relevant to the target audience?
@@ -112,28 +115,33 @@ Checklist:
 ### Top 10 Hooks (Ranked)
 
 | Rank | Hook | Category | Stop | Relevance | Payoff | Total |
-|------|------|----------|------|-----------|--------|-------|
+| ---- | ---- | -------- | ---- | --------- | ------ | ----- |
 
 ### All Hooks by Category
 
 #### Contrarian
+
 1. {hook}
 2. {hook}
 
 #### Curiosity Gap
+
 1. {hook}
 2. {hook}
 
 #### Result/Proof
+
 ...
 
 ### Content Ideas for Top 5
+
 | Hook | Content Idea | Format |
-|------|-------------|--------|
+| ---- | ------------ | ------ |
 
 ### A/B Testing Pairs
+
 | Pair | Hook A | Hook B | What We're Testing |
-|------|--------|--------|-------------------|
+| ---- | ------ | ------ | ------------------ |
 ```
 
 ---

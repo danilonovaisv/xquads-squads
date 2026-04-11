@@ -9,6 +9,7 @@
 This checklist validates movement building output specifically.
 
 EXECUTION APPROACH:
+
 1. For each category, verify every item against the deliverable
 2. Mark items as [x] Pass, [ ] Fail, [N/A] Not Applicable
 3. CRITICAL items block delivery; non-critical items are advisory
@@ -31,7 +32,7 @@ CRITICAL items are marked with (CRITICAL) suffix.]]
 - [ ] Identity markers exist: language, symbols, rituals, or shared behaviors
 - [ ] The identity is aspirational — people want to be part of this
 - [ ] In-group/out-group boundaries are clear but not exclusionary or toxic
-- [ ] The identity story answers: "We are the people who ___"
+- [ ] The identity story answers: "We are the people who \_\_\_"
 
 ## 3. Call to Action & Mobilization
 

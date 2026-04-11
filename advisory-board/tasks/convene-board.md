@@ -1,6 +1,6 @@
 ---
 task: conveneBoard()
-responsavel: "@board-chair"
+responsavel: '@board-chair'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] 3-5 relevant advisors consulted with their frameworks"
-  - "[ ] Synthesis identifies agreement, disagreement, and tensions"
-  - "[ ] Unified recommendation with dissenting views included"
+  - '[ ] 3-5 relevant advisors consulted with their frameworks'
+  - '[ ] Synthesis identifies agreement, disagreement, and tensions'
+  - '[ ] Unified recommendation with dissenting views included'
 ---
 
 # Task: Full Board Meeting
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `strategic_question` | User prompt | YES |
-| `context` | Business situation, data, constraints | YES |
-| `advisors_requested` | Specific advisors to include | NO (default: 3-5 most relevant) |
-| `decision_urgency` | Timeline for decision | NO |
-| `previous_decisions` | Related past decisions | NO |
+| Input                | Source                                | Required                        |
+| -------------------- | ------------------------------------- | ------------------------------- |
+| `strategic_question` | User prompt                           | YES                             |
+| `context`            | Business situation, data, constraints | YES                             |
+| `advisors_requested` | Specific advisors to include          | NO (default: 3-5 most relevant) |
+| `decision_urgency`   | Timeline for decision                 | NO                              |
+| `previous_decisions` | Related past decisions                | NO                              |
 
 ## Preconditions
 
@@ -81,6 +81,7 @@ For each selected advisor, request their perspective:
 10. **Yvon Chouinard** — Mission alignment, environmental/ethical impact, long-term sustainability
 
 Each advisor provides:
+
 - Their analysis through their specific framework
 - Key risks they see
 - Their recommendation
@@ -109,28 +110,28 @@ Each advisor provides:
 
 ```yaml
 board_meeting:
-  chair: "board-chair"
-  question: "{strategic question}"
-  advisors_consulted: ["{advisor list}"]
+  chair: 'board-chair'
+  question: '{strategic question}'
+  advisors_consulted: ['{advisor list}']
   perspectives:
-    - advisor: "{name}"
-      framework: "{their lens}"
-      analysis: "{their perspective}"
-      recommendation: "{their advice}"
-      confidence: "HIGH | MEDIUM | LOW"
-      key_risk: "{biggest concern}"
+    - advisor: '{name}'
+      framework: '{their lens}'
+      analysis: '{their perspective}'
+      recommendation: '{their advice}'
+      confidence: 'HIGH | MEDIUM | LOW'
+      key_risk: '{biggest concern}'
   synthesis:
-    areas_of_agreement: ["{convergence points}"]
-    areas_of_disagreement: ["{divergence points}"]
-    key_tensions: ["{genuine tradeoffs}"]
-    blind_spots: ["{unaddressed areas}"]
+    areas_of_agreement: ['{convergence points}']
+    areas_of_disagreement: ['{divergence points}']
+    key_tensions: ['{genuine tradeoffs}']
+    blind_spots: ['{unaddressed areas}']
   recommendation:
-    action: "{what to do}"
-    reasoning: "{why}"
-    dissenting_views: ["{strong counterarguments}"]
-    risk_profile: "{what could go wrong}"
-    contrarian_check: "{strongest argument against}"
-    next_steps: ["{specific actions}"]
+    action: '{what to do}'
+    reasoning: '{why}'
+    dissenting_views: ['{strong counterarguments}']
+    risk_profile: '{what could go wrong}'
+    contrarian_check: '{strongest argument against}'
+    next_steps: ['{specific actions}']
 ```
 
 ## Veto Conditions

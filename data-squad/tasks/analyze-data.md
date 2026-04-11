@@ -1,6 +1,6 @@
 ---
 task: analyzeData()
-responsavel: "@avinash-kaushik"
+responsavel: '@avinash-kaushik'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] DMMM applied with objectives, goals, KPIs, targets"
-  - "[ ] OMTM identified"
-  - "[ ] Dashboard designed with Actions row"
+  - '[ ] DMMM applied with objectives, goals, KPIs, targets'
+  - '[ ] OMTM identified'
+  - '[ ] Dashboard designed with Actions row'
 ---
 
 # Task: Analyze Data
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `business` | User prompt | Yes | Business description and objectives |
-| `channels` | User prompt | Yes | Active digital channels (web, social, email, etc.) |
-| `current_tracking` | User | No | Existing analytics tools and what is tracked today |
-| `audience_segments` | User | No | Known audience segments |
-| `stage` | User | No | Business stage: pre-launch, growth, mature |
+| Input               | Source      | Required | Description                                        |
+| ------------------- | ----------- | -------- | -------------------------------------------------- |
+| `business`          | User prompt | Yes      | Business description and objectives                |
+| `channels`          | User prompt | Yes      | Active digital channels (web, social, email, etc.) |
+| `current_tracking`  | User        | No       | Existing analytics tools and what is tracked today |
+| `audience_segments` | User        | No       | Known audience segments                            |
+| `stage`             | User        | No       | Business stage: pre-launch, growth, mature         |
 
 ## Preconditions
 
@@ -107,22 +107,22 @@ Checklist:
 
 ```yaml
 analytics_framework:
-  business: "{name}"
-  business_questions: ["{q1}", "{q2}", "{q3}"]
-  omtm: "{one metric that matters most}"
+  business: '{name}'
+  business_questions: ['{q1}', '{q2}', '{q3}']
+  omtm: '{one metric that matters most}'
   stdc_metrics:
-    see: {kpi: "", target: "", source: ""}
-    think: {kpi: "", target: "", source: ""}
-    do: {kpi: "", target: "", source: ""}
-    care: {kpi: "", target: "", source: ""}
-  total_kpis: {number}
+    see: { kpi: '', target: '', source: '' }
+    think: { kpi: '', target: '', source: '' }
+    do: { kpi: '', target: '', source: '' }
+    care: { kpi: '', target: '', source: '' }
+  total_kpis: { number }
   dashboard:
-    pages: {number}
-    refresh: "{real-time|daily|weekly}"
-    sections: ["{section1}", "{section2}"]
+    pages: { number }
+    refresh: '{real-time|daily|weekly}'
+    sections: ['{section1}', '{section2}']
   tracking_plan:
-    events_defined: {number}
-    data_gaps: ["{gap1}", "{gap2}"]
+    events_defined: { number }
+    data_gaps: ['{gap1}', '{gap2}']
   deliverables:
     - analytics-framework.md
     - dashboard-design.md

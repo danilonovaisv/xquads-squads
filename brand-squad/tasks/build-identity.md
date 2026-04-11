@@ -1,6 +1,6 @@
 ---
 task: buildIdentity()
-responsavel: "@alina-wheeler"
+responsavel: '@alina-wheeler'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Visual identity system defined (colors, typography, logo)"
-  - "[ ] Verbal identity system defined (voice, messaging, story)"
-  - "[ ] Brand guidelines summary compiled with application examples"
+  - '[ ] Visual identity system defined (colors, typography, logo)'
+  - '[ ] Verbal identity system defined (voice, messaging, story)'
+  - '[ ] Brand guidelines summary compiled with application examples'
 ---
 
 # Task: Build Brand Identity
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| brand | string | User prompt | Yes | Brand name |
-| positioning | string | User prompt | Yes | Positioning statement (ideally from create-positioning.md) |
-| audience | string | User prompt | Yes | Target audience with psychographic detail |
-| industry | string | User prompt | Yes | Industry context |
-| brand_personality | list | User prompt | No | Desired personality traits (3-5) |
-| existing_assets | list | User prompt | No | Current logo, colors, fonts to preserve or replace |
-| archetype | string | User prompt | No | Brand archetype if already determined |
+| Field             | Type   | Source      | Required | Validation                                                 |
+| ----------------- | ------ | ----------- | -------- | ---------------------------------------------------------- |
+| brand             | string | User prompt | Yes      | Brand name                                                 |
+| positioning       | string | User prompt | Yes      | Positioning statement (ideally from create-positioning.md) |
+| audience          | string | User prompt | Yes      | Target audience with psychographic detail                  |
+| industry          | string | User prompt | Yes      | Industry context                                           |
+| brand_personality | list   | User prompt | No       | Desired personality traits (3-5)                           |
+| existing_assets   | list   | User prompt | No       | Current logo, colors, fonts to preserve or replace         |
+| archetype         | string | User prompt | No       | Brand archetype if already determined                      |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Brand Personality Definition
+
 1. Define 5 personality traits using the brand personality spectrum:
    - Sincerity: honest, wholesome, cheerful, down-to-earth
    - Excitement: daring, spirited, imaginative, up-to-date
@@ -75,6 +76,7 @@ Checklist:
 4. Write a "brand as a person" description (if the brand were a person at a dinner party)
 
 ### Phase 2: Visual Identity System
+
 1. Define the color system:
    - Primary color: The dominant brand color (with hex, RGB, CMYK values)
    - Secondary colors: 2-3 complementary colors
@@ -97,6 +99,7 @@ Checklist:
    - Layout principles and grid preferences
 
 ### Phase 3: Verbal Identity System
+
 1. Define the brand voice:
    - Tone dimensions (formal/casual, serious/playful, respectful/irreverent, enthusiastic/matter-of-fact)
    - Voice dos and don'ts with examples
@@ -114,6 +117,7 @@ Checklist:
    - Level 3: What we never say (off-limits topics)
 
 ### Phase 4: Brand Guidelines Summary
+
 1. Compile the identity system into a structured guidelines document
 2. Provide usage examples for common applications:
    - Business card
@@ -142,46 +146,55 @@ Checklist:
 ### Brand Personality
 
 | Trait | Expression | Anti-Trait |
-|-------|-----------|-----------|
+| ----- | ---------- | ---------- |
 
 **Brand as a Person:** {description}
 
 ### Visual Identity
 
 #### Colors
-| Role | Color | Hex | Psychology |
-|------|-------|-----|-----------|
+
+| Role    | Color   | Hex    | Psychology  |
+| ------- | ------- | ------ | ----------- |
 | Primary | {color} | #{hex} | {rationale} |
 
 #### Typography
+
 | Role | Typeface | Weight | Usage |
-|------|---------|--------|-------|
+| ---- | -------- | ------ | ----- |
 
 #### Logo Direction
+
 {Concept description with variation requirements}
 
 #### Visual Style
+
 {Photography, illustration, and layout direction}
 
 ### Verbal Identity
 
 #### Brand Voice
+
 | Dimension | Position | Example |
-|-----------|----------|---------|
+| --------- | -------- | ------- |
 
 #### Key Messaging
+
 - **Tagline:** {tagline}
 - **Brand Promise:** {promise}
 - **Mission:** {mission}
 - **Vision:** {vision}
 
 #### Brand Story
+
 {2-3 paragraph origin narrative}
 
 ### Application Examples
+
 {Description of how the identity applies to key touchpoints}
 
 ### Governance
+
 {Who, what, when for brand management}
 ```
 

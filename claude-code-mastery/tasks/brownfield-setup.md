@@ -53,13 +53,13 @@ OUTPUT: Brownfield integration config + protected paths + convention docs
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Auto-detect | yes | Existing project with source code |
-| critical_paths | array | User | no | Paths that must never be modified by AI |
-| team_conventions_doc | string | User | no | Path to existing coding standards doc |
-| deployment_branch | string | User | no | Branch used for deployment (default: main) |
-| legacy_areas | array | User | no | Directories with legacy code to be careful with |
+| Field                | Type   | Source      | Required | Validation                                      |
+| -------------------- | ------ | ----------- | -------- | ----------------------------------------------- |
+| project_root         | string | Auto-detect | yes      | Existing project with source code               |
+| critical_paths       | array  | User        | no       | Paths that must never be modified by AI         |
+| team_conventions_doc | string | User        | no       | Path to existing coding standards doc           |
+| deployment_branch    | string | User        | no       | Branch used for deployment (default: main)      |
+| legacy_areas         | array  | User        | no       | Directories with legacy code to be careful with |
 
 ---
 
@@ -90,31 +90,33 @@ src/
 ```
 
 1.2. Analyze coding patterns from existing files:
-   - Import style (named vs default, absolute vs relative)
-   - Component patterns (functional vs class, hooks usage)
-   - Error handling patterns (try/catch vs error boundaries)
-   - Naming conventions (camelCase, PascalCase, kebab-case for files)
-   - Comment style and density
+
+- Import style (named vs default, absolute vs relative)
+- Component patterns (functional vs class, hooks usage)
+- Error handling patterns (try/catch vs error boundaries)
+- Naming conventions (camelCase, PascalCase, kebab-case for files)
+- Comment style and density
 
 1.3. Detect architectural patterns:
-   - State management approach
-   - API integration patterns
-   - Routing structure
-   - Authentication flow
+
+- State management approach
+- API integration patterns
+- Routing structure
+- Authentication flow
 
 1.4. Build a pattern inventory:
 
 ```yaml
 patterns:
-  imports: "absolute with @ alias"
-  components: "functional with arrow functions"
-  state: "Zustand stores in src/stores/"
-  api: "axios instances in src/services/"
+  imports: 'absolute with @ alias'
+  components: 'functional with arrow functions'
+  state: 'Zustand stores in src/stores/'
+  api: 'axios instances in src/services/'
   naming:
-    files: "kebab-case"
-    components: "PascalCase"
-    functions: "camelCase"
-    constants: "UPPER_SNAKE_CASE"
+    files: 'kebab-case'
+    components: 'PascalCase'
+    functions: 'camelCase'
+    constants: 'UPPER_SNAKE_CASE'
 ```
 
 ---
@@ -126,35 +128,38 @@ patterns:
 ### Steps
 
 2.1. Check for CI/CD:
-   - `.github/workflows/*.yml` (GitHub Actions)
-   - `.gitlab-ci.yml` (GitLab CI)
-   - `Jenkinsfile` (Jenkins)
-   - `.circleci/` (CircleCI)
-   - `vercel.json` (Vercel)
-   - `netlify.toml` (Netlify)
+
+- `.github/workflows/*.yml` (GitHub Actions)
+- `.gitlab-ci.yml` (GitLab CI)
+- `Jenkinsfile` (Jenkins)
+- `.circleci/` (CircleCI)
+- `vercel.json` (Vercel)
+- `netlify.toml` (Netlify)
 
 2.2. Check for code quality tools:
-   - `.eslintrc*` / `eslint.config.*` (ESLint)
-   - `.prettierrc*` (Prettier)
-   - `.stylelintrc*` (Stylelint)
-   - `.editorconfig` (EditorConfig)
-   - `commitlint.config.*` (Commit message linting)
+
+- `.eslintrc*` / `eslint.config.*` (ESLint)
+- `.prettierrc*` (Prettier)
+- `.stylelintrc*` (Stylelint)
+- `.editorconfig` (EditorConfig)
+- `commitlint.config.*` (Commit message linting)
 
 2.3. Check for testing:
-   - `jest.config.*` (Jest)
-   - `vitest.config.*` (Vitest)
-   - `cypress.config.*` (Cypress)
-   - `playwright.config.*` (Playwright)
+
+- `jest.config.*` (Jest)
+- `vitest.config.*` (Vitest)
+- `cypress.config.*` (Cypress)
+- `playwright.config.*` (Playwright)
 
 2.4. Document existing scripts from package.json:
 
 ```yaml
 scripts:
-  dev: "next dev"
-  build: "next build"
-  test: "jest --coverage"
-  lint: "eslint src/"
-  format: "prettier --write src/"
+  dev: 'next dev'
+  build: 'next build'
+  test: 'jest --coverage'
+  lint: 'eslint src/'
+  format: 'prettier --write src/'
 ```
 
 ---
@@ -171,20 +176,24 @@ scripts:
 # {Project Name}
 
 ## Code Standards (from existing codebase)
+
 - Import style: {detected pattern}
 - Component pattern: {detected pattern}
 - File naming: {detected pattern}
 - Error handling: {detected pattern}
 
 ## Commands
+
 - `{npm run dev}` -- Start development server
 - `{npm test}` -- Run tests
 - `{npm run lint}` -- Run linter
 
 ## Architecture
+
 {Brief description of project structure}
 
 ## Critical Rules
+
 - NEVER modify files in {critical_paths}
 - ALWAYS follow existing patterns in neighboring files
 - When in doubt, check how similar code is written in the codebase
@@ -203,21 +212,23 @@ scripts:
 
 4.1. Create `.claude/rules/` with pattern files:
 
-| Rule | Content |
-|------|---------|
-| `code-style.md` | Naming conventions, import patterns, file structure |
-| `architecture.md` | Layer boundaries, data flow, dependency rules |
-| `anti-patterns.md` | Things to never do in this codebase |
-| `legacy-areas.md` | Special handling for legacy code sections |
+| Rule               | Content                                             |
+| ------------------ | --------------------------------------------------- |
+| `code-style.md`    | Naming conventions, import patterns, file structure |
+| `architecture.md`  | Layer boundaries, data flow, dependency rules       |
+| `anti-patterns.md` | Things to never do in this codebase                 |
+| `legacy-areas.md`  | Special handling for legacy code sections           |
 
 4.2. Use path-based activation for context-specific rules:
 
 ```markdown
 ---
 paths:
-  - "src/legacy/**"
+  - 'src/legacy/**'
 ---
+
 # Legacy Code Rules
+
 - Do NOT refactor unless explicitly asked
 - Maintain existing patterns even if suboptimal
 - Add tests before making any changes
@@ -231,14 +242,14 @@ paths:
 
 ### Common Critical Paths
 
-| Path Pattern | Reason |
-|-------------|--------|
-| `.env*` | Secrets and credentials |
-| `**/migrations/**` | Database migrations (run, don't edit) |
-| `docker-compose.prod.yml` | Production infrastructure |
-| `*.lock` | Lock files (managed by package managers) |
-| `.github/workflows/**` | CI/CD pipelines |
-| `infrastructure/**` | Infrastructure-as-code |
+| Path Pattern              | Reason                                   |
+| ------------------------- | ---------------------------------------- |
+| `.env*`                   | Secrets and credentials                  |
+| `**/migrations/**`        | Database migrations (run, don't edit)    |
+| `docker-compose.prod.yml` | Production infrastructure                |
+| `*.lock`                  | Lock files (managed by package managers) |
+| `.github/workflows/**`    | CI/CD pipelines                          |
+| `infrastructure/**`       | Infrastructure-as-code                   |
 
 ### Steps
 
@@ -255,9 +266,7 @@ paths:
       "Edit(docker-compose.prod.yml)",
       "Edit(.github/workflows/**)"
     ],
-    "allow": [
-      "Read(**)"
-    ]
+    "allow": ["Read(**)"]
   }
 }
 ```
@@ -273,17 +282,20 @@ paths:
 ### Steps
 
 6.1. Configure pre-tool-use hooks to align with existing linters:
-   - After writing code, suggest running the project's lint command
-   - After modifying tests, suggest running the project's test command
+
+- After writing code, suggest running the project's lint command
+- After modifying tests, suggest running the project's test command
 
 6.2. Align git behavior with team conventions:
-   - Detect commit message format from history (conventional commits, etc.)
-   - Document branch naming conventions
-   - Note any PR template or review requirements
+
+- Detect commit message format from history (conventional commits, etc.)
+- Document branch naming conventions
+- Note any PR template or review requirements
 
 6.3. Set up notification hooks for critical operations:
-   - Alert when modifying shared configuration files
-   - Alert when adding new dependencies
+
+- Alert when modifying shared configuration files
+- Alert when adding new dependencies
 
 ---
 
@@ -292,31 +304,31 @@ paths:
 ```yaml
 brownfield_setup_result:
   project_analysis:
-    language: "TypeScript"
-    framework: "Next.js 14"
+    language: 'TypeScript'
+    framework: 'Next.js 14'
     patterns_detected: 12
-    tooling_detected: ["ESLint", "Prettier", "Jest", "GitHub Actions"]
+    tooling_detected: ['ESLint', 'Prettier', 'Jest', 'GitHub Actions']
   files_created:
-    - "CLAUDE.md"
-    - ".claude/settings.json"
-    - ".claude/rules/code-style.md"
-    - ".claude/rules/architecture.md"
-    - ".claude/rules/anti-patterns.md"
+    - 'CLAUDE.md'
+    - '.claude/settings.json'
+    - '.claude/rules/code-style.md'
+    - '.claude/rules/architecture.md'
+    - '.claude/rules/anti-patterns.md'
   critical_paths_protected: 5
   deny_rules_configured: 5
   existing_workflows_integrated: true
-  disruption_risk: "none"
-  overall_status: "PASS"
+  disruption_risk: 'none'
+  overall_status: 'PASS'
 ```
 
 ---
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
-| Project has no existing source code | HALT -- use integrate-project for greenfield |
-| CLAUDE.md exists and is manually maintained | WARN -- ask before overwriting |
-| Cannot detect any coding patterns (empty repo) | HALT -- nothing to learn from |
+| Condition                                         | Action                                                |
+| ------------------------------------------------- | ----------------------------------------------------- |
+| Project has no existing source code               | HALT -- use integrate-project for greenfield          |
+| CLAUDE.md exists and is manually maintained       | WARN -- ask before overwriting                        |
+| Cannot detect any coding patterns (empty repo)    | HALT -- nothing to learn from                         |
 | Critical paths list is empty and project is large | WARN -- strongly recommend identifying critical paths |
-| Existing .claude/settings.json has deny rules | MERGE -- add to existing rules, do not replace |
+| Existing .claude/settings.json has deny rules     | MERGE -- add to existing rules, do not replace        |

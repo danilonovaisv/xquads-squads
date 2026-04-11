@@ -1,6 +1,6 @@
 ---
 task: evaluateTechnology()
-responsavel: "@cto-architect"
+responsavel: '@cto-architect'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Current stack inventoried across all layers"
-  - "[ ] Technology Radar built with 4 rings"
-  - "[ ] 12-month technology roadmap created"
+  - '[ ] Current stack inventoried across all layers'
+  - '[ ] Technology Radar built with 4 rings'
+  - '[ ] 12-month technology roadmap created'
 ---
 
 # Task: Evaluate Technology
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `company` | User prompt | Yes | Company name and product description |
-| `current_stack` | User | Yes | Current technology stack and infrastructure |
-| `team` | User | Yes | Engineering team size, skills, and structure |
-| `challenges` | User | No | Known technical challenges or debt |
-| `strategic_pillars` | vision-chief | No | Strategic pillars that tech must support |
+| Input               | Source       | Required | Description                                  |
+| ------------------- | ------------ | -------- | -------------------------------------------- |
+| `company`           | User prompt  | Yes      | Company name and product description         |
+| `current_stack`     | User         | Yes      | Current technology stack and infrastructure  |
+| `team`              | User         | Yes      | Engineering team size, skills, and structure |
+| `challenges`        | User         | No       | Known technical challenges or debt           |
+| `strategic_pillars` | vision-chief | No       | Strategic pillars that tech must support     |
 
 ## Preconditions
 
@@ -149,31 +149,31 @@ Checklist:
 
 ```yaml
 technology_strategy:
-  company: "{name}"
+  company: '{name}'
   current_stack:
-    frontend: ["{tech1}", "{tech2}"]
-    backend: ["{tech1}", "{tech2}"]
-    data: ["{tech1}", "{tech2}"]
-    infrastructure: ["{tech1}", "{tech2}"]
-  tech_debt_score: "{1-10 average}"
-  critical_risks: ["{risk1}", "{risk2}"]
+    frontend: ['{tech1}', '{tech2}']
+    backend: ['{tech1}', '{tech2}']
+    data: ['{tech1}', '{tech2}']
+    infrastructure: ['{tech1}', '{tech2}']
+  tech_debt_score: '{1-10 average}'
+  critical_risks: ['{risk1}', '{risk2}']
   technology_radar:
-    adopt: ["{tech1}", "{tech2}"]
-    trial: ["{tech1}"]
-    assess: ["{tech1}"]
-    hold: ["{tech1}"]
+    adopt: ['{tech1}', '{tech2}']
+    trial: ['{tech1}']
+    assess: ['{tech1}']
+    hold: ['{tech1}']
   adrs:
-    documented: {number}
-    pending_decisions: {number}
+    documented: { number }
+    pending_decisions: { number }
   investment_allocation:
-    features: "{%}"
-    tech_debt: "{%}"
-    innovation: "{%}"
+    features: '{%}'
+    tech_debt: '{%}'
+    innovation: '{%}'
   roadmap:
-    q1: "{theme and priorities}"
-    q2: "{theme and priorities}"
-    q3: "{theme and priorities}"
-    q4: "{theme and priorities}"
+    q1: '{theme and priorities}'
+    q2: '{theme and priorities}'
+    q3: '{theme and priorities}'
+    q4: '{theme and priorities}'
   deliverables:
     - technology-assessment.md
     - technology-radar.md

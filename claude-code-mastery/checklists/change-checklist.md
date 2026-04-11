@@ -10,6 +10,7 @@ This checklist is used BEFORE applying configuration changes to Claude Code
 artifacts (.claude/ directory, settings, rules, hooks, MCP config).
 
 EXECUTION APPROACH:
+
 1. Identify all files that will change
 2. For each category, assess impact and document findings
 3. Security impacts must be explicitly assessed -- never skip
@@ -43,7 +44,7 @@ Treat configuration changes with the same rigor as production deployments.]]
 - [ ] Deny rules are not weakened or removed without explicit security justification (CRITICAL)
 - [ ] No new sensitive file patterns exposed by allow rule additions (CRITICAL)
 - [ ] Permission mode changes are intentional (explore/ask/auto transitions documented)
-- [ ] Secret file patterns (.env, credentials.json, *.key, *.pem) remain in deny rules
+- [ ] Secret file patterns (.env, credentials.json, _.key, _.pem) remain in deny rules
 - [ ] MCP server access is not broadened beyond intended scope
 - [ ] Hook scripts do not introduce new file system write access to protected areas
 

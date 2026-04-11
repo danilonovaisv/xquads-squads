@@ -1,6 +1,6 @@
 ---
 task: buildMovement()
-responsavel: "@movement-chief"
+responsavel: '@movement-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Spark analysis completed and validated"
-  - "[ ] All 6 deliverable documents produced"
-  - "[ ] End-to-end coherence validated"
+  - '[ ] Spark analysis completed and validated'
+  - '[ ] All 6 deliverable documents produced'
+  - '[ ] End-to-end coherence validated'
 ---
 
 # Task: Build Movement
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `cause` | User prompt | Yes | The cause, idea, or brand to build a movement around |
-| `audience` | User prompt | Yes | Target audience or community description |
-| `context` | Session | No | Market context, existing brand assets, competitors |
-| `phase_override` | User | No | Start from a specific phase (skip earlier phases) |
-| `intensity` | User | No | Scale: grassroots, regional, national, global |
+| Input            | Source      | Required | Description                                          |
+| ---------------- | ----------- | -------- | ---------------------------------------------------- |
+| `cause`          | User prompt | Yes      | The cause, idea, or brand to build a movement around |
+| `audience`       | User prompt | Yes      | Target audience or community description             |
+| `context`        | Session     | No       | Market context, existing brand assets, competitors   |
+| `phase_override` | User        | No       | Start from a specific phase (skip earlier phases)    |
+| `intensity`      | User        | No       | Scale: grassroots, regional, national, global        |
 
 ## Preconditions
 
@@ -115,18 +115,18 @@ Checklist:
 
 ```yaml
 movement_build:
-  name: "{movement name}"
-  cause: "{cause summary}"
-  spark: "{one-line spark insight}"
+  name: '{movement name}'
+  cause: '{cause summary}'
+  spark: '{one-line spark insight}'
   identity:
-    core_belief: "{central belief}"
-    battle_cry: "{one sentence}"
-    tribal_markers: ["{marker1}", "{marker2}", "{marker3}"]
-  manifesto_status: "complete"
-  growth_flywheel: "{attract > activate > sustain > multiply}"
+    core_belief: '{central belief}'
+    battle_cry: '{one sentence}'
+    tribal_markers: ['{marker1}', '{marker2}', '{marker3}']
+  manifesto_status: 'complete'
+  growth_flywheel: '{attract > activate > sustain > multiply}'
   impact_metrics:
-    vitality_index: "{score}/100"
-    primary_kpi: "{metric}"
+    vitality_index: '{score}/100'
+    primary_kpi: '{metric}'
   deliverables:
     - spark-analysis.md
     - identity-architecture.md
@@ -134,7 +134,7 @@ movement_build:
     - ignition-plan.md
     - growth-strategy.md
     - impact-framework.md
-  status: "{complete|in-progress|blocked}"
+  status: '{complete|in-progress|blocked}'
 ```
 
 ## Veto Conditions

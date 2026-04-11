@@ -33,11 +33,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Must be a valid directory |
-| mode | string | User parameter | No | `guided` (default, interactive) or `express` (smart defaults) |
-| preset | string | User parameter | No | Project type override (monorepo, fullstack, library, api, cli) |
+| Field        | Type   | Source            | Required | Validation                                                     |
+| ------------ | ------ | ----------------- | -------- | -------------------------------------------------------------- |
+| project_root | string | Working directory | Yes      | Must be a valid directory                                      |
+| mode         | string | User parameter    | No       | `guided` (default, interactive) or `express` (smart defaults)  |
+| preset       | string | User parameter    | No       | Project type override (monorepo, fullstack, library, api, cli) |
 
 ---
 
@@ -74,16 +74,16 @@ Analyze the project to determine its type:
 
 **Project Type Matrix:**
 
-| Type | Markers | Default Permission Mode |
-|------|---------|------------------------|
-| monorepo | workspaces, packages/ | acceptEdits |
-| fullstack | next.config, app/ + api/ | acceptEdits |
-| frontend | vite.config, src/components | acceptEdits |
-| api | server/, express/fastify dep | acceptEdits |
-| library | main/module in package.json | askAlways |
-| cli | bin/ field in package.json | askAlways |
-| python | pyproject.toml, src/ | acceptEdits |
-| aios | .aios-core/ directory | acceptEdits |
+| Type      | Markers                      | Default Permission Mode |
+| --------- | ---------------------------- | ----------------------- |
+| monorepo  | workspaces, packages/        | acceptEdits             |
+| fullstack | next.config, app/ + api/     | acceptEdits             |
+| frontend  | vite.config, src/components  | acceptEdits             |
+| api       | server/, express/fastify dep | acceptEdits             |
+| library   | main/module in package.json  | askAlways               |
+| cli       | bin/ field in package.json   | askAlways               |
+| python    | pyproject.toml, src/         | acceptEdits             |
+| aios      | .aios-core/ directory        | acceptEdits             |
 
 ### Phase 2: Generate CLAUDE.md
 
@@ -117,7 +117,7 @@ Analyze the project to determine its type:
 2. Generate conditional rules based on project structure:
    - **api-rules.md**: API conventions (if src/api/ or server/ exists)
      - `paths: ["src/api/**", "server/**"]`
-   - **test-rules.md**: Testing conventions (if tests/ or __tests__/ exists)
+   - **test-rules.md**: Testing conventions (if tests/ or **tests**/ exists)
      - `paths: ["tests/**", "**/*.test.*", "**/*.spec.*"]`
    - **component-rules.md**: Component patterns (if src/components/ exists)
      - `paths: ["src/components/**", "**/*.tsx"]`
@@ -136,13 +136,17 @@ Analyze the project to determine its type:
    ```json
    {
      "hooks": {
-       "PreToolUse": [{
-         "matcher": "Bash",
-         "hooks": [{ "type": "command", "command": "...", "timeout": 10 }]
-       }],
-       "PreCompact": [{
-         "hooks": [{ "type": "command", "command": "...", "timeout": 5 }]
-       }]
+       "PreToolUse": [
+         {
+           "matcher": "Bash",
+           "hooks": [{ "type": "command", "command": "...", "timeout": 10 }]
+         }
+       ],
+       "PreCompact": [
+         {
+           "hooks": [{ "type": "command", "command": "...", "timeout": 5 }]
+         }
+       ]
      }
    }
    ```
@@ -189,12 +193,12 @@ Analyze the project to determine its type:
 
 ### Files Created
 
-| File | Purpose | Lines |
-|------|---------|-------|
-| .claude/CLAUDE.md | Project instructions | {N} |
-| .claude/settings.json | Permissions and config | {N} |
-| .claude/rules/{name}.md | Conditional rule | {N} |
-| ... | ... | ... |
+| File                    | Purpose                | Lines |
+| ----------------------- | ---------------------- | ----- |
+| .claude/CLAUDE.md       | Project instructions   | {N}   |
+| .claude/settings.json   | Permissions and config | {N}   |
+| .claude/rules/{name}.md | Conditional rule       | {N}   |
+| ...                     | ...                    | ...   |
 
 ### Configuration Summary
 

@@ -1,6 +1,6 @@
 ---
 task: createAdCreative()
-responsavel: "@ad-midas"
+responsavel: '@ad-midas'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Concepts developed with distinct angles"
-  - "[ ] Each concept includes hook, copy, visual direction, and CTA"
-  - "[ ] Testing framework defined with pairs and metrics"
+  - '[ ] Concepts developed with distinct angles'
+  - '[ ] Each concept includes hook, copy, visual direction, and CTA'
+  - '[ ] Testing framework defined with pairs and metrics'
 ---
 
 # Task: Create Ad Creative
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service being advertised |
-| platform | enum | User prompt | Yes | facebook, instagram, youtube, tiktok, google, linkedin |
-| audience | string | User prompt | Yes | Target audience for the creative |
-| funnel_stage | enum | User prompt | Yes | cold, warm, hot |
-| format | enum | User prompt | No | image, video, carousel, UGC — defaults to platform best practice |
-| num_concepts | number | User prompt | No | Defaults to 5 concepts |
-| brand_guidelines | string | User prompt | No | Colors, fonts, tone constraints |
+| Field            | Type   | Source      | Required | Validation                                                       |
+| ---------------- | ------ | ----------- | -------- | ---------------------------------------------------------------- |
+| product          | string | User prompt | Yes      | Product/service being advertised                                 |
+| platform         | enum   | User prompt | Yes      | facebook, instagram, youtube, tiktok, google, linkedin           |
+| audience         | string | User prompt | Yes      | Target audience for the creative                                 |
+| funnel_stage     | enum   | User prompt | Yes      | cold, warm, hot                                                  |
+| format           | enum   | User prompt | No       | image, video, carousel, UGC — defaults to platform best practice |
+| num_concepts     | number | User prompt | No       | Defaults to 5 concepts                                           |
+| brand_guidelines | string | User prompt | No       | Colors, fonts, tone constraints                                  |
 
 ---
 
@@ -62,6 +62,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Creative Research
+
 1. Analyze the winning creative patterns for the platform:
    - What format dominates (static, video, UGC)?
    - What hook styles perform (question, shock, result, story)?
@@ -74,6 +75,7 @@ Checklist:
    - Hot: Offer, urgency, testimonials, direct CTA
 
 ### Phase 2: Concept Development
+
 1. Develop creative concepts using distinct angles:
    - **Problem-Agitation:** Show the pain they experience
    - **Before/After:** Visual or narrative transformation
@@ -90,6 +92,7 @@ Checklist:
 4. Ensure at least one UGC-style concept (for social platforms)
 
 ### Phase 3: Production Briefs
+
 1. Write production-ready briefs for each concept:
    - For video: Shot list, script, duration, music direction
    - For image: Layout description, text overlay, imagery direction
@@ -99,6 +102,7 @@ Checklist:
 4. Provide reference examples or mood boards where helpful
 
 ### Phase 4: Testing Framework
+
 1. Define what is being tested per concept:
    - Hook test: Same body, different hooks
    - Format test: Same message, different formats
@@ -122,11 +126,13 @@ Checklist:
 ---
 
 ### Concept 1: {Name} — {Angle}
+
 **Format:** {format}
 **Hook:** {first 2-3 seconds or headline}
 **Core Message:** {single takeaway}
 
 **Copy:**
+
 - Primary Text: {body copy}
 - Headline: {headline}
 - Description: {description}
@@ -147,11 +153,12 @@ Checklist:
 ### Testing Plan
 
 | Test | Concept A | Concept B | Variable | Budget | Duration |
-|------|-----------|-----------|----------|--------|----------|
+| ---- | --------- | --------- | -------- | ------ | -------- |
 
 ### Platform Specs Checklist
+
 | Spec | Requirement | Status |
-|------|------------|--------|
+| ---- | ----------- | ------ |
 ```
 
 ---

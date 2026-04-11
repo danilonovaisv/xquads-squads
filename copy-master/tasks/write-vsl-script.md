@@ -1,6 +1,6 @@
 ---
 task: writeVslScript()
-responsavel: "@stefan-georgi"
+responsavel: '@stefan-georgi'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] RMBC framework fully executed (all 4 sections)"
-  - "[ ] Hook compelling in first 60 seconds"
-  - "[ ] Visual direction cues and production notes included"
-  - "[ ] Psychological Layer applied (Cialdini/Warren principles tagged)"
+  - '[ ] RMBC framework fully executed (all 4 sections)'
+  - '[ ] Hook compelling in first 60 seconds'
+  - '[ ] Visual direction cues and production notes included'
+  - '[ ] Psychological Layer applied (Cialdini/Warren principles tagged)'
 ---
 
 # Task: Write VSL Script
@@ -40,15 +40,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service with transformation it delivers |
-| audience | string | User prompt | Yes | Target audience with emotional state and desires |
-| offer | object | User prompt | Yes | Price, guarantee, bonuses, urgency |
-| duration_target | string | User prompt | No | short (10-15min), medium (20-30min), long (45-60min) — defaults to medium |
-| unique_mechanism | string | User prompt | No | What makes this solution different |
-| proof_elements | list | User prompt | No | Testimonials, results, credentials |
-| platform | string | User prompt | No | Where the VSL will run (landing page, YouTube, webinar) |
+| Field            | Type   | Source      | Required | Validation                                                                |
+| ---------------- | ------ | ----------- | -------- | ------------------------------------------------------------------------- |
+| product          | string | User prompt | Yes      | Product/service with transformation it delivers                           |
+| audience         | string | User prompt | Yes      | Target audience with emotional state and desires                          |
+| offer            | object | User prompt | Yes      | Price, guarantee, bonuses, urgency                                        |
+| duration_target  | string | User prompt | No       | short (10-15min), medium (20-30min), long (45-60min) — defaults to medium |
+| unique_mechanism | string | User prompt | No       | What makes this solution different                                        |
+| proof_elements   | list   | User prompt | No       | Testimonials, results, credentials                                        |
+| platform         | string | User prompt | No       | Where the VSL will run (landing page, YouTube, webinar)                   |
 
 ---
 
@@ -75,6 +75,7 @@ Study these real-world champion VSLs before writing:
 ## Execution Phases
 
 ### Phase 1: RMBC Framework Setup
+
 1. **R -- Relate:** Define the relatable opening story or scenario
    - Identify a moment the prospect has lived through
    - Choose first-person or second-person narrative angle
@@ -95,6 +96,7 @@ Study these real-world champion VSLs before writing:
    - Final CTA with exact next step
 
 ### Phase 2: Psychological Layer
+
 1. Map Cialdini's principles into the VSL structure:
    - **Relate section:** Liking (shared struggle), Unity (shared identity)
    - **Mechanism section:** Authority (science, credentials), Commitment (small agreements)
@@ -108,6 +110,7 @@ Study these real-world champion VSLs before writing:
 4. Document the persuasion architecture
 
 ### Phase 3: Script Writing
+
 1. Write the hook (first 60 seconds) — must stop the scroll and earn attention
 2. Write the "relate" section with story arc (struggle -> discovery -> transformation)
 3. Transition to mechanism reveal with pattern interrupt
@@ -118,6 +121,7 @@ Study these real-world champion VSLs before writing:
 8. Write the "walk away" close — what happens if they do nothing
 
 ### Phase 4: Production Notes
+
 1. Add visual/slide direction cues in brackets
 2. Mark emphasis points for voice modulation
 3. Identify where B-roll or demonstration footage should appear
@@ -138,41 +142,49 @@ Study these real-world champion VSLs before writing:
 **Unique Mechanism:** {mechanism name}
 
 ### Persuasion Architecture
+
 | RMBC Section | Cialdini Principles | Warren Levers |
-|--------------|--------------------|--------------  |
-| Relate | {principles} | {levers} |
-| Mechanism | {principles} | {levers} |
-| Benefits | {principles} | {levers} |
-| Close | {principles} | {levers} |
+| ------------ | ------------------- | ------------- |
+| Relate       | {principles}        | {levers}      |
+| Mechanism    | {principles}        | {levers}      |
+| Benefits     | {principles}        | {levers}      |
+| Close        | {principles}        | {levers}      |
 
 ---
 
 ### HOOK (0:00 - 1:00)
+
 {Opening hook script}
 [VISUAL: {direction}]
 
 ### RELATE (1:00 - {X}:00)
+
 {Relatable story section}
 [VISUAL: {direction}]
 
 ### MECHANISM ({X}:00 - {Y}:00)
+
 {Mechanism reveal and explanation}
 [VISUAL: {direction}]
 
 ### BENEFITS ({Y}:00 - {Z}:00)
+
 {Benefits stack with future-pacing}
 [VISUAL: {direction}]
 
 ### PROOF BLOCKS
+
 {Testimonial/proof insertions with timestamps}
 
 ### CLOSE ({Z}:00 - END)
+
 {Price reveal, stack, guarantee, urgency, CTA}
 [VISUAL: {direction}]
 
 ---
 
 ### Production Notes
+
 - **Estimated runtime:** {X} minutes
 - **Word count:** {Y}
 - **Key visual moments:** {list}

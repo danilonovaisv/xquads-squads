@@ -1,6 +1,6 @@
 ---
 task: writeBullets()
-responsavel: "@gary-bencivenga"
+responsavel: '@gary-bencivenga'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Source content mined for all bullet material"
-  - "[ ] Requested number of bullets written using varied formulas"
-  - "[ ] 3-5 killer bullets identified for multi-use"
+  - '[ ] Source content mined for all bullet material'
+  - '[ ] Requested number of bullets written using varied formulas'
+  - '[ ] 3-5 killer bullets identified for multi-use'
 ---
 
 # Task: Write Bullet Points
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service with content or features to bullet |
-| content_source | string | User prompt | Yes | Raw material to transform into bullets (features, chapters, lessons, results) |
-| context | enum | User prompt | Yes | sales-page, email, VSL, ad, order-form |
-| audience | string | User prompt | No | Target reader for calibrating language |
-| num_bullets | number | User prompt | No | Defaults to 20 |
-| style | enum | User prompt | No | fascination, benefit, proof, hybrid — defaults to fascination |
+| Field          | Type   | Source      | Required | Validation                                                                    |
+| -------------- | ------ | ----------- | -------- | ----------------------------------------------------------------------------- |
+| product        | string | User prompt | Yes      | Product/service with content or features to bullet                            |
+| content_source | string | User prompt | Yes      | Raw material to transform into bullets (features, chapters, lessons, results) |
+| context        | enum   | User prompt | Yes      | sales-page, email, VSL, ad, order-form                                        |
+| audience       | string | User prompt | No       | Target reader for calibrating language                                        |
+| num_bullets    | number | User prompt | No       | Defaults to 20                                                                |
+| style          | enum   | User prompt | No       | fascination, benefit, proof, hybrid — defaults to fascination                 |
 
 ---
 
@@ -60,6 +60,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Source Mining
+
 1. Extract every unique claim, feature, benefit, or fact from the source content
 2. Identify which facts are most surprising, counterintuitive, or valuable
 3. Rank by "would someone pay money just to know this?" factor
@@ -67,6 +68,7 @@ Checklist:
 5. Target at least 2x the requested bullet count as raw material
 
 ### Phase 2: Bullet Writing
+
 1. Write bullets using proven fascination formulas:
    - **The Secret:** "The closely guarded secret that {outcome}..."
    - **The Counterintuitive:** "Why {common belief} is actually {opposite}..."
@@ -82,6 +84,7 @@ Checklist:
 5. Bold or emphasize the most important phrase in longer bullets
 
 ### Phase 3: Selection and Ordering
+
 1. Score each bullet on curiosity intensity (1-5)
 2. Select the top bullets (per requested count)
 3. Order strategically:
@@ -105,14 +108,17 @@ Checklist:
 ---
 
 ### Top Bullets (Killer Headlines)
+
 {3-5 strongest bullets marked with a star}
 
 ### Bullet Section 1: {Theme}
+
 - {bullet}
 - {bullet}
 - {bullet}
 
 ### Bullet Section 2: {Theme}
+
 - {bullet}
 - {bullet}
 - {bullet}
@@ -122,6 +128,7 @@ Checklist:
 ---
 
 ### Usage Notes
+
 - **Best for headline conversion:** {bullet #}
 - **Best for email subject line:** {bullet #}
 - **Best for ad hook:** {bullet #}

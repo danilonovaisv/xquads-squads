@@ -33,10 +33,10 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Must contain a .claude/ directory or be a valid project root |
-| depth | string | User parameter | No | `quick` (checks 1-3 only) or `full` (default, all 8 checks) |
+| Field        | Type   | Source            | Required | Validation                                                   |
+| ------------ | ------ | ----------------- | -------- | ------------------------------------------------------------ |
+| project_root | string | Working directory | Yes      | Must contain a .claude/ directory or be a valid project root |
+| depth        | string | User parameter    | No       | `quick` (checks 1-3 only) or `full` (default, all 8 checks)  |
 
 ---
 
@@ -67,6 +67,7 @@ Verify the presence and structure of the .claude/ directory:
 ```
 
 Score each item:
+
 - REQUIRED missing = -20 points
 - RECOMMENDED missing = -10 points
 - OPTIONAL missing = informational only
@@ -150,15 +151,15 @@ Calculate the final score and generate recommendations.
 
 **Scoring System (100 points max):**
 
-| Check | Max Points | Criteria |
-|-------|-----------|----------|
-| Directory structure | 15 | Required files present, recommended dirs exist |
-| Settings validation | 20 | Valid schema, deny-first rules, no conflicts |
-| CLAUDE.md quality | 20 | Under 200 lines, well-structured, uses imports |
-| Hooks coverage | 15 | At least PreToolUse configured, proper timeouts |
-| MCP servers | 10 | Configured and no hardcoded secrets |
-| Rules coverage | 10 | Conditional loading used, major dirs covered |
-| Agent definitions | 10 | Valid frontmatter, scoped tools |
+| Check               | Max Points | Criteria                                        |
+| ------------------- | ---------- | ----------------------------------------------- |
+| Directory structure | 15         | Required files present, recommended dirs exist  |
+| Settings validation | 20         | Valid schema, deny-first rules, no conflicts    |
+| CLAUDE.md quality   | 20         | Under 200 lines, well-structured, uses imports  |
+| Hooks coverage      | 15         | At least PreToolUse configured, proper timeouts |
+| MCP servers         | 10         | Configured and no hardcoded secrets             |
+| Rules coverage      | 10         | Conditional loading used, major dirs covered    |
+| Agent definitions   | 10         | Valid frontmatter, scoped tools                 |
 
 ---
 
@@ -173,25 +174,25 @@ Calculate the final score and generate recommendations.
 
 ### Score: {N}/100 ({GRADE})
 
-| Grade | Range | Meaning |
-|-------|-------|---------|
-| A | 90-100 | Excellent -- production-ready configuration |
-| B | 75-89 | Good -- minor improvements recommended |
-| C | 60-74 | Fair -- several gaps to address |
-| D | 40-59 | Poor -- significant configuration work needed |
-| F | 0-39 | Critical -- minimal or broken setup |
+| Grade | Range  | Meaning                                       |
+| ----- | ------ | --------------------------------------------- |
+| A     | 90-100 | Excellent -- production-ready configuration   |
+| B     | 75-89  | Good -- minor improvements recommended        |
+| C     | 60-74  | Fair -- several gaps to address               |
+| D     | 40-59  | Poor -- significant configuration work needed |
+| F     | 0-39   | Critical -- minimal or broken setup           |
 
 ### Check Results
 
-| # | Check | Status | Score | Notes |
-|---|-------|--------|-------|-------|
-| 1 | Directory Structure | {PASS/WARN/FAIL} | {N}/15 | {notes} |
-| 2 | Settings Validation | {PASS/WARN/FAIL} | {N}/20 | {notes} |
-| 3 | CLAUDE.md Quality | {PASS/WARN/FAIL} | {N}/20 | {notes} |
-| 4 | Hooks Coverage | {PASS/WARN/FAIL} | {N}/15 | {notes} |
-| 5 | MCP Servers | {PASS/WARN/FAIL} | {N}/10 | {notes} |
-| 6 | Rules Coverage | {PASS/WARN/FAIL} | {N}/10 | {notes} |
-| 7 | Agent Definitions | {PASS/WARN/FAIL} | {N}/10 | {notes} |
+| #   | Check               | Status           | Score  | Notes   |
+| --- | ------------------- | ---------------- | ------ | ------- |
+| 1   | Directory Structure | {PASS/WARN/FAIL} | {N}/15 | {notes} |
+| 2   | Settings Validation | {PASS/WARN/FAIL} | {N}/20 | {notes} |
+| 3   | CLAUDE.md Quality   | {PASS/WARN/FAIL} | {N}/20 | {notes} |
+| 4   | Hooks Coverage      | {PASS/WARN/FAIL} | {N}/15 | {notes} |
+| 5   | MCP Servers         | {PASS/WARN/FAIL} | {N}/10 | {notes} |
+| 6   | Rules Coverage      | {PASS/WARN/FAIL} | {N}/10 | {notes} |
+| 7   | Agent Definitions   | {PASS/WARN/FAIL} | {N}/10 | {notes} |
 
 ### Recommendations (Priority Order)
 

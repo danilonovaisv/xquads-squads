@@ -28,11 +28,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Must contain CLAUDE.md or .claude/CLAUDE.md |
-| target_lines | number | User parameter | No | Target max lines for CLAUDE.md (default: 200) |
-| dry_run | boolean | User parameter | No | If true, only report without making changes |
+| Field        | Type    | Source            | Required | Validation                                    |
+| ------------ | ------- | ----------------- | -------- | --------------------------------------------- |
+| project_root | string  | Working directory | Yes      | Must contain CLAUDE.md or .claude/CLAUDE.md   |
+| target_lines | number  | User parameter    | No       | Target max lines for CLAUDE.md (default: 200) |
+| dry_run      | boolean | User parameter    | No       | If true, only report without making changes   |
 
 ---
 
@@ -65,9 +65,9 @@
    - **Redundant content** (can remove): Duplicated across files, outdated
 4. Generate the analysis table:
 
-| Section | Lines | Category | Recommendation |
-|---------|-------|----------|----------------|
-| {header} | {N} | {core/conditional/reference/redundant} | {keep/move/import/remove} |
+| Section  | Lines | Category                               | Recommendation            |
+| -------- | ----- | -------------------------------------- | ------------------------- |
+| {header} | {N}   | {core/conditional/reference/redundant} | {keep/move/import/remove} |
 
 ### Phase 2: Move Detailed Instructions to .claude/rules/
 
@@ -94,7 +94,7 @@ For each section categorized as "conditional":
    ```yaml
    ---
    paths:
-     - "src/api/**/*.ts"
+     - 'src/api/**/*.ts'
    ---
    ```
 2. Test glob patterns match actual project files
@@ -132,11 +132,11 @@ For each section categorized as "conditional":
    - Default trigger is ~95% context capacity
 2. Recommend compaction threshold based on project size:
 
-| Project Size | CLAUDE.md Lines | Recommended PCT | Rationale |
-|-------------|----------------|-----------------|-----------|
-| Small (<100 files) | <100 | Default (95%) | Rarely hits limit |
-| Medium (100-500 files) | 100-200 | 80% | Some headroom needed |
-| Large (500+ files) | 200+ | 50-60% | Frequent compaction needed |
+| Project Size           | CLAUDE.md Lines | Recommended PCT | Rationale                  |
+| ---------------------- | --------------- | --------------- | -------------------------- |
+| Small (<100 files)     | <100            | Default (95%)   | Rarely hits limit          |
+| Medium (100-500 files) | 100-200         | 80%             | Some headroom needed       |
+| Large (500+ files)     | 200+            | 50-60%          | Frequent compaction needed |
 
 3. Check for PreCompact hook:
    - If missing: recommend adding one for context preservation
@@ -159,27 +159,27 @@ For each section categorized as "conditional":
 
 ### CLAUDE.md Analysis
 
-| Metric | Before | After | Change |
-|--------|--------|-------|--------|
-| Total lines | {N} | {N} | {-N (-X%)} |
-| Sections | {N} | {N} | {-N} |
-| Est. tokens | {N} | {N} | {-N (-X%)} |
-| @imports | {N} | {N} | {+N} |
+| Metric      | Before | After | Change     |
+| ----------- | ------ | ----- | ---------- |
+| Total lines | {N}    | {N}   | {-N (-X%)} |
+| Sections    | {N}    | {N}   | {-N}       |
+| Est. tokens | {N}    | {N}   | {-N (-X%)} |
+| @imports    | {N}    | {N}   | {+N}       |
 
 ### Content Redistribution
 
-| Section | Lines | Action | Destination |
-|---------|-------|--------|-------------|
-| {section} | {N} | {moved/imported/removed/kept} | {.claude/rules/X.md | @import | --} |
+| Section   | Lines | Action                        | Destination         |
+| --------- | ----- | ----------------------------- | ------------------- | ------- | --- |
+| {section} | {N}   | {moved/imported/removed/kept} | {.claude/rules/X.md | @import | --} |
 
 ### Context Budget
 
-| Component | Lines | Tokens (est.) | Loading |
-|-----------|-------|---------------|---------|
-| CLAUDE.md | {N} | {N} | Always |
-| .claude/rules/ (total) | {N} | {N} | Conditional |
-| Auto-memory | {N} | {N} | Always |
-| **Total always-loaded** | {N} | {N} | -- |
+| Component               | Lines | Tokens (est.) | Loading     |
+| ----------------------- | ----- | ------------- | ----------- |
+| CLAUDE.md               | {N}   | {N}           | Always      |
+| .claude/rules/ (total)  | {N}   | {N}           | Conditional |
+| Auto-memory             | {N}   | {N}           | Always      |
+| **Total always-loaded** | {N}   | {N}           | --          |
 
 ### Compaction Settings
 

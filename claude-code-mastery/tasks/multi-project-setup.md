@@ -54,11 +54,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| projects | object[] | User | Yes | Array of {path, name, type} for each project |
-| relationship | enum | User | Yes | `monorepo`, `polyrepo-shared-stack`, `polyrepo-independent`, `workspace` |
-| shared_tools | string[] | User | No | Tools used across all projects (e.g., "eslint", "jest", "docker") |
+| Field        | Type     | Source | Required | Validation                                                               |
+| ------------ | -------- | ------ | -------- | ------------------------------------------------------------------------ |
+| projects     | object[] | User   | Yes      | Array of {path, name, type} for each project                             |
+| relationship | enum     | User   | Yes      | `monorepo`, `polyrepo-shared-stack`, `polyrepo-independent`, `workspace` |
+| shared_tools | string[] | User   | No       | Tools used across all projects (e.g., "eslint", "jest", "docker")        |
 
 ---
 
@@ -83,6 +83,7 @@ For each project, determine:
 5. **Git topology**: single repo with multiple packages vs separate repositories
 
 Build a relationship map:
+
 ```
 Project A (Next.js frontend) --imports--> shared-lib
 Project B (Node.js API)      --imports--> shared-lib
@@ -104,6 +105,7 @@ Create or update `~/.claude/settings.json`:
    - Default model configuration
 
 Create or update `~/.claude/CLAUDE.md` (user-level):
+
 - Developer identity and preferences
 - Cross-project conventions (commit style, PR format)
 - Keep under 50 lines -- project-specific content goes in project CLAUDE.md
@@ -176,9 +178,9 @@ Run verification across all projects:
 
 ### Project Map
 
-| Project | Type | Stack | MCP Servers | Rules |
-|---------|------|-------|-------------|-------|
-| {name} | {type} | {stack} | {N} | {N} |
+| Project | Type   | Stack   | MCP Servers | Rules |
+| ------- | ------ | ------- | ----------- | ----- |
+| {name}  | {type} | {stack} | {N}         | {N}   |
 
 ### Shared Configuration
 
@@ -190,6 +192,7 @@ Run verification across all projects:
 ### Per-Project Configuration
 
 **{project_name}:**
+
 - .claude/CLAUDE.md: {N} lines
 - .claude/settings.json: {N} allows, {N} denies
 - .claude/rules/: {N} files
@@ -197,13 +200,13 @@ Run verification across all projects:
 
 ### Cross-Project Verification
 
-| Check | Status |
-|-------|--------|
-| No setting conflicts | PASS/FAIL |
+| Check                   | Status    |
+| ----------------------- | --------- |
+| No setting conflicts    | PASS/FAIL |
 | All projects configured | PASS/FAIL |
-| MCP consistency | PASS/FAIL |
-| Rule consistency | PASS/FAIL |
-| Path accuracy | PASS/FAIL |
+| MCP consistency         | PASS/FAIL |
+| Rule consistency        | PASS/FAIL |
+| Path accuracy           | PASS/FAIL |
 ```
 
 ---

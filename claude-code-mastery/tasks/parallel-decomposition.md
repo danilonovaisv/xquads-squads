@@ -53,13 +53,13 @@ OUTPUT: Execution plan + dependency graph + agent configs + merge strategy
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| task_description | string | User | yes | Full description of the work to parallelize |
-| max_parallel_agents | number | User or default | no | Maximum simultaneous agents (default: 4) |
-| isolation_mode | enum | User | no | shared / worktree / branch (default: shared) |
-| time_constraint | string | User | no | Target completion time |
-| cost_constraint | enum | User | no | low / medium / high (affects model selection) |
+| Field               | Type   | Source          | Required | Validation                                    |
+| ------------------- | ------ | --------------- | -------- | --------------------------------------------- |
+| task_description    | string | User            | yes      | Full description of the work to parallelize   |
+| max_parallel_agents | number | User or default | no       | Maximum simultaneous agents (default: 4)      |
+| isolation_mode      | enum   | User            | no       | shared / worktree / branch (default: shared)  |
+| time_constraint     | string | User            | no       | Target completion time                        |
+| cost_constraint     | enum   | User            | no       | low / medium / high (affects model selection) |
 
 ---
 
@@ -80,25 +80,26 @@ OUTPUT: Execution plan + dependency graph + agent configs + merge strategy
 
 1.1. Read the full task description.
 1.2. Identify atomic subtasks -- each should be:
-   - Completable by a single agent
-   - Testable independently
-   - Producing a clear output artifact
-1.3. Classify each subtask:
 
-| Complexity | Lines of Change | Model | Estimated Time |
-|------------|----------------|-------|----------------|
-| Trivial | < 20 lines | haiku | 1-2 min |
-| Simple | 20-100 lines | sonnet | 3-5 min |
-| Standard | 100-500 lines | sonnet | 5-15 min |
-| Complex | 500+ lines | opus | 15-30 min |
+- Completable by a single agent
+- Testable independently
+- Producing a clear output artifact
+  1.3. Classify each subtask:
+
+| Complexity | Lines of Change | Model  | Estimated Time |
+| ---------- | --------------- | ------ | -------------- |
+| Trivial    | < 20 lines      | haiku  | 1-2 min        |
+| Simple     | 20-100 lines    | sonnet | 3-5 min        |
+| Standard   | 100-500 lines   | sonnet | 5-15 min       |
+| Complex    | 500+ lines      | opus   | 15-30 min      |
 
 1.4. Create a subtask inventory table:
 
 ```markdown
-| ID | Subtask | Complexity | Est. Time | Dependencies |
-|----|---------|-----------|-----------|--------------|
-| S1 | ...     | simple    | 3 min     | none         |
-| S2 | ...     | standard  | 10 min    | S1           |
+| ID  | Subtask | Complexity | Est. Time | Dependencies |
+| --- | ------- | ---------- | --------- | ------------ |
+| S1  | ...     | simple     | 3 min     | none         |
+| S2  | ...     | standard   | 10 min    | S1           |
 ```
 
 ---
@@ -109,12 +110,12 @@ OUTPUT: Execution plan + dependency graph + agent configs + merge strategy
 
 ### Dependency Types
 
-| Type | Description | Impact |
-|------|-------------|--------|
-| **Data** | S2 needs output from S1 | Must sequence |
-| **Resource** | S1 and S3 modify same file | Must sequence or isolate |
-| **Semantic** | S2 should know what S1 decided | Can use shared context file |
-| **None** | S1 and S4 are fully independent | Can parallelize |
+| Type         | Description                     | Impact                      |
+| ------------ | ------------------------------- | --------------------------- |
+| **Data**     | S2 needs output from S1         | Must sequence               |
+| **Resource** | S1 and S3 modify same file      | Must sequence or isolate    |
+| **Semantic** | S2 should know what S1 decided  | Can use shared context file |
+| **None**     | S1 and S4 are fully independent | Can parallelize             |
 
 ### Steps
 
@@ -146,12 +147,12 @@ Join: S5 waits for S3 and S4
 
 ### Parallelization Patterns
 
-| Pattern | Description | Use When |
-|---------|-------------|----------|
-| **Fan-Out/Fan-In** | Dispatch N agents, collect all results | Independent subtasks with shared merge |
-| **Pipeline** | Chain agents A -> B -> C | Sequential transformation |
+| Pattern            | Description                               | Use When                                |
+| ------------------ | ----------------------------------------- | --------------------------------------- |
+| **Fan-Out/Fan-In** | Dispatch N agents, collect all results    | Independent subtasks with shared merge  |
+| **Pipeline**       | Chain agents A -> B -> C                  | Sequential transformation               |
 | **Scatter-Gather** | Dispatch same task to N agents, pick best | Need diverse approaches to same problem |
-| **Wave** | Groups of parallel tasks with sync points | Mixed dependencies |
+| **Wave**           | Groups of parallel tasks with sync points | Mixed dependencies                      |
 
 ### Wave Planning
 
@@ -165,10 +166,10 @@ Wave 3: [S5]         -- depends on Wave 2
 
 3.2. For each wave, determine execution mode:
 
-| Mode | Mechanism | When to Use |
-|------|-----------|-------------|
-| **Background** | Agent tool with background flag | Fire-and-forget subtasks |
-| **Foreground** | Sequential Agent tool calls | Need result before next step |
+| Mode                    | Mechanism                            | When to Use                            |
+| ----------------------- | ------------------------------------ | -------------------------------------- |
+| **Background**          | Agent tool with background flag      | Fire-and-forget subtasks               |
+| **Foreground**          | Sequential Agent tool calls          | Need result before next step           |
 | **Parallel foreground** | Multiple Agent calls in same message | Independent subtasks, need all results |
 
 3.3. Document the execution timeline:
@@ -188,21 +189,24 @@ Time ->
 ### Steps
 
 4.1. For each subtask, decide:
-   - Use existing agent definition? (search `.claude/agents/`)
-   - Create new agent? (use create-agent-definition task)
-   - Use generic Agent tool with inline prompt?
+
+- Use existing agent definition? (search `.claude/agents/`)
+- Create new agent? (use create-agent-definition task)
+- Use generic Agent tool with inline prompt?
 
 4.2. Configure model per subtask based on complexity from Phase 1.
 4.3. Set tool permissions -- restrict to minimum needed:
-   - Read-only subtasks: Explore-type agent
-   - Code modification: General-purpose with Write/Edit
-   - Research: Explore-type with Bash for web tools
+
+- Read-only subtasks: Explore-type agent
+- Code modification: General-purpose with Write/Edit
+- Research: Explore-type with Bash for web tools
 
 4.4. Set `max_turns` per agent based on complexity:
-   - Trivial: 5 turns
-   - Simple: 10 turns
-   - Standard: 20 turns
-   - Complex: 40 turns
+
+- Trivial: 5 turns
+- Simple: 10 turns
+- Standard: 20 turns
+- Complex: 40 turns
 
 ---
 
@@ -212,23 +216,24 @@ Time ->
 
 ### Merge Strategies
 
-| Strategy | Description | Conflict Risk |
-|----------|-------------|--------------|
-| **File ownership** | Each agent owns specific files | None |
-| **Directory ownership** | Each agent owns a directory | None |
-| **Git merge** | Each agent on a branch, merge at end | Medium |
-| **Manual review** | Human reviews and merges | Low (but slow) |
-| **Automated merge** | Script merges outputs by convention | Low |
+| Strategy                | Description                          | Conflict Risk  |
+| ----------------------- | ------------------------------------ | -------------- |
+| **File ownership**      | Each agent owns specific files       | None           |
+| **Directory ownership** | Each agent owns a directory          | None           |
+| **Git merge**           | Each agent on a branch, merge at end | Medium         |
+| **Manual review**       | Human reviews and merges             | Low (but slow) |
+| **Automated merge**     | Script merges outputs by convention  | Low            |
 
 ### Steps
 
 5.1. Assign file/directory ownership to each agent.
 5.2. Define the merge process:
-   - Collect outputs from all agents
-   - Verify no conflicts (same file modified by 2+ agents)
-   - If conflicts exist, apply resolution strategy
-   - Run integration tests on merged result
-5.3. If using worktree isolation, plan the branch merge sequence.
+
+- Collect outputs from all agents
+- Verify no conflicts (same file modified by 2+ agents)
+- If conflicts exist, apply resolution strategy
+- Run integration tests on merged result
+  5.3. If using worktree isolation, plan the branch merge sequence.
 
 ---
 
@@ -239,16 +244,17 @@ Time ->
 ### Steps
 
 6.1. Define progress checkpoints:
-   - Each agent writes status to a shared progress file
-   - Wave completion triggers next wave
-6.2. Set timeout thresholds per subtask (2x estimated time).
-6.3. Define failure handling:
-   - Agent timeout: Kill and report partial results
-   - Agent error: Retry once with same config
-   - Repeated failure: Escalate to human
-6.4. Plan rollback if merge fails:
-   - Revert to pre-execution state
-   - Report which subtasks succeeded vs failed
+
+- Each agent writes status to a shared progress file
+- Wave completion triggers next wave
+  6.2. Set timeout thresholds per subtask (2x estimated time).
+  6.3. Define failure handling:
+- Agent timeout: Kill and report partial results
+- Agent error: Retry once with same config
+- Repeated failure: Escalate to human
+  6.4. Plan rollback if merge fails:
+- Revert to pre-execution state
+- Report which subtasks succeeded vs failed
 
 ---
 
@@ -258,21 +264,21 @@ Time ->
 parallel_decomposition_result:
   total_subtasks: 5
   total_waves: 3
-  estimated_sequential_time: "35 min"
-  estimated_parallel_time: "15 min"
-  speedup: "2.3x"
-  critical_path: ["S1", "S3", "S5"]
+  estimated_sequential_time: '35 min'
+  estimated_parallel_time: '15 min'
+  speedup: '2.3x'
+  critical_path: ['S1', 'S3', 'S5']
   waves:
     - wave: 1
-      subtasks: ["S1", "S2"]
-      mode: "parallel-foreground"
+      subtasks: ['S1', 'S2']
+      mode: 'parallel-foreground'
     - wave: 2
-      subtasks: ["S3", "S4"]
-      mode: "parallel-foreground"
+      subtasks: ['S3', 'S4']
+      mode: 'parallel-foreground'
     - wave: 3
-      subtasks: ["S5"]
-      mode: "foreground"
-  merge_strategy: "file-ownership"
+      subtasks: ['S5']
+      mode: 'foreground'
+  merge_strategy: 'file-ownership'
   agents_created: [...]
   dependency_graph: |
     S1 -> S3 -> S5
@@ -283,11 +289,11 @@ parallel_decomposition_result:
 
 ## Veto Conditions
 
-| Condition | Action |
-|-----------|--------|
-| Circular dependency detected in graph | HALT -- restructure subtasks to break cycle |
-| All subtasks are sequentially dependent | HALT -- no parallelization benefit, use single agent |
-| Subtask count exceeds 10 | HALT -- group into higher-level units first |
-| Multiple agents must write to same file | HALT -- redesign with file ownership or worktree |
+| Condition                                  | Action                                                      |
+| ------------------------------------------ | ----------------------------------------------------------- |
+| Circular dependency detected in graph      | HALT -- restructure subtasks to break cycle                 |
+| All subtasks are sequentially dependent    | HALT -- no parallelization benefit, use single agent        |
+| Subtask count exceeds 10                   | HALT -- group into higher-level units first                 |
+| Multiple agents must write to same file    | HALT -- redesign with file ownership or worktree            |
 | Critical path time exceeds time constraint | WARN -- consider decomposing critical path subtasks further |
-| Estimated cost exceeds budget | HALT -- downgrade models or reduce parallelism |
+| Estimated cost exceeds budget              | HALT -- downgrade models or reduce parallelism              |

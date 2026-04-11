@@ -1,6 +1,6 @@
 ---
 task: setPricing()
-responsavel: "@hormozi-pricing"
+responsavel: '@hormozi-pricing'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Value delivered calculated with financial and emotional dimensions"
-  - "[ ] Pricing model selected with rationale"
-  - "[ ] Testing plan defined"
+  - '[ ] Value delivered calculated with financial and emotional dimensions'
+  - '[ ] Pricing model selected with rationale'
+  - '[ ] Testing plan defined'
 ---
 
 # Task: Set Pricing Strategy
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product or service to price |
-| audience | string | User prompt | Yes | Target customer with willingness-to-pay context |
-| current_price | number | User prompt | No | Existing price if applicable |
-| cost_structure | object | User prompt | No | Cost to deliver (COGS, fulfillment, etc.) |
-| competitor_prices | list | User prompt | No | Market pricing references |
-| business_model | string | User prompt | No | One-time, subscription, tiered, usage-based |
-| revenue_target | number | User prompt | No | Target monthly/annual revenue |
+| Field             | Type   | Source      | Required | Validation                                      |
+| ----------------- | ------ | ----------- | -------- | ----------------------------------------------- |
+| product           | string | User prompt | Yes      | Product or service to price                     |
+| audience          | string | User prompt | Yes      | Target customer with willingness-to-pay context |
+| current_price     | number | User prompt | No       | Existing price if applicable                    |
+| cost_structure    | object | User prompt | No       | Cost to deliver (COGS, fulfillment, etc.)       |
+| competitor_prices | list   | User prompt | No       | Market pricing references                       |
+| business_model    | string | User prompt | No       | One-time, subscription, tiered, usage-based     |
+| revenue_target    | number | User prompt | No       | Target monthly/annual revenue                   |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Value Assessment
+
 1. Calculate the ROI the customer receives from the product
 2. Apply the 10x Rule: price should be 1/10 of the value delivered minimum
 3. Determine the "cost of inaction" — what does NOT buying cost them?
@@ -68,6 +69,7 @@ Checklist:
 5. Assess the emotional value beyond financial ROI
 
 ### Phase 2: Pricing Architecture
+
 1. Choose the pricing model:
    - Premium (high price, high touch, fewer customers)
    - Volume (lower price, systems-based, many customers)
@@ -84,6 +86,7 @@ Checklist:
    - Best: Core + all bonuses + premium access
 
 ### Phase 3: Price Justification
+
 1. Build the price-to-value narrative
 2. Calculate the daily/weekly cost breakdown ("less than a coffee per day")
 3. Create the comparison stack (what else costs this much but delivers less)
@@ -91,6 +94,7 @@ Checklist:
 5. Write the pricing section copy for sales materials
 
 ### Phase 4: Pricing Optimization
+
 1. Set the initial test price
 2. Define the price testing methodology:
    - Test at 2x current price first (most businesses underprice)
@@ -116,31 +120,34 @@ Checklist:
 
 ### Value Assessment
 
-| Dimension | Value | Rationale |
-|-----------|-------|-----------|
-| Financial ROI | ${X} | {calculation} |
-| Time Saved | {hours} | {at $X/hour = $Y} |
-| Emotional Value | {qualitative} | {description} |
-| Cost of Inaction | ${X}/year | {what they lose by not buying} |
+| Dimension        | Value         | Rationale                      |
+| ---------------- | ------------- | ------------------------------ |
+| Financial ROI    | ${X}          | {calculation}                  |
+| Time Saved       | {hours}       | {at $X/hour = $Y}              |
+| Emotional Value  | {qualitative} | {description}                  |
+| Cost of Inaction | ${X}/year     | {what they lose by not buying} |
 
 ### Pricing Tiers
 
 | Tier | Includes | Price | Target Customer |
-|------|----------|-------|----------------|
+| ---- | -------- | ----- | --------------- |
 
 ### Payment Options
 
 | Option | Price | Terms | Incentive |
-|--------|-------|-------|-----------|
+| ------ | ----- | ----- | --------- |
 
 ### Price Justification Narrative
+
 {Ready-to-use copy for sales materials}
 
 ### Testing Plan
+
 | Phase | Price | Duration | Success Metric |
-|-------|-------|----------|----------------|
+| ----- | ----- | -------- | -------------- |
 
 ### Price Increase Strategy
+
 {Annual increase plan with triggers}
 ```
 

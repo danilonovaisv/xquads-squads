@@ -1,6 +1,6 @@
 ---
 task: optimizeRetention()
-responsavel: "@peter-fader"
+responsavel: '@peter-fader'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] CLV segmentation complete with 4 tiers"
-  - "[ ] Customer Health Score defined with 6 dimensions"
-  - "[ ] Intervention playbooks designed per risk level"
+  - '[ ] CLV segmentation complete with 4 tiers'
+  - '[ ] Customer Health Score defined with 6 dimensions'
+  - '[ ] Intervention playbooks designed per risk level'
 ---
 
 # Task: Optimize Retention
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `business` | User prompt | Yes | Business description and model (SaaS, e-commerce, etc.) |
-| `customer_data` | User | Yes | Available customer data (transactions, engagement, support) |
-| `current_retention` | User | No | Current retention rate and known churn patterns |
-| `revenue_model` | User | No | Pricing model, ARPU, expansion revenue |
-| `support_structure` | User | No | Current CS team structure and processes |
+| Input               | Source      | Required | Description                                                 |
+| ------------------- | ----------- | -------- | ----------------------------------------------------------- |
+| `business`          | User prompt | Yes      | Business description and model (SaaS, e-commerce, etc.)     |
+| `customer_data`     | User        | Yes      | Available customer data (transactions, engagement, support) |
+| `current_retention` | User        | No       | Current retention rate and known churn patterns             |
+| `revenue_model`     | User        | No       | Pricing model, ARPU, expansion revenue                      |
+| `support_structure` | User        | No       | Current CS team structure and processes                     |
 
 ## Preconditions
 
@@ -145,27 +145,27 @@ Checklist:
 
 ```yaml
 retention_optimization:
-  business: "{name}"
+  business: '{name}'
   clv_segmentation:
-    platinum: {count: "", pct_revenue: ""}
-    gold: {count: "", pct_revenue: ""}
-    silver: {count: "", pct_revenue: ""}
-    bronze: {count: "", pct_revenue: ""}
-  concentration_risk: "{top 20% = X% revenue}"
+    platinum: { count: '', pct_revenue: '' }
+    gold: { count: '', pct_revenue: '' }
+    silver: { count: '', pct_revenue: '' }
+    bronze: { count: '', pct_revenue: '' }
+  concentration_risk: '{top 20% = X% revenue}'
   health_score:
     dimensions: 6
-    churn_signals: ["{signal1}", "{signal2}", "{signal3}"]
+    churn_signals: ['{signal1}', '{signal2}', '{signal3}']
   churn_risk_distribution:
-    healthy: "{%}"
-    monitor: "{%}"
-    at_risk: "{%}"
-    critical: "{%}"
+    healthy: '{%}'
+    monitor: '{%}'
+    at_risk: '{%}'
+    critical: '{%}'
   nrr:
-    current: "{%}"
-    target: "{%}"
+    current: '{%}'
+    target: '{%}'
   interventions:
-    playbook_count: {number}
-    automation_rules: {number}
+    playbook_count: { number }
+    automation_rules: { number }
   deliverables:
     - clv-segmentation.md
     - health-score-model.md

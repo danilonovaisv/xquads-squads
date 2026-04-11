@@ -10,6 +10,7 @@ This checklist validates the combined output of a multi-agent execution.
 Run this AFTER all agents have completed or timed out.
 
 EXECUTION APPROACH:
+
 1. Verify every agent returned a result (or document why it did not)
 2. Check for merge conflicts between agent outputs
 3. Validate each output against its acceptance criteria

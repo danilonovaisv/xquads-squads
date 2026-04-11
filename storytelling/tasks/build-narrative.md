@@ -1,6 +1,6 @@
 ---
 task: buildNarrative()
-responsavel: "@story-chief"
+responsavel: '@story-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Framework selected with reasoning"
-  - "[ ] All structural beats defined and populated"
-  - "[ ] Emotional arc mapped from beginning to end"
+  - '[ ] Framework selected with reasoning'
+  - '[ ] All structural beats defined and populated'
+  - '[ ] Emotional arc mapped from beginning to end'
 ---
 
 # Task: Story Structure Creation
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `story_concept` | User prompt | YES |
-| `genre_or_context` | User description | PREFERRED |
-| `target_audience` | User specification | PREFERRED |
-| `format` | Film, TV, book, presentation, brand | NO |
-| `existing_material` | Draft, outline, notes | NO |
-| `preferred_framework` | Hero's Journey, Beat Sheet, Story Circle | NO |
+| Input                 | Source                                   | Required  |
+| --------------------- | ---------------------------------------- | --------- |
+| `story_concept`       | User prompt                              | YES       |
+| `genre_or_context`    | User description                         | PREFERRED |
+| `target_audience`     | User specification                       | PREFERRED |
+| `format`              | Film, TV, book, presentation, brand      | NO        |
+| `existing_material`   | Draft, outline, notes                    | NO        |
+| `preferred_framework` | Hero's Journey, Beat Sheet, Story Circle | NO        |
 
 ## Preconditions
 
@@ -70,6 +70,7 @@ Checklist:
 ### Phase 2: Build Structure
 
 **If Hero's Journey (joseph-campbell):**
+
 1. Define the Ordinary World — establish normal before disruption
 2. Identify the Call to Adventure — what disrupts the status quo
 3. Map the Threshold Crossing — commitment to the journey
@@ -79,6 +80,7 @@ Checklist:
 7. Close with Return with the Elixir — transformation complete
 
 **If Beat Sheet (blake-snyder):**
+
 1. Opening Image — visual thesis of the world before
 2. Theme Stated — the lesson the story will teach
 3. Set-Up, Catalyst, Debate — introduction through commitment
@@ -90,6 +92,7 @@ Checklist:
 9. Final Image — visual antithesis showing transformation
 
 **If Story Circle (dan-harmon):**
+
 1. YOU — Establish the character in their comfort zone
 2. NEED — Something is missing or desired
 3. GO — They enter an unfamiliar situation
@@ -123,25 +126,25 @@ Checklist:
 
 ```yaml
 narrative_structure:
-  concept: "{story concept}"
+  concept: '{story concept}'
   framework: "Hero's Journey | Beat Sheet | Story Circle"
-  specialist: "joseph-campbell | blake-snyder | dan-harmon"
-  genre: "{identified genre}"
-  theme: "{central theme}"
+  specialist: 'joseph-campbell | blake-snyder | dan-harmon'
+  genre: '{identified genre}'
+  theme: '{central theme}'
   protagonist:
-    name: "{character}"
-    starting_state: "{before transformation}"
-    ending_state: "{after transformation}"
+    name: '{character}'
+    starting_state: '{before transformation}'
+    ending_state: '{after transformation}'
   beats:
     - beat_number: 1
-      name: "{beat name}"
-      description: "{what happens}"
-      emotional_state: "{feeling}"
-      conflict: "{tension}"
-      theme_connection: "{how it ties to theme}"
-  emotional_arc: "{description of emotional journey}"
-  pacing_notes: "{rhythm and tempo observations}"
-  revision_suggestions: ["{areas to strengthen}"]
+      name: '{beat name}'
+      description: '{what happens}'
+      emotional_state: '{feeling}'
+      conflict: '{tension}'
+      theme_connection: '{how it ties to theme}'
+  emotional_arc: '{description of emotional journey}'
+  pacing_notes: '{rhythm and tempo observations}'
+  revision_suggestions: ['{areas to strengthen}']
 ```
 
 ## Veto Conditions

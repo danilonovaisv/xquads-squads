@@ -1,6 +1,6 @@
 ---
 task: review()
-responsavel: "@copy-master-chief"
+responsavel: '@copy-master-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All checklist items evaluated and scored"
-  - "[ ] Verdict rendered (APPROVE/REVISE/REJECT)"
-  - "[ ] Specific feedback provided for any failures"
-  - "[ ] Persuasion psychology checkpoint passed"
+  - '[ ] All checklist items evaluated and scored'
+  - '[ ] Verdict rendered (APPROVE/REVISE/REJECT)'
+  - '[ ] Specific feedback provided for any failures'
+  - '[ ] Persuasion psychology checkpoint passed'
 ---
 
 # Task: Review Copywriting Output
@@ -40,11 +40,11 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| specialist_output | string | Specialist agent | Yes | Non-empty deliverable |
-| original_request | string | User prompt | Yes | The original request that triggered the work |
-| specialist_id | string | Routing | Yes | Agent ID that produced the output |
+| Field             | Type   | Source           | Required | Validation                                   |
+| ----------------- | ------ | ---------------- | -------- | -------------------------------------------- |
+| specialist_output | string | Specialist agent | Yes      | Non-empty deliverable                        |
+| original_request  | string | User prompt      | Yes      | The original request that triggered the work |
+| specialist_id     | string | Routing          | Yes      | Agent ID that produced the output            |
 
 ---
 
@@ -89,11 +89,11 @@ Checklist:
 
 ### Phase 4: Score and Decide
 
-| Score | Verdict | Action |
-|-------|---------|--------|
-| All CRITICAL pass, < 2 non-critical fail, psychology checkpoint pass | APPROVE | Deliver to user |
-| All CRITICAL pass, 2+ non-critical fail OR psychology gap | REVISE | Return to specialist with specific feedback |
-| Any CRITICAL fail | REJECT | Return to specialist, block delivery |
+| Score                                                                | Verdict | Action                                      |
+| -------------------------------------------------------------------- | ------- | ------------------------------------------- |
+| All CRITICAL pass, < 2 non-critical fail, psychology checkpoint pass | APPROVE | Deliver to user                             |
+| All CRITICAL pass, 2+ non-critical fail OR psychology gap            | REVISE  | Return to specialist with specific feedback |
+| Any CRITICAL fail                                                    | REJECT  | Return to specialist, block delivery        |
 
 ### Phase 5: Output
 
@@ -111,23 +111,28 @@ Produce review report with verdict, score, and feedback.
 **Score:** {X}/{total} items passed
 
 ### Passed
+
 - {items that passed}
 
 ### Issues Found
+
 - [{CRITICAL|WARN}] {description} — {recommendation}
 
 ### Persuasion Psychology Checkpoint
+
 - Cialdini principles active: {count}/7 — {list}
 - Warren levers active: {count}/5 — {list}
 - Hormozi Value Equation: {scored/not-applicable}
 - Psychology verdict: {PASS/GAP — description}
 
 ### Copy-Specific Notes
+
 - Headline effectiveness: {assessment}
 - Emotional resonance: {assessment}
 - Conversion likelihood: {assessment}
 
 ### Recommendation
+
 {Next step: deliver / revise specific items / redo}
 ```
 

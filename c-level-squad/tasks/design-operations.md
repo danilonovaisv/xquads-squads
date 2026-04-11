@@ -1,6 +1,6 @@
 ---
 task: designOperations()
-responsavel: "@coo-orchestrator"
+responsavel: '@coo-orchestrator'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Core processes identified and mapped"
-  - "[ ] Top 3 bottlenecks identified with quantified impact"
-  - "[ ] OKR framework drafted for current quarter"
+  - '[ ] Core processes identified and mapped'
+  - '[ ] Top 3 bottlenecks identified with quantified impact'
+  - '[ ] OKR framework drafted for current quarter'
 ---
 
 # Task: Design Operations
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `company` | User prompt | Yes | Company name and current operational context |
-| `strategic_pillars` | vision-chief | No | Strategic pillars from set-vision task |
-| `team_structure` | User | Yes | Current team size, roles, departments |
-| `pain_points` | User | No | Known operational challenges and bottlenecks |
-| `tools` | User | No | Current operational tools (PM, CRM, comms, etc.) |
+| Input               | Source       | Required | Description                                      |
+| ------------------- | ------------ | -------- | ------------------------------------------------ |
+| `company`           | User prompt  | Yes      | Company name and current operational context     |
+| `strategic_pillars` | vision-chief | No       | Strategic pillars from set-vision task           |
+| `team_structure`    | User         | Yes      | Current team size, roles, departments            |
+| `pain_points`       | User         | No       | Known operational challenges and bottlenecks     |
+| `tools`             | User         | No       | Current operational tools (PM, CRM, comms, etc.) |
 
 ## Preconditions
 
@@ -143,21 +143,21 @@ Checklist:
 
 ```yaml
 operational_design:
-  company: "{name}"
-  core_processes: {count: 0, mapped: 0, maturity_avg: ""}
+  company: '{name}'
+  core_processes: { count: 0, mapped: 0, maturity_avg: '' }
   bottlenecks:
-    identified: {number}
-    top_3: ["{bottleneck1}", "{bottleneck2}", "{bottleneck3}"]
-    estimated_time_saved: "{hours/week}"
+    identified: { number }
+    top_3: ['{bottleneck1}', '{bottleneck2}', '{bottleneck3}']
+    estimated_time_saved: '{hours/week}'
   okr_framework:
-    company_objectives: {number}
-    team_objectives: {number}
-    quarter: "{Q1/Q2/Q3/Q4 YYYY}"
+    company_objectives: { number }
+    team_objectives: { number }
+    quarter: '{Q1/Q2/Q3/Q4 YYYY}'
   cadence:
-    daily: "15-min standup"
-    weekly: "60-min team sync"
-    monthly: "90-min business review"
-    quarterly: "Half-day strategy"
+    daily: '15-min standup'
+    weekly: '60-min team sync'
+    monthly: '90-min business review'
+    quarterly: 'Half-day strategy'
   deliverables:
     - process-map.md
     - bottleneck-analysis.md

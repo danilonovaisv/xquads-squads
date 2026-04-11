@@ -1,6 +1,6 @@
 ---
 task: planFundraise()
-responsavel: "@vision-chief"
+responsavel: '@vision-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Readiness assessment completed (10 dimensions)"
-  - "[ ] Investment thesis and narrative arc crafted"
-  - "[ ] Investor target list built and tiered"
+  - '[ ] Readiness assessment completed (10 dimensions)'
+  - '[ ] Investment thesis and narrative arc crafted'
+  - '[ ] Investor target list built and tiered'
 ---
 
 # Task: Plan Fundraise
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `company` | User prompt | Yes | Company name, stage, and description |
-| `financials` | User | Yes | Current revenue, burn rate, runway, unit economics |
-| `round_target` | User | Yes | Target raise amount and round type (pre-seed, seed, A, B) |
-| `traction` | User | Yes | Key traction metrics (users, revenue, growth rate) |
-| `existing_investors` | User | No | Current cap table and investor relationships |
-| `use_of_funds` | User | No | How the funds will be deployed |
+| Input                | Source      | Required | Description                                               |
+| -------------------- | ----------- | -------- | --------------------------------------------------------- |
+| `company`            | User prompt | Yes      | Company name, stage, and description                      |
+| `financials`         | User        | Yes      | Current revenue, burn rate, runway, unit economics        |
+| `round_target`       | User        | Yes      | Target raise amount and round type (pre-seed, seed, A, B) |
+| `traction`           | User        | Yes      | Key traction metrics (users, revenue, growth rate)        |
+| `existing_investors` | User        | No       | Current cap table and investor relationships              |
+| `use_of_funds`       | User        | No       | How the funds will be deployed                            |
 
 ## Preconditions
 
@@ -160,28 +160,28 @@ Checklist:
 
 ```yaml
 fundraise_plan:
-  company: "{name}"
-  round: "{pre-seed|seed|series-a|series-b}"
-  target_raise: "{amount}"
+  company: '{name}'
+  round: '{pre-seed|seed|series-a|series-b}'
+  target_raise: '{amount}'
   readiness:
-    score: "{X/50}"
-    status: "{ready|near-ready|prep-needed|not-ready}"
-    critical_gaps: ["{gap1}", "{gap2}"]
+    score: '{X/50}'
+    status: '{ready|near-ready|prep-needed|not-ready}'
+    critical_gaps: ['{gap1}', '{gap2}']
   narrative:
-    one_liner: "{10-second pitch}"
-    investment_thesis: "{2-sentence summary}"
-    hook: "{opening sentence}"
+    one_liner: '{10-second pitch}'
+    investment_thesis: '{2-sentence summary}'
+    hook: '{opening sentence}'
   deck:
-    slides: {number}
-    status: "{draft|review|final}"
+    slides: { number }
+    status: '{draft|review|final}'
   investor_pipeline:
-    tier_1: {count: 0, warm_intros: 0}
-    tier_2: {count: 0, warm_intros: 0}
-    tier_3: {count: 0, warm_intros: 0}
+    tier_1: { count: 0, warm_intros: 0 }
+    tier_2: { count: 0, warm_intros: 0 }
+    tier_3: { count: 0, warm_intros: 0 }
   timeline:
-    prep_weeks: {number}
-    pitch_weeks: {number}
-    close_target: "{date}"
+    prep_weeks: { number }
+    pitch_weeks: { number }
+    close_target: '{date}'
   deliverables:
     - readiness-assessment.md
     - investment-narrative.md

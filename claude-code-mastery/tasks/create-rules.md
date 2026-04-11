@@ -27,12 +27,12 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| rule_name | string | User parameter | Yes | Kebab-case filename (e.g., `api-conventions`) |
-| rule_type | string | User parameter | No | `conditional` (default) or `always-on` |
-| target_paths | array | User parameter or auto-detected | No | Glob patterns for conditional loading |
-| description | string | User parameter | No | Purpose of the rule |
+| Field        | Type   | Source                          | Required | Validation                                    |
+| ------------ | ------ | ------------------------------- | -------- | --------------------------------------------- |
+| rule_name    | string | User parameter                  | Yes      | Kebab-case filename (e.g., `api-conventions`) |
+| rule_type    | string | User parameter                  | No       | `conditional` (default) or `always-on`        |
+| target_paths | array  | User parameter or auto-detected | No       | Glob patterns for conditional loading         |
+| description  | string | User parameter                  | No       | Purpose of the rule                           |
 
 ---
 
@@ -53,16 +53,16 @@ Determine what kind of rule to create:
 1. Ask the user what behavior they want to enforce or what context they want to inject
 2. Categorize the rule:
 
-| Category | Example Rules | Typical Paths |
-|----------|---------------|---------------|
-| API conventions | Endpoint patterns, error handling, validation | `src/api/**`, `server/**` |
-| Component patterns | React patterns, styling, props conventions | `src/components/**/*.tsx` |
-| Test conventions | Testing patterns, mock strategies, coverage | `tests/**`, `**/*.test.*` |
-| Database rules | Migration patterns, query conventions, RLS | `migrations/**`, `supabase/**` |
-| Documentation | Doc formatting, README structure, changelog | `docs/**`, `*.md` |
-| Security | Input validation, auth patterns, OWASP | `src/auth/**`, `src/middleware/**` |
-| Configuration | Config file conventions, env var patterns | `*.config.*`, `.env.*` |
-| Always-on | Project-wide conventions (no paths: needed) | (none -- loads always) |
+| Category           | Example Rules                                 | Typical Paths                      |
+| ------------------ | --------------------------------------------- | ---------------------------------- |
+| API conventions    | Endpoint patterns, error handling, validation | `src/api/**`, `server/**`          |
+| Component patterns | React patterns, styling, props conventions    | `src/components/**/*.tsx`          |
+| Test conventions   | Testing patterns, mock strategies, coverage   | `tests/**`, `**/*.test.*`          |
+| Database rules     | Migration patterns, query conventions, RLS    | `migrations/**`, `supabase/**`     |
+| Documentation      | Doc formatting, README structure, changelog   | `docs/**`, `*.md`                  |
+| Security           | Input validation, auth patterns, OWASP        | `src/auth/**`, `src/middleware/**` |
+| Configuration      | Config file conventions, env var patterns     | `*.config.*`, `.env.*`             |
+| Always-on          | Project-wide conventions (no paths: needed)   | (none -- loads always)             |
 
 3. If the user is unsure: scan the project structure and suggest rules based on detected directories
 
@@ -74,13 +74,14 @@ Determine what kind of rule to create:
 ```markdown
 ---
 paths:
-  - "src/api/**/*.ts"
-  - "src/api/**/*.tsx"
-  - "server/**/*.ts"
+  - 'src/api/**/*.ts'
+  - 'src/api/**/*.tsx'
+  - 'server/**/*.ts'
 ---
 ```
 
 **Glob pattern reference:**
+
 - `*` matches any single path segment
 - `**` matches zero or more path segments (recursive)
 - `*.ts` matches TypeScript files in current directory
@@ -103,11 +104,12 @@ Write the rule body following these guidelines:
 
 **Rule template:**
 
-```markdown
+````markdown
 ---
 paths:
-  - "{glob-patterns}"
+  - '{glob-patterns}'
 ---
+
 # {Rule Title}
 
 ## Conventions
@@ -122,12 +124,14 @@ When creating {X}, follow this pattern:
 ```{language}
 {code example}
 ```
+````
 
 ## Anti-patterns
 
 - Do NOT {specific thing to avoid}
 - Do NOT {another thing to avoid}
-```
+
+````
 
 ### Phase 4: Validate Rule Loading
 
@@ -182,7 +186,7 @@ This rule loads on every interaction.
 
 Open any file matching the paths above and ask Claude to follow the
 conventions. The rule will be active in that context.
-```
+````
 
 ---
 

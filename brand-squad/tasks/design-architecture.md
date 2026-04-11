@@ -1,6 +1,6 @@
 ---
 task: designArchitecture()
-responsavel: "@david-aaker"
+responsavel: '@david-aaker'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Architecture model selected with scored rationale"
-  - "[ ] All products/services mapped into the architecture"
-  - "[ ] Governance framework established"
+  - '[ ] Architecture model selected with scored rationale'
+  - '[ ] All products/services mapped into the architecture'
+  - '[ ] Governance framework established'
 ---
 
 # Task: Design Brand Architecture
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| parent_brand | string | User prompt | Yes | Parent or master brand name |
-| products | list | User prompt | Yes | All products, services, or sub-brands |
-| market_context | string | User prompt | Yes | Industry and competitive landscape |
-| audience_segments | list | User prompt | No | Different audience groups served |
-| growth_plans | string | User prompt | No | Planned new products or market expansions |
-| current_architecture | string | User prompt | No | Existing brand structure if any |
+| Field                | Type   | Source      | Required | Validation                                |
+| -------------------- | ------ | ----------- | -------- | ----------------------------------------- |
+| parent_brand         | string | User prompt | Yes      | Parent or master brand name               |
+| products             | list   | User prompt | Yes      | All products, services, or sub-brands     |
+| market_context       | string | User prompt | Yes      | Industry and competitive landscape        |
+| audience_segments    | list   | User prompt | No       | Different audience groups served          |
+| growth_plans         | string | User prompt | No       | Planned new products or market expansions |
+| current_architecture | string | User prompt | No       | Existing brand structure if any           |
 
 ---
 
@@ -60,6 +60,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Architecture Model Selection
+
 1. Evaluate the 4 brand architecture models:
    - **Branded House:** One master brand, all products live under it
      - Example: Google (Google Maps, Google Drive, Google Photos)
@@ -77,6 +78,7 @@ Checklist:
 3. Recommend the primary model with rationale
 
 ### Phase 2: Architecture Design
+
 1. Map every product/service/sub-brand into the chosen architecture
 2. Define the naming strategy:
    - Descriptive names (Google Maps) — clear but less distinctive
@@ -93,6 +95,7 @@ Checklist:
    - Voice consistency rules
 
 ### Phase 3: Role Assignment
+
 1. Assign a strategic role to each brand in the portfolio:
    - **Master Brand:** The primary source of equity and trust
    - **Cash Cow:** Established brand that funds growth
@@ -105,6 +108,7 @@ Checklist:
 4. Map the portfolio's coverage of audience segments
 
 ### Phase 4: Migration and Governance
+
 1. If changing from current architecture, define the migration plan:
    - Phase 1: What changes immediately
    - Phase 2: What transitions over 6-12 months
@@ -138,32 +142,37 @@ Checklist:
 
 ### Brand Portfolio
 
-| Brand | Role | Relationship to Parent | Audience | Status |
-|-------|------|----------------------|----------|--------|
+| Brand   | Role   | Relationship to Parent        | Audience  | Status                  |
+| ------- | ------ | ----------------------------- | --------- | ----------------------- |
 | {brand} | {role} | {master/endorsed/independent} | {segment} | {active/planned/sunset} |
 
 ### Naming Strategy
+
 **Convention:** {descriptive / suggestive / abstract}
 **Rules:** {naming guidelines for new additions}
 
 ### Visual Relationship
-| Element | Parent | Sub-Brand A | Sub-Brand B |
-|---------|--------|------------|------------|
-| Logo | {rule} | {rule} | {rule} |
-| Colors | {rule} | {rule} | {rule} |
-| Typography | {rule} | {rule} | {rule} |
+
+| Element    | Parent | Sub-Brand A | Sub-Brand B |
+| ---------- | ------ | ----------- | ----------- |
+| Logo       | {rule} | {rule}      | {rule}      |
+| Colors     | {rule} | {rule}      | {rule}      |
+| Typography | {rule} | {rule}      | {rule}      |
 
 ### Migration Plan (if applicable)
+
 | Phase | Timeline | Changes |
-|-------|----------|---------|
+| ----- | -------- | ------- |
 
 ### Governance Rules
+
 - New brand approval: {process}
 - Extend vs create decision: {criteria}
 - Maximum portfolio size: {N}
 - Review cadence: {frequency}
 
 ### Portfolio Gaps
+
 {Audience segments or markets not currently covered}
 ```
 

@@ -10,20 +10,20 @@
 
 ## Tech Stack
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| Framework | Next.js | 15.x |
-| UI Library | React | 19.x |
-| Language | TypeScript | 5.x |
-| Styling | Tailwind CSS | 4.x |
-| UI Components | shadcn/ui | latest |
-| State (client) | Zustand | 5.x |
-| Data Fetching | TanStack Query | 5.x |
-| Database | PostgreSQL | via Supabase |
-| Auth | Supabase Auth | — |
-| Validation | Zod | 3.x |
-| Testing | Jest + React Testing Library | — |
-| Linting | ESLint + Prettier | — |
+| Layer          | Technology                   | Version      |
+| -------------- | ---------------------------- | ------------ |
+| Framework      | Next.js                      | 15.x         |
+| UI Library     | React                        | 19.x         |
+| Language       | TypeScript                   | 5.x          |
+| Styling        | Tailwind CSS                 | 4.x          |
+| UI Components  | shadcn/ui                    | latest       |
+| State (client) | Zustand                      | 5.x          |
+| Data Fetching  | TanStack Query               | 5.x          |
+| Database       | PostgreSQL                   | via Supabase |
+| Auth           | Supabase Auth                | —            |
+| Validation     | Zod                          | 3.x          |
+| Testing        | Jest + React Testing Library | —            |
+| Linting        | ESLint + Prettier            | —            |
 
 ## Directory Structure
 
@@ -52,6 +52,7 @@ src/
 ## Code Standards
 
 ### Components
+
 - Use function components with TypeScript interfaces for props
 - Prefer named exports: `export function Button() {}` not `export default`
 - Co-locate component tests: `Button.tsx` + `Button.test.tsx`
@@ -59,6 +60,7 @@ src/
 - Keep components under 200 lines; extract logic into hooks
 
 ### Naming Conventions
+
 - Components: PascalCase (`UserProfile.tsx`)
 - Hooks: camelCase with `use` prefix (`useAuth.ts`)
 - Utilities: camelCase (`formatDate.ts`)
@@ -67,12 +69,14 @@ src/
 - Constants: SCREAMING_SNAKE_CASE (`MAX_RETRY_COUNT`)
 
 ### Server vs Client Components
+
 - **Server Components** (default): Data fetching, database access, sensitive logic
 - **Client Components** (`'use client'`): Interactivity, browser APIs, state, effects
 - Never import server-only modules in client components
 - Pass serializable props from server to client components
 
 ### API Patterns
+
 - API routes in `src/app/api/` using Route Handlers
 - Validate all inputs with Zod schemas
 - Return consistent response shapes: `{ data, error, meta }`
@@ -80,6 +84,7 @@ src/
 - Handle errors with try/catch, never expose internal errors
 
 ### State Management
+
 - **Server state:** TanStack Query for all API data (caching, revalidation)
 - **Client state:** Zustand for UI state (modals, sidebars, preferences)
 - **Form state:** React Hook Form + Zod validation
@@ -131,10 +136,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ data });
   } catch (error) {
     console.error('GET /api/resource failed:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch resource' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to fetch resource' }, { status: 500 });
   }
 }
 ```

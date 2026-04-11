@@ -5,6 +5,7 @@ All notable changes to the Claude Code Mastery squad.
 ## [1.0.0] - 2026-03-02
 
 ### Added
+
 - 8 specialist agents: claude-mastery-chief (Orion), hooks-architect (Latch), mcp-integrator (Piper), swarm-orchestrator (Nexus), config-engineer (Sigil), skill-craftsman (Anvil), project-integrator (Conduit), roadmap-sentinel (Vigil)
 - 26 executable tasks across all agents
 - 3 multi-phase workflows (wf-project-setup, wf-knowledge-update, wf-audit-complete)
@@ -17,6 +18,7 @@ All notable changes to the Claude Code Mastery squad.
 - AIOS-core integration bridge (agents, tasks, hooks, config mapping)
 
 ### Architecture
+
 - Entry agent: claude-mastery-chief (Orion) with 7-domain routing matrix
 - Cross-cutting concern: all agents understand AIOS-core architecture
 - Knowledge sources: Claude Code changelog, official docs, community resources

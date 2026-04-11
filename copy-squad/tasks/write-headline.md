@@ -1,6 +1,6 @@
 ---
 task: writeHeadline()
-responsavel: "@eugene-schwartz"
+responsavel: '@eugene-schwartz'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Awareness level confirmed or diagnosed"
-  - "[ ] 10 headline variations generated using 3+ formulas"
-  - "[ ] Top 5 ranked with scoring on 4 dimensions"
+  - '[ ] Awareness level confirmed or diagnosed'
+  - '[ ] 10 headline variations generated using 3+ formulas'
+  - '[ ] Top 5 ranked with scoring on 4 dimensions'
 ---
 
 # Task: Write Headline
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product or service name with brief description |
-| audience | string | User prompt | Yes | Target audience description |
-| awareness_level | enum | User prompt or inferred | Yes | unaware, problem-aware, solution-aware, product-aware, most-aware |
-| medium | string | User prompt | No | Where headline appears (ad, email, sales page, VSL) |
-| tone | string | User prompt | No | Desired tone (urgent, curious, authoritative, empathetic) |
-| swipe_reference | string | User prompt | No | Reference headline or style to emulate |
+| Field           | Type   | Source                  | Required | Validation                                                        |
+| --------------- | ------ | ----------------------- | -------- | ----------------------------------------------------------------- |
+| product         | string | User prompt             | Yes      | Product or service name with brief description                    |
+| audience        | string | User prompt             | Yes      | Target audience description                                       |
+| awareness_level | enum   | User prompt or inferred | Yes      | unaware, problem-aware, solution-aware, product-aware, most-aware |
+| medium          | string | User prompt             | No       | Where headline appears (ad, email, sales page, VSL)               |
+| tone            | string | User prompt             | No       | Desired tone (urgent, curious, authoritative, empathetic)         |
+| swipe_reference | string | User prompt             | No       | Reference headline or style to emulate                            |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Awareness Diagnosis
+
 1. Confirm the prospect's awareness level using Schwartz's 5-level scale
 2. Identify the dominant emotion driving the prospect (fear, desire, curiosity, frustration)
 3. Map awareness level to headline approach:
@@ -71,6 +72,7 @@ Checklist:
    - Most-aware: Lead with offer, urgency, or deal
 
 ### Phase 2: Headline Generation
+
 1. Generate 10 headline variations using distinct angles
 2. Apply at least 3 different headline formulas per batch:
    - How-to headlines
@@ -85,6 +87,7 @@ Checklist:
 4. Vary length: include short (under 8 words), medium (8-15), and long (15+)
 
 ### Phase 3: Refinement and Ranking
+
 1. Score each headline on 4 dimensions (1-5 each):
    - Specificity: Does it promise a concrete outcome?
    - Curiosity: Does it create an open loop?
@@ -107,23 +110,26 @@ Checklist:
 
 ### Top 5 Headlines (Ranked)
 
-| Rank | Headline | Formula | Specificity | Curiosity | Relevance | Believability | Total |
-|------|----------|---------|-------------|-----------|-----------|---------------|-------|
-| 1 | {headline} | {formula} | X | X | X | X | XX |
+| Rank | Headline   | Formula   | Specificity | Curiosity | Relevance | Believability | Total |
+| ---- | ---------- | --------- | ----------- | --------- | --------- | ------------- | ----- |
+| 1    | {headline} | {formula} | X           | X         | X         | X             | XX    |
 
 ### A/B Test Recommendation
+
 **Control:** {headline 1}
 **Variant:** {headline 2}
 **Rationale:** {why these two}
 
 ### Sub-headline Pairings
+
 1. {headline} + {sub-headline}
 2. {headline} + {sub-headline}
 3. {headline} + {sub-headline}
 
 ### Full 10-Headline Bank
+
 1. {headline} — {formula used}
-...
+   ...
 ```
 
 ---

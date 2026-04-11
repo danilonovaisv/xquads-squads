@@ -9,6 +9,7 @@
 This checklist validates copywriting output specifically for the Copy Master squad.
 
 EXECUTION APPROACH:
+
 1. For each category, verify every item against the deliverable
 2. Mark items as [x] Pass, [ ] Fail, [N/A] Not Applicable
 3. CRITICAL items block delivery; non-critical items are advisory
@@ -90,7 +91,7 @@ CRITICAL items are marked with (CRITICAL) suffix.]]
 
 ## 8. Offer Architecture (Hormozi Value Equation)
 
-*Apply only when the deliverable includes an offer. Mark [N/A] for pure content pieces.*
+_Apply only when the deliverable includes an offer. Mark [N/A] for pure content pieces._
 
 - [ ] Dream Outcome clearly defined and maximized
 - [ ] Perceived Likelihood of Achievement supported with proof/guarantee
@@ -112,6 +113,7 @@ CRITICAL items are marked with (CRITICAL) suffix.]]
 **FAIL:** Any CRITICAL item unchecked.
 
 **Scoring:**
+
 - Sections 1-6: Standard quality gate (same as Copy Squad baseline)
 - Section 7: Persuasion psychology gate (REQUIRED for Copy Master — differentiator from Copy Squad)
 - Section 8: Offer architecture gate (REQUIRED when offer is present)

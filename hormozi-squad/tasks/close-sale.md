@@ -1,6 +1,6 @@
 ---
 task: closeSale()
-responsavel: "@hormozi-closer"
+responsavel: '@hormozi-closer'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All 6 CLOSER steps scripted for the specific product"
-  - "[ ] Top 10 objections handled with Isolate and Overcome responses"
-  - "[ ] KPI targets set"
+  - '[ ] All 6 CLOSER steps scripted for the specific product'
+  - '[ ] Top 10 objections handled with Isolate and Overcome responses'
+  - '[ ] KPI targets set'
 ---
 
 # Task: Close Sale
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service being sold |
-| price | number | User prompt | Yes | Price point of the offer |
-| sales_context | enum | User prompt | Yes | phone, zoom, in-person, DM, chat |
-| audience | string | User prompt | Yes | Prospect profile |
-| common_objections | list | User prompt | No | Known objections from past sales |
-| conversion_rate | number | User prompt | No | Current close rate if known |
+| Field             | Type   | Source      | Required | Validation                       |
+| ----------------- | ------ | ----------- | -------- | -------------------------------- |
+| product           | string | User prompt | Yes      | Product/service being sold       |
+| price             | number | User prompt | Yes      | Price point of the offer         |
+| sales_context     | enum   | User prompt | Yes      | phone, zoom, in-person, DM, chat |
+| audience          | string | User prompt | Yes      | Prospect profile                 |
+| common_objections | list   | User prompt | No       | Known objections from past sales |
+| conversion_rate   | number | User prompt | No       | Current close rate if known      |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: CLOSER Framework Setup
+
 1. Map each step of the CLOSER framework to the specific product:
    - **C — Clarify:** Questions to understand their current situation
    - **L — Label:** Restate their problem so they feel understood
@@ -73,6 +74,7 @@ Checklist:
 4. Build the overview narrative (3-step bridge from pain to solution)
 
 ### Phase 2: Objection Handling
+
 1. List the top 10 objections for this price point and product
 2. For each objection, prepare the "Isolate and Overcome" response:
    - "I totally understand. Other than {objection}, is there anything else?"
@@ -86,6 +88,7 @@ Checklist:
 4. Create the "walk away" frame for prospects who are not a fit
 
 ### Phase 3: Script Development
+
 1. Write the opening script (rapport + agenda setting)
 2. Write the Clarify question sequence with transition bridges
 3. Write the Label statements template
@@ -96,6 +99,7 @@ Checklist:
 8. Write the post-close confirmation script (reduce buyer remorse)
 
 ### Phase 4: Performance Framework
+
 1. Define KPIs: show rate, close rate, average deal value
 2. Create a call scoring rubric for self-evaluation
 3. Build a follow-up sequence for non-closes
@@ -119,21 +123,27 @@ Checklist:
 ### CLOSER Script
 
 #### C — Clarify
+
 {Discovery questions with transitions}
 
 #### L — Label
+
 {Labeling statement templates}
 
 #### O — Overview
+
 {3-step bridge narrative}
 
 #### S — Sell the Vacation
+
 {Outcome painting script}
 
 #### E — Explain Away Concerns
+
 {Preemptive objection handling}
 
 #### R — Reinforce and Close
+
 {Closing language and assumptive close}
 
 ---
@@ -141,19 +151,21 @@ Checklist:
 ### Objection Handling Matrix
 
 | Objection | Isolate | Reframe | Evidence |
-|-----------|---------|---------|----------|
+| --------- | ------- | ------- | -------- |
 
 ### Post-Close Script
+
 {Confirmation and next steps}
 
 ### Follow-Up Sequence (Non-Close)
+
 | Day | Action | Message |
-|-----|--------|---------|
+| --- | ------ | ------- |
 
 ### KPI Targets
 
 | Metric | Target | Current |
-|--------|--------|---------|
+| ------ | ------ | ------- |
 ```
 
 ---

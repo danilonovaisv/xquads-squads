@@ -11,6 +11,7 @@ It complements the AIOS framework pre-push-checklist but focuses on
 .claude/ directory artifacts, settings.json, rules, hooks, and MCP config.
 
 EXECUTION APPROACH:
+
 1. For each category, verify every item against the current file state
 2. Mark items as [x] Pass, [ ] Fail, or [N/A] Not Applicable
 3. Any CRITICAL item failure blocks the push

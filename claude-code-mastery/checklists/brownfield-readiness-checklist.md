@@ -11,6 +11,7 @@ existing project. It ensures we understand the codebase, protect
 sensitive files, and integrate without disrupting existing workflows.
 
 EXECUTION APPROACH:
+
 1. Analyze the repository structure and existing tooling
 2. Discover conventions and patterns already in use
 3. Map ALL sensitive files and secrets
@@ -50,7 +51,7 @@ Take the time to understand before modifying.]]
 - [ ] Error handling patterns documented (try/catch, Result types, error boundaries)
 - [ ] State management approach identified (if frontend project)
 - [ ] API patterns documented (REST, GraphQL, tRPC, etc.)
-- [ ] Test file naming convention identified (*.test.ts, *.spec.ts, __tests__/)
+- [ ] Test file naming convention identified (_.test.ts, _.spec.ts, **tests**/)
 
 ## 4. Sensitive Files
 
@@ -59,7 +60,7 @@ Take the time to understand before modifying.]]
 - [ ] Secret management approach documented (vault, env vars, config files)
 - [ ] `.gitignore` already excludes secret files (verify, do not assume)
 - [ ] No committed secrets found in git history (run secret scanner if available)
-- [ ] Private key files (*.key, *.pem, *.p12) located and mapped
+- [ ] Private key files (_.key, _.pem, \*.p12) located and mapped
 - [ ] Database connection strings identified and their storage method documented
 
 ## 5. Team Considerations

@@ -1,6 +1,6 @@
 ---
 task: createPitch()
-responsavel: "@oren-klaff"
+responsavel: '@oren-klaff'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Audience profiled with decision criteria mapped"
-  - "[ ] Narrative approach selected and all beats structured"
-  - "[ ] Clear ask with objection handling prepared"
+  - '[ ] Audience profiled with decision criteria mapped'
+  - '[ ] Narrative approach selected and all beats structured'
+  - '[ ] Clear ask with objection handling prepared'
 ---
 
 # Task: Pitch Deck Narrative
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `pitch_subject` | User prompt | YES |
-| `target_audience` | Investors, clients, partners, internal | YES |
-| `desired_outcome` | Funding, deal, approval, buy-in | YES |
-| `key_data_points` | Metrics, traction, financials | PREFERRED |
-| `time_limit` | Pitch duration | NO (default: 10 min) |
-| `existing_deck` | Current slides or outline | NO |
+| Input             | Source                                 | Required             |
+| ----------------- | -------------------------------------- | -------------------- |
+| `pitch_subject`   | User prompt                            | YES                  |
+| `target_audience` | Investors, clients, partners, internal | YES                  |
+| `desired_outcome` | Funding, deal, approval, buy-in        | YES                  |
+| `key_data_points` | Metrics, traction, financials          | PREFERRED            |
+| `time_limit`      | Pitch duration                         | NO (default: 10 min) |
+| `existing_deck`   | Current slides or outline              | NO                   |
 
 ## Preconditions
 
@@ -68,6 +68,7 @@ Checklist:
 ### Phase 2: Structure Narrative
 
 **If Klaff approach (oren-klaff):**
+
 1. **Set the Frame** — Establish your frame as the dominant one (prize frame, time frame, authority frame)
 2. **Tell the Story** — Hook with intrigue, build tension, create desire
 3. **Reveal the Intrigue** — The unique insight or opportunity that changes everything
@@ -76,6 +77,7 @@ Checklist:
 6. **Get the Decision** — Drive to a clear yes/no (not "let me think about it")
 
 **If Duarte approach (nancy-duarte):**
+
 1. **What Is** — Paint the current reality (the audience's world today)
 2. **What Could Be** — Reveal the possibility (the better future)
 3. **Alternate** — Toggle between current pain and future promise (sparkline)
@@ -104,25 +106,25 @@ Checklist:
 
 ```yaml
 pitch_narrative:
-  subject: "{what is being pitched}"
-  approach: "klaff_frame_control | duarte_sparkline"
-  specialist: "oren-klaff | nancy-duarte"
-  audience: "{target audience}"
-  desired_outcome: "{what success looks like}"
-  duration: "{estimated time}"
+  subject: '{what is being pitched}'
+  approach: 'klaff_frame_control | duarte_sparkline'
+  specialist: 'oren-klaff | nancy-duarte'
+  audience: '{target audience}'
+  desired_outcome: '{what success looks like}'
+  duration: '{estimated time}'
   narrative_beats:
     - beat: 1
-      name: "{beat name}"
-      content: "{what to say/show}"
-      emotional_target: "{audience feeling}"
-      duration: "{time allocation}"
-  tension_points: ["{key moments of tension}"]
-  proof_points: ["{data and evidence}"]
-  the_ask: "{specific request}"
+      name: '{beat name}'
+      content: '{what to say/show}'
+      emotional_target: '{audience feeling}'
+      duration: '{time allocation}'
+  tension_points: ['{key moments of tension}']
+  proof_points: ['{data and evidence}']
+  the_ask: '{specific request}'
   objection_handling:
-    - objection: "{anticipated concern}"
-      response: "{preemptive answer}"
-  closing_statement: "{memorable ending}"
+    - objection: '{anticipated concern}'
+      response: '{preemptive answer}'
+  closing_statement: '{memorable ending}'
 ```
 
 ## Veto Conditions

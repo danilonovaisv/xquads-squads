@@ -1,6 +1,6 @@
 ---
 task: buildAudience()
-responsavel: "@wes-kao"
+responsavel: '@wes-kao'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Spiky POV identified and validated"
-  - "[ ] Platform selected with format fit analysis"
-  - "[ ] 30-day content starter pack outlined"
+  - '[ ] Spiky POV identified and validated'
+  - '[ ] Platform selected with format fit analysis'
+  - '[ ] 30-day content starter pack outlined'
 ---
 
 # Task: Build Audience
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `expertise` | User prompt | Yes | Domain expertise or knowledge area |
-| `target_audience` | User prompt | Yes | Who the audience should be |
-| `current_presence` | User | No | Existing audience size, platforms, content |
-| `goal` | User | No | Audience goal: authority, leads, community, course launch |
-| `time_commitment` | User | No | Hours per week available for content creation |
+| Input              | Source      | Required | Description                                               |
+| ------------------ | ----------- | -------- | --------------------------------------------------------- |
+| `expertise`        | User prompt | Yes      | Domain expertise or knowledge area                        |
+| `target_audience`  | User prompt | Yes      | Who the audience should be                                |
+| `current_presence` | User        | No       | Existing audience size, platforms, content                |
+| `goal`             | User        | No       | Audience goal: authority, leads, community, course launch |
+| `time_commitment`  | User        | No       | Hours per week available for content creation             |
 
 ## Preconditions
 
@@ -135,27 +135,27 @@ Checklist:
 
 ```yaml
 audience_strategy:
-  expertise: "{domain}"
-  target_audience: "{description}"
+  expertise: '{domain}'
+  target_audience: '{description}'
   spiky_pov:
-    primary: "{main spiky POV}"
-    supporting: ["{pov1}", "{pov2}"]
+    primary: '{main spiky POV}'
+    supporting: ['{pov1}', '{pov2}']
   platform:
-    primary: "{platform}"
-    secondary: "{platform}"
-    format: "{native content format}"
+    primary: '{platform}'
+    secondary: '{platform}'
+    format: '{native content format}'
   content_cadence:
-    pillars: ["{pillar1}", "{pillar2}", "{pillar3}"]
-    frequency: "{X posts per week}"
-    repurposing_ratio: "1 long-form = {X} derivatives"
+    pillars: ['{pillar1}', '{pillar2}', '{pillar3}']
+    frequency: '{X posts per week}'
+    repurposing_ratio: '1 long-form = {X} derivatives'
   cohort_pipeline:
-    lead_magnet: "{description}"
-    nurture_length: "{X emails}"
-    cohort_ready: "{yes|no|future}"
+    lead_magnet: '{description}'
+    nurture_length: '{X emails}'
+    cohort_ready: '{yes|no|future}'
   milestones:
-    30_day: "{target}"
-    90_day: "{target}"
-    6_month: "{target}"
+    30_day: '{target}'
+    90_day: '{target}'
+    6_month: '{target}'
   deliverables:
     - spiky-pov-analysis.md
     - content-strategy.md

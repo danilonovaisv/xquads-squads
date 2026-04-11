@@ -29,8 +29,7 @@ const checks = [
   {
     name: 'settings.json exists',
     weight: 15,
-    check: () =>
-      fs.existsSync(path.join(projectPath, '.claude', 'settings.json')),
+    check: () => fs.existsSync(path.join(projectPath, '.claude', 'settings.json')),
   },
   {
     name: 'settings.json has deny rules',
@@ -84,9 +83,7 @@ const checks = [
       if (!fs.existsSync(settingsPath)) return false;
       try {
         const settings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
-        return (
-          settings.mcpServers && Object.keys(settings.mcpServers).length > 0
-        );
+        return settings.mcpServers && Object.keys(settings.mcpServers).length > 0;
       } catch {
         return false;
       }
@@ -96,10 +93,9 @@ const checks = [
     name: 'CLAUDE.md under 200 lines',
     weight: 5,
     check: () => {
-      const claudeMdPath =
-        fs.existsSync(path.join(projectPath, '.claude', 'CLAUDE.md'))
-          ? path.join(projectPath, '.claude', 'CLAUDE.md')
-          : path.join(projectPath, 'CLAUDE.md');
+      const claudeMdPath = fs.existsSync(path.join(projectPath, '.claude', 'CLAUDE.md'))
+        ? path.join(projectPath, '.claude', 'CLAUDE.md')
+        : path.join(projectPath, 'CLAUDE.md');
       if (!fs.existsSync(claudeMdPath)) return false;
       const lines = fs.readFileSync(claudeMdPath, 'utf8').split('\n').length;
       return lines <= 200;
@@ -114,11 +110,10 @@ const checks = [
       try {
         const settings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
         const deny = settings.permissions?.deny || [];
-        return deny.some(
-          (rule) =>
-            typeof rule === 'string'
-              ? rule.includes('.env')
-              : rule.pattern && rule.pattern.includes('.env')
+        return deny.some((rule) =>
+          typeof rule === 'string'
+            ? rule.includes('.env')
+            : rule.pattern && rule.pattern.includes('.env'),
         );
       } catch {
         return false;

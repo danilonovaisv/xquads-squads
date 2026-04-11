@@ -1,6 +1,6 @@
 ---
 task: mapArchetype()
-responsavel: "@archetype-consultant"
+responsavel: '@archetype-consultant'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All 12 archetypes evaluated and top 3 scored"
-  - "[ ] Primary and secondary archetypes selected"
-  - "[ ] Application examples provided for 5+ touchpoints"
+  - '[ ] All 12 archetypes evaluated and top 3 scored'
+  - '[ ] Primary and secondary archetypes selected'
+  - '[ ] Application examples provided for 5+ touchpoints'
 ---
 
 # Task: Map Brand Archetype
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| brand | string | User prompt | Yes | Brand name and description |
-| audience | string | User prompt | Yes | Target audience and their aspirations |
-| brand_values | list | User prompt | Yes | Core values and beliefs |
-| industry | string | User prompt | No | Industry context |
-| competitors | list | User prompt | No | Competitors with their perceived archetypes |
-| current_perception | string | User prompt | No | How the brand is currently perceived |
+| Field              | Type   | Source      | Required | Validation                                  |
+| ------------------ | ------ | ----------- | -------- | ------------------------------------------- |
+| brand              | string | User prompt | Yes      | Brand name and description                  |
+| audience           | string | User prompt | Yes      | Target audience and their aspirations       |
+| brand_values       | list   | User prompt | Yes      | Core values and beliefs                     |
+| industry           | string | User prompt | No       | Industry context                            |
+| competitors        | list   | User prompt | No       | Competitors with their perceived archetypes |
+| current_perception | string | User prompt | No       | How the brand is currently perceived        |
 
 ---
 
@@ -60,6 +60,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Archetype Analysis
+
 1. Evaluate the brand against all 12 archetypes:
    - **Innocent:** Optimism, simplicity, purity (Dove, Coca-Cola)
    - **Explorer:** Freedom, discovery, adventure (Jeep, Patagonia)
@@ -78,6 +79,7 @@ Checklist:
 4. Validate against competitor archetypes to ensure differentiation
 
 ### Phase 2: Archetype Expression Guide
+
 1. Define how the primary archetype manifests in the brand:
    - **Core Desire:** What the archetype fundamentally wants
    - **Goal:** What the archetype is trying to achieve
@@ -93,6 +95,7 @@ Checklist:
    - Content themes: What topics the brand covers
 
 ### Phase 3: Messaging Through Archetype Lens
+
 1. Write archetype-aligned messaging:
    - Tagline: Captures the archetype's essence
    - Brand promise: Framed through the archetype's values
@@ -109,6 +112,7 @@ Checklist:
    - Where the secondary archetype creates uniqueness
 
 ### Phase 4: Application Examples
+
 1. Write 3-5 examples of the archetype in action:
    - Homepage headline
    - Email subject line
@@ -136,45 +140,48 @@ Checklist:
 ### Archetype Scorecard
 
 | Archetype | Values Fit | Audience Fit | Differentiation | Total |
-|-----------|-----------|-------------|-----------------|-------|
-| {top 1} | X/10 | X/10 | X/10 | XX/30 |
-| {top 2} | X/10 | X/10 | X/10 | XX/30 |
-| {top 3} | X/10 | X/10 | X/10 | XX/30 |
+| --------- | ---------- | ------------ | --------------- | ----- |
+| {top 1}   | X/10       | X/10         | X/10            | XX/30 |
+| {top 2}   | X/10       | X/10         | X/10            | XX/30 |
+| {top 3}   | X/10       | X/10         | X/10            | XX/30 |
 
 ### Archetype Profile
 
-| Element | Definition |
-|---------|-----------|
-| Core Desire | {desire} |
-| Goal | {goal} |
-| Fear | {fear} |
-| Strategy | {strategy} |
-| Gift | {gift} |
-| Shadow | {what to avoid} |
+| Element     | Definition      |
+| ----------- | --------------- |
+| Core Desire | {desire}        |
+| Goal        | {goal}          |
+| Fear        | {fear}          |
+| Strategy    | {strategy}      |
+| Gift        | {gift}          |
+| Shadow      | {what to avoid} |
 
 ### Brand Expression Guide
 
-| Dimension | Direction | Example |
-|-----------|----------|---------|
-| Tone of Voice | {description} | {example phrase} |
-| Visual Mood | {description} | {reference} |
-| Story Themes | {themes} | {example} |
-| Customer Relationship | {style} | {example} |
+| Dimension             | Direction     | Example          |
+| --------------------- | ------------- | ---------------- |
+| Tone of Voice         | {description} | {example phrase} |
+| Visual Mood           | {description} | {reference}      |
+| Story Themes          | {themes}      | {example}        |
+| Customer Relationship | {style}       | {example}        |
 
 ### Archetype-Aligned Messaging
+
 - **Tagline:** {tagline}
 - **Promise:** {brand promise}
 - **Key Messages:** {3-5 messages}
 
 ### Application Examples
-| Touchpoint | Example |
-|-----------|---------|
-| Homepage headline | {copy} |
-| Email subject | {copy} |
-| Social post | {copy} |
-| Support response | {copy} |
+
+| Touchpoint        | Example |
+| ----------------- | ------- |
+| Homepage headline | {copy}  |
+| Email subject     | {copy}  |
+| Social post       | {copy}  |
+| Support response  | {copy}  |
 
 ### Team Cheat Sheet
+
 **Always ask:** "Would a {archetype} say/do this?"
 **Do:** {list}
 **Don't:** {list}

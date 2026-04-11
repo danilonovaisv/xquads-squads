@@ -1,6 +1,6 @@
 ---
 task: reviewPaidTrafficOutput()
-responsavel: "@traffic-chief"
+responsavel: '@traffic-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All checklist items evaluated"
-  - "[ ] Verdict rendered (APPROVE/REVISE/REJECT)"
-  - "[ ] Budget allocation and targeting individually assessed"
+  - '[ ] All checklist items evaluated'
+  - '[ ] Verdict rendered (APPROVE/REVISE/REJECT)'
+  - '[ ] Budget allocation and targeting individually assessed'
 ---
 
 # Task: Review Paid Traffic Output
@@ -39,11 +39,11 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| specialist_output | string | Specialist agent | Yes | Non-empty deliverable |
-| original_request | string | User prompt | Yes | The original request that triggered the work |
-| specialist_id | string | Routing | Yes | Agent ID that produced the output |
+| Field             | Type   | Source           | Required | Validation                                   |
+| ----------------- | ------ | ---------------- | -------- | -------------------------------------------- |
+| specialist_output | string | Specialist agent | Yes      | Non-empty deliverable                        |
+| original_request  | string | User prompt      | Yes      | The original request that triggered the work |
+| specialist_id     | string | Routing          | Yes      | Agent ID that produced the output            |
 
 ---
 
@@ -74,11 +74,11 @@ Checklist:
 
 ### Phase 3: Score and Decide
 
-| Score | Verdict | Action |
-|-------|---------|--------|
-| All CRITICAL pass, < 2 non-critical fail | APPROVE | Deliver to user |
-| All CRITICAL pass, 2+ non-critical fail | REVISE | Return to specialist with specific feedback |
-| Any CRITICAL fail | REJECT | Return to specialist, block delivery |
+| Score                                    | Verdict | Action                                      |
+| ---------------------------------------- | ------- | ------------------------------------------- |
+| All CRITICAL pass, < 2 non-critical fail | APPROVE | Deliver to user                             |
+| All CRITICAL pass, 2+ non-critical fail  | REVISE  | Return to specialist with specific feedback |
+| Any CRITICAL fail                        | REJECT  | Return to specialist, block delivery        |
 
 ### Phase 4: Output
 
@@ -96,17 +96,21 @@ Produce review report with verdict, score, and feedback.
 **Score:** {X}/{total} items passed
 
 ### Passed
+
 - {items that passed}
 
 ### Issues Found
+
 - [{CRITICAL|WARN}] {description} — {recommendation}
 
 ### Traffic-Specific Notes
+
 - Platform compliance: {assessment}
 - Targeting quality: {assessment}
 - Expected ROAS/CPA: {assessment}
 
 ### Recommendation
+
 {Next step: deliver / revise specific items / redo}
 ```
 

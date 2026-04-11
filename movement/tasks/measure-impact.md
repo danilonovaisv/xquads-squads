@@ -1,6 +1,6 @@
 ---
 task: measureImpact()
-responsavel: "@analista-de-impacto"
+responsavel: '@analista-de-impacto'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Impact Pyramid defined with 5 levels"
-  - "[ ] Vitality Index formula defined with weights"
-  - "[ ] Reporting cadence established"
+  - '[ ] Impact Pyramid defined with 5 levels'
+  - '[ ] Vitality Index formula defined with weights'
+  - '[ ] Reporting cadence established'
 ---
 
 # Task: Measure Impact
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `movement_context` | Session | Yes | Movement cause, identity, and growth strategy |
-| `growth_data` | estrategista-de-ciclo | No | Existing growth metrics and community data |
-| `goals` | User prompt | Yes | What impact the movement aims to achieve |
-| `timeframe` | User | No | Measurement period: monthly, quarterly, annual |
-| `existing_metrics` | User | No | Any metrics already being tracked |
+| Input              | Source                | Required | Description                                    |
+| ------------------ | --------------------- | -------- | ---------------------------------------------- |
+| `movement_context` | Session               | Yes      | Movement cause, identity, and growth strategy  |
+| `growth_data`      | estrategista-de-ciclo | No       | Existing growth metrics and community data     |
+| `goals`            | User prompt           | Yes      | What impact the movement aims to achieve       |
+| `timeframe`        | User                  | No       | Measurement period: monthly, quarterly, annual |
+| `existing_metrics` | User                  | No       | Any metrics already being tracked              |
 
 ## Preconditions
 
@@ -115,32 +115,33 @@ Checklist:
 
 ```yaml
 impact_framework:
-  movement: "{name}"
-  current_pyramid_level: {1-5}
-  target_pyramid_level: {1-5}
+  movement: '{name}'
+  current_pyramid_level: { 1-5 }
+  target_pyramid_level: { 1-5 }
   metrics_per_level:
-    awareness: ["{metric1}", "{metric2}", "{metric3}"]
-    engagement: ["{metric1}", "{metric2}", "{metric3}"]
-    commitment: ["{metric1}", "{metric2}", "{metric3}"]
-    advocacy: ["{metric1}", "{metric2}", "{metric3}"]
-    transformation: ["{metric1}", "{metric2}", "{metric3}"]
+    awareness: ['{metric1}', '{metric2}', '{metric3}']
+    engagement: ['{metric1}', '{metric2}', '{metric3}']
+    commitment: ['{metric1}', '{metric2}', '{metric3}']
+    advocacy: ['{metric1}', '{metric2}', '{metric3}']
+    transformation: ['{metric1}', '{metric2}', '{metric3}']
   community_health:
-    growth_rate: {baseline: "", target: "", status: ""}
-    activation_rate: {baseline: "", target: "", status: ""}
-    retention_rate: {baseline: "", target: "", status: ""}
-    engagement_depth: {baseline: "", target: "", status: ""}
-    sentiment_score: {baseline: "", target: "", status: ""}
-    advocacy_rate: {baseline: "", target: "", status: ""}
+    growth_rate: { baseline: '', target: '', status: '' }
+    activation_rate: { baseline: '', target: '', status: '' }
+    retention_rate: { baseline: '', target: '', status: '' }
+    engagement_depth: { baseline: '', target: '', status: '' }
+    sentiment_score: { baseline: '', target: '', status: '' }
+    advocacy_rate: { baseline: '', target: '', status: '' }
   vitality_index:
-    current_score: {0-100}
-    threshold: "{thriving|healthy|at-risk|critical|failing}"
-    weights: {growth: 15, activation: 20, retention: 25, engagement: 20, sentiment: 10, advocacy: 10}
+    current_score: { 0-100 }
+    threshold: '{thriving|healthy|at-risk|critical|failing}'
+    weights:
+      { growth: 15, activation: 20, retention: 25, engagement: 20, sentiment: 10, advocacy: 10 }
   reporting_cadence:
-    weekly: "Vitality pulse + leading indicators"
-    monthly: "Full dashboard + trends + recommendations"
-    quarterly: "Impact pyramid review + strategy adjustment"
+    weekly: 'Vitality pulse + leading indicators'
+    monthly: 'Full dashboard + trends + recommendations'
+    quarterly: 'Impact pyramid review + strategy adjustment'
   alert_triggers:
-    - "{condition that triggers escalation}"
+    - '{condition that triggers escalation}'
 ```
 
 ## Veto Conditions

@@ -1,6 +1,6 @@
 ---
 task: auditAppSecurity()
-responsavel: "@jim-manico"
+responsavel: '@jim-manico'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Threat model created with STRIDE analysis"
-  - "[ ] All OWASP Top 10 categories tested"
-  - "[ ] Remediation plan with code-level fix examples"
+  - '[ ] Threat model created with STRIDE analysis'
+  - '[ ] All OWASP Top 10 categories tested'
+  - '[ ] Remediation plan with code-level fix examples'
 ---
 
 # Task: OWASP Application Security Audit
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `application_url` | User prompt | YES |
-| `source_code_access` | Repository or files | PREFERRED |
-| `tech_stack` | User or auto-detected | YES |
-| `authentication_type` | User description | YES |
-| `api_documentation` | OpenAPI/Swagger | NO |
-| `previous_audit` | Prior findings | NO |
+| Input                 | Source                | Required  |
+| --------------------- | --------------------- | --------- |
+| `application_url`     | User prompt           | YES       |
+| `source_code_access`  | Repository or files   | PREFERRED |
+| `tech_stack`          | User or auto-detected | YES       |
+| `authentication_type` | User description      | YES       |
+| `api_documentation`   | OpenAPI/Swagger       | NO        |
+| `previous_audit`      | Prior findings        | NO        |
 
 ## Preconditions
 
@@ -111,29 +111,29 @@ Checklist:
 
 ```yaml
 app_security_audit:
-  application: "{app name/url}"
-  auditor: "jim-manico"
-  methodology: "OWASP ASVS + Top 10"
-  tech_stack: "{detected stack}"
+  application: '{app name/url}'
+  auditor: 'jim-manico'
+  methodology: 'OWASP ASVS + Top 10'
+  tech_stack: '{detected stack}'
   threat_model:
-    architecture: "{description}"
-    trust_boundaries: ["{boundary list}"]
-    stride_findings: ["{threat list}"]
+    architecture: '{description}'
+    trust_boundaries: ['{boundary list}']
+    stride_findings: ['{threat list}']
   findings:
-    - id: "APP-001"
-      owasp_category: "A01 — Broken Access Control"
-      cwe: "CWE-284"
-      title: "{finding}"
-      severity: "CRITICAL | HIGH | MEDIUM | LOW"
-      location: "{file:line or endpoint}"
-      description: "{detailed description}"
-      remediation: "{specific fix with code example}"
-      cheat_sheet: "{OWASP cheat sheet URL}"
+    - id: 'APP-001'
+      owasp_category: 'A01 — Broken Access Control'
+      cwe: 'CWE-284'
+      title: '{finding}'
+      severity: 'CRITICAL | HIGH | MEDIUM | LOW'
+      location: '{file:line or endpoint}'
+      description: '{detailed description}'
+      remediation: '{specific fix with code example}'
+      cheat_sheet: '{OWASP cheat sheet URL}'
   remediation_plan:
-    critical: ["{immediate fixes}"]
-    high: ["{this sprint}"]
-    medium: ["{next sprint}"]
-    low: ["{backlog}"]
+    critical: ['{immediate fixes}']
+    high: ['{this sprint}']
+    medium: ['{next sprint}']
+    low: ['{backlog}']
 ```
 
 ## Veto Conditions

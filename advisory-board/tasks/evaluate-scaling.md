@@ -1,6 +1,6 @@
 ---
 task: evaluateScaling()
-responsavel: "@board-chair"
+responsavel: '@board-chair'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Readiness assessed by all three advisors (Hoffman, Thiel, Naval)"
-  - "[ ] Scaling strategy identified with clear rationale"
-  - "[ ] Go/No-Go verdict with playbook and kill criteria"
+  - '[ ] Readiness assessed by all three advisors (Hoffman, Thiel, Naval)'
+  - '[ ] Scaling strategy identified with clear rationale'
+  - '[ ] Go/No-Go verdict with playbook and kill criteria'
 ---
 
 # Task: Scaling Decision Analysis
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `business_description` | Current state of the business | YES |
-| `scaling_trigger` | Why scaling is being considered now | YES |
-| `current_metrics` | Revenue, users, growth rate, unit economics | PREFERRED |
-| `resources_available` | Capital, team, infrastructure | PREFERRED |
-| `market_context` | Market size, competition, timing | NO |
-| `constraints` | Limitations, values, non-negotiables | NO |
+| Input                  | Source                                      | Required  |
+| ---------------------- | ------------------------------------------- | --------- |
+| `business_description` | Current state of the business               | YES       |
+| `scaling_trigger`      | Why scaling is being considered now         | YES       |
+| `current_metrics`      | Revenue, users, growth rate, unit economics | PREFERRED |
+| `resources_available`  | Capital, team, infrastructure               | PREFERRED |
+| `market_context`       | Market size, competition, timing            | NO        |
+| `constraints`          | Limitations, values, non-negotiables        | NO        |
 
 ## Preconditions
 
@@ -59,6 +59,7 @@ Checklist:
 ### Phase 1: Assess Readiness
 
 **Reid Hoffman — Blitzscaling Readiness:**
+
 1. Is there a large, growing market? (TAM analysis)
 2. Is there product-market fit? (retention, referral, organic growth)
 3. Are there network effects? (does the product get better with more users?)
@@ -67,6 +68,7 @@ Checklist:
 6. Rate blitzscaling readiness: NOT READY / APPROACHING / READY / OVERDUE
 
 **Peter Thiel — Monopoly Assessment:**
+
 1. Are you dominating a small market? (You should be #1 or #2 in a niche)
 2. What is your secret? (What do you know that others do not?)
 3. Can you achieve monopoly in a defined space?
@@ -75,6 +77,7 @@ Checklist:
 6. Rate monopoly potential: WEAK / MODERATE / STRONG
 
 **Naval Ravikant — Leverage Analysis:**
+
 1. Are you applying leverage? (Code, media, capital, labor — in that order of preference)
 2. Do you have specific knowledge? (Something the market cannot easily replicate)
 3. Are you building assets that earn while you sleep?
@@ -121,29 +124,29 @@ Checklist:
 scaling_evaluation:
   advisors: [reid-hoffman, peter-thiel, naval-ravikant]
   readiness:
-    hoffman_blitzscaling: "NOT_READY | APPROACHING | READY | OVERDUE"
-    thiel_monopoly: "WEAK | MODERATE | STRONG"
-    naval_leverage: "LOW | MEDIUM | HIGH"
+    hoffman_blitzscaling: 'NOT_READY | APPROACHING | READY | OVERDUE'
+    thiel_monopoly: 'WEAK | MODERATE | STRONG'
+    naval_leverage: 'LOW | MEDIUM | HIGH'
   strategy:
-    approach: "speed | efficiency | leverage"
-    direction: "horizontal | vertical"
-    growth_type: "organic | inorganic | hybrid"
-    capital_strategy: "bootstrap | venture | revenue-funded"
+    approach: 'speed | efficiency | leverage'
+    direction: 'horizontal | vertical'
+    growth_type: 'organic | inorganic | hybrid'
+    capital_strategy: 'bootstrap | venture | revenue-funded'
   risks:
-    premature_scaling: "{assessment}"
-    execution: "{assessment}"
-    culture: "{assessment}"
-    financial: "{assessment}"
-    market: "{assessment}"
-    competitive: "{assessment}"
-  verdict: "GO | CONDITIONAL_GO | NO_GO | PIVOT"
-  conditions: ["{if conditional}"]
+    premature_scaling: '{assessment}'
+    execution: '{assessment}'
+    culture: '{assessment}'
+    financial: '{assessment}'
+    market: '{assessment}'
+    competitive: '{assessment}'
+  verdict: 'GO | CONDITIONAL_GO | NO_GO | PIVOT'
+  conditions: ['{if conditional}']
   playbook:
-    days_90: ["{first actions}"]
-    months_6: ["{medium-term actions}"]
-    months_12: ["{long-term actions}"]
-  success_metrics: ["{what to measure}"]
-  kill_criteria: ["{when to stop}"]
+    days_90: ['{first actions}']
+    months_6: ['{medium-term actions}']
+    months_12: ['{long-term actions}']
+  success_metrics: ['{what to measure}']
+  kill_criteria: ['{when to stop}']
 ```
 
 ## Veto Conditions

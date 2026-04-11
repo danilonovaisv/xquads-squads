@@ -1,6 +1,6 @@
 ---
 task: createOffer()
-responsavel: "@dan-kennedy"
+responsavel: '@dan-kennedy'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Core transformation and value stack defined"
-  - "[ ] 3-5 relevant bonuses designed with guarantee"
-  - "[ ] Price anchoring strategy and offer stack copy ready"
+  - '[ ] Core transformation and value stack defined'
+  - '[ ] 3-5 relevant bonuses designed with guarantee'
+  - '[ ] Price anchoring strategy and offer stack copy ready'
 ---
 
 # Task: Create Offer
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Core product or service |
-| audience | string | User prompt | Yes | Target buyer with budget context |
-| price_range | string | User prompt | No | Acceptable price range or target price |
-| delivery_method | string | User prompt | No | Digital, physical, service, hybrid |
-| competitors | list | User prompt | No | Competing offers in the market |
-| existing_assets | list | User prompt | No | Bonuses, content, tools already available |
-| business_model | string | User prompt | No | One-time, subscription, high-ticket, low-ticket |
+| Field           | Type   | Source      | Required | Validation                                      |
+| --------------- | ------ | ----------- | -------- | ----------------------------------------------- |
+| product         | string | User prompt | Yes      | Core product or service                         |
+| audience        | string | User prompt | Yes      | Target buyer with budget context                |
+| price_range     | string | User prompt | No       | Acceptable price range or target price          |
+| delivery_method | string | User prompt | No       | Digital, physical, service, hybrid              |
+| competitors     | list   | User prompt | No       | Competing offers in the market                  |
+| existing_assets | list   | User prompt | No       | Bonuses, content, tools already available       |
+| business_model  | string | User prompt | No       | One-time, subscription, high-ticket, low-ticket |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Value Architecture
+
 1. Define the core transformation (before state to after state)
 2. Identify all value components the product delivers:
    - Primary outcome (the main thing they buy)
@@ -72,6 +73,7 @@ Checklist:
 4. Map the value stack from most to least impactful
 
 ### Phase 2: Offer Construction
+
 1. Structure the core offer with clear deliverables
 2. Design the bonus stack (3-5 bonuses):
    - Each bonus must solve a related problem or accelerate the result
@@ -90,6 +92,7 @@ Checklist:
    - Reveal the actual price as a fraction of perceived value
 
 ### Phase 3: Offer Positioning
+
 1. Write the offer stack copy (how it will be presented in sales materials)
 2. Create the "what you get" summary section
 3. Write the guarantee statement as standalone copy
@@ -113,23 +116,27 @@ Checklist:
 ---
 
 ### Core Offer
+
 {Description of what they get — the main product/service}
 
 ### Bonus Stack
 
-| # | Bonus Name | What It Does | Value |
-|---|------------|-------------|-------|
-| 1 | {name} | {solves X} | ${value} |
-| 2 | {name} | {accelerates Y} | ${value} |
-| 3 | {name} | {removes Z friction} | ${value} |
+| #   | Bonus Name | What It Does         | Value    |
+| --- | ---------- | -------------------- | -------- |
+| 1   | {name}     | {solves X}           | ${value} |
+| 2   | {name}     | {accelerates Y}      | ${value} |
+| 3   | {name}     | {removes Z friction} | ${value} |
 
 ### Guarantee
+
 {Full guarantee statement — bold, specific, risk-reversing}
 
 ### Urgency/Scarcity
+
 {What creates time pressure — and why it's credible}
 
 ### Price Presentation
+
 - Total Value: ${total}
 - Not ${high_anchor}
 - Not even ${mid_anchor}
@@ -137,11 +144,13 @@ Checklist:
 - {Payment plan option if applicable}
 
 ### Offer Stack Copy
+
 {Ready-to-use copy block for sales page/VSL/email}
 
 ### Objection Handlers Built Into Offer
+
 | Objection | How the Offer Addresses It |
-|-----------|---------------------------|
+| --------- | -------------------------- |
 ```
 
 ---

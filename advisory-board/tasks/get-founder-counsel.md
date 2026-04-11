@@ -1,6 +1,6 @@
 ---
 task: getFounderCounsel()
-responsavel: "@board-chair"
+responsavel: '@board-chair'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All three advisor perspectives delivered (Sivers, Chouinard, Naval)"
-  - "[ ] Contrarian check completed with regret minimization"
-  - "[ ] Decision framework offered with journaling prompt"
+  - '[ ] All three advisor perspectives delivered (Sivers, Chouinard, Naval)'
+  - '[ ] Contrarian check completed with regret minimization'
+  - '[ ] Decision framework offered with journaling prompt'
 ---
 
 # Task: Founder Crossroads Counsel
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `crossroads_description` | The decision or dilemma | YES |
-| `founder_context` | Stage, values, personal situation | YES |
-| `options_considered` | Paths being weighed | PREFERRED |
-| `fears_and_hopes` | What they are afraid of and what they want | PREFERRED |
-| `constraints` | Non-negotiables, commitments | NO |
+| Input                    | Source                                     | Required  |
+| ------------------------ | ------------------------------------------ | --------- |
+| `crossroads_description` | The decision or dilemma                    | YES       |
+| `founder_context`        | Stage, values, personal situation          | YES       |
+| `options_considered`     | Paths being weighed                        | PREFERRED |
+| `fears_and_hopes`        | What they are afraid of and what they want | PREFERRED |
+| `constraints`            | Non-negotiables, commitments               | NO        |
 
 ## Preconditions
 
@@ -72,6 +72,7 @@ Checklist:
 ### Phase 2: Multiple Perspectives
 
 **Derek Sivers — Contrarian Simplicity:**
+
 1. Apply the "Hell Yeah or No" test — does this option make you say "HELL YEAH!"?
 2. Check for conventional thinking — are you doing this because "everyone says you should"?
 3. Apply the "opposite is also true" principle — what if the opposite path is right?
@@ -80,6 +81,7 @@ Checklist:
 6. Key question: "What would you do if you knew no one would judge you?"
 
 **Yvon Chouinard — Mission-Driven Wisdom:**
+
 1. Does this align with your deepest values? (Not your stated values — your REAL values)
 2. What is the environmental and social impact of each path?
 3. Apply the 100-year lens — which decision will you be proud of in the very long term?
@@ -88,6 +90,7 @@ Checklist:
 6. Key question: "What does the planet (and your community) need you to do?"
 
 **Naval Ravikant — First Principles Wisdom:**
+
 1. Apply specific knowledge — what are you uniquely suited to do?
 2. Assess leverage — which path creates the most leverage (code > media > capital > labor)?
 3. Check for playing status games — are you chasing status or creating wealth?
@@ -122,30 +125,30 @@ Checklist:
 ```yaml
 founder_counsel:
   advisors: [derek-sivers, yvon-chouinard, naval-ravikant]
-  crossroads: "{description}"
-  type: "{crossroads type}"
+  crossroads: '{description}'
+  type: '{crossroads type}'
   perspectives:
     sivers:
-      hell_yeah_test: "{result}"
-      contrarian_view: "{what if the opposite is true}"
-      key_insight: "{core wisdom}"
+      hell_yeah_test: '{result}'
+      contrarian_view: '{what if the opposite is true}'
+      key_insight: '{core wisdom}'
     chouinard:
-      values_alignment: "{assessment}"
-      long_term_lens: "{100-year perspective}"
-      key_insight: "{core wisdom}"
+      values_alignment: '{assessment}'
+      long_term_lens: '{100-year perspective}'
+      key_insight: '{core wisdom}'
     naval:
-      leverage_analysis: "{which path has more leverage}"
-      specific_knowledge: "{what are you uniquely suited for}"
-      key_insight: "{core wisdom}"
+      leverage_analysis: '{which path has more leverage}'
+      specific_knowledge: '{what are you uniquely suited for}'
+      key_insight: '{core wisdom}'
   contrarian_check:
-    strongest_argument_against: "{for each path}"
-    regret_minimization: "{at 80, what would you regret}"
-    reversibility: "one-way | two-way"
+    strongest_argument_against: '{for each path}'
+    regret_minimization: '{at 80, what would you regret}'
+    reversibility: 'one-way | two-way'
   synthesis:
-    core_tension: "{the real tradeoff}"
-    framework: "{decision lens recommendation}"
-    experiment: "{small test before committing}"
-    journaling_prompt: "{for personal reflection}"
+    core_tension: '{the real tradeoff}'
+    framework: '{decision lens recommendation}'
+    experiment: '{small test before committing}'
+    journaling_prompt: '{for personal reflection}'
   closing_wisdom: |
     {A synthesized, personal message from the board}
 ```

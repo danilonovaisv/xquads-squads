@@ -29,11 +29,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Valid project directory |
-| team_size | string | User parameter | No | `solo`, `small` (2-5), `team` (6+), `enterprise` |
-| sensitivity | string | User parameter | No | `low`, `standard` (default), `high`, `regulated` |
+| Field        | Type   | Source            | Required | Validation                                       |
+| ------------ | ------ | ----------------- | -------- | ------------------------------------------------ |
+| project_root | string | Working directory | Yes      | Valid project directory                          |
+| team_size    | string | User parameter    | No       | `solo`, `small` (2-5), `team` (6+), `enterprise` |
+| sensitivity  | string | User parameter    | No       | `low`, `standard` (default), `high`, `regulated` |
 
 ---
 
@@ -51,14 +51,14 @@
 
 1. Determine the sensitivity profile:
 
-| Factor | Weight | Assessment |
-|--------|--------|------------|
-| Handles PII/PHI data | HIGH | Check for user data, health records |
-| Has production credentials | HIGH | .env files, secret managers |
-| External API integrations | MEDIUM | Third-party services, webhooks |
-| Financial transactions | HIGH | Payment processing, billing |
-| Open source project | LOW | Public code, no secrets |
-| Internal tool | MEDIUM | Company data, internal APIs |
+| Factor                     | Weight | Assessment                          |
+| -------------------------- | ------ | ----------------------------------- |
+| Handles PII/PHI data       | HIGH   | Check for user data, health records |
+| Has production credentials | HIGH   | .env files, secret managers         |
+| External API integrations  | MEDIUM | Third-party services, webhooks      |
+| Financial transactions     | HIGH   | Payment processing, billing         |
+| Open source project        | LOW    | Public code, no secrets             |
+| Internal tool              | MEDIUM | Company data, internal APIs         |
 
 2. Scan for sensitive file patterns:
    - `.env`, `.env.*` -- environment variables
@@ -75,12 +75,12 @@
 
 Select the base mode based on assessment:
 
-| Mode | Use When | Friction Level | Security Level |
-|------|----------|----------------|----------------|
-| askAlways | Regulated environments, onboarding, high sensitivity | High | Maximum |
-| acceptEdits | Standard development, trusted codebase, medium sensitivity | Medium | Balanced |
-| autoApprove | Solo developer, low sensitivity, personal projects | Low | Minimum |
-| plan | Complex workflows requiring upfront approval (managed only) | Medium | High |
+| Mode        | Use When                                                    | Friction Level | Security Level |
+| ----------- | ----------------------------------------------------------- | -------------- | -------------- |
+| askAlways   | Regulated environments, onboarding, high sensitivity        | High           | Maximum        |
+| acceptEdits | Standard development, trusted codebase, medium sensitivity  | Medium         | Balanced       |
+| autoApprove | Solo developer, low sensitivity, personal projects          | Low            | Minimum        |
+| plan        | Complex workflows requiring upfront approval (managed only) | Medium         | High           |
 
 **Decision tree:**
 
@@ -104,27 +104,27 @@ Build the allow list using `Tool(specifier)` syntax:
 
 **Common allow patterns by tool:**
 
-| Tool | Pattern | Purpose |
-|------|---------|---------|
-| `Bash(npm run *)` | Allow all npm scripts | Development workflow |
-| `Bash(npx *)` | Allow npx execution | Tool execution |
-| `Bash(git status)` | Git status check | Version control |
-| `Bash(git diff *)` | Git diff viewing | Code review |
-| `Bash(git log *)` | Git history | Version control |
-| `Bash(git add *)` | Git staging | Version control |
-| `Bash(git commit *)` | Git commits | Version control |
-| `Bash(node *)` | Node.js execution | Development |
-| `Bash(python *)` | Python execution | Development |
-| `Bash(pytest *)` | Python testing | Testing |
-| `Read(src/**)` | Read source code | Development |
-| `Read(docs/**)` | Read documentation | Reference |
-| `Read(tests/**)` | Read test files | Testing |
-| `Edit(src/**)` | Edit source code | Development |
-| `Edit(tests/**)` | Edit test files | Testing |
-| `WebFetch(domain:*.npmjs.org)` | NPM registry | Package info |
-| `WebFetch(domain:api.github.com)` | GitHub API | Repository info |
-| `MCP(context7)` | Library docs | Documentation |
-| `Agent(Explore)` | Exploration subagent | Analysis |
+| Tool                              | Pattern               | Purpose              |
+| --------------------------------- | --------------------- | -------------------- |
+| `Bash(npm run *)`                 | Allow all npm scripts | Development workflow |
+| `Bash(npx *)`                     | Allow npx execution   | Tool execution       |
+| `Bash(git status)`                | Git status check      | Version control      |
+| `Bash(git diff *)`                | Git diff viewing      | Code review          |
+| `Bash(git log *)`                 | Git history           | Version control      |
+| `Bash(git add *)`                 | Git staging           | Version control      |
+| `Bash(git commit *)`              | Git commits           | Version control      |
+| `Bash(node *)`                    | Node.js execution     | Development          |
+| `Bash(python *)`                  | Python execution      | Development          |
+| `Bash(pytest *)`                  | Python testing        | Testing              |
+| `Read(src/**)`                    | Read source code      | Development          |
+| `Read(docs/**)`                   | Read documentation    | Reference            |
+| `Read(tests/**)`                  | Read test files       | Testing              |
+| `Edit(src/**)`                    | Edit source code      | Development          |
+| `Edit(tests/**)`                  | Edit test files       | Testing              |
+| `WebFetch(domain:*.npmjs.org)`    | NPM registry          | Package info         |
+| `WebFetch(domain:api.github.com)` | GitHub API            | Repository info      |
+| `MCP(context7)`                   | Library docs          | Documentation        |
+| `Agent(Explore)`                  | Exploration subagent  | Analysis             |
 
 Customize based on detected project needs.
 
@@ -155,12 +155,12 @@ Build the deny list (evaluated first, highest priority):
 
 **Project-specific deny rules:**
 
-| Project Type | Additional Deny Rules |
-|-------------|----------------------|
-| AIOS | `Edit(.aios-core/core/**)`, `Edit(.aios-core/constitution.md)`, `Edit(bin/aios.js)` |
-| Infrastructure | `Bash(terraform apply *)`, `Bash(terraform destroy *)` |
-| Database | `Bash(psql * DROP *)`, `Bash(mysql * DROP *)` |
-| Docker | `Bash(docker rm -f *)`, `Bash(docker system prune *)` |
+| Project Type   | Additional Deny Rules                                                               |
+| -------------- | ----------------------------------------------------------------------------------- |
+| AIOS           | `Edit(.aios-core/core/**)`, `Edit(.aios-core/constitution.md)`, `Edit(bin/aios.js)` |
+| Infrastructure | `Bash(terraform apply *)`, `Bash(terraform destroy *)`                              |
+| Database       | `Bash(psql * DROP *)`, `Bash(mysql * DROP *)`                                       |
+| Docker         | `Bash(docker rm -f *)`, `Bash(docker system prune *)`                               |
 
 **Ask rules (prompt before executing):**
 
@@ -193,7 +193,7 @@ Build the deny list (evaluated first, highest priority):
 
 ## Output Format
 
-```markdown
+````markdown
 ## Permission Strategy
 
 **Project:** {project-name}
@@ -203,11 +203,11 @@ Build the deny list (evaluated first, highest priority):
 
 ### Rule Summary
 
-| Category | Count | Examples |
-|----------|-------|---------|
-| deny | {N} | .env, secrets, destructive commands |
-| ask | {N} | git push, package.json changes |
-| allow | {N} | npm scripts, git read-only, src/ access |
+| Category | Count | Examples                                |
+| -------- | ----- | --------------------------------------- |
+| deny     | {N}   | .env, secrets, destructive commands     |
+| ask      | {N}   | git push, package.json changes          |
+| allow    | {N}   | npm scripts, git read-only, src/ access |
 
 ### Complete Configuration
 
@@ -221,17 +221,18 @@ Build the deny list (evaluated first, highest priority):
   }
 }
 ```
+````
 
 ### Evaluation Examples
 
 Show how specific operations will be handled:
 
-| Operation | Matches | Category | Result |
-|-----------|---------|----------|--------|
-| `cat .env` | `Read(./.env)` | deny | BLOCKED |
-| `npm run test` | `Bash(npm run *)` | allow | AUTO-APPROVED |
-| `git push origin main` | `Bash(git push *)` | ask | PROMPTS USER |
-| `edit src/app.ts` | `Edit(src/**)` | allow | AUTO-APPROVED |
+| Operation              | Matches            | Category | Result        |
+| ---------------------- | ------------------ | -------- | ------------- |
+| `cat .env`             | `Read(./.env)`     | deny     | BLOCKED       |
+| `npm run test`         | `Bash(npm run *)`  | allow    | AUTO-APPROVED |
+| `git push origin main` | `Bash(git push *)` | ask      | PROMPTS USER  |
+| `edit src/app.ts`      | `Edit(src/**)`     | allow    | AUTO-APPROVED |
 
 ### Security Coverage
 
@@ -241,6 +242,7 @@ Show how specific operations will be handled:
 - [x] Pipe-to-shell attacks blocked
 - [x] Certificate/key files protected
 - [ ] {Any gaps flagged here}
+
 ```
 
 ---
@@ -264,3 +266,4 @@ Show how specific operations will be handled:
 - [ ] Ask rules protect modification of critical config files
 - [ ] MCP tool permissions set for all configured servers
 - [ ] Evaluation examples show how common operations are handled
+```

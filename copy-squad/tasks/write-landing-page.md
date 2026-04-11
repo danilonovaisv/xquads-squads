@@ -1,6 +1,6 @@
 ---
 task: writeLandingPage()
-responsavel: "@joe-sugarman"
+responsavel: '@joe-sugarman'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Single conversion goal defined and maintained"
-  - "[ ] All sections written per page type architecture"
-  - "[ ] CTA appears at least 3 times with action-oriented text"
+  - '[ ] Single conversion goal defined and maintained'
+  - '[ ] All sections written per page type architecture'
+  - '[ ] CTA appears at least 3 times with action-oriented text'
 ---
 
 # Task: Write Landing Page Copy
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service being offered |
-| audience | string | User prompt | Yes | Target visitor profile |
-| page_type | enum | User prompt | Yes | opt-in, sales, webinar-reg, waitlist, product, checkout |
-| offer | object | User prompt | Yes | What the visitor gets for taking action |
-| traffic_source | string | User prompt | No | Where visitors come from (ads, email, organic, social) |
-| awareness_level | enum | User prompt | No | Awareness level of incoming traffic |
-| page_length | string | User prompt | No | short (opt-in), medium (webinar), long (sales) — auto-detected from type |
+| Field           | Type   | Source      | Required | Validation                                                               |
+| --------------- | ------ | ----------- | -------- | ------------------------------------------------------------------------ |
+| product         | string | User prompt | Yes      | Product/service being offered                                            |
+| audience        | string | User prompt | Yes      | Target visitor profile                                                   |
+| page_type       | enum   | User prompt | Yes      | opt-in, sales, webinar-reg, waitlist, product, checkout                  |
+| offer           | object | User prompt | Yes      | What the visitor gets for taking action                                  |
+| traffic_source  | string | User prompt | No       | Where visitors come from (ads, email, organic, social)                   |
+| awareness_level | enum   | User prompt | No       | Awareness level of incoming traffic                                      |
+| page_length     | string | User prompt | No       | short (opt-in), medium (webinar), long (sales) — auto-detected from type |
 
 ---
 
@@ -62,6 +62,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Page Strategy
+
 1. Define the single conversion goal (one page, one action)
 2. Identify the visitor's state of mind when they arrive:
    - From cold ad: skeptical, curious, low trust
@@ -74,6 +75,7 @@ Checklist:
    - Webinar reg: Headline → What you'll learn → Speaker cred → Date/Time → CTA (medium)
 
 ### Phase 2: Section-by-Section Writing
+
 1. **Hero Section:** Headline + sub-headline + hero CTA
    - The headline must do 80% of the selling
    - Sub-headline clarifies or amplifies
@@ -98,6 +100,7 @@ Checklist:
 8. **Final CTA:** Last push with urgency
 
 ### Phase 3: Conversion Optimization
+
 1. Ensure CTA appears at minimum 3 times on the page
 2. Write all button text as action-oriented first person ("Get My Free Guide")
 3. Add micro-copy below buttons to reduce anxiety
@@ -119,35 +122,44 @@ Checklist:
 ---
 
 ### [HERO SECTION]
+
 **Headline:** {headline}
 **Sub-headline:** {sub-headline}
 **CTA Button:** {button text}
 **Micro-copy:** {below-button text}
 
 ### [PROBLEM SECTION]
+
 {Problem agitation copy}
 
 ### [SOLUTION SECTION]
+
 {Solution introduction copy}
 
 ### [BENEFITS SECTION]
+
 {Benefits with formatting notes}
 
 ### [PROOF SECTION]
+
 {Testimonial placeholders and social proof copy}
 
 ### [OFFER SECTION]
+
 {Value stack and pricing — if sales page}
 
 ### [FAQ SECTION]
+
 {5-7 Q&A pairs}
 
 ### [FINAL CTA SECTION]
+
 {Closing argument + CTA}
 
 ---
 
 ### Conversion Notes
+
 - **CTA count:** {X placements}
 - **Estimated page length:** {scroll depth}
 - **Key anxiety reducers:** {list}

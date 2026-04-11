@@ -1,6 +1,6 @@
 ---
 task: unblockCreative()
-responsavel: "@keith-johnstone"
+responsavel: '@keith-johnstone'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Block type diagnosed with emotional root identified"
-  - "[ ] At least 3 exercises prescribed and explained"
-  - "[ ] Micro-goal set for immediate action"
+  - '[ ] Block type diagnosed with emotional root identified'
+  - '[ ] At least 3 exercises prescribed and explained'
+  - '[ ] Micro-goal set for immediate action'
 ---
 
 # Task: Creative Unblocking
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `block_description` | User describes their stuck point | YES |
-| `project_context` | What they are working on | PREFERRED |
-| `what_theyve_tried` | Previous attempts to unblock | NO |
-| `deadline_pressure` | Time constraints | NO |
-| `creative_history` | Past successes and patterns | NO |
+| Input               | Source                           | Required  |
+| ------------------- | -------------------------------- | --------- |
+| `block_description` | User describes their stuck point | YES       |
+| `project_context`   | What they are working on         | PREFERRED |
+| `what_theyve_tried` | Previous attempts to unblock     | NO        |
+| `deadline_pressure` | Time constraints                 | NO        |
+| `creative_history`  | Past successes and patterns      | NO        |
 
 ## Preconditions
 
@@ -119,21 +119,21 @@ Checklist:
 
 ```yaml
 creative_unblock:
-  specialist: "keith-johnstone"
-  block_type: "{diagnosed type}"
-  severity: "mild | moderate | severe"
-  emotional_root: "{underlying feeling}"
+  specialist: 'keith-johnstone'
+  block_type: '{diagnosed type}'
+  severity: 'mild | moderate | severe'
+  emotional_root: '{underlying feeling}'
   diagnosis: |
     {Why the block is happening and what it signals}
   exercises_prescribed:
-    - exercise: "{name}"
-      instructions: "{step by step}"
-      purpose: "{why this helps this specific block}"
-      time_required: "{duration}"
+    - exercise: '{name}'
+      instructions: '{step by step}'
+      purpose: '{why this helps this specific block}'
+      time_required: '{duration}'
   reframe: |
     {How to see the block differently}
-  micro_goal: "{immediate small action}"
-  ongoing_practice: "{habit to prevent recurrence}"
+  micro_goal: '{immediate small action}'
+  ongoing_practice: '{habit to prevent recurrence}'
 ```
 
 ## Veto Conditions

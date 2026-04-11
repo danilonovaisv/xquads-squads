@@ -1,6 +1,6 @@
 ---
 task: manageBudget()
-responsavel: "@fiscal"
+responsavel: '@fiscal'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Current allocation mapped with marginal ROAS"
-  - "[ ] 3 budget scenarios modeled with projections"
-  - "[ ] Reallocation plan phased over 1-2 weeks"
+  - '[ ] Current allocation mapped with marginal ROAS'
+  - '[ ] 3 budget scenarios modeled with projections'
+  - '[ ] Reallocation plan phased over 1-2 weeks'
 ---
 
 # Task: Manage Budget
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| total_budget | number | User prompt | Yes | Total monthly ad budget |
-| platforms | list | User prompt | Yes | Active platforms with current allocation |
-| campaign_data | object | User prompt | Yes | Performance by campaign (spend, CPA, ROAS, conversions) |
-| revenue_target | number | User prompt | No | Monthly revenue goal |
-| max_cpa | number | User prompt | No | Maximum acceptable CPA |
-| min_roas | number | User prompt | No | Minimum acceptable ROAS |
-| growth_mode | enum | User prompt | No | maintain, grow, aggressive — defaults to grow |
+| Field          | Type   | Source      | Required | Validation                                              |
+| -------------- | ------ | ----------- | -------- | ------------------------------------------------------- |
+| total_budget   | number | User prompt | Yes      | Total monthly ad budget                                 |
+| platforms      | list   | User prompt | Yes      | Active platforms with current allocation                |
+| campaign_data  | object | User prompt | Yes      | Performance by campaign (spend, CPA, ROAS, conversions) |
+| revenue_target | number | User prompt | No       | Monthly revenue goal                                    |
+| max_cpa        | number | User prompt | No       | Maximum acceptable CPA                                  |
+| min_roas       | number | User prompt | No       | Minimum acceptable ROAS                                 |
+| growth_mode    | enum   | User prompt | No       | maintain, grow, aggressive — defaults to grow           |
 
 ---
 
@@ -62,6 +62,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Current Allocation Analysis
+
 1. Map current spend distribution:
    - By platform
    - By campaign
@@ -72,6 +73,7 @@ Checklist:
 5. Assess budget utilization (are campaigns spending their full budgets?)
 
 ### Phase 2: Optimization Modeling
+
 1. Rank all campaigns by efficiency:
    - CPA-ranked (lowest CPA first)
    - ROAS-ranked (highest ROAS first)
@@ -87,6 +89,7 @@ Checklist:
 4. Calculate projected results for each scenario
 
 ### Phase 3: Reallocation Plan
+
 1. Define the budget shift:
    - From: Campaigns losing budget (with impact analysis)
    - To: Campaigns gaining budget (with projected benefit)
@@ -100,6 +103,7 @@ Checklist:
 4. Account for platform learning phases during budget changes
 
 ### Phase 4: Ongoing Management Framework
+
 1. Define the budget review cadence:
    - Daily: Spend pacing check (on track vs plan?)
    - Weekly: Performance review and minor adjustments
@@ -128,33 +132,36 @@ Checklist:
 ### Current Allocation
 
 | Campaign/Platform | Monthly Spend | CPA | ROAS | Marginal ROAS | Status |
-|-------------------|--------------|-----|------|---------------|--------|
+| ----------------- | ------------- | --- | ---- | ------------- | ------ |
 
 **Wasted Spend:** ${X}/month on underperformers
 **Underutilized:** ${X}/month budget not being spent
 
 ### Scenario Modeling
 
-| Scenario | Budget | Projected CPA | Projected ROAS | Projected Revenue |
-|----------|--------|--------------|----------------|------------------|
-| Conservative | ${X} | ${X} | {X}:1 | ${X} |
-| Growth | ${X} | ${X} | {X}:1 | ${X} |
-| Aggressive | ${X} | ${X} | {X}:1 | ${X} |
+| Scenario     | Budget | Projected CPA | Projected ROAS | Projected Revenue |
+| ------------ | ------ | ------------- | -------------- | ----------------- |
+| Conservative | ${X}   | ${X}          | {X}:1          | ${X}              |
+| Growth       | ${X}   | ${X}          | {X}:1          | ${X}              |
+| Aggressive   | ${X}   | ${X}          | {X}:1          | ${X}              |
 
 ### Recommended Reallocation
 
 | Campaign | Current | New | Change | Rationale |
-|----------|---------|-----|--------|-----------|
+| -------- | ------- | --- | ------ | --------- |
 
 ### Transition Plan
+
 | Week | Action | Monitor |
-|------|--------|---------|
+| ---- | ------ | ------- |
 
 ### Automated Rules
+
 | Rule | Trigger | Action |
-|------|---------|--------|
+| ---- | ------- | ------ |
 
 ### Monthly Review Template
+
 {Template for ongoing budget management}
 ```
 

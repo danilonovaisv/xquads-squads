@@ -1,6 +1,6 @@
 ---
 task: diagnose()
-responsavel: "@copy-chief"
+responsavel: '@copy-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -18,9 +18,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Request parsed and keywords extracted"
-  - "[ ] Routing catalog consulted with scored results"
-  - "[ ] Quick answer provided with specialist routing"
+  - '[ ] Request parsed and keywords extracted'
+  - '[ ] Routing catalog consulted with scored results'
+  - '[ ] Quick answer provided with specialist routing'
 ---
 
 # Task: Diagnose Copywriting Request
@@ -48,11 +48,11 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| request | string | User prompt | Yes | Non-empty copywriting-related description |
-| context | object | Session state | No | Project context, target audience, awareness level |
-| medium | string | User prompt | No | headline, email, VSL, sales letter, ad, funnel, etc. |
+| Field   | Type   | Source        | Required | Validation                                           |
+| ------- | ------ | ------------- | -------- | ---------------------------------------------------- |
+| request | string | User prompt   | Yes      | Non-empty copywriting-related description            |
+| context | object | Session state | No       | Project context, target audience, awareness level    |
+| medium  | string | User prompt   | No       | headline, email, VSL, sales letter, ad, funnel, etc. |
 
 ---
 
@@ -76,27 +76,28 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 
 ### Phase 2: Match Against Routing Catalog
 
-| Domain | Keywords | Route To |
-|--------|----------|----------|
-| Headline | headline, subject line, hook, attention, awareness levels | eugene-schwartz / gary-halbert |
-| Sales Letter | sales letter, long-form, direct mail, long copy | gary-halbert / john-carlton |
-| Email Sequence | email sequence, autoresponder, soap opera, nurture | andre-chaperon / ben-settle |
-| VSL | VSL, video sales letter, video script, RMBC | stefan-georgi / jon-benson |
-| Webinar Script | webinar, webinar script, perfect webinar, presentation | russell-brunson / todd-brown |
-| Offer Creation | offer, irresistible offer, guarantee, bonus, stack | dan-kennedy / joe-sugarman |
-| Funnel Copy | funnel, landing page, opt-in, tripwire, upsell | russell-brunson / frank-kern |
-| Big Idea | big idea, campaign concept, unique mechanism, E5 | todd-brown / eugene-schwartz |
-| Bullet Points | bullets, fascinations, teasers, curiosity | gary-bencivenga / clayton-makepeace |
-| Daily Emails | daily email, engagement, newsletter, anti-guru | ben-settle / dan-koe |
-| Classic Mail | classic letter, direct mail, empathy letter, magalog | robert-collier / jim-rutz |
-| Financial/Health | financial copy, health copy, supplement, investment | clayton-makepeace / parris-lampropoulos |
-| Brand Copy | brand copy, premium, elegant, sophisticated | david-ogilvy / david-deutsch |
-| Ad Copy | ad copy, paid ads, Facebook ad, PPC, short copy | dan-kennedy / frank-kern |
-| Launch Copy | launch, product launch, launch sequence, cart open | frank-kern / russell-brunson |
-| Personal Brand | personal brand, one-person business, creator, authority | dan-koe / ry-schwartz |
-| Copy Review | copy review, critique, feedback, analyze, rewrite | copy-chief / eugene-schwartz |
+| Domain           | Keywords                                                  | Route To                                |
+| ---------------- | --------------------------------------------------------- | --------------------------------------- |
+| Headline         | headline, subject line, hook, attention, awareness levels | eugene-schwartz / gary-halbert          |
+| Sales Letter     | sales letter, long-form, direct mail, long copy           | gary-halbert / john-carlton             |
+| Email Sequence   | email sequence, autoresponder, soap opera, nurture        | andre-chaperon / ben-settle             |
+| VSL              | VSL, video sales letter, video script, RMBC               | stefan-georgi / jon-benson              |
+| Webinar Script   | webinar, webinar script, perfect webinar, presentation    | russell-brunson / todd-brown            |
+| Offer Creation   | offer, irresistible offer, guarantee, bonus, stack        | dan-kennedy / joe-sugarman              |
+| Funnel Copy      | funnel, landing page, opt-in, tripwire, upsell            | russell-brunson / frank-kern            |
+| Big Idea         | big idea, campaign concept, unique mechanism, E5          | todd-brown / eugene-schwartz            |
+| Bullet Points    | bullets, fascinations, teasers, curiosity                 | gary-bencivenga / clayton-makepeace     |
+| Daily Emails     | daily email, engagement, newsletter, anti-guru            | ben-settle / dan-koe                    |
+| Classic Mail     | classic letter, direct mail, empathy letter, magalog      | robert-collier / jim-rutz               |
+| Financial/Health | financial copy, health copy, supplement, investment       | clayton-makepeace / parris-lampropoulos |
+| Brand Copy       | brand copy, premium, elegant, sophisticated               | david-ogilvy / david-deutsch            |
+| Ad Copy          | ad copy, paid ads, Facebook ad, PPC, short copy           | dan-kennedy / frank-kern                |
+| Launch Copy      | launch, product launch, launch sequence, cart open        | frank-kern / russell-brunson            |
+| Personal Brand   | personal brand, one-person business, creator, authority   | dan-koe / ry-schwartz                   |
+| Copy Review      | copy review, critique, feedback, analyze, rewrite         | copy-chief / eugene-schwartz            |
 
 **Scoring rules:**
+
 - Count keyword matches per domain
 - 2+ matches above others --> route to that domain's primary specialist
 - Tie or cross-domain --> Copy Chief answers directly, suggest 2 specialists
@@ -105,6 +106,7 @@ User Request → Parse Keywords → Match Routing Catalog → Answer/Route → O
 ### Phase 3a: Cross-Cutting Answer
 
 If request is general or cross-domain:
+
 - Synthesize answer drawing from multiple copywriting traditions
 - Reference which specialists could add depth
 - Provide actionable copywriting advice immediately
@@ -112,17 +114,18 @@ If request is general or cross-domain:
 ### Phase 3b: Domain-Specific Route
 
 If request maps clearly to a domain:
+
 1. **Quick answer first** (3-5 lines minimum + concrete example or framework reference)
 2. **Route:** Name the specialist, explain their unique value, provide activation command
    - Example: "For VSL scripts, Stefan Georgi's RMBC method is the gold standard. Activate with `@copy-squad:stefan-georgi`"
 
 ### Phase 4: Confidence Assessment
 
-| Confidence | Criteria | Action |
-|------------|----------|--------|
-| HIGH | 3+ keyword matches in one domain | Route with confidence to primary specialist |
-| MEDIUM | 1-2 matches or split across 2 domains | Answer + suggest 2 specialists |
-| LOW | No clear match or ambiguous medium | Answer directly, ask clarifying question |
+| Confidence | Criteria                              | Action                                      |
+| ---------- | ------------------------------------- | ------------------------------------------- |
+| HIGH       | 3+ keyword matches in one domain      | Route with confidence to primary specialist |
+| MEDIUM     | 1-2 matches or split across 2 domains | Answer + suggest 2 specialists              |
+| LOW        | No clear match or ambiguous medium    | Answer directly, ask clarifying question    |
 
 ---
 
@@ -130,14 +133,17 @@ If request maps clearly to a domain:
 
 ```markdown
 ## Diagnosis
+
 **Category:** {domain | cross-cutting}
 **Confidence:** {HIGH | MEDIUM | LOW}
 **Specialist:** {Name} ({agent-id}) | Direct Answer
 
 ### Quick Answer
+
 {3-10 line answer with concrete copywriting advice}
 
 ### Recommended Next Step
+
 {Route instruction with activation command, or follow-up question}
 ```
 

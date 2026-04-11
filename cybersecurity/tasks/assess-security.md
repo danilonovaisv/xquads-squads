@@ -1,6 +1,6 @@
 ---
 task: assessSecurity()
-responsavel: "@cyber-chief"
+responsavel: '@cyber-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Authorization confirmed and scope defined"
-  - "[ ] All findings classified with CVSS scores"
-  - "[ ] Remediation roadmap generated with priorities"
+  - '[ ] Authorization confirmed and scope defined'
+  - '[ ] All findings classified with CVSS scores'
+  - '[ ] Remediation roadmap generated with priorities'
 ---
 
 # Task: Security Posture Assessment
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `target_description` | User prompt | YES |
-| `scope_definition` | User or engagement docs | YES |
-| `authorization_proof` | User confirmation | YES |
-| `existing_reports` | Previous assessments | NO |
-| `compliance_requirements` | Regulatory context | NO |
+| Input                     | Source                  | Required |
+| ------------------------- | ----------------------- | -------- |
+| `target_description`      | User prompt             | YES      |
+| `scope_definition`        | User or engagement docs | YES      |
+| `authorization_proof`     | User confirmation       | YES      |
+| `existing_reports`        | Previous assessments    | NO       |
+| `compliance_requirements` | Regulatory context      | NO       |
 
 ## Preconditions
 
@@ -93,28 +93,28 @@ Checklist:
 
 ```yaml
 security_assessment:
-  target: "{target name}"
-  scope: "{assessment scope}"
-  date: "{assessment date}"
-  assessor: "cyber-chief + specialists"
+  target: '{target name}'
+  scope: '{assessment scope}'
+  date: '{assessment date}'
+  assessor: 'cyber-chief + specialists'
   executive_summary: |
     {Business-level risk overview}
   findings:
-    - id: "FIND-001"
-      title: "{finding title}"
-      severity: "CRITICAL | HIGH | MEDIUM | LOW | INFO"
+    - id: 'FIND-001'
+      title: '{finding title}'
+      severity: 'CRITICAL | HIGH | MEDIUM | LOW | INFO'
       cvss_score: 0.0
-      description: "{detailed description}"
-      evidence: "{proof of finding}"
-      remediation: "{fix recommendation}"
-      effort: "QUICK_WIN | SHORT_TERM | LONG_TERM"
+      description: '{detailed description}'
+      evidence: '{proof of finding}'
+      remediation: '{fix recommendation}'
+      effort: 'QUICK_WIN | SHORT_TERM | LONG_TERM'
   attack_surface:
-    external_exposure: "{summary}"
-    internal_risks: "{summary}"
+    external_exposure: '{summary}'
+    internal_risks: '{summary}'
   remediation_roadmap:
-    immediate: ["{quick wins}"]
-    short_term: ["{1-4 week items}"]
-    long_term: ["{strategic improvements}"]
+    immediate: ['{quick wins}']
+    short_term: ['{1-4 week items}']
+    long_term: ['{strategic improvements}']
 ```
 
 ## Veto Conditions

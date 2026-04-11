@@ -1,6 +1,6 @@
 ---
 task: diagnoseDesignChallenge()
-responsavel: "@design-chief"
+responsavel: '@design-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,22 +22,22 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] User intent parsed and categorized"
-  - "[ ] Cross-cutting answer delivered to user"
-  - "[ ] Confidence level assessed"
+  - '[ ] User intent parsed and categorized'
+  - '[ ] Cross-cutting answer delivered to user'
+  - '[ ] Confidence level assessed'
 ---
 
 # Task: Diagnose & Route — Design Squad
 
 ## Metadata
 
-| Field         | Value                                            |
-|---------------|--------------------------------------------------|
-| Task ID       | `design-squad:diagnose`                          |
-| Command       | `@design-squad` or `@design-squad:design-chief`  |
-| Orchestrator  | `design-chief`                                   |
-| Version       | 1.0.0                                            |
-| Created       | 2026-03-05                                       |
+| Field        | Value                                           |
+| ------------ | ----------------------------------------------- |
+| Task ID      | `design-squad:diagnose`                         |
+| Command      | `@design-squad` or `@design-squad:design-chief` |
+| Orchestrator | `design-chief`                                  |
+| Version      | 1.0.0                                           |
+| Created      | 2026-03-05                                      |
 
 ## Purpose
 
@@ -47,12 +47,12 @@ agent file during diagnosis — it only identifies the best route.
 
 ## Inputs
 
-| Input            | Source              | Required |
-|------------------|---------------------|----------|
-| `user_message`   | User prompt         | YES      |
-| `routing_catalog` | `data/routing-catalog.yaml` | YES |
-| `config`         | `config/config.yaml` | YES     |
-| `conversation_history` | Session context | NO       |
+| Input                  | Source                      | Required |
+| ---------------------- | --------------------------- | -------- |
+| `user_message`         | User prompt                 | YES      |
+| `routing_catalog`      | `data/routing-catalog.yaml` | YES      |
+| `config`               | `config/config.yaml`        | YES      |
+| `conversation_history` | Session context             | NO       |
 
 ## Preconditions
 
@@ -97,22 +97,22 @@ agent file during diagnosis — it only identifies the best route.
 
 Assess routing confidence:
 
-| Level  | Criteria                                      | Action                        |
-|--------|-----------------------------------------------|-------------------------------|
-| HIGH   | Clear keyword match, single domain, unambiguous | Route to primary specialist  |
-| MEDIUM | Multiple domains match, slight ambiguity       | Suggest primary + secondary   |
-| LOW    | No clear match, vague request, cross-domain    | Stay with chief, ask clarifying questions |
+| Level  | Criteria                                        | Action                                    |
+| ------ | ----------------------------------------------- | ----------------------------------------- |
+| HIGH   | Clear keyword match, single domain, unambiguous | Route to primary specialist               |
+| MEDIUM | Multiple domains match, slight ambiguity        | Suggest primary + secondary               |
+| LOW    | No clear match, vague request, cross-domain     | Stay with chief, ask clarifying questions |
 
 ## Output Format
 
 ```yaml
 diagnosis:
-  intent: "{parsed user intent}"
-  design_domain: "systems | operations | experience | production"
-  matched_domain: "{domain from routing catalog}"
-  confidence: "HIGH | MEDIUM | LOW"
-  primary_agent: "{agent-id}"
-  secondary_agent: "{agent-id}"
+  intent: '{parsed user intent}'
+  design_domain: 'systems | operations | experience | production'
+  matched_domain: '{domain from routing catalog}'
+  confidence: 'HIGH | MEDIUM | LOW'
+  primary_agent: '{agent-id}'
+  secondary_agent: '{agent-id}'
   cross_cutting_answer: |
     {The immediate answer provided to the user}
   routing_suggestion: |

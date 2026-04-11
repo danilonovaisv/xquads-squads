@@ -1,6 +1,6 @@
 ---
 task: writeWebinarScript()
-responsavel: "@russell-brunson"
+responsavel: '@russell-brunson'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,10 +22,10 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Perfect Webinar framework fully executed (all 5 sections)"
-  - "[ ] 3 Secrets structure with belief-breaking epiphany bridges"
-  - "[ ] Stack and close sequence complete with price anchoring"
-  - "[ ] Psychological Layer applied (Cialdini/Warren principles tagged)"
+  - '[ ] Perfect Webinar framework fully executed (all 5 sections)'
+  - '[ ] 3 Secrets structure with belief-breaking epiphany bridges'
+  - '[ ] Stack and close sequence complete with price anchoring'
+  - '[ ] Psychological Layer applied (Cialdini/Warren principles tagged)'
 ---
 
 # Task: Write Webinar Script
@@ -40,15 +40,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| product | string | User prompt | Yes | Product/service with core transformation |
-| audience | string | User prompt | Yes | Target attendee profile with current beliefs and objections |
-| offer | object | User prompt | Yes | Price, guarantee, bonuses, urgency elements |
-| webinar_type | enum | User prompt | No | live, automated, hybrid — defaults to live |
-| duration_target | string | User prompt | No | 60min (standard), 90min (extended), 45min (condensed) — defaults to 60min |
-| three_secrets | list | User prompt | No | Pre-defined secrets/myths to break, or agent will derive them |
-| origin_story | string | User prompt | No | Speaker's personal origin story for the epiphany bridge |
+| Field           | Type   | Source      | Required | Validation                                                                |
+| --------------- | ------ | ----------- | -------- | ------------------------------------------------------------------------- |
+| product         | string | User prompt | Yes      | Product/service with core transformation                                  |
+| audience        | string | User prompt | Yes      | Target attendee profile with current beliefs and objections               |
+| offer           | object | User prompt | Yes      | Price, guarantee, bonuses, urgency elements                               |
+| webinar_type    | enum   | User prompt | No       | live, automated, hybrid — defaults to live                                |
+| duration_target | string | User prompt | No       | 60min (standard), 90min (extended), 45min (condensed) — defaults to 60min |
+| three_secrets   | list   | User prompt | No       | Pre-defined secrets/myths to break, or agent will derive them             |
+| origin_story    | string | User prompt | No       | Speaker's personal origin story for the epiphany bridge                   |
 
 ---
 
@@ -105,6 +105,7 @@ Study these real-world champion webinars before writing:
 ### Phase 2: Epiphany Bridge Stories
 
 For each of the 3 Secrets, construct an Epiphany Bridge Story:
+
 1. **Backstory:** Set the scene — where were you before the discovery?
 2. **Journey:** What happened that led to the discovery?
 3. **New Opportunity Discovery:** The moment of epiphany
@@ -163,27 +164,31 @@ For each of the 3 Secrets, construct an Epiphany Bridge Story:
 **Offer:** {offer summary}
 
 ### Persuasion Architecture
-| Section | Duration | Cialdini Principles | Warren Levers |
-|---------|----------|--------------------|--------------  |
-| Introduction | 5 min | {principles} | {levers} |
-| The One Thing | 5 min | {principles} | {levers} |
-| Secret 1 | 10 min | {principles} | {levers} |
-| Secret 2 | 10 min | {principles} | {levers} |
-| Secret 3 | 10 min | {principles} | {levers} |
-| The Stack | 10 min | {principles} | {levers} |
-| The Close | 10 min | {principles} | {levers} |
+
+| Section       | Duration | Cialdini Principles | Warren Levers |
+| ------------- | -------- | ------------------- | ------------- |
+| Introduction  | 5 min    | {principles}        | {levers}      |
+| The One Thing | 5 min    | {principles}        | {levers}      |
+| Secret 1      | 10 min   | {principles}        | {levers}      |
+| Secret 2      | 10 min   | {principles}        | {levers}      |
+| Secret 3      | 10 min   | {principles}        | {levers}      |
+| The Stack     | 10 min   | {principles}        | {levers}      |
+| The Close     | 10 min   | {principles}        | {levers}      |
 
 ---
 
 ### INTRODUCTION (0:00 - 5:00)
+
 {Script with slide cues and speaker notes}
 [SLIDE: Title + Speaker Credibility]
 
 ### THE ONE THING (5:00 - 10:00)
+
 {New opportunity framing}
 [SLIDE: Old Opportunity vs New Opportunity]
 
 ### SECRET 1: {Title} — Breaking the Vehicle Belief (10:00 - 20:00)
+
 **False Belief:** {what they currently believe}
 **Epiphany Bridge Story:** {story arc}
 **New Belief:** {what they'll believe after}
@@ -191,6 +196,7 @@ For each of the 3 Secrets, construct an Epiphany Bridge Story:
 [SLIDE: Secret 1 Visual]
 
 ### SECRET 2: {Title} — Breaking the Internal Belief (20:00 - 30:00)
+
 **False Belief:** {what they believe about themselves}
 **Epiphany Bridge Story:** {story arc}
 **New Belief:** {what they'll believe after}
@@ -198,6 +204,7 @@ For each of the 3 Secrets, construct an Epiphany Bridge Story:
 [SLIDE: Secret 2 Visual]
 
 ### SECRET 3: {Title} — Breaking the External Belief (30:00 - 40:00)
+
 **False Belief:** {what they believe about external factors}
 **Epiphany Bridge Story:** {story arc}
 **New Belief:** {what they'll believe after}
@@ -205,6 +212,7 @@ For each of the 3 Secrets, construct an Epiphany Bridge Story:
 [SLIDE: Secret 3 Visual]
 
 ### THE STACK (40:00 - 50:00)
+
 {Value stack presentation with running total}
 [SLIDE: Stack Slide — building value]
 [SLIDE: Price Reveal]
@@ -212,6 +220,7 @@ For each of the 3 Secrets, construct an Epiphany Bridge Story:
 [SLIDE: Bonus Stack]
 
 ### THE CLOSE (50:00 - 60:00)
+
 {Two choices close + FAQ + final CTA}
 [SLIDE: Two Paths — Change vs Same]
 [SLIDE: CTA with URL/button]
@@ -219,14 +228,16 @@ For each of the 3 Secrets, construct an Epiphany Bridge Story:
 ---
 
 ### Post-Webinar Email Sequence (Outline)
-| Email | Send | Subject | Purpose |
-|-------|------|---------|---------|
-| 1 | Immediately | Replay link | Recap + CTA |
-| 2 | Day 2 | Testimonial | Social proof push |
-| 3 | Day 3 | FAQ | Objection handling |
-| 4 | Day 4 | Final chance | Scarcity close |
+
+| Email | Send        | Subject      | Purpose            |
+| ----- | ----------- | ------------ | ------------------ |
+| 1     | Immediately | Replay link  | Recap + CTA        |
+| 2     | Day 2       | Testimonial  | Social proof push  |
+| 3     | Day 3       | FAQ          | Objection handling |
+| 4     | Day 4       | Final chance | Scarcity close     |
 
 ### Production Notes
+
 - **Total slides:** {count}
 - **Key interaction moments:** {list}
 - **Emotional arc:** Curiosity -> Hope -> Belief -> Desire -> Urgency

@@ -1,6 +1,6 @@
 ---
 task: measureGrowth()
-responsavel: "@sean-ellis"
+responsavel: '@sean-ellis'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] North Star Metric defined with input metrics"
-  - "[ ] At least 5 hypotheses generated and ICE-scored"
-  - "[ ] Experiment log created with tracking plan"
+  - '[ ] North Star Metric defined with input metrics'
+  - '[ ] At least 5 hypotheses generated and ICE-scored'
+  - '[ ] Experiment log created with tracking plan'
 ---
 
 # Task: Measure Growth
@@ -39,13 +39,13 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required | Description |
-|-------|--------|----------|-------------|
-| `product` | User prompt | Yes | Product or service description |
-| `current_metrics` | User | Yes | Current growth numbers (users, revenue, retention) |
-| `pmf_status` | User | No | Product-market fit status (pre/post PMF) |
-| `growth_stage` | User | No | Stage: traction, transition, growth, mature |
-| `experiment_budget` | User | No | Resources available for experimentation |
+| Input               | Source      | Required | Description                                        |
+| ------------------- | ----------- | -------- | -------------------------------------------------- |
+| `product`           | User prompt | Yes      | Product or service description                     |
+| `current_metrics`   | User        | Yes      | Current growth numbers (users, revenue, retention) |
+| `pmf_status`        | User        | No       | Product-market fit status (pre/post PMF)           |
+| `growth_stage`      | User        | No       | Stage: traction, transition, growth, mature        |
+| `experiment_budget` | User        | No       | Resources available for experimentation            |
 
 ## Preconditions
 
@@ -119,25 +119,25 @@ Checklist:
 
 ```yaml
 growth_analysis:
-  product: "{name}"
-  pmf_score: "{percentage} very disappointed"
-  pmf_status: "{pre-pmf|post-pmf}"
+  product: '{name}'
+  pmf_score: '{percentage} very disappointed'
+  pmf_status: '{pre-pmf|post-pmf}'
   north_star_metric:
-    name: "{metric name}"
-    current_value: "{number}"
-    target: "{number}"
+    name: '{metric name}'
+    current_value: '{number}'
+    target: '{number}'
     input_metrics:
-      breadth: "{metric}"
-      depth: "{metric}"
-      frequency: "{metric}"
+      breadth: '{metric}'
+      depth: '{metric}'
+      frequency: '{metric}'
   experiments:
-    - hypothesis: "{if/then statement}"
-      ice_score: {number}
-      status: "{planned|running|complete}"
-      result: "{winner|loser|inconclusive|pending}"
+    - hypothesis: '{if/then statement}'
+      ice_score: { number }
+      status: '{planned|running|complete}'
+      result: '{winner|loser|inconclusive|pending}'
   aarrr_analysis:
-    weakest_stage: "{acquisition|activation|retention|referral|revenue}"
-    biggest_opportunity: "{description}"
+    weakest_stage: '{acquisition|activation|retention|referral|revenue}'
+    biggest_opportunity: '{description}'
   deliverables:
     - north-star-analysis.md
     - experiment-backlog.md

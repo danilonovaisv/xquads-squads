@@ -1,6 +1,6 @@
 ---
 task: designUxFlow()
-responsavel: "@ux-designer"
+responsavel: '@ux-designer'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] User research conducted with documented insights"
-  - "[ ] 2-3 personas created with goals and pain points"
-  - "[ ] Wireframes created for all key screens and flows"
+  - '[ ] User research conducted with documented insights'
+  - '[ ] 2-3 personas created with goals and pain points'
+  - '[ ] Wireframes created for all key screens and flows'
 ---
 
 # Task: UX Research & Flow Design
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `feature_or_product` | What is being designed | YES |
-| `target_users` | Who will use this | YES |
-| `business_goals` | What the business wants to achieve | YES |
-| `existing_research` | Prior user research, analytics | NO |
-| `constraints` | Technical, time, budget limitations | NO |
-| `competitive_context` | How competitors solve this | NO |
+| Input                 | Source                              | Required |
+| --------------------- | ----------------------------------- | -------- |
+| `feature_or_product`  | What is being designed              | YES      |
+| `target_users`        | Who will use this                   | YES      |
+| `business_goals`      | What the business wants to achieve  | YES      |
+| `existing_research`   | Prior user research, analytics      | NO       |
+| `constraints`         | Technical, time, budget limitations | NO       |
+| `competitive_context` | How competitors solve this          | NO       |
 
 ## Preconditions
 
@@ -133,35 +133,35 @@ Checklist:
 
 ```yaml
 ux_flow:
-  designer: "ux-designer"
-  feature: "{feature/product name}"
+  designer: 'ux-designer'
+  feature: '{feature/product name}'
   research:
-    methods_used: ["{methods}"]
-    key_insights: ["{insight statements}"]
+    methods_used: ['{methods}']
+    key_insights: ['{insight statements}']
     participants: 0
   personas:
-    - name: "{persona name}"
-      role: "{role}"
-      goals: ["{goals}"]
-      pain_points: ["{pains}"]
-      quote: "{representative quote}"
+    - name: '{persona name}'
+      role: '{role}'
+      goals: ['{goals}']
+      pain_points: ['{pains}']
+      quote: '{representative quote}'
   journey_map:
-    stages: ["{stage list}"]
-    pain_points: ["{key pains}"]
-    opportunities: ["{design opportunities}"]
+    stages: ['{stage list}']
+    pain_points: ['{key pains}']
+    opportunities: ['{design opportunities}']
   information_architecture:
-    site_map: "{structure description}"
-    navigation_model: "{nav pattern}"
-    key_labels: ["{naming}"]
+    site_map: '{structure description}'
+    navigation_model: '{nav pattern}'
+    key_labels: ['{naming}']
   wireframes:
-    screens: ["{screen list}"]
-    user_flows: ["{flow list}"]
-    interaction_notes: ["{key behaviors}"]
+    screens: ['{screen list}']
+    user_flows: ['{flow list}']
+    interaction_notes: ['{key behaviors}']
   validation:
-    method: "{testing method}"
-    task_success_rate: "{percentage}"
-    key_findings: ["{what we learned}"]
-    iterations: ["{changes made}"]
+    method: '{testing method}'
+    task_success_rate: '{percentage}'
+    key_findings: ['{what we learned}']
+    iterations: ['{changes made}']
 ```
 
 ## Veto Conditions

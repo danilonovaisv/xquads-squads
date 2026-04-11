@@ -28,10 +28,10 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Must contain .claude/ or be a project root |
-| check_managed | boolean | User parameter | No | Whether to check managed-settings.json (default: true) |
+| Field         | Type    | Source            | Required | Validation                                             |
+| ------------- | ------- | ----------------- | -------- | ------------------------------------------------------ |
+| project_root  | string  | Working directory | Yes      | Must contain .claude/ or be a project root             |
+| check_managed | boolean | User parameter    | No       | Whether to check managed-settings.json (default: true) |
 
 ---
 
@@ -49,20 +49,22 @@
 
 Locate and read each settings layer in precedence order:
 
-| Layer | Priority | Path | Scope |
-|-------|----------|------|-------|
-| 1 (Highest) | Managed | Platform-specific managed-settings.json | Organization |
-| 2 | CLI args | (Runtime only -- cannot be audited from files) | Session |
-| 3 | Local | .claude/settings.local.json | Personal/project |
-| 4 | Shared | .claude/settings.json | Team/project |
-| 5 (Lowest) | User | ~/.claude/settings.json | Personal/global |
+| Layer       | Priority | Path                                           | Scope            |
+| ----------- | -------- | ---------------------------------------------- | ---------------- |
+| 1 (Highest) | Managed  | Platform-specific managed-settings.json        | Organization     |
+| 2           | CLI args | (Runtime only -- cannot be audited from files) | Session          |
+| 3           | Local    | .claude/settings.local.json                    | Personal/project |
+| 4           | Shared   | .claude/settings.json                          | Team/project     |
+| 5 (Lowest)  | User     | ~/.claude/settings.json                        | Personal/global  |
 
 **Managed settings locations:**
+
 - macOS: `/Library/Application Support/ClaudeCode/managed-settings.json`
 - Linux/WSL: `/etc/claude-code/managed-settings.json`
 - Windows: `C:\Program Files\ClaudeCode\managed-settings.json`
 
 For each file found:
+
 1. Parse JSON and validate structure
 2. Extract permission rules (deny, ask, allow arrays)
 3. Extract MCP server configurations
@@ -91,23 +93,23 @@ Check that critical sensitive files are protected:
 
 **Required deny rules (flag if missing):**
 
-| Pattern | Protects | Severity if Missing |
-|---------|----------|---------------------|
-| `Read(./.env)` | Environment variables | CRITICAL |
-| `Read(./.env.*)` | Environment variants | CRITICAL |
-| `Read(./secrets/**)` | Secrets directory | HIGH |
-| `Read(./**/*.pem)` | SSL/TLS certificates | HIGH |
-| `Read(./**/*.key)` | Private keys | HIGH |
-| `Bash(rm -rf *)` | Destructive deletion | CRITICAL |
-| `Bash(curl * \| bash)` | Pipe-to-shell attacks | HIGH |
+| Pattern                | Protects              | Severity if Missing |
+| ---------------------- | --------------------- | ------------------- |
+| `Read(./.env)`         | Environment variables | CRITICAL            |
+| `Read(./.env.*)`       | Environment variants  | CRITICAL            |
+| `Read(./secrets/**)`   | Secrets directory     | HIGH                |
+| `Read(./**/*.pem)`     | SSL/TLS certificates  | HIGH                |
+| `Read(./**/*.key)`     | Private keys          | HIGH                |
+| `Bash(rm -rf *)`       | Destructive deletion  | CRITICAL            |
+| `Bash(curl * \| bash)` | Pipe-to-shell attacks | HIGH                |
 
 **AIOS-specific deny rules (if .aios-core/ exists):**
 
-| Pattern | Protects | Severity if Missing |
-|---------|----------|---------------------|
-| `Edit(.aios-core/core/**)` | L1 Framework Core | HIGH |
-| `Edit(.aios-core/constitution.md)` | Constitution | HIGH |
-| `Edit(bin/aios.js)` | CLI entry point | MEDIUM |
+| Pattern                            | Protects          | Severity if Missing |
+| ---------------------------------- | ----------------- | ------------------- |
+| `Edit(.aios-core/core/**)`         | L1 Framework Core | HIGH                |
+| `Edit(.aios-core/constitution.md)` | Constitution      | HIGH                |
+| `Edit(bin/aios.js)`                | CLI entry point   | MEDIUM              |
 
 ### Phase 4: Check Permission Mode Appropriateness
 
@@ -150,12 +152,12 @@ Compile all findings into a structured report.
 
 ### Layer Summary
 
-| Layer | File | Exists | Rules | Mode |
-|-------|------|--------|-------|------|
-| Managed | {path} | {Yes/No} | {N deny, N allow} | {mode or --} |
-| Local | .claude/settings.local.json | {Yes/No} | {N deny, N allow} | {mode or --} |
-| Shared | .claude/settings.json | {Yes/No} | {N deny, N allow} | {mode or --} |
-| User | ~/.claude/settings.json | {Yes/No} | {N deny, N allow} | {mode or --} |
+| Layer   | File                        | Exists   | Rules             | Mode         |
+| ------- | --------------------------- | -------- | ----------------- | ------------ |
+| Managed | {path}                      | {Yes/No} | {N deny, N allow} | {mode or --} |
+| Local   | .claude/settings.local.json | {Yes/No} | {N deny, N allow} | {mode or --} |
+| Shared  | .claude/settings.json       | {Yes/No} | {N deny, N allow} | {mode or --} |
+| User    | ~/.claude/settings.json     | {Yes/No} | {N deny, N allow} | {mode or --} |
 
 ### Effective Configuration
 
@@ -167,9 +169,9 @@ Compile all findings into a structured report.
 
 ### Findings
 
-| # | Severity | Finding | Layer(s) | Recommendation |
-|---|----------|---------|----------|----------------|
-| 1 | {CRITICAL/HIGH/MEDIUM/LOW/INFO} | {description} | {layer} | {fix} |
+| #   | Severity                        | Finding       | Layer(s) | Recommendation |
+| --- | ------------------------------- | ------------- | -------- | -------------- |
+| 1   | {CRITICAL/HIGH/MEDIUM/LOW/INFO} | {description} | {layer}  | {fix}          |
 
 ### Security Gaps
 

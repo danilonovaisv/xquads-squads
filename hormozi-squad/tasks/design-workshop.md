@@ -1,6 +1,6 @@
 ---
 task: designWorkshop()
-responsavel: "@hormozi-workshop"
+responsavel: '@hormozi-workshop'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Single transformation promise defined"
-  - "[ ] 3-5 teaching modules designed with frameworks and exercises"
-  - "[ ] Run of show created with timing"
+  - '[ ] Single transformation promise defined'
+  - '[ ] 3-5 teaching modules designed with frameworks and exercises'
+  - '[ ] Run of show created with timing'
 ---
 
 # Task: Design Workshop
@@ -39,15 +39,15 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| topic | string | User prompt | Yes | Workshop subject and transformation |
-| audience | string | User prompt | Yes | Target attendees |
-| duration | string | User prompt | Yes | 60min, 90min, half-day, full-day, multi-day |
-| format | enum | User prompt | Yes | virtual, in-person, hybrid |
-| backend_offer | object | User prompt | No | What you sell at the end (if conversion workshop) |
-| price | number | User prompt | No | Workshop ticket price (0 for free) |
-| capacity | number | User prompt | No | Max attendees |
+| Field         | Type   | Source      | Required | Validation                                        |
+| ------------- | ------ | ----------- | -------- | ------------------------------------------------- |
+| topic         | string | User prompt | Yes      | Workshop subject and transformation               |
+| audience      | string | User prompt | Yes      | Target attendees                                  |
+| duration      | string | User prompt | Yes      | 60min, 90min, half-day, full-day, multi-day       |
+| format        | enum   | User prompt | Yes      | virtual, in-person, hybrid                        |
+| backend_offer | object | User prompt | No       | What you sell at the end (if conversion workshop) |
+| price         | number | User prompt | No       | Workshop ticket price (0 for free)                |
+| capacity      | number | User prompt | No       | Max attendees                                     |
 
 ---
 
@@ -61,6 +61,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Workshop Architecture
+
 1. Define the single transformation promise ("By the end of this workshop, you will...")
 2. Choose the workshop model:
    - Pure Value: No pitch, brand building and relationship
@@ -74,6 +75,7 @@ Checklist:
 4. For each teaching block, define the "aha moment" — what will they realize?
 
 ### Phase 2: Content Design
+
 1. For each teaching block:
    - Big idea (one concept per block)
    - Framework or model to teach it
@@ -90,6 +92,7 @@ Checklist:
 5. Plan the energy arc: start strong, vary pace, end on a peak
 
 ### Phase 3: Conversion Design (if applicable)
+
 1. Plant "seeds" throughout the teaching that point to the offer:
    - "In my program, we go much deeper on this..."
    - "My clients get a done-for-you version of this..."
@@ -107,6 +110,7 @@ Checklist:
 4. Plan the follow-up for non-buyers
 
 ### Phase 4: Logistics and Delivery
+
 1. Create the run-of-show with exact timing
 2. Define tech requirements (platform, tools, slides, chat)
 3. Plan the registration and reminder sequence
@@ -130,16 +134,17 @@ Checklist:
 
 ### Run of Show
 
-| Time | Block | Content | Energy Level |
-|------|-------|---------|-------------|
-| 0:00-{X} | Opening | {hook + promise} | High |
-| {X}-{Y} | Module 1 | {topic} | Medium |
-| ... | ... | ... | ... |
-| {Z}-END | Close/Offer | {recap + CTA} | Peak |
+| Time     | Block       | Content          | Energy Level |
+| -------- | ----------- | ---------------- | ------------ |
+| 0:00-{X} | Opening     | {hook + promise} | High         |
+| {X}-{Y}  | Module 1    | {topic}          | Medium       |
+| ...      | ...         | ...              | ...          |
+| {Z}-END  | Close/Offer | {recap + CTA}    | Peak         |
 
 ### Module Details
 
 #### Module 1: {Title}
+
 **Big Idea:** {concept}
 **Framework:** {framework name}
 **Example:** {case study}
@@ -149,22 +154,26 @@ Checklist:
 #### Module 2-N: ...
 
 ### Worksheets/Templates
+
 | Resource | Purpose | When Used |
-|----------|---------|-----------|
+| -------- | ------- | --------- |
 
 ### Conversion Plan (if applicable)
+
 **Seeds planted in:** {modules}
 **Bridge script:** {transition language}
 **Offer presentation:** {structure}
 **Follow-up plan:** {non-buyer sequence}
 
 ### Registration and Reminders
+
 | Timing | Communication | Channel |
-|--------|--------------|---------|
+| ------ | ------------- | ------- |
 
 ### Success Metrics
+
 | Metric | Target |
-|--------|--------|
+| ------ | ------ |
 ```
 
 ---

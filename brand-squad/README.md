@@ -13,31 +13,31 @@ The definitive brand strategy squad — 10 legendary brand thinkers + 4 function
 
 ## Tier Architecture
 
-| Tier | Name | Agents | Focus |
-|------|------|--------|-------|
-| **0** | Orchestrator | brand-chief | Routes challenges, reviews output |
-| **1** | Brand Strategy & Equity | david-aaker, kevin-keller, jean-noel-kapferer | Equity models, identity systems, strategic management |
-| **1** | Positioning & Differentiation | al-ries, byron-sharp, marty-neumeier | Market positioning, category strategy, evidence-based growth |
-| **1** | Brand Building & Communication | donald-miller, denise-yohn, emily-heyward | StoryBrand messaging, brand-culture fusion, startup branding |
-| **1** | Brand Identity & Expression | alina-wheeler, archetype-consultant, naming-strategist | Visual identity, archetypes, naming strategy |
-| **2** | Specialized Support | domain-scout, miller-sticky-brand | Domain availability, StoryBrand implementation |
+| Tier  | Name                           | Agents                                                 | Focus                                                        |
+| ----- | ------------------------------ | ------------------------------------------------------ | ------------------------------------------------------------ |
+| **0** | Orchestrator                   | brand-chief                                            | Routes challenges, reviews output                            |
+| **1** | Brand Strategy & Equity        | david-aaker, kevin-keller, jean-noel-kapferer          | Equity models, identity systems, strategic management        |
+| **1** | Positioning & Differentiation  | al-ries, byron-sharp, marty-neumeier                   | Market positioning, category strategy, evidence-based growth |
+| **1** | Brand Building & Communication | donald-miller, denise-yohn, emily-heyward              | StoryBrand messaging, brand-culture fusion, startup branding |
+| **1** | Brand Identity & Expression    | alina-wheeler, archetype-consultant, naming-strategist | Visual identity, archetypes, naming strategy                 |
+| **2** | Specialized Support            | domain-scout, miller-sticky-brand                      | Domain availability, StoryBrand implementation               |
 
 ## Routing Matrix
 
-| Challenge | Primary | Secondary |
-|-----------|---------|-----------|
-| Brand equity & value | david-aaker | kevin-keller |
-| Brand identity & DNA | jean-noel-kapferer | alina-wheeler |
-| Positioning & category | al-ries | marty-neumeier |
-| Evidence-based growth | byron-sharp | kevin-keller |
-| Messaging & StoryBrand | donald-miller | miller-sticky-brand |
-| Visual identity & guidelines | alina-wheeler | archetype-consultant |
-| Brand culture & employer brand | denise-yohn | donald-miller |
-| Startup & DTC brand | emily-heyward | marty-neumeier |
-| Luxury & premium | jean-noel-kapferer | david-aaker |
-| Naming & domains | naming-strategist | domain-scout |
-| Archetypes & personality | archetype-consultant | jean-noel-kapferer |
-| Brand architecture & portfolio | david-aaker | kevin-keller |
+| Challenge                      | Primary              | Secondary            |
+| ------------------------------ | -------------------- | -------------------- |
+| Brand equity & value           | david-aaker          | kevin-keller         |
+| Brand identity & DNA           | jean-noel-kapferer   | alina-wheeler        |
+| Positioning & category         | al-ries              | marty-neumeier       |
+| Evidence-based growth          | byron-sharp          | kevin-keller         |
+| Messaging & StoryBrand         | donald-miller        | miller-sticky-brand  |
+| Visual identity & guidelines   | alina-wheeler        | archetype-consultant |
+| Brand culture & employer brand | denise-yohn          | donald-miller        |
+| Startup & DTC brand            | emily-heyward        | marty-neumeier       |
+| Luxury & premium               | jean-noel-kapferer   | david-aaker          |
+| Naming & domains               | naming-strategist    | domain-scout         |
+| Archetypes & personality       | archetype-consultant | jean-noel-kapferer   |
+| Brand architecture & portfolio | david-aaker          | kevin-keller         |
 
 ## Components
 
@@ -50,9 +50,11 @@ The definitive brand strategy squad — 10 legendary brand thinkers + 4 function
 ## Workflows
 
 ### Brand Creation (`*brand-creation`)
+
 End-to-end: archetype > positioning > naming > identity > story > launch package.
 
 ### Rebrand (`*rebrand`)
+
 Audit > positioning review > identity update > messaging refresh.
 
 ## Requirements

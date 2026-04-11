@@ -27,11 +27,11 @@
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| project_root | string | Working directory | Yes | Valid directory with project files |
-| security_level | string | User parameter | No | `standard` (default), `strict`, `enterprise` |
-| existing_settings | object | .claude/settings.json | No | Existing config to merge with |
+| Field             | Type   | Source                | Required | Validation                                   |
+| ----------------- | ------ | --------------------- | -------- | -------------------------------------------- |
+| project_root      | string | Working directory     | Yes      | Valid directory with project files           |
+| security_level    | string | User parameter        | No       | `standard` (default), `strict`, `enterprise` |
+| existing_settings | object | .claude/settings.json | No       | Existing config to merge with                |
 
 ---
 
@@ -87,6 +87,7 @@ Build the settings file following deny-first methodology:
 ```
 
 Populate `allow` based on detected project needs:
+
 - **Always:** `Bash(git status)`, `Bash(git diff *)`, `Bash(git log *)`
 - **Node.js:** `Bash(npm run *)`, `Bash(npx *)`, `Bash(node *)`
 - **Python:** `Bash(python *)`, `Bash(pip *)`, `Bash(pytest *)`
@@ -98,11 +99,11 @@ Populate `allow` based on detected project needs:
 
 Select the appropriate permission mode:
 
-| Security Level | Default Mode | Rationale |
-|---------------|--------------|-----------|
-| standard | acceptEdits | Auto-approves file edits, prompts for bash/network |
-| strict | askAlways | Prompts for every operation including edits |
-| enterprise | askAlways | Plus managed-settings.json restrictions |
+| Security Level | Default Mode | Rationale                                          |
+| -------------- | ------------ | -------------------------------------------------- |
+| standard       | acceptEdits  | Auto-approves file edits, prompts for bash/network |
+| strict         | askAlways    | Prompts for every operation including edits        |
+| enterprise     | askAlways    | Plus managed-settings.json restrictions            |
 
 Present the selected mode with explanation. Allow user override.
 
@@ -168,11 +169,11 @@ managed-settings.json  (highest -- cannot be overridden)
 
 ### Generated: .claude/settings.json
 
-| Section | Count | Details |
-|---------|-------|---------|
-| deny rules | {N} | Blocks: {summary} |
-| allow rules | {N} | Permits: {summary} |
-| MCP servers | {N} | {server names} |
+| Section     | Count | Details            |
+| ----------- | ----- | ------------------ |
+| deny rules  | {N}   | Blocks: {summary}  |
+| allow rules | {N}   | Permits: {summary} |
+| MCP servers | {N}   | {server names}     |
 
 ### Permission Rules
 
@@ -184,9 +185,9 @@ managed-settings.json  (highest -- cannot be overridden)
 
 ### Environment Variables
 
-| Variable | Recommended Value | Purpose |
-|----------|-------------------|---------|
-| {name} | {value} | {purpose} |
+| Variable | Recommended Value | Purpose   |
+| -------- | ----------------- | --------- |
+| {name}   | {value}           | {purpose} |
 
 ### Verification
 

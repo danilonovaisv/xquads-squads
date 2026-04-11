@@ -1,6 +1,6 @@
 ---
 task: writeManifesto()
-responsavel: "@marshall-ganz"
+responsavel: '@marshall-ganz'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Story of Self crafted with authentic personal origin"
-  - "[ ] Story of Us builds shared identity and belonging"
-  - "[ ] Manifesto text woven with rallying cry"
+  - '[ ] Story of Self crafted with authentic personal origin'
+  - '[ ] Story of Us builds shared identity and belonging'
+  - '[ ] Manifesto text woven with rallying cry'
 ---
 
 # Task: Movement/Brand Manifesto
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `movement_or_brand` | User description | YES |
-| `core_values` | User specification | YES |
-| `target_community` | Who this is for | YES |
-| `urgency_trigger` | Why now? | PREFERRED |
-| `founder_story` | Personal origin narrative | PREFERRED |
-| `enemy_or_obstacle` | What the movement opposes | NO |
+| Input               | Source                    | Required  |
+| ------------------- | ------------------------- | --------- |
+| `movement_or_brand` | User description          | YES       |
+| `core_values`       | User specification        | YES       |
+| `target_community`  | Who this is for           | YES       |
+| `urgency_trigger`   | Why now?                  | PREFERRED |
+| `founder_story`     | Personal origin narrative | PREFERRED |
+| `enemy_or_obstacle` | What the movement opposes | NO        |
 
 ## Preconditions
 
@@ -98,27 +98,27 @@ Checklist:
 
 ```yaml
 manifesto:
-  title: "{manifesto title}"
-  author_agent: "marshall-ganz"
-  movement_or_brand: "{name}"
-  core_values: ["{values}"]
-  target_community: "{audience}"
+  title: '{manifesto title}'
+  author_agent: 'marshall-ganz'
+  movement_or_brand: '{name}'
+  core_values: ['{values}']
+  target_community: '{audience}'
   story_of_self:
-    origin: "{personal story}"
-    choice_point: "{the moment}"
-    values_expressed: ["{values revealed}"]
+    origin: '{personal story}'
+    choice_point: '{the moment}'
+    values_expressed: ['{values revealed}']
   story_of_us:
-    shared_experience: "{what unites us}"
-    shared_values: ["{collective beliefs}"]
-    collective_challenge: "{our obstacle}"
+    shared_experience: '{what unites us}'
+    shared_values: ['{collective beliefs}']
+    collective_challenge: '{our obstacle}'
   story_of_now:
-    urgent_challenge: "{why now}"
-    the_choice: "{what we must decide}"
-    call_to_action: "{specific action}"
-    future_vision: "{the world we create}"
+    urgent_challenge: '{why now}'
+    the_choice: '{what we must decide}'
+    call_to_action: '{specific action}'
+    future_vision: '{the world we create}'
   manifesto_text: |
     {The full manifesto text}
-  rallying_cry: "{the one sentence people will repeat}"
+  rallying_cry: '{the one sentence people will repeat}'
 ```
 
 ## Veto Conditions

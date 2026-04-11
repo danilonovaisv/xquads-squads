@@ -10,6 +10,7 @@ This checklist evaluates how well Claude Code is integrated into a project.
 Use it to audit existing setups and identify improvement opportunities.
 
 EXECUTION APPROACH:
+
 1. Check each item against the actual project state
 2. Mark [x] for present and correct, [ ] for missing or incorrect, [N/A] for not applicable
 3. Count checked items vs total applicable items
@@ -87,13 +88,13 @@ This audit is non-destructive -- it only reads and reports.]]
 
 **Calculation:** (Checked items) / (Total items - N/A items) x 100
 
-| Grade | Score Range | Interpretation |
-|-------|------------|----------------|
-| A | 90-100% | Excellent integration, production-ready |
-| B | 80-89% | Good integration, minor improvements needed |
-| C | 70-79% | Adequate integration, several gaps to address |
-| D | 60-69% | Below average, significant gaps present |
-| F | Below 60% | Poor integration, major rework needed |
+| Grade | Score Range | Interpretation                                |
+| ----- | ----------- | --------------------------------------------- |
+| A     | 90-100%     | Excellent integration, production-ready       |
+| B     | 80-89%      | Good integration, minor improvements needed   |
+| C     | 70-79%      | Adequate integration, several gaps to address |
+| D     | 60-69%      | Below average, significant gaps present       |
+| F     | Below 60%   | Poor integration, major rework needed         |
 
 ## Priority Fix Order
 

@@ -1,6 +1,6 @@
 ---
 task: diagnose()
-responsavel: "@vision-chief"
+responsavel: '@vision-chief'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -18,29 +18,29 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Query parsed with intent and business function"
-  - "[ ] Quick answer provided"
-  - "[ ] Route executed or direct answer given"
+  - '[ ] Query parsed with intent and business function'
+  - '[ ] Quick answer provided'
+  - '[ ] Route executed or direct answer given'
 ---
 
 # Task: Diagnose — C-Level Squad
 
 ## Metadata
 
-| Field         | Value                                              |
-|---------------|----------------------------------------------------|
-| Task ID       | `c-level:diagnose`                                 |
-| Command       | `@c-level diagnose "{query}"`                      |
-| Orchestrator  | `vision-chief`                                     |
-| Purpose       | Parse the user's request, provide a quick answer, and route to the best C-suite executive |
+| Field        | Value                                                                                     |
+| ------------ | ----------------------------------------------------------------------------------------- |
+| Task ID      | `c-level:diagnose`                                                                        |
+| Command      | `@c-level diagnose "{query}"`                                                             |
+| Orchestrator | `vision-chief`                                                                            |
+| Purpose      | Parse the user's request, provide a quick answer, and route to the best C-suite executive |
 
 ## Inputs
 
-| Input        | Source       | Required | Description                              |
-|--------------|-------------|----------|------------------------------------------|
-| `query`      | User prompt | Yes      | The user's question or request           |
-| `context`    | Session     | No       | Previous conversation context            |
-| `role_hint`  | User/Auto   | No       | Suggested C-level role (CEO, COO, etc.)  |
+| Input       | Source      | Required | Description                             |
+| ----------- | ----------- | -------- | --------------------------------------- |
+| `query`     | User prompt | Yes      | The user's question or request          |
+| `context`   | Session     | No       | Previous conversation context           |
+| `role_hint` | User/Auto   | No       | Suggested C-level role (CEO, COO, etc.) |
 
 ## Preconditions
 
@@ -75,14 +75,14 @@ Checklist:
    - **Confidence level**: HIGH (>= 3 keyword matches), MEDIUM (2 matches), LOW (0-1 matches)
 
 4. Executive routing guide:
-   | Problem Area                | Primary Agent    | Secondary Agent  |
+   | Problem Area | Primary Agent | Secondary Agent |
    |-----------------------------|------------------|------------------|
-   | Vision/strategy/fundraising | vision-chief     | coo-orchestrator |
-   | Operations/scaling/process  | coo-orchestrator | vision-chief     |
-   | Marketing/brand/GTM         | cmo-architect    | vision-chief     |
-   | Technology/architecture     | cto-architect    | cio-engineer     |
-   | Infrastructure/security     | cio-engineer     | cto-architect    |
-   | AI/ML/digital transformation| caio-architect   | cto-architect    |
+   | Vision/strategy/fundraising | vision-chief | coo-orchestrator |
+   | Operations/scaling/process | coo-orchestrator | vision-chief |
+   | Marketing/brand/GTM | cmo-architect | vision-chief |
+   | Technology/architecture | cto-architect | cio-engineer |
+   | Infrastructure/security | cio-engineer | cto-architect |
+   | AI/ML/digital transformation| caio-architect | cto-architect |
 
 ### Phase 3: Answer
 
@@ -105,17 +105,17 @@ Checklist:
 
 ```yaml
 diagnosis:
-  query_summary: "{1-line summary}"
-  intent: "{question|strategy|decision|assessment|transformation}"
-  business_function: "{vision|operations|marketing|technology|infrastructure|ai}"
+  query_summary: '{1-line summary}'
+  intent: '{question|strategy|decision|assessment|transformation}'
+  business_function: '{vision|operations|marketing|technology|infrastructure|ai}'
   quick_answer: |
     {2-4 sentence direct answer}
   routing:
-    confidence: "{HIGH|MEDIUM|LOW}"
-    primary_agent: "{agent-id}"
-    secondary_agent: "{agent-id}"
-    reason: "{why this executive is the best match}"
-  routed: {true|false}
+    confidence: '{HIGH|MEDIUM|LOW}'
+    primary_agent: '{agent-id}'
+    secondary_agent: '{agent-id}'
+    reason: '{why this executive is the best match}'
+  routed: { true|false }
 ```
 
 ## Veto Rules

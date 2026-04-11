@@ -1,6 +1,6 @@
 ---
 task: generateLeads()
-responsavel: "@hormozi-leads"
+responsavel: '@hormozi-leads'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] All 4 lead sources audited and scored"
-  - "[ ] Lead magnet designed with clear bridge to core offer"
-  - "[ ] 30-Day launch plan created"
+  - '[ ] All 4 lead sources audited and scored'
+  - '[ ] Lead magnet designed with clear bridge to core offer'
+  - '[ ] 30-Day launch plan created'
 ---
 
 # Task: Generate Leads
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Field | Type | Source | Required | Validation |
-|-------|------|--------|----------|------------|
-| business | string | User prompt | Yes | Business type, product/service, and current stage |
-| audience | string | User prompt | Yes | Dream customer avatar with demographics |
-| budget | string | User prompt | No | Monthly marketing budget range |
-| current_channels | list | User prompt | No | Existing lead sources |
-| lead_goal | number | User prompt | No | Target leads per month |
-| business_model | string | User prompt | No | B2B, B2C, local, e-commerce, SaaS, service |
+| Field            | Type   | Source      | Required | Validation                                        |
+| ---------------- | ------ | ----------- | -------- | ------------------------------------------------- |
+| business         | string | User prompt | Yes      | Business type, product/service, and current stage |
+| audience         | string | User prompt | Yes      | Dream customer avatar with demographics           |
+| budget           | string | User prompt | No       | Monthly marketing budget range                    |
+| current_channels | list   | User prompt | No       | Existing lead sources                             |
+| lead_goal        | number | User prompt | No       | Target leads per month                            |
+| business_model   | string | User prompt | No       | B2B, B2C, local, e-commerce, SaaS, service        |
 
 ---
 
@@ -60,6 +60,7 @@ Checklist:
 ## Execution Phases
 
 ### Phase 1: Lead Source Audit
+
 1. Evaluate the 4 core lead sources (Hormozi framework):
    - Warm Outreach: Existing contacts, past customers, referrals
    - Cold Outreach: Direct outreach to strangers (email, DM, phone)
@@ -70,6 +71,7 @@ Checklist:
 4. Map each source to the business model and budget
 
 ### Phase 2: Lead Magnet Design
+
 1. Create a lead magnet using the Hormozi criteria:
    - Solves a specific, narrow problem completely
    - Delivers value in under 5 minutes of consumption
@@ -86,6 +88,7 @@ Checklist:
 4. Define the delivery mechanism
 
 ### Phase 3: Channel Strategy
+
 1. For each active or recommended channel, define:
    - Target volume (leads per week)
    - Cost per lead estimate
@@ -112,6 +115,7 @@ Checklist:
    - Lead capture mechanism
 
 ### Phase 4: System Assembly
+
 1. Map the complete lead flow: Source → Lead Magnet → Nurture → Offer
 2. Define the follow-up system for each source
 3. Set KPIs for each channel
@@ -134,14 +138,15 @@ Checklist:
 
 ### Lead Source Scorecard
 
-| Source | Current Score | Opportunity | Priority |
-|--------|-------------|-------------|----------|
-| Warm Outreach | X/10 | {gap} | {1-4} |
-| Cold Outreach | X/10 | {gap} | {1-4} |
-| Content (Free) | X/10 | {gap} | {1-4} |
-| Paid Ads | X/10 | {gap} | {1-4} |
+| Source         | Current Score | Opportunity | Priority |
+| -------------- | ------------- | ----------- | -------- |
+| Warm Outreach  | X/10          | {gap}       | {1-4}    |
+| Cold Outreach  | X/10          | {gap}       | {1-4}    |
+| Content (Free) | X/10          | {gap}       | {1-4}    |
+| Paid Ads       | X/10          | {gap}       | {1-4}    |
 
 ### Lead Magnet
+
 **Name:** {name}
 **Type:** {type}
 **Problem Solved:** {specific problem}
@@ -149,19 +154,22 @@ Checklist:
 **Bridge to Offer:** {how it leads to the paid product}
 
 ### Channel Plans
+
 {Detailed plan per channel}
 
 ### Lead Flow Map
+
 {Source} → {Lead Magnet} → {Nurture} → {Offer}
 
 ### 30-Day Launch Plan
 
 | Week | Actions | Target Leads | KPI |
-|------|---------|-------------|-----|
+| ---- | ------- | ------------ | --- |
 
 ### Scaling Triggers
+
 | Metric | Threshold | Action |
-|--------|-----------|--------|
+| ------ | --------- | ------ |
 ```
 
 ---

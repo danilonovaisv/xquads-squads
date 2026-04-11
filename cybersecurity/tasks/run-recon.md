@@ -1,6 +1,6 @@
 ---
 task: runRecon()
-responsavel: "@cartographer"
+responsavel: '@cartographer'
 responsavel_type: Agent
 atomic_layer: Task
 elicit: true
@@ -22,9 +22,9 @@ Saida:
     persistido: false
 
 Checklist:
-  - "[ ] Passive and active reconnaissance completed"
-  - "[ ] Directory and service enumeration completed"
-  - "[ ] Attack surface mapped with high-value targets identified"
+  - '[ ] Passive and active reconnaissance completed'
+  - '[ ] Directory and service enumeration completed'
+  - '[ ] Attack surface mapped with high-value targets identified'
 ---
 
 # Task: Reconnaissance & Enumeration
@@ -39,14 +39,14 @@ Checklist:
 
 ## Inputs
 
-| Input | Source | Required |
-|-------|--------|----------|
-| `target` | User specification | YES |
-| `target_type` | Domain, IP, range, webapp | YES |
-| `authorization` | User confirmation | YES |
-| `depth` | shallow, standard, deep | NO (default: standard) |
-| `stealth_required` | Boolean | NO (default: false) |
-| `known_information` | Prior intel | NO |
+| Input               | Source                    | Required               |
+| ------------------- | ------------------------- | ---------------------- |
+| `target`            | User specification        | YES                    |
+| `target_type`       | Domain, IP, range, webapp | YES                    |
+| `authorization`     | User confirmation         | YES                    |
+| `depth`             | shallow, standard, deep   | NO (default: standard) |
+| `stealth_required`  | Boolean                   | NO (default: false)    |
+| `known_information` | Prior intel               | NO                     |
 
 ## Preconditions
 
@@ -101,28 +101,28 @@ Checklist:
 
 ```yaml
 recon_report:
-  target: "{target}"
-  recon_agent: "cartographer + dirber"
-  depth: "shallow | standard | deep"
+  target: '{target}'
+  recon_agent: 'cartographer + dirber'
+  depth: 'shallow | standard | deep'
   stealth_mode: false
   passive_findings:
-    dns_records: ["{records}"]
-    subdomains: ["{subdomain list}"]
-    technologies: ["{tech stack}"]
-    emails: ["{harvested emails}"]
+    dns_records: ['{records}']
+    subdomains: ['{subdomain list}']
+    technologies: ['{tech stack}']
+    emails: ['{harvested emails}']
   active_findings:
-    hosts: ["{alive hosts}"]
-    open_ports: ["{port:service mappings}"]
-    os_detection: ["{OS fingerprints}"]
-    ssl_issues: ["{TLS findings}"]
+    hosts: ['{alive hosts}']
+    open_ports: ['{port:service mappings}']
+    os_detection: ['{OS fingerprints}']
+    ssl_issues: ['{TLS findings}']
   enumeration:
-    directories: ["{discovered paths}"]
-    api_endpoints: ["{API paths}"]
-    interesting_files: ["{sensitive files}"]
+    directories: ['{discovered paths}']
+    api_endpoints: ['{API paths}']
+    interesting_files: ['{sensitive files}']
   attack_surface:
-    high_value_targets: ["{prioritized targets}"]
-    potential_vectors: ["{attack paths}"]
-    recommended_next_steps: ["{actions}"]
+    high_value_targets: ['{prioritized targets}']
+    potential_vectors: ['{attack paths}']
+    recommended_next_steps: ['{actions}']
 ```
 
 ## Veto Conditions

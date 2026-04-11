@@ -11,6 +11,7 @@ stale references, outdated instructions, and redundant content over time.
 This degrades agent accuracy and wastes context budget.
 
 EXECUTION APPROACH:
+
 1. Measure CLAUDE.md size against budget limits
 2. Validate every file path and reference mentioned in context files
 3. Check instructions against current codebase reality
@@ -86,23 +87,23 @@ Regular audits prevent accumulation.]]
 
 For each category, count failed items (excluding N/A). Apply weights:
 
-| Category | Weight | Max Deduction |
-|----------|--------|---------------|
-| Size Check | 1x per fail | 10 points |
-| Reference Validity | 3x per fail | 21 points |
-| Instruction Currency | 2x per fail | 14 points |
-| Rule Health | 2x per fail | 12 points |
-| Memory Hygiene | 1x per fail | 6 points |
-| Redundancy Check | 2x per fail | 12 points |
+| Category             | Weight      | Max Deduction |
+| -------------------- | ----------- | ------------- |
+| Size Check           | 1x per fail | 10 points     |
+| Reference Validity   | 3x per fail | 21 points     |
+| Instruction Currency | 2x per fail | 14 points     |
+| Rule Health          | 2x per fail | 12 points     |
+| Memory Hygiene       | 1x per fail | 6 points      |
+| Redundancy Check     | 2x per fail | 12 points     |
 
 **Rot Score** = 100 - (total deductions, capped at 100)
 
-| Score Range | Health Status | Action Required |
-|-------------|--------------|-----------------|
-| 80-100 | Healthy | Routine maintenance only |
-| 60-79 | Aging | Schedule cleanup within 1-2 sprints |
-| 40-59 | Rotting | Immediate cleanup sprint needed |
-| 0-39 | Critical | Full context rebuild recommended |
+| Score Range | Health Status | Action Required                     |
+| ----------- | ------------- | ----------------------------------- |
+| 80-100      | Healthy       | Routine maintenance only            |
+| 60-79       | Aging         | Schedule cleanup within 1-2 sprints |
+| 40-59       | Rotting       | Immediate cleanup sprint needed     |
+| 0-39        | Critical      | Full context rebuild recommended    |
 
 ## Priority Fix Order
 
