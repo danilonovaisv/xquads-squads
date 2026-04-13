@@ -85,7 +85,7 @@ OUTPUT: Configured MCP servers + context budget report + CLAUDE.md updates
 - `.env` / `supabase/` -> Supabase/database usage
 - `playwright.config.*` -> Browser testing
 
-1.2. Cross-reference detected stack against MCP server catalog:
+  1.2. Cross-reference detected stack against MCP server catalog:
 
 | Tech Stack Signal | Recommended MCP     | Purpose                         |
 | ----------------- | ------------------- | ------------------------------- |

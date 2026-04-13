@@ -194,14 +194,14 @@ Time ->
 - Create new agent? (use create-agent-definition task)
 - Use generic Agent tool with inline prompt?
 
-4.2. Configure model per subtask based on complexity from Phase 1.
-4.3. Set tool permissions -- restrict to minimum needed:
+  4.2. Configure model per subtask based on complexity from Phase 1.
+  4.3. Set tool permissions -- restrict to minimum needed:
 
 - Read-only subtasks: Explore-type agent
 - Code modification: General-purpose with Write/Edit
 - Research: Explore-type with Bash for web tools
 
-4.4. Set `max_turns` per agent based on complexity:
+  4.4. Set `max_turns` per agent based on complexity:
 
 - Trivial: 5 turns
 - Simple: 10 turns

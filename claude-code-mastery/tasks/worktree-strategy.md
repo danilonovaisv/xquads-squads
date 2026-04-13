@@ -122,7 +122,7 @@ Examples:
 - Use current branch for story work
 - Use `main` for independent feature work
 
-2.2. Create a branch plan:
+  2.2. Create a branch plan:
 
 ```yaml
 branches:
@@ -270,7 +270,7 @@ git merge {agent-branch} --no-ff -m "merge: {agent-name} work for {task-id}"
 - If tests fail, identify which merge introduced the failure
 - Fix or revert as needed
 
-5.4. Cleanup:
+  5.4. Cleanup:
 
 ```bash
 # Remove all worktrees for this task

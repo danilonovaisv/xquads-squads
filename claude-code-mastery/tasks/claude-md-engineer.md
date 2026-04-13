@@ -155,7 +155,7 @@ OUTPUT: Optimized CLAUDE.md file
 - Naming convention (_.test.ts vs _.spec.ts)
 - Mock patterns specific to this project
 
-3.4. Keep this section under 15 lines.
+  3.4. Keep this section under 15 lines.
 
 ---
 

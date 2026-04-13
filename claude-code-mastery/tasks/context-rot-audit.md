@@ -203,12 +203,12 @@ staleness_audit:
 - Verify at least one file matches the glob pattern
 - If no files match, the rule is orphaned
 
-4.3. Check for missing rules:
+  4.3. Check for missing rules:
 
 - Are there important directories with no corresponding rule?
 - Compare rule coverage against project structure
 
-4.4. Check for conflicting rules:
+  4.4. Check for conflicting rules:
 
 - Do any rules give contradictory instructions for the same paths?
 

@@ -210,7 +210,7 @@ jobs:
 - Go to Settings > Secrets and variables > Actions
 - Add `ANTHROPIC_API_KEY` with the API key value
 
-4.2. Configure additional environment variables if needed:
+  4.2. Configure additional environment variables if needed:
 
 ```yaml
 env:
@@ -251,7 +251,7 @@ When using `--output-format stream-json`, output is newline-delimited JSON:
 - Code generation -> `stream-json` (for parsing file changes)
 - Testing -> `text` (for test result summary)
 
-5.2. Create a parsing script if using `stream-json`:
+  5.2. Create a parsing script if using `stream-json`:
 
 ```bash
 # Extract final assistant message

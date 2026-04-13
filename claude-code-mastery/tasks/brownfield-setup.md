@@ -97,14 +97,14 @@ src/
 - Naming conventions (camelCase, PascalCase, kebab-case for files)
 - Comment style and density
 
-1.3. Detect architectural patterns:
+  1.3. Detect architectural patterns:
 
 - State management approach
 - API integration patterns
 - Routing structure
 - Authentication flow
 
-1.4. Build a pattern inventory:
+  1.4. Build a pattern inventory:
 
 ```yaml
 patterns:
@@ -136,7 +136,7 @@ patterns:
 - `vercel.json` (Vercel)
 - `netlify.toml` (Netlify)
 
-2.2. Check for code quality tools:
+  2.2. Check for code quality tools:
 
 - `.eslintrc*` / `eslint.config.*` (ESLint)
 - `.prettierrc*` (Prettier)
@@ -144,14 +144,14 @@ patterns:
 - `.editorconfig` (EditorConfig)
 - `commitlint.config.*` (Commit message linting)
 
-2.3. Check for testing:
+  2.3. Check for testing:
 
 - `jest.config.*` (Jest)
 - `vitest.config.*` (Vitest)
 - `cypress.config.*` (Cypress)
 - `playwright.config.*` (Playwright)
 
-2.4. Document existing scripts from package.json:
+  2.4. Document existing scripts from package.json:
 
 ```yaml
 scripts:
@@ -286,13 +286,13 @@ paths:
 - After writing code, suggest running the project's lint command
 - After modifying tests, suggest running the project's test command
 
-6.2. Align git behavior with team conventions:
+  6.2. Align git behavior with team conventions:
 
 - Detect commit message format from history (conventional commits, etc.)
 - Document branch naming conventions
 - Note any PR template or review requirements
 
-6.3. Set up notification hooks for critical operations:
+  6.3. Set up notification hooks for critical operations:
 
 - Alert when modifying shared configuration files
 - Alert when adding new dependencies

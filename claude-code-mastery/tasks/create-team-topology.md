@@ -116,7 +116,7 @@ roles:
 - Code generation: sonnet (standard implementation)
 - Simple tasks: haiku (formatting, data extraction)
 
-2.3. Verify no two agents have overlapping responsibilities.
+  2.3. Verify no two agents have overlapping responsibilities.
 
 ---
 
@@ -209,13 +209,13 @@ Are subtasks independent with no shared state?
 - Quality check passed (lint, test, etc.)
 - Completion signal sent
 
-6.2. For the team, define completion as:
+  6.2. For the team, define completion as:
 
 - All agents report done
 - Outputs aggregated
 - Integration test passed (if applicable)
 
-6.3. Define failure handling:
+  6.3. Define failure handling:
 
 - Agent fails -> retry once, then escalate to coordinator
 - Coordinator fails -> escalate to human

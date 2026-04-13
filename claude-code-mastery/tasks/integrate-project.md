@@ -149,8 +149,8 @@ detection:
 - Key directories and their purposes
 - Common commands reference
 
-2.2. Verify line count is under 200.
-2.3. If over 200, move detailed sections to `.claude/rules/` files.
+  2.2. Verify line count is under 200.
+  2.3. If over 200, move detailed sections to `.claude/rules/` files.
 
 ---
 
@@ -178,7 +178,7 @@ detection:
 - `**/node_modules/**`
 - Production config files
 
-3.3. Add allow rules for common development operations:
+  3.3. Add allow rules for common development operations:
 
 - Build commands
 - Test commands
@@ -257,8 +257,8 @@ paths:
 - For medium projects: 1-2 specialized agents (e.g., code-reviewer, test-writer)
 - For large projects: full agent team with topology
 
-7.2. Create agent files in `.claude/agents/`.
-7.3. Delegate to create-agent-definition task for each agent.
+  7.2. Create agent files in `.claude/agents/`.
+  7.3. Delegate to create-agent-definition task for each agent.
 
 ---
 
